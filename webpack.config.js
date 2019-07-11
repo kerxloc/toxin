@@ -19,6 +19,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.pug"
     }),
+    new HtmlWebpackPlugin({
+      filename: 'page.html',
+      template: 'src/pages/page.pug',
+      chunks: ['pageEntry']
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].build.css"
     })
