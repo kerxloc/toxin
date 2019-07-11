@@ -1,0 +1,19 @@
+{
+  "name": "toxin",
+  "version": "1.0.0",
+  "description": "search hotels (fsd)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dywork/toxin.git"
+  },
+  "author": "dywork",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dywork/toxin/issues"
+  },
+  "homepage": "https://github.com/dywork/toxin#readme"
+}
