@@ -38,6 +38,10 @@ module.exports = {
             loader: "css-loader"
           },
           {
+            loader: 'postcss-loader',
+            options: { config: { path: 'src/js/postcss.config.js' } }
+          },
+          {
             loader: "sass-loader"
           }
         ]
