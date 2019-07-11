@@ -1,3 +1,5 @@
+include ./components/users/users
+
 doctype html
 html(lang="en")
   head
@@ -8,3 +10,5 @@ html(lang="en")
   body
     main
       h1 hello world with pug!
+      ul.users
+        +user(["Андрей", "Наташа"])
