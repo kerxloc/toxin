@@ -11,7 +11,8 @@ module.exports = {
   },
   devServer: {
     port: 3000,
-    clientLogLevel: "silent"
+    clientLogLevel: "silent",
+    overlay: true
   },
   plugins: [
     new HtmlWebpackPlugin({
