@@ -1,9 +1,9 @@
-@import "fonts";
+@import 'fonts';
 
 body {
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: 'Montserrat', 'Arial', sans-serif;
   background-color: cornflowerblue;
 }
 
-@import "../components/header/header";
-@import "../components/footer/footer";
+@import '../components/header/header';
+@import '../components/footer/footer';
