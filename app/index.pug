@@ -1,5 +1,3 @@
-include ./components/users/users
-
 doctype html
 html(lang="en")
   head
@@ -8,7 +6,5 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Document
   body
-    main
-      h1 hello world with pug!
-      ul.users
-        +user(["Андрей", "Наташа"])
+    include components/header/header
+    include components/footer/footer

@@ -1,0 +1,9 @@
+@import "fonts";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: cornflowerblue;
+}
+
+@import "../components/header/header";
+@import "../components/footer/footer";
