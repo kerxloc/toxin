@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import './styles/main.scss';
 
 if (process.env.NODE_ENV !== 'production') {
