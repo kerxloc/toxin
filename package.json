@@ -37,12 +37,15 @@
     "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
     "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
     "eslint-config-standard": "^12.0.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.2",
+    "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-compat": "^3.1.1",
-    "eslint-plugin-import": "^2.17.1",
+    "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-standard": "^4.0.0",
@@ -59,12 +62,16 @@
     "nodemon": "^1.18.11",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
+    "prettier": "^1.18.2",
     "pug-html-loader": "^1.1.5",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "style-loader": "^0.23.1",
     "stylelint": "^10.0.1",
+    "stylelint-config-htmlacademy": "^0.1.4",
+    "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.1",
     "stylelint-scss": "^3.5.4",
     "stylelint-webpack-plugin": "^0.10.5",
     "terser-webpack-plugin": "1.2.3",
@@ -83,6 +90,40 @@
   ],
   "engines": {
     "node": ">=6.0.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-htmlacademy",
+    "plugins": [
+      "stylelint-order",
+      "stylelint-config-rational-order/plugin",
+      "stylelint-scss"
+    ],
+    "rules": {
+      "string-quotes": "single",
+      "order/properties-order": [],
+      "plugin/rational-order": [
+        true,
+        {
+          "border-in-box-model": false,
+          "empty-line-between-groups": false
+        }
+      ],
+      "scss/dollar-variable-pattern": "^foo",
+      "scss/selector-no-redundant-nesting-selector": true
+    }
+  },
+  "rules": {
+    "string-quotes": "single",
+    "order/properties-order": [],
+    "plugin/rational-order": [
+      true,
+      {
+        "border-in-box-model": false,
+        "empty-line-between-groups": false
+      }
+    ],
+    "scss/dollar-variable-pattern": "^foo",
+    "scss/selector-no-redundant-nesting-selector": true
   },
   "dependencies": {
     "gh-pages": "^2.0.1"
