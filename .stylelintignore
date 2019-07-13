@@ -1,1 +1,3 @@
 build/**/*.css
+app/styles/variables.scss
+app/styles/normolize.scss
