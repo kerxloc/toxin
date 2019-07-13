@@ -1,6 +1,33 @@
 include ../logo/logo
+include ../main-menu/main-menu
+
+-
+  var menuItems = [
+    { title: 'О нас', path: '#' }, 
+    { 
+      title: 'Услуги', 
+      path: '#', 
+      subMenu: [ 
+        { title: 'Item 1', path: '#' }, 
+        { title: 'Item 2', path: '#' }, 
+        { title: 'Item 3', path: '#' } 
+      ]
+    }, 
+    { title: 'Вакансии', path: '#' },
+    { title: 'Новости', path: '#' },
+    { 
+      title: 'Соглашения', 
+      path: '#',
+      subMenu: [ 
+        { title: 'Item 1', path: '#' }, 
+        { title: 'Item 2', path: '#' }, 
+        { title: 'Item 3', path: '#' } 
+      ]
+    }
+  ]
 
 header.page-header
   .container
     .page-header__wrap
       +logo({width: 120, height: 60})
+      +mainMenu(menuItems)
