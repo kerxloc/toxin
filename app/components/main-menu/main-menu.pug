@@ -1,0 +1,14 @@
+mixin mainMenu(menuItems)
+  nav
+    ul.page-header__menu-list
+      each item in menuItems
+        if item.subMenu
+          li(class="page-header__menu-item  page-header__menu-item--sub-menu")
+            a(href=item.path)= item.title
+            ul.page-header__sub-menu
+              each subItem in item.subMenu
+                li.page-header__menu-sub-item
+                  a(href=subItem.path)= subItem.title
+        else
+          li.page-header__menu-item
+            a(href=item.path)= item.title
