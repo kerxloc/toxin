@@ -1,6 +1,6 @@
+include ../logo/logo
+
 header.page-header
-  .wrapper
-    h2.page-header__title Привет, я хедер
-    .page-header__pict
-      img(width="150" height="150" src=("./components/header/js-logo.svg"))
-      
+  .container
+    .page-header__wrap
+      +logo({width: 120, height: 60})
