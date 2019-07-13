@@ -1,7 +1,29 @@
 @import 'fonts';
+@import 'variables.scss';
 
 body {
   font-family: 'Montserrat', 'Arial', sans-serif;
+}
+
+.container {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: $desktopWidth;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media screen and (max-width: $smDesktopWidth) {
+    max-width: $tableWidth;
+  }
+
+  @media screen and (max-width: $tableWidth) {
+    max-width: $phoneWidth;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    max-width: $smPhoneWidth;
+  }
 }
 
 @import '../components/header/header';
