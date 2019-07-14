@@ -1,0 +1,5 @@
+mixin button(options)
+  if options.path
+    a(class="button" href=options.path)= options.title
+  else
+    button(class="button" type="button")= options.title
