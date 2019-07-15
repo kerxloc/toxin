@@ -1,6 +1,6 @@
-@import 'normolize';
+@import 'utils/normolize';
+@import 'utils/variables';
 @import 'fonts';
-@import 'variables';
 
 body {
   color: $contentColor;
