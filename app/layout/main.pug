@@ -1,3 +1,4 @@
+include ../components/header/header
 block variables
 
 doctype html
@@ -9,6 +10,6 @@ html(lang="ru")
     meta(name="description", content=description)
     title #{title}
   body(class=pageClass)
-    include ../components/header/header
+    +header
     block content
     include ../components/footer/footer
