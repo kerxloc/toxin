@@ -10,8 +10,14 @@
 .page-header__auth {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 303px;
   margin-left: 22px;
   padding-bottom: 4px;
+}
+
+.page-header__auth .button {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
