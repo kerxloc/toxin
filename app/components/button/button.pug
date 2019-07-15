@@ -1,5 +1,17 @@
 mixin button(options)
-  if options.path
-    a(class="button" href=options.path)= options.title
+  -
+    var buttonClass = options.isEmptyStyle ? "button  button--empty-style" : "button" 
+    
+  if options.path && options.isEmptyStyle
+    a(href=options.path class=buttonClass )= options.title
+      svg(class="icon" viewBox="0 0 250 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+        defs
+          linearGradient(x1="0" y1="0%" x2="0%" y2="1" id="linearGradient-1")
+            stop(stop-color="#bc9cff" offset="0%")
+            stop(stop-color="#8ba4f9" offset="100%")
+        path(fill="none" d='M50,95 a45,45 0 0,1 0,-90 h150 a45,45 0 1,1 0,90 h-150')
+        path(class="icon--plain" fill="url(#linearGradient-1)" d='M50,95 a45,45 0 0,1 0,-90 h150 a45,45 0 1,1 0,90 h-150')
+  else if options.path
+    a(class=buttonClass href=options.path)= options.title
   else
-    button(class="button" type="button")= options.title
+    button(class=buttonClass type="button")= options.title
