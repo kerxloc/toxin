@@ -32,7 +32,7 @@
     transition: 0.4s ease;
 
     &:hover {
-      color: $accentColor;
+      color: darken($accentColor, 10%);
       opacity: 1;
     }
   }

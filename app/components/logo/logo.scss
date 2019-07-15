@@ -8,7 +8,7 @@
 
   &:hover {
     .logo__letter {
-      fill: $accentColor;
+      fill: darken($accentColor, 10%);
     }
 
     .logo__label-left {
