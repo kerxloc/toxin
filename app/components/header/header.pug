@@ -27,11 +27,12 @@ include ../main-menu/main-menu
     }
   ]
 
-header.page-header
-  .container
-    .page-header__wrap
-      +logo({width: 120, height: 60})
-      +mainMenu(menuItems)
-      .page-header__auth
-        +button({ title: 'Войти', path: '#', isEmptyStyle: true })
-        +button({ title: 'Зарегистрироваться', path: '#' })
+mixin header(options)
+  header.page-header
+    .container
+      .page-header__wrap
+        +logo({width: 120, height: 60})
+        +mainMenu(menuItems)
+        .page-header__auth
+          +button({ title: 'Войти', path: '#', isEmptyStyle: true })
+          +button({ title: 'Зарегистрироваться', path: '#' })
