@@ -12,6 +12,21 @@
   align-items: center;
   margin-left: 22px;
   padding-bottom: 4px;
+
+  &--is-auth {
+    position: relative;
+    padding-left: 20px;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      width: 1px;
+      height: 30px;
+      background: $contentColor;
+      opacity: 0.1;
+      content: '';
+    }
+  }
 }
 
 .page-header__auth .button {
@@ -20,4 +35,10 @@
   &:last-child {
     margin-right: 0;
   }
+}
+
+.page-header__user-name {
+  margin: 0;
+  color: $contentColor;
+  opacity: 0.5;
 }
