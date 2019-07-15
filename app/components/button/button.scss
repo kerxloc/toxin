@@ -67,8 +67,8 @@
 
         &.icon--plain {
           opacity: 0;
-          stroke: none;
-          stroke-width: 0;
+          stroke: url('#linearGradient-1');
+          stroke-width: 7;
         }
       }
     }
