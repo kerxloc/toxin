@@ -3,6 +3,8 @@
 @import 'variables';
 
 body {
+  color: $contentColor;
+  font-size: 14px;
   font-family: $fontFamily;
 }
 
