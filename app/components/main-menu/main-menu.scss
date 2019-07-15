@@ -41,6 +41,19 @@
   &--sub-menu {
     position: relative;
 
+    &:hover {
+      > a {
+        color: darken($accentColor, 10%);
+        opacity: 1;
+
+        &::after {
+          border-right-color: darken($accentColor, 5%);
+          border-bottom-color: darken($accentColor, 5%);
+          opacity: 1;
+        }
+      }
+    }
+
     &::after {
       position: absolute;
       bottom: -18px;
