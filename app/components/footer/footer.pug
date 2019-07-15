@@ -1,3 +1,8 @@
+include ../logo/logo
+include ../text-content/text-content
+
 footer.page-footer
-  .wrapper
-    h2.page-footer__title Привет, я футер
+  .container
+    .page-footer__wrap
+      +logo({ width: 120, height: 40 })
+      +textContent({text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'})
