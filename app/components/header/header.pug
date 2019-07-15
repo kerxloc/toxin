@@ -28,12 +28,13 @@ include ../main-menu/main-menu
   ]
 
 mixin header(options)
+  - var authClass = options.userName ? "page-header__auth  page-header__auth--is-auth" : "page-header__auth"
   header.page-header
     .container
       .page-header__wrap
         +logo({width: 120, height: 60})
         +mainMenu(menuItems)
-        .page-header__auth
+        section(class=authClass)
           if options.userName
             p.page-header__user-name= options.userName
           else
