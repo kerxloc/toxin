@@ -29,7 +29,7 @@
     line-height: 17px;
     text-decoration: none;
     opacity: 0.5;
-    transition: 0.4s ease;
+    transition: color 0.4s ease, opacity 0.4s ease;
 
     &:hover {
       color: darken($accentColor, 10%);
@@ -47,22 +47,34 @@
 
   &--sub-menu {
     position: relative;
-    padding-right: 24px;
 
-    &::after {
-      position: absolute;
-      top: 50%;
-      right: 6px;
-      width: 7px;
-      height: 7px;
-      margin-top: -6px;
-      background-color: transparent;
-      border-right: 2px solid $contentColor;
-      border-bottom: 2px solid $contentColor;
+    a {
+      position: relative;
+      padding-right: 24px;
 
-      transform: rotate(45deg);
-      opacity: 0.5;
-      content: '';
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 6px;
+        width: 7px;
+        height: 7px;
+        margin-top: -6px;
+        background-color: transparent;
+        border-right: 2px solid $contentColor;
+        border-bottom: 2px solid $contentColor;
+
+        transform: rotate(45deg);
+        opacity: 0.5;
+        content: '';
+      }
+
+      &:hover {
+        &::after {
+          border-right-color: darken($accentColor, 5%);
+          border-bottom-color: darken($accentColor, 5%);
+          opacity: 1;
+        }
+      }
     }
   }
 }
