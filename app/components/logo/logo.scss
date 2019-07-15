@@ -10,9 +10,14 @@
     .logo__letter {
       fill: $accentColor;
     }
+
+    .logo__label-left {
+      fill: $accentSecondСolor;
+    }
   }
 }
 
-.logo__letter {
+.logo__letter,
+.logo__label-left {
   transition: fill 0.4s ease;
 }
