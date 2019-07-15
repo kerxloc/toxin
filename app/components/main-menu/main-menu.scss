@@ -41,15 +41,15 @@
 
   &--sub-menu {
     position: relative;
-    padding-right: 20px;
+    padding-right: 24px;
 
     &::after {
       position: absolute;
       top: 50%;
-      right: 3px;
-      width: 6px;
-      height: 6px;
-      margin-top: -4px;
+      right: 6px;
+      width: 7px;
+      height: 7px;
+      margin-top: -5px;
       background-color: transparent;
       border-right: 2px solid $contentColor;
       border-bottom: 2px solid $contentColor;
