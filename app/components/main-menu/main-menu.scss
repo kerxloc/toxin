@@ -1,8 +1,7 @@
 .main-menu {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-left: auto;
-  padding: 10px 0;
 }
 
 .main-menu__list,
@@ -18,7 +17,28 @@
 }
 
 .main-menu__sub-menu {
-  display: none;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  padding: 5px 20px;
+  text-align: center;
+  background-color: $mainColor;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  transform: translate(-50%, 10px);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.main-menu__item:hover > .main-menu__sub-menu {
+  transform: translate(-50%, 0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.main-menu__sub-item {
+  margin-bottom: 10px;
 }
 
 .main-menu__item,
@@ -48,7 +68,17 @@
   &--sub-menu {
     position: relative;
 
-    a {
+    &::after {
+      position: absolute;
+      bottom: -18px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: transparent;
+      content: '';
+    }
+
+    > a {
       position: relative;
       padding-right: 24px;
 
