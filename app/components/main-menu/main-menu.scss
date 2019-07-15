@@ -29,6 +29,12 @@
     line-height: 17px;
     text-decoration: none;
     opacity: 0.5;
+    transition: 0.4s ease;
+
+    &:hover {
+      color: $accentColor;
+      opacity: 1;
+    }
   }
 }
 
