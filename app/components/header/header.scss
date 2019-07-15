@@ -4,6 +4,9 @@
 }
 
 .page-header__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 303px;
   margin-left: 31px;
 }
