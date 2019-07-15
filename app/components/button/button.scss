@@ -1,4 +1,6 @@
 .button {
+  position: relative;
+  z-index: 100;
   padding: 10px 20px;
   color: $mainColor;
   font-weight: bold;
@@ -11,8 +13,28 @@
 
   border: none;
   border-radius: 22px;
-
   cursor: pointer;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(darken($accentColor, 10%), darken($accentGradColor, 10%));
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    content: '';
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
 
   &--empty-style {
     position: relative;
@@ -20,6 +42,10 @@
     color: $accentColor;
     background: none;
     transition: color 0.4s ease;
+
+    &::before {
+      display: none;
+    }
 
     .icon {
       position: absolute;
