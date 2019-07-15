@@ -1,8 +1,18 @@
 .logo {
   position: relative;
+}
 
-  a {
-    position: absolute;
-    top: -2px;
+.logo__link {
+  position: absolute;
+  top: -2px;
+
+  &:hover {
+    .logo__letter {
+      fill: $accentColor;
+    }
   }
+}
+
+.logo__letter {
+  transition: fill 0.4s ease;
 }
