@@ -77,6 +77,14 @@
     &:hover {
       color: $mainColor;
 
+      .button__top-gradient {
+        stop-color: darken($accentColor, 10%);
+      }
+
+      .button__bot-gradient {
+        stop-color: darken($accentGradColor, 10%);
+      }
+
       path {
         &:first-of-type {
           opacity: 0;
@@ -88,4 +96,12 @@
       }
     }
   }
+}
+
+.button__top-gradient {
+  stop-color: $accentColor;
+}
+
+.button__bot-gradient {
+  stop-color: $accentColor;
 }
