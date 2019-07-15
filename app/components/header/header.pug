@@ -34,5 +34,8 @@ mixin header(options)
         +logo({width: 120, height: 60})
         +mainMenu(menuItems)
         .page-header__auth
-          +button({ title: 'Войти', path: '#', isEmptyStyle: true })
-          +button({ title: 'Зарегистрироваться', path: '#' })
+          if options.userName
+            p.page-header__user-name= options.userName
+          else
+            +button({ title: 'Войти', path: '#', isEmptyStyle: true })
+            +button({ title: 'Зарегистрироваться', path: '#' })
