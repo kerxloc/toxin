@@ -1,4 +1,15 @@
 .page-footer {
-  padding: 100px 0;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+}
+
+.page-footer__wrap {
+  padding: 102px 0 100px;
+}
+
+.page-footer .text-content {
+  width: 260px;
+}
+
+.page-footer .logo {
+  margin-bottom: 18px;
 }
