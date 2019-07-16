@@ -1,0 +1,32 @@
+.nav-menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu__title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.nav-menu__item {
+  margin-bottom: 20px;
+
+  a {
+    color: $contentColor;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.4s ease, color 0.4s ease;
+
+    &:hover {
+      color: darken($accentColor, 10%);
+      opacity: 1;
+    }
+  }
+}
