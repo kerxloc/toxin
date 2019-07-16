@@ -2,6 +2,22 @@
   position: relative;
   min-width: 120px;
   min-height: 38px;
+
+  &--colorless {
+    .logo__link:hover {
+      .logo__letter {
+        fill: #cccccc;
+      }
+
+      .logo__label-left {
+        fill: #cccccc;
+      }
+    }
+
+    path {
+      fill: #cccccc;
+    }
+  }
 }
 
 .logo__link {
