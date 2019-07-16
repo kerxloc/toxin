@@ -1,8 +1,18 @@
 include ../logo/logo
 include ../text-content/text-content
+include ../nav-menu/nav-menu
 
 footer.page-footer
   .container
     .page-footer__wrap
       +logo()
       +textContent({ text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»' })
+      +navMenu({ 
+        title: 'Навигация',
+        list: [
+          { label: 'О нас', path: '#' },
+          { label: 'Новости', path: '#' },
+          { label: 'Служба поддержки', path: '#' },
+          { label: 'Услуги', path: '#' }
+        ]
+      })
