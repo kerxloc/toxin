@@ -26,7 +26,7 @@ include ../main-menu/main-menu
     }
   ]
 
-mixin header(options)
+mixin header( options = {} )
   - var authClass = options.userName ? "page-header__auth  page-header__auth--is-auth" : "page-header__auth"
   header.page-header
     .container
