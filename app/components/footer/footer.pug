@@ -1,6 +1,7 @@
 include ../logo/logo
 include ../text-content/text-content
 include ../nav-menu/nav-menu
+include ../input/input
 
 footer.page-footer
   .container
@@ -39,3 +40,4 @@ footer.page-footer
         })
       div(class='page-footer__col  page-footer__col--large')
         +textContent({ title: 'Подписка', text: 'Получайте специальные предложения и новости сервиса' })
+        +input({placeholder: 'Email'})
