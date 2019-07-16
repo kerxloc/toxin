@@ -31,7 +31,7 @@ mixin header(options)
   header.page-header
     .container
       .page-header__wrap
-        +logo({ width: 120, height: 40 })
+        +logo()
         +mainMenu(menuItems)
         section(class=authClass)
           if options.userName
