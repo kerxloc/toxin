@@ -3,6 +3,9 @@
 }
 
 .page-footer__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 102px 0 100px;
 }
 
