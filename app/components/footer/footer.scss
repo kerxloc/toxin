@@ -14,8 +14,11 @@
 }
 
 .page-footer__side-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   padding: 25px 0;
-  // border-top: 1px solid ;
 }
 
 .page-footer__col {
