@@ -1,4 +1,5 @@
 include ../components/header/header
+include ../components/footer/footer
 block variables
 
 doctype html
@@ -12,4 +13,4 @@ html(lang="ru")
   body(class=pageClass)
     +header()
     block content
-    include ../components/footer/footer
+    +footer()
