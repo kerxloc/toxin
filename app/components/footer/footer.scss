@@ -1,16 +1,23 @@
 .page-footer {
+  position: relative;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-}
 
-// .page-footer__wrap {
-// display: flex;
-// }
+  &::after {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    width: 1440px;
+    height: 1px;
+    margin-left: -720px;
+    background: transparentize($contentColor, 0.9);
+    content: '';
+  }
+}
 
 .page-footer__content {
   display: flex;
   flex-wrap: wrap;
   padding: 100px 0;
-  box-shadow: 0 1px 0 rgba(31, 32, 65, 0.1);
 }
 
 .page-footer__side-info {
