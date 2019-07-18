@@ -7,6 +7,13 @@
   list-style: none;
 }
 
+.social-buttons__item {
+  margin-right: 24px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 .social-buttons__link .icon-content {
   transition: fill 0.4s ease;
 }
