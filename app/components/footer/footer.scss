@@ -2,10 +2,13 @@
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 }
 
-.page-footer__wrap {
+// .page-footer__wrap {
+// display: flex;
+// }
+
+.page-footer__content {
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
   padding: 100px 0;
 }
 
