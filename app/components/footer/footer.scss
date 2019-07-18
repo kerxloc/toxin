@@ -5,12 +5,37 @@
 .page-footer__wrap {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 102px 0 100px;
+  // justify-content: space-between;
+  padding: 100px 0;
+}
+
+.page-footer__col {
+  padding-top: 4px;
+
+  &:first-child {
+    margin-right: 40px;
+    padding-top: 2px;
+  }
+
+  &:nth-child(2) {
+    margin-right: 57px;
+  }
+
+  &:nth-child(3) {
+    margin-right: 92px;
+  }
+
+  &:last-child {
+    margin-left: auto;
+  }
 }
 
 .page-footer .text-content {
   width: 260px;
+}
+
+.page-footer .nav-menu__title {
+  margin-bottom: 24px;
 }
 
 .page-footer .logo {
