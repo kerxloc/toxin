@@ -1,2 +1,8 @@
 mixin input(options = {})
-  input(class="input" type=options.type name=options.name placeholder=options.placeholder)
+  if options.isButtonSplit
+    .input-group
+      input(class='input-group__input  input-group__input--button-split' type=options.type name=options.name placeholder=options.placeholder)
+      button(class='input-group__button-split' type='button')
+  else
+    .input-group
+      input(class='input-group__input' type=options.type name=options.name placeholder=options.placeholder)
