@@ -3,6 +3,7 @@ include ../text-content/text-content
 include ../nav-menu/nav-menu
 include ../input/input
 include ../copyright/copyright
+include ../social-buttons/social-buttons
 
 footer.page-footer
   .container
@@ -45,3 +46,4 @@ footer.page-footer
           +input({ isButtonSplit: true, type: 'email', placeholder: 'Email' })
       .page-footer__side-info
         +copyright({ year: 2018 })
+        +socialButtons()
