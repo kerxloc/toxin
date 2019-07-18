@@ -29,6 +29,19 @@ body {
   }
 }
 
+.index-block {
+  min-height: 830px;
+  background-image: url('../images/interior.jpg');
+  background-repeat: no-repeat;
+  background-position: center -69px;
+}
+
+.index-block__slogan {
+  p {
+    margin: 0;
+  }
+}
+
 @import '../components/header/header';
 @import '../components/logo/logo';
 @import '../components/main-menu/main-menu';
