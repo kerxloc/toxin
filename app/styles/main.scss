@@ -36,9 +36,23 @@ body {
   background-position: center -69px;
 }
 
+.index-block__wrap {
+  position: relative;
+  min-height: 830px;
+}
+
 .index-block__slogan {
+  position: absolute;
+  right: -6px;
+  bottom: 21px;
+  width: 297px;
+
   p {
     margin: 0;
+    color: transparentize($contentColor, 0.25);
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
   }
 }
 
