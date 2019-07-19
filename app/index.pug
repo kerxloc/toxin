@@ -1,4 +1,5 @@
 extends layout/main.pug
+include components/date-wishes/date-wishes
 
 block variables
   - var title = "Toxin - подбери свой отель!"
@@ -11,5 +12,6 @@ block content
       .container
         .index-block__wrap
           section.find-hotel
+            +dateWishes()
           .index-block__slogan
             p Лучшие номера для вашей работы, отдыха и просто вдохновения
