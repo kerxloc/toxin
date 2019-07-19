@@ -1,9 +1,0 @@
-include ../button/button
-
-mixin card(options)
-  section.card
-    .card__wrap
-      if options.title
-        h2.card__title= options.title
-      if options.buttonName
-        +button({ title: options.buttonName })
