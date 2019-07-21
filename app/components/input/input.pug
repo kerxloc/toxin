@@ -1,8 +1,17 @@
 mixin input(options = {})
+  -
+    var inputGroupClass = options.labelName ? 'input-group  input-group--column' : 'input-group'
+    var inputClass = options.isButtonSplit ? 'input-group__input  input-group__input--button-split' : 'input-group__input'
+  
   if options.isButtonSplit
-    .input-group
-      input(class='input-group__input  input-group__input--button-split' type=options.type name=options.name placeholder=options.placeholder)
-      button(class='input-group__button-split' type='button')
+    div(class=inputGroupClass)
+      if options.labelName
+        label(for=`${options.labelName}-input`)= options.labelName
+      p.input-group__split
+        input(id=`${options.labelName}-input` class=inputClass type=options.type name=options.name placeholder=options.placeholder)
+        button(class='input-group__button-split' type='button')
   else
-    .input-group
-      input(class='input-group__input' type=options.type name=options.name placeholder=options.placeholder)
+    p(class=inputGroupClass)
+      if options.labelName
+        label(for=`${options.labelName}-input`)= options.labelName
+      input(id=`${options.labelName}-input` class=inputClass type=options.type name=options.name placeholder=options.placeholder)

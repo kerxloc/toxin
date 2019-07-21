@@ -1,6 +1,14 @@
 .input-group {
   display: flex;
 
+  &--column {
+    flex-direction: column;
+
+    label {
+      margin-bottom: 5px;
+    }
+  }
+
   &:hover,
   &:focus {
     .input-group__input {
@@ -11,6 +19,11 @@
       border-color: transparentize($contentColor, 0.25);
     }
   }
+}
+
+.input-group__split {
+  display: flex;
+  margin: 0;
 }
 
 .input-group__input {
