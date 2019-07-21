@@ -30,7 +30,8 @@ body {
 }
 
 .index-block {
-  min-height: 830px;
+  box-sizing: border-box;
+  height: 830px;
   background-image: url('../images/interior.jpg');
   background-repeat: no-repeat;
   background-position: center -69px;
@@ -39,12 +40,13 @@ body {
 .index-block__wrap {
   position: relative;
   min-height: 830px;
+  padding-top: 70px;
 }
 
 .index-block__slogan {
   position: absolute;
-  right: -6px;
-  bottom: 21px;
+  right: 4px;
+  bottom: 90px;
   width: 297px;
 
   p {
