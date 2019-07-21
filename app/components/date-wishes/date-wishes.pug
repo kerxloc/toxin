@@ -6,7 +6,8 @@ section.date-wishes
     form(action="")
       fieldset
         legend.date-wishes__title Найдём номера под ваши пожелания
-        +input({ labelName: 'Прибытие', placeholder: 'ДД.ММ.ГГГГ' })
-        +input({ labelName: 'Выезд', placeholder: 'ДД.ММ.ГГГГ' })
+        .date-wishes__group
+          +input({ labelName: 'Прибытие', placeholder: 'ДД.ММ.ГГГГ' })
+          +input({ labelName: 'Выезд', placeholder: 'ДД.ММ.ГГГГ' })
         +input({ labelName: 'Гости', placeholder: 'Сколько гостей' })
         +button({ title: 'Подобрать номер', buttonType: 'submit' })
