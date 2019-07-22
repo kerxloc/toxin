@@ -57,3 +57,9 @@
   font-size: 24px;
   line-height: 30px;
 }
+
+.date-wishes .input-group__button-split:active {
+  img {
+    transform: translate(0, 2px);
+  }
+}
