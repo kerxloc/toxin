@@ -41,6 +41,12 @@
       margin-right: 0;
     }
   }
+
+  .input-group__input {
+    &--button-split {
+      width: 106px;
+    }
+  }
 }
 
 .date-wishes__title {
