@@ -98,6 +98,29 @@
   }
 }
 
+.button--icon {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    margin-top: -22px;
+    background: url('./arrow_forward.svg') no-repeat;
+    background-position: center center;
+    transition: background 0.2s ease;
+    content: '';
+  }
+
+  &:active {
+    &::after {
+      background-position: 20px center;
+    }
+  }
+}
+
 .button__top-gradient {
   stop-color: $accentColor;
 }
