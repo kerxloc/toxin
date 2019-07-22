@@ -49,7 +49,9 @@
   }
 
   &::placeholder {
-    color: transparentize($contentColor, 0.75);
+    color: transparentize($contentColor, 0.25);
+    font-size: 14px;
+    // line-height: 14px;
   }
 
   &:hover,
