@@ -1,6 +1,15 @@
 mixin button(options)
   -
-    var buttonClass = options.isEmptyStyle ? "button  button--empty-style" : "button" 
+    var buttonClass = "button"
+
+    if (options.isEmptyStyle) {
+      buttonClass += "  button--empty-style"
+    }
+
+    if (options.isHaveIcon) {
+      buttonClass += "  button--icon"
+    }
+
     var buttonType = options.buttonType ? options.buttonType : "button"
     
   if options.path && options.isEmptyStyle
