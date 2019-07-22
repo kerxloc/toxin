@@ -7,7 +7,7 @@ section.date-wishes
       fieldset
         legend.date-wishes__title Найдём номера под ваши пожелания
         .date-wishes__group
-          +input({ labelName: 'Прибытие', placeholder: 'ДД.ММ.ГГГГ' })
-          +input({ labelName: 'Выезд', placeholder: 'ДД.ММ.ГГГГ' })
-        +input({ labelName: 'Гости', placeholder: 'Сколько гостей' })
-        +button({ title: 'Подобрать номер', buttonType: 'submit' })
+          +input({ labelName: 'Прибытие', isHaveIcon: true, placeholder: 'ДД.ММ.ГГГГ' })
+          +input({ labelName: 'Выезд', isHaveIcon: true, placeholder: 'ДД.ММ.ГГГГ' })
+        +input({ labelName: 'Гости', isHaveIcon: true, placeholder: 'Сколько гостей' })
+        +button({ title: 'Подобрать номер', isHaveIcon: true, buttonType: 'submit' })
