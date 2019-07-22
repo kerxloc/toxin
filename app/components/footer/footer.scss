@@ -65,6 +65,10 @@
   margin-top: 20px;
 }
 
+.page-footer .input-group__input--button-split {
+  width: 216px;
+}
+
 .page-footer .input-group__input::placeholder {
   color: transparentize($contentColor, 0.55);
 }
