@@ -47,7 +47,6 @@
 
   &--button-split {
     position: relative;
-    width: 216px;
     padding-right: 0;
     border-right: none;
     border-radius: 4px 0 0 4px;
@@ -73,7 +72,7 @@
   box-sizing: border-box;
   width: 44px;
   background-color: transparent;
-  background-image: url('arrow_forward.svg');
+  // background-image: url('arrow_forward.svg');
   background-repeat: no-repeat;
   background-position: center center;
   border: 1px solid transparentize($contentColor, 0.75);
