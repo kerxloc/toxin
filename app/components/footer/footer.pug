@@ -44,7 +44,7 @@ mixin footer()
             })
           div(class='page-footer__col  page-footer__col--large')
             +textContent({ title: 'Подписка', text: 'Получайте специальные предложения и новости сервиса' })
-            +input({ isButtonSplit: true, type: 'email', placeholder: 'Email' })
+            +input({ isButtonSplit: true, iconSrc: 'arrow_forward.svg', type: 'email', placeholder: 'Email' })
         .page-footer__side-info
           +copyright({ year: 2018 })
           +socialButtons()
