@@ -1,8 +1,17 @@
 mixin input(options = {})
   -
     var inputGroupClass = options.labelName ? 'input-group  input-group--column' : 'input-group'
-    var inputClass = options.isButtonSplit ? 'input-group__input  input-group__input--button-split' : 'input-group__input'
-  
+    //- var inputClass = options.isButtonSplit ? 'input-group__input  input-group__input--button-split' : 'input-group__input'
+    var inputClass = "input-group__input"
+
+    if (options.isButtonSplit) {
+      inputClass += "  input-group__input--button-split"
+    }
+
+    if (options.isHaveIcon) {
+      inputClass += "  input-group__input--icon"
+    }
+
   if options.isButtonSplit
     div(class=inputGroupClass)
       if options.labelName
