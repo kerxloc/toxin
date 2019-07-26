@@ -21,6 +21,7 @@ class DatePicker {
       'Назад',
     );
     datePickerHtmlSliderBtnPrev.classList.add('date-picker__slider-btn--prev');
+    datePickerHtmlSliderBtnPrev.type = 'button';
 
     const datePickerHtmlSliderBtnNext = getHtmlElement(
       'button',
@@ -28,6 +29,7 @@ class DatePicker {
       'Вперед',
     );
     datePickerHtmlSliderBtnNext.classList.add('date-picker__slider-btn--next');
+    datePickerHtmlSliderBtnNext.type = 'button';
 
     const datePickerHtmlTitle = getHtmlElement('h2', 'date-picker__title', 'Август 2019');
 
