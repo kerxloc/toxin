@@ -1,5 +1,6 @@
 include ../input/input
 include ../button/button
+include ../date-picker/date-picker
 
 section.date-wishes
   .date-wishes__wrap
@@ -11,3 +12,4 @@ section.date-wishes
           +input({ labelName: 'Выезд', isButtonSplit: true, iconSrc: 'expand_more.svg', placeholder: 'ДД.ММ.ГГГГ' })
         +input({ labelName: 'Гости', isButtonSplit: true, iconSrc: 'expand_more.svg', placeholder: 'Сколько гостей' })
         +button({ title: 'Подобрать номер', isHaveIcon: true, buttonType: 'submit' })
+        +datePicker()
