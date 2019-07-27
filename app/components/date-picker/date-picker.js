@@ -53,11 +53,51 @@ class DatePicker {
 
     tBody.appendChild(tableTrHead);
 
+    // const nowDate = new Date();
+    const currentDate = new Date(2019, 7, 1);
+    // const currentDate = new Date();
+    // console.log(currentDate.toDateString());
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth();
+    const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
+    const lastDayPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
+
+    // let startMonthDay;
+
+    // if (lastWeekDayPrevMonth === 0) {
+    //   startMonthDay = lastWeekDayPrevMonth + 8;
+    // } else {
+    //   startMonthDay = lastWeekDayPrevMonth + 1;
+    // }
+
+    // const endMonthDay = new Date(currentYear, currentMonth + 1, 0).getDate() + startMonthDay;
+
+    // let currentMonthDay;
+
+    // if (currentDate.getDate() === 0) {
+    // currentMonthDay = startMonthDay + 7;
+    // } else {
+    // currentMonthDay = currentDate.getDate() + startMonthDay;
+    // }
+
+    let numberDay;
+
+    if (lastWeekDayPrevMonth === 0) {
+      numberDay = lastDayPrevMonth - 7;
+    } else {
+      numberDay = lastDayPrevMonth - lastWeekDayPrevMonth;
+    }
+
+    // console.log(`currentMonthDay - ${currentMonthDay}`);
+    // console.log(`endMonthDay - ${endMonthDay}`);
+    // console.log(`numberDay - ${numberDay}`);
+
     for (let i = 0; i < 5; i++) {
       const tableTr = getHtmlElement('tr');
 
       for (let j = 0; j < 7; j++) {
-        const tableTd = getHtmlElement('td', 'date-picker__day', j + 1);
+        const viewDate = new Date(currentYear, currentMonth - 1, ++numberDay);
+        const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
         tableTr.appendChild(tableTd);
       }
 
@@ -85,6 +125,7 @@ class DatePicker {
 
       datePickerHtmlControl.appendChild(btn);
     });
+
     return datePickerHtmlControl;
   };
 
