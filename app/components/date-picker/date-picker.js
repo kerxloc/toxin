@@ -242,8 +242,10 @@ class DatePicker {
     const calendarTable = this.parentNode.querySelector('table');
     const calendarTableBody = calendarTable.querySelector('tbody');
     calendarTable.removeChild(calendarTableBody);
+    const tBody = getHtmlElement('tbody');
     const tableDate = this.getCalendarTableDate();
-    calendarTable.appendChild(tableDate);
+    tBody.appendChild(tableDate);
+    calendarTable.appendChild(tBody);
   };
 
   renderCalendar = (parentNode = document.body) => {
