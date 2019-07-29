@@ -197,6 +197,22 @@ class DatePicker {
     return datePickerHtmlSection;
   };
 
+  updateCurrentDate = date => {
+    this.currentDate = date;
+    this.updateCalendar();
+  };
+
+  updateCalendar = () => {
+    this.updateCalendarTitle();
+  };
+
+  updateCalendarTitle = () => {
+    const title = document.querySelector('#date-picker-main-title');
+    const monthName = monthMap[this.currentDate.getMonth()];
+    const yearName = this.currentDate.getFullYear();
+    title.textContent = `${monthName} ${yearName}`;
+  };
+
   renderCalendar = (parentNode = document.body) => {
     const calendar = this.getCalendar();
     parentNode.appendChild(calendar);
