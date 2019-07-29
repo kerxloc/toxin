@@ -45,6 +45,7 @@
 .date-picker__calendar {
   margin-top: 30px;
   margin-bottom: 20px;
+  border-collapse: collapse;
 }
 
 .date-picker__th,
@@ -65,4 +66,58 @@
 .date-picker__day {
   color: transparentize($contentColor, 0.5);
   font-weight: normal;
+
+  &--current {
+    color: $mainColor;
+    background: linear-gradient(180deg, $accentSecondСolor, $accentGradSecondСolor);
+    border-radius: 22px;
+  }
+
+  &--select {
+    color: $mainColor;
+    background: linear-gradient(180deg, $accentColor, $accentGradColor);
+    border-radius: 22px;
+  }
+
+  &--select-space {
+    background: linear-gradient(
+      180deg,
+      transparentize($accentColor, 0.75),
+      transparentize($accentGradColor, 0.75)
+    );
+  }
+
+  &--not-current {
+    color: transparentize($contentColor, 0.75);
+  }
+}
+
+.date-picker__day--select-start,
+.date-picker__day--select-end {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      transparentize($accentColor, 0.75),
+      transparentize($accentGradColor, 0.75)
+    );
+    content: '';
+  }
+}
+
+.date-picker__day--select-start {
+  &::after {
+    right: 0;
+  }
+}
+
+.date-picker__day--select-end {
+  &::after {
+    left: 0;
+  }
 }
