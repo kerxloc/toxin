@@ -37,9 +37,30 @@
   width: 24px;
   height: 24px;
   font-size: 0;
-  background-color: $accentColor;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
   border: none;
+  outline: none;
   cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &--prev {
+    background-image: url('./arrow_back.svg');
+
+    &:active {
+      transform: translateX(-5px);
+    }
+  }
+
+  &--next {
+    background-image: url('./arrow_back.svg');
+    transform: rotate(180deg);
+
+    &:active {
+      transform: rotate(180deg) translateX(-5px);
+    }
+  }
 }
 
 .date-picker__calendar {
@@ -69,12 +90,14 @@
 
   &--current {
     color: $mainColor;
+    font-weight: bold;
     background: linear-gradient(180deg, $accentSecondСolor, $accentGradSecondСolor);
     border-radius: 22px;
   }
 
   &--select {
     color: $mainColor;
+    font-weight: bold;
     background: linear-gradient(180deg, $accentColor, $accentGradColor);
     border-radius: 22px;
   }
@@ -119,5 +142,21 @@
 .date-picker__day--select-end {
   &::after {
     left: 0;
+  }
+}
+
+.date-picker__button {
+  padding: 0;
+  color: transparentize($contentColor, 0.5);
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &--accent {
+    color: $accentColor;
   }
 }
