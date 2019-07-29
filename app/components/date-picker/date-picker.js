@@ -61,6 +61,15 @@ class DatePicker {
     datePickerHtmlSliderBtnPrev.classList.add('date-picker__slider-btn--prev');
     datePickerHtmlSliderBtnPrev.type = 'button';
 
+    datePickerHtmlSliderBtnPrev.addEventListener('click', evt => {
+      evt.preventDefault();
+      const year = this.currentDate.getFullYear();
+      const month = this.currentDate.getMonth();
+      const day = this.currentDate.getDay();
+      const prevMonthDate = new Date(year, month - 1, day);
+      this.updateCurrentDate(prevMonthDate);
+    });
+
     const datePickerHtmlSliderBtnNext = getHtmlElement(
       'button',
       'date-picker__slider-btn',
@@ -68,6 +77,15 @@ class DatePicker {
     );
     datePickerHtmlSliderBtnNext.classList.add('date-picker__slider-btn--next');
     datePickerHtmlSliderBtnNext.type = 'button';
+
+    datePickerHtmlSliderBtnNext.addEventListener('click', evt => {
+      evt.preventDefault();
+      const year = this.currentDate.getFullYear();
+      const month = this.currentDate.getMonth();
+      const day = this.currentDate.getDay();
+      const prevMonthDate = new Date(year, month + 1, day);
+      this.updateCurrentDate(prevMonthDate);
+    });
 
     const monthName = monthMap[this.currentDate.getMonth()];
     const yearName = this.currentDate.getFullYear();
@@ -210,6 +228,7 @@ class DatePicker {
 
   updateCalendar = () => {
     this.updateCalendarTitle();
+    this.updateCalendarTable();
   };
 
   updateCalendarTitle = () => {
