@@ -75,6 +75,8 @@ class DatePicker {
       `${monthName} ${yearName}`,
     );
 
+    datePickerHtmlTitle.id = 'date-picker-main-title';
+
     datePickerHtmlControl.appendChild(datePickerHtmlSliderBtnPrev);
     datePickerHtmlControl.appendChild(datePickerHtmlTitle);
     datePickerHtmlControl.appendChild(datePickerHtmlSliderBtnNext);
