@@ -146,6 +146,7 @@ class DatePicker {
 
   getCalendarTable = currentDate => {
     const calendarTable = getHtmlElement('table', 'date-picker__calendar');
+    const tHead = getHtmlElement('thead');
     const tBody = getHtmlElement('tbody');
     const tableTrHead = getHtmlElement('tr');
     const tableHead = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
@@ -155,9 +156,11 @@ class DatePicker {
       tableTrHead.appendChild(th);
     });
 
-    tBody.appendChild(tableTrHead);
+    tHead.appendChild(tableTrHead);
     const tableDate = this.getCalendarTableDate(currentDate);
     tBody.appendChild(tableDate);
+
+    calendarTable.appendChild(tHead);
     calendarTable.appendChild(tBody);
     return calendarTable;
   };
