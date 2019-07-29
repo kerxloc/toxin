@@ -28,7 +28,7 @@ function getHtmlElement(tagName, className, text) {
 }
 
 class DatePicker {
-  currentDate = new Date(2019, 6, 1);
+  currentDate = new Date();
 
   parentNode = document.body;
 
@@ -41,9 +41,10 @@ class DatePicker {
     const compaireMonth = date.getMonth();
     const compaireYear = date.getFullYear();
 
-    const currentDay = this.currentDate.getDate();
-    const currentMonth = this.currentDate.getMonth();
-    const currentYear = this.currentDate.getFullYear();
+    const nowDate = new Date();
+    const currentDay = nowDate.getDate();
+    const currentMonth = nowDate.getMonth();
+    const currentYear = nowDate.getFullYear();
 
     return (
       compaireDay === currentDay && compaireMonth === currentMonth && compaireYear === currentYear
