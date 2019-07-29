@@ -196,7 +196,6 @@ class DatePicker {
   };
 
   renderCalendar = (parentNode = document.body) => {
-    // const currentDate = new Date(2019, 6, 1);
     const calendar = this.getCalendar();
     parentNode.appendChild(calendar);
   };
