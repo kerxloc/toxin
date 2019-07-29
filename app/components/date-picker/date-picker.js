@@ -52,18 +52,8 @@ class DatePicker {
     return datePickerHtmlControl;
   };
 
-  getCalendarTable = () => {
-    const calendarTable = getHtmlElement('table', 'date-picker__calendar');
-    const tBody = getHtmlElement('tbody');
-    const tableTrHead = getHtmlElement('tr');
-    const tableHead = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
-
-    tableHead.forEach(item => {
-      const th = getHtmlElement('th', 'date-picker__th', item);
-      tableTrHead.appendChild(th);
-    });
-
-    tBody.appendChild(tableTrHead);
+  getCalendarTableDate = () => {
+    const tableFragment = document.createDocumentFragment();
 
     const currentDate = new Date(2019, 7, 1);
     const currentYear = currentDate.getFullYear();
@@ -117,9 +107,26 @@ class DatePicker {
         tableTr.appendChild(tableTd);
       }
 
-      tBody.appendChild(tableTr);
+      tableFragment.appendChild(tableTr);
     }
 
+    return tableFragment;
+  };
+
+  getCalendarTable = () => {
+    const calendarTable = getHtmlElement('table', 'date-picker__calendar');
+    const tBody = getHtmlElement('tbody');
+    const tableTrHead = getHtmlElement('tr');
+    const tableHead = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+
+    tableHead.forEach(item => {
+      const th = getHtmlElement('th', 'date-picker__th', item);
+      tableTrHead.appendChild(th);
+    });
+
+    tBody.appendChild(tableTrHead);
+    const tableDate = this.getCalendarTableDate();
+    tBody.appendChild(tableDate);
     calendarTable.appendChild(tBody);
     return calendarTable;
   };
