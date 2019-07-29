@@ -30,6 +30,8 @@ function getHtmlElement(tagName, className, text) {
 class DatePicker {
   currentDate = new Date(2019, 6, 1);
 
+  parentNode = document.body;
+
   hasCurrentMonth = date => {
     return date.getMonth() === this.currentDate.getMonth();
   };
@@ -217,8 +219,10 @@ class DatePicker {
   };
 
   renderCalendar = (parentNode = document.body) => {
+    this.parentNode = parentNode;
     const calendar = this.getCalendar();
-    parentNode.appendChild(calendar);
+    this.parentNode.appendChild(calendar);
+    this.updateCalendarTable();
   };
 }
 
