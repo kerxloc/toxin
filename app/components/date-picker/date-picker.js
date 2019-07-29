@@ -28,25 +28,27 @@ function getHtmlElement(tagName, className, text) {
 }
 
 class DatePicker {
-  hasCurrentMonth = (date, currentDate) => {
-    return date.getMonth() === currentDate.getMonth();
+  currentDate = new Date(2019, 6, 1);
+
+  hasCurrentMonth = date => {
+    return date.getMonth() === this.currentDate.getMonth();
   };
 
-  hasCurrentDate = (date, currentDate) => {
+  hasCurrentDate = date => {
     const compaireDay = date.getDate();
     const compaireMonth = date.getMonth();
     const compaireYear = date.getFullYear();
 
-    const currentDay = currentDate.getDate();
-    const currentMonth = currentDate.getMonth();
-    const currentYear = currentDate.getFullYear();
+    const currentDay = this.currentDate.getDate();
+    const currentMonth = this.currentDate.getMonth();
+    const currentYear = this.currentDate.getFullYear();
 
     return (
       compaireDay === currentDay && compaireMonth === currentMonth && compaireYear === currentYear
     );
   };
 
-  getCalendarTopControl = currentDate => {
+  getCalendarTopControl = () => {
     const datePickerHtmlControl = getHtmlElement('div', 'date-picker__control');
     const datePickerHtmlSliderBtnPrev = getHtmlElement(
       'button',
@@ -64,10 +66,13 @@ class DatePicker {
     datePickerHtmlSliderBtnNext.classList.add('date-picker__slider-btn--next');
     datePickerHtmlSliderBtnNext.type = 'button';
 
+    const monthName = monthMap[this.currentDate.getMonth()];
+    const yearName = this.currentDate.getFullYear();
+
     const datePickerHtmlTitle = getHtmlElement(
       'h2',
       'date-picker__title',
-      `${monthMap[currentDate.getMonth()]} ${currentDate.getFullYear()}`,
+      `${monthName} ${yearName}`,
     );
 
     datePickerHtmlControl.appendChild(datePickerHtmlSliderBtnPrev);
@@ -77,11 +82,11 @@ class DatePicker {
     return datePickerHtmlControl;
   };
 
-  getCalendarTableDate = currentDate => {
+  getCalendarTableDate = () => {
     const tableFragment = document.createDocumentFragment();
 
-    const currentYear = currentDate.getFullYear();
-    const currentMonth = currentDate.getMonth();
+    const currentYear = this.currentDate.getFullYear();
+    const currentMonth = this.currentDate.getMonth();
     const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
     const lastDayPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
 
@@ -100,11 +105,11 @@ class DatePicker {
         const viewDate = new Date(currentYear, currentMonth - 1, ++numberDay);
         const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
 
-        if (!this.hasCurrentMonth(viewDate, currentDate)) {
+        if (!this.hasCurrentMonth(viewDate)) {
           tableTd.classList.add('date-picker__day--not-current');
         }
 
-        if (this.hasCurrentDate(viewDate, currentDate)) {
+        if (this.hasCurrentDate(viewDate)) {
           tableTd.classList.add('date-picker__day--current');
         }
 
@@ -176,11 +181,11 @@ class DatePicker {
     return datePickerHtmlControl;
   };
 
-  getCalendar = (currentDate = new Date()) => {
+  getCalendar = () => {
     const datePickerHtmlSection = getHtmlElement('section', 'date-picker');
     const datePickerHtmlWrap = getHtmlElement('div', 'date-picker__wrap');
-    const datePickerHtmlControl = this.getCalendarTopControl(currentDate);
-    const datePickerHtmlTable = this.getCalendarTable(currentDate);
+    const datePickerHtmlControl = this.getCalendarTopControl();
+    const datePickerHtmlTable = this.getCalendarTable();
     const datePickerHtmlBotControl = this.getCalendarBotControl();
     datePickerHtmlWrap.appendChild(datePickerHtmlControl);
     datePickerHtmlWrap.appendChild(datePickerHtmlTable);
@@ -191,8 +196,8 @@ class DatePicker {
   };
 
   renderCalendar = (parentNode = document.body) => {
-    const currentDate = new Date(2019, 6, 1);
-    const calendar = this.getCalendar(currentDate);
+    // const currentDate = new Date(2019, 6, 1);
+    const calendar = this.getCalendar();
     parentNode.appendChild(calendar);
   };
 }
