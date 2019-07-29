@@ -146,7 +146,7 @@ class DatePicker {
     return tableFragment;
   };
 
-  getCalendarTable = currentDate => {
+  getCalendarTable = () => {
     const calendarTable = getHtmlElement('table', 'date-picker__calendar');
     const tHead = getHtmlElement('thead');
     const tBody = getHtmlElement('tbody');
@@ -159,7 +159,7 @@ class DatePicker {
     });
 
     tHead.appendChild(tableTrHead);
-    const tableDate = this.getCalendarTableDate(currentDate);
+    const tableDate = this.getCalendarTableDate();
     tBody.appendChild(tableDate);
 
     calendarTable.appendChild(tHead);
@@ -218,11 +218,18 @@ class DatePicker {
     title.textContent = `${monthName} ${yearName}`;
   };
 
+  updateCalendarTable = () => {
+    const calendarTable = this.parentNode.querySelector('table');
+    const calendarTableBody = calendarTable.querySelector('tbody');
+    calendarTable.removeChild(calendarTableBody);
+    const tableDate = this.getCalendarTableDate();
+    calendarTable.appendChild(tableDate);
+  };
+
   renderCalendar = (parentNode = document.body) => {
     this.parentNode = parentNode;
     const calendar = this.getCalendar();
     this.parentNode.appendChild(calendar);
-    this.updateCalendarTable();
   };
 }
 
