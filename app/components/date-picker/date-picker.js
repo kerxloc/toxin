@@ -13,6 +13,18 @@ function getHtmlElement(tagName, className, text) {
 }
 
 class DatePicker {
+  hasCurrentMonth = date => {
+    return date.getMonth() === 7;
+  };
+
+  hasCurrentDate = date => {
+    const compaireDay = date.getDate();
+    const compaireMonth = date.getMonth();
+    const compaireYear = date.getFullYear();
+
+    return compaireDay === 8 && compaireMonth === 7 && compaireYear === 2019;
+  };
+
   getCalendarTopControl = () => {
     const datePickerHtmlControl = getHtmlElement('div', 'date-picker__control');
     const datePickerHtmlSliderBtnPrev = getHtmlElement(
@@ -73,6 +85,35 @@ class DatePicker {
       for (let j = 0; j < 7; j++) {
         const viewDate = new Date(currentYear, currentMonth - 1, ++numberDay);
         const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
+
+        if (!this.hasCurrentMonth(viewDate)) {
+          tableTd.classList.add('date-picker__day--not-current');
+        }
+
+        if (this.hasCurrentDate(viewDate)) {
+          tableTd.classList.add('date-picker__day--current');
+        }
+
+        const isTdSelected = viewDate.getDate() === 19 || viewDate.getDate() === 23;
+
+        if (isTdSelected) {
+          tableTd.classList.add('date-picker__day--select');
+        }
+
+        if (viewDate.getDate() === 19) {
+          tableTd.classList.add('date-picker__day--select-start');
+        }
+
+        if (viewDate.getDate() === 23) {
+          tableTd.classList.add('date-picker__day--select-end');
+        }
+
+        const isTdSpaceSelected = viewDate.getDate() >= 20 && viewDate.getDate() <= 22;
+
+        if (isTdSpaceSelected) {
+          tableTd.classList.add('date-picker__day--select-space');
+        }
+
         tableTr.appendChild(tableTd);
       }
 
