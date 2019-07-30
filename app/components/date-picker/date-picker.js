@@ -215,22 +215,27 @@ class DatePicker {
 
   onSelectDate = evt => {
     evt.preventDefault();
-    const td = evt.target;
-    const selectDate = new Date(td.getAttribute('aria-date'));
-    const selectDay = getTwoDigitNumberString(selectDate.getDate());
-    const selectMonth = getTwoDigitNumberString(selectDate.getMonth() + 1);
-    const selectYear = selectDate.getFullYear();
+    const isTdTag = evt.target.tagName.toLowerCase() === 'td';
+    if (isTdTag) {
+      const td = evt.target;
+      td.classList.add('date-picker__day--select');
+      const selectDate = new Date(td.getAttribute('aria-date'));
+      const selectDay = getTwoDigitNumberString(selectDate.getDate());
+      const selectMonth = getTwoDigitNumberString(selectDate.getMonth() + 1);
+      const selectYear = selectDate.getFullYear();
+      const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
 
-    if (!this.isStartSelect) {
-      this.isStartSelect = true;
-      this.arrivalDate = selectDate;
-      const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
-      this.arrivalInput.value = selectDateText;
-    } else {
-      this.isStartSelect = false;
-      this.departureDate = selectDate;
-      const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
-      this.departureInput.value = selectDateText;
+      if (!this.isStartSelect) {
+        td.classList.add('date-picker__day--select-start');
+        this.isStartSelect = true;
+        this.arrivalDate = selectDate;
+        this.arrivalInput.value = selectDateText;
+      } else {
+        td.classList.add('date-picker__day--select-end');
+        this.isStartSelect = false;
+        this.departureDate = selectDate;
+        this.departureInput.value = selectDateText;
+      }
     }
   };
 
