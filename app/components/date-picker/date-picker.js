@@ -126,11 +126,7 @@ class DatePicker {
       numberDay = lastDayPrevMonth - lastWeekDayPrevMonth;
     }
 
-    if (lastWeekDayPrevMonth === 6 && lastDayCurrentMonth >= 30) {
-      numberRow = 6;
-    }
-
-    if (lastWeekDayPrevMonth === 5 && lastDayCurrentMonth === 31) {
+    if (lastWeekDayPrevMonth >= 5 && lastDayCurrentMonth >= 30) {
       numberRow = 6;
     }
 
