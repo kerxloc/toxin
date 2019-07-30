@@ -136,8 +136,8 @@ class DatePicker {
     const lastDayPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
     const numberColumn = 7;
     const numberRow = this.getNumberRow();
-    let viewMonth = currentMonth - 1;
 
+    let viewMonth;
     let numberDay;
 
     if (lastWeekDayPrevMonth === 0) {
@@ -145,6 +145,7 @@ class DatePicker {
       viewMonth = currentMonth;
     } else {
       numberDay = lastDayPrevMonth - lastWeekDayPrevMonth;
+      viewMonth = currentMonth - 1;
     }
 
     for (let i = 0; i < numberRow; i++) {
