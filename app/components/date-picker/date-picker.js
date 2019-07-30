@@ -113,7 +113,7 @@ class DatePicker {
     const lastDayCurrentMonth = new Date(currentYear + 1, currentMonth + 1, 0).getDate();
     const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
     const lastDayPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
-
+    const numberColumn = 7;
     let numberRow = 5;
     let viewMonth = currentMonth - 1;
 
@@ -141,7 +141,7 @@ class DatePicker {
     for (let i = 0; i < numberRow; i++) {
       const tableTr = getHtmlElement('tr');
 
-      for (let j = 0; j < 7; j++) {
+      for (let j = 0; j < numberColumn; j++) {
         const viewDate = new Date(currentYear, viewMonth, ++numberDay);
         const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
 
