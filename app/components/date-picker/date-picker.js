@@ -140,7 +140,9 @@ class DatePicker {
     let viewMonth;
     let numberDay;
 
-    if (lastWeekDayPrevMonth === 0) {
+    const isLastWeekDaySunday = lastWeekDayPrevMonth === 0;
+
+    if (isLastWeekDaySunday) {
       numberDay = 0;
       viewMonth = currentMonth;
     } else {
