@@ -238,8 +238,18 @@ class DatePicker {
       const selectMonth = getTwoDigitNumberString(selectDate.getMonth() + 1);
       const selectYear = selectDate.getFullYear();
 
-      const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
-      this.arrivalInput.value = selectDateText;
+      if (!this.isStartSelect) {
+        this.isStartSelect = true;
+        this.arrivalDate = selectDate;
+        const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
+        this.arrivalInput.value = selectDateText;
+      } else {
+        this.isStartSelect = false;
+        this.departureDate = selectDate;
+        const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
+        this.departureInput.value = selectDateText;
+      }
+
       console.log(this.departureInput);
     });
 
