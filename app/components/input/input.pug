@@ -15,13 +15,13 @@ mixin input(options = {})
   if options.isButtonSplit
     div(class=inputGroupClass)
       if options.labelName
-        label(class='input-group__label' for=`${options.labelName}-input`)= options.labelName
+        label(class='input-group__label' for=`${options.id}`)= options.labelName
       p.input-group__split
-        input(id=`${options.labelName}-input` class=inputClass type=options.type name=options.name placeholder=options.placeholder)
+        input(id=`${options.id}` class=inputClass type=options.type name=options.name placeholder=options.placeholder)
         button(class='input-group__button-split' type='button')
           img(src=`components/input/${options.iconSrc}`, alt="")
   else
     p(class=inputGroupClass)
       if options.labelName
-        label(class='input-group__label' for=`${options.labelName}-input`)= options.labelName
-      input(id=`${options.labelName}-input` class=inputClass type=options.type name=options.name placeholder=options.placeholder)
+        label(class='input-group__label' for=`${options.id}`)= options.labelName
+      input(id=`${options.id}` class=inputClass type=options.type name=options.name placeholder=options.placeholder)
