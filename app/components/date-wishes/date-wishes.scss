@@ -23,6 +23,10 @@
     margin-top: 31px;
     padding: 15px 20px;
   }
+
+  .button--icon {
+    z-index: 0;
+  }
 }
 
 .date-wishes__wrap {
@@ -30,6 +34,7 @@
 }
 
 .date-wishes__group {
+  position: relative;
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -38,6 +43,12 @@
     &--button-split {
       width: 106px;
     }
+  }
+
+  #date-picker-container {
+    position: absolute;
+    top: 269px;
+    left: 50%;
   }
 }
 
