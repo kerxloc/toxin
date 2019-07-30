@@ -110,17 +110,20 @@ class DatePicker {
     const currentMonth = this.currentDate.getMonth();
     const lastDayCurrentMonth = new Date(currentYear + 1, currentMonth + 1, 0).getDate();
     const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
+    const isLastWeekDaySuterday = lastWeekDayPrevMonth === 6;
+    const isLastWeekDayFriday = lastWeekDayPrevMonth === 5;
+    const isLastWeekDaySunday = lastWeekDayPrevMonth === 0;
     let numberRow = 5;
 
-    if (lastWeekDayPrevMonth === 6 && lastDayCurrentMonth >= 30) {
+    if (isLastWeekDaySuterday && lastDayCurrentMonth >= 30) {
       numberRow = 6;
     }
 
-    if (lastWeekDayPrevMonth === 5 && lastDayCurrentMonth === 31) {
+    if (isLastWeekDayFriday && lastDayCurrentMonth === 31) {
       numberRow = 6;
     }
 
-    if (lastWeekDayPrevMonth === 0 && lastDayCurrentMonth === 28) {
+    if (isLastWeekDaySunday && lastDayCurrentMonth === 28) {
       numberRow = 4;
     }
     return numberRow;
