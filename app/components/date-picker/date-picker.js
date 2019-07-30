@@ -42,13 +42,11 @@ class DatePicker {
     const compaireYear = date.getFullYear();
 
     const nowDate = new Date();
-    const currentDay = nowDate.getDate();
-    const currentMonth = nowDate.getMonth();
-    const currentYear = nowDate.getFullYear();
+    const nowDay = nowDate.getDate();
+    const nowMonth = nowDate.getMonth();
+    const nowYear = nowDate.getFullYear();
 
-    return (
-      compaireDay === currentDay && compaireMonth === currentMonth && compaireYear === currentYear
-    );
+    return compaireDay === nowDay && compaireMonth === nowMonth && compaireYear === nowYear;
   };
 
   getCalendarTopControl = () => {
