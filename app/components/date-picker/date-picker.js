@@ -161,25 +161,10 @@ class DatePicker {
           tableTd.classList.add('date-picker__day--current');
         }
 
-        // const isTdSelected = viewDate.getDate() === 19 || viewDate.getDate() === 23;
-
-        // if (isTdSelected) {
-        //   tableTd.classList.add('date-picker__day--select');
-        // }
-
-        // if (viewDate.getDate() === 19) {
-        //   tableTd.classList.add('date-picker__day--select-start');
-        // }
-
-        // if (viewDate.getDate() === 23) {
-        //   tableTd.classList.add('date-picker__day--select-end');
-        // }
-
-        // const isTdSpaceSelected = viewDate.getDate() >= 20 && viewDate.getDate() <= 22;
-
-        // if (isTdSpaceSelected) {
-        //   tableTd.classList.add('date-picker__day--select-space');
-        // }
+        // date-picker__day--select
+        // date-picker__day--select-start
+        // date-picker__day--select-end
+        // date-picker__day--select-space
 
         tableTr.appendChild(tableTd);
       }
