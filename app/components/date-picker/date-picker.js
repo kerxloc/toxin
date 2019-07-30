@@ -56,6 +56,9 @@ class DatePicker {
     }
 
     this.currentDate = new Date();
+    this.arrivalDate = null;
+    this.departureDate = null;
+    this.isStartSelect = false;
   }
 
   hasCurrentMonth = date => {
