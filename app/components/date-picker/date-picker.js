@@ -105,26 +105,12 @@ class DatePicker {
     return datePickerHtmlControl;
   };
 
-  getCalendarTableDate = () => {
-    const tableFragment = document.createDocumentFragment();
-
+  getNumberRow = () => {
     const currentYear = this.currentDate.getFullYear();
     const currentMonth = this.currentDate.getMonth();
     const lastDayCurrentMonth = new Date(currentYear + 1, currentMonth + 1, 0).getDate();
     const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
-    const lastDayPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
-    const numberColumn = 7;
     let numberRow = 5;
-    let viewMonth = currentMonth - 1;
-
-    let numberDay;
-
-    if (lastWeekDayPrevMonth === 0) {
-      numberDay = 0;
-      viewMonth = currentMonth;
-    } else {
-      numberDay = lastDayPrevMonth - lastWeekDayPrevMonth;
-    }
 
     if (lastWeekDayPrevMonth === 6 && lastDayCurrentMonth >= 30) {
       numberRow = 6;
@@ -136,6 +122,28 @@ class DatePicker {
 
     if (lastWeekDayPrevMonth === 0 && lastDayCurrentMonth === 28) {
       numberRow = 4;
+    }
+    return numberRow;
+  };
+
+  getCalendarTableDate = () => {
+    const tableFragment = document.createDocumentFragment();
+
+    const currentYear = this.currentDate.getFullYear();
+    const currentMonth = this.currentDate.getMonth();
+    const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
+    const lastDayPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
+    const numberColumn = 7;
+    const numberRow = this.getNumberRow();
+    let viewMonth = currentMonth - 1;
+
+    let numberDay;
+
+    if (lastWeekDayPrevMonth === 0) {
+      numberDay = 0;
+      viewMonth = currentMonth;
+    } else {
+      numberDay = lastDayPrevMonth - lastWeekDayPrevMonth;
     }
 
     for (let i = 0; i < numberRow; i++) {
