@@ -58,6 +58,8 @@ class DatePicker {
     this.currentDate = new Date();
     this.arrivalDate = null;
     this.departureDate = null;
+    this.arrivalCell = null;
+    this.departureCell = null;
     this.isStartSelect = false;
   }
 
@@ -226,12 +228,14 @@ class DatePicker {
       const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
 
       if (!this.isStartSelect) {
-        // td.classList.add('date-picker__day--select-start');
+        this.arrivalCell = td;
         this.isStartSelect = true;
         this.arrivalDate = selectDate;
         this.arrivalInput.value = selectDateText;
       } else {
+        this.arrivalCell.classList.add('date-picker__day--select-start');
         td.classList.add('date-picker__day--select-end');
+        this.departureCell = td;
         this.isStartSelect = false;
         this.departureDate = selectDate;
         this.departureInput.value = selectDateText;
