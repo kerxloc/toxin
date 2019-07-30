@@ -250,7 +250,6 @@ class DatePicker {
     const tableDate = this.getCalendarTableDate();
 
     tBody.appendChild(tableDate);
-
     tBody.addEventListener('click', this.onSelectDate);
 
     calendarTable.appendChild(tHead);
@@ -316,6 +315,7 @@ class DatePicker {
     calendarTable.removeChild(calendarTableBody);
     const tBody = getHtmlElement('tbody');
     const tableDate = this.getCalendarTableDate();
+    tBody.addEventListener('click', this.onSelectDate);
     tBody.appendChild(tableDate);
     calendarTable.appendChild(tBody);
   };
