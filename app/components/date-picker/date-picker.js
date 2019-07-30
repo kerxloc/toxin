@@ -110,22 +110,36 @@ class DatePicker {
 
     const currentYear = this.currentDate.getFullYear();
     const currentMonth = this.currentDate.getMonth();
+    const lastDayCurrentMonth = new Date(currentYear + 1, currentMonth + 1, 0).getDate();
     const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
     const lastDayPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
+
+    let numberRow = 5;
+    let viewMonth = currentMonth - 1;
 
     let numberDay;
 
     if (lastWeekDayPrevMonth === 0) {
-      numberDay = lastDayPrevMonth - 7;
+      // numberDay = lastDayPrevMonth - 7;
+      numberDay = 0;
+      viewMonth = currentMonth;
     } else {
       numberDay = lastDayPrevMonth - lastWeekDayPrevMonth;
     }
 
-    for (let i = 0; i < 5; i++) {
+    if (lastWeekDayPrevMonth === 6 && lastDayCurrentMonth >= 30) {
+      numberRow = 6;
+    }
+
+    if (lastWeekDayPrevMonth === 5 && lastDayCurrentMonth === 31) {
+      numberRow = 6;
+    }
+
+    for (let i = 0; i < numberRow; i++) {
       const tableTr = getHtmlElement('tr');
 
       for (let j = 0; j < 7; j++) {
-        const viewDate = new Date(currentYear, currentMonth - 1, ++numberDay);
+        const viewDate = new Date(currentYear, viewMonth, ++numberDay);
         const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
 
         if (!this.hasCurrentMonth(viewDate)) {
