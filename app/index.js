@@ -7,6 +7,11 @@ if (process.env.NODE_ENV !== 'production') {
   require('./pages/about.pug');
 }
 
-const datePickerContainer = document.querySelector('#date-picker-container');
-const datePicker = new DatePicker();
-datePicker.renderCalendar(datePickerContainer);
+const datePickerDomInfo = {
+  parentNodeId: 'date-picker-container',
+  arrivalInputId: 'arrival-input',
+  departureInputId: 'departure-input',
+};
+
+const datePicker = new DatePicker(datePickerDomInfo);
+datePicker.renderCalendar();
