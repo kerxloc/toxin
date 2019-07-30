@@ -186,7 +186,7 @@ class DatePicker {
         const viewDate = new Date(currentYear, viewMonth, ++numberDay);
         const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
 
-        if (!this.hasCurrentMonth(viewDate)) {
+        if (!this.hasCurrentMonth(viewDate) && !this.hasNowDate(viewDate)) {
           tableTd.classList.add('date-picker__day--not-current');
         }
 
@@ -226,7 +226,7 @@ class DatePicker {
       const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
 
       if (!this.isStartSelect) {
-        td.classList.add('date-picker__day--select-start');
+        // td.classList.add('date-picker__day--select-start');
         this.isStartSelect = true;
         this.arrivalDate = selectDate;
         this.arrivalInput.value = selectDateText;
