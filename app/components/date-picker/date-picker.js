@@ -130,6 +130,10 @@ class DatePicker {
       numberRow = 6;
     }
 
+    if (lastWeekDayPrevMonth === 0 && lastDayCurrentMonth === 28) {
+      numberRow = 4;
+    }
+
     for (let i = 0; i < numberRow; i++) {
       const tableTr = getHtmlElement('tr');
 
