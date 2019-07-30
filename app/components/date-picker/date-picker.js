@@ -211,7 +211,14 @@ class DatePicker {
 
     tHead.appendChild(tableTrHead);
     const tableDate = this.getCalendarTableDate();
+
     tBody.appendChild(tableDate);
+
+    tBody.addEventListener('click', evt => {
+      evt.preventDefault();
+      console.log(this.arrivalInput);
+      console.log(this.departureInput);
+    });
 
     calendarTable.appendChild(tHead);
     calendarTable.appendChild(tBody);
