@@ -213,6 +213,27 @@ class DatePicker {
     return tableFragment;
   };
 
+  onSelectDate = evt => {
+    evt.preventDefault();
+    const td = evt.target;
+    const selectDate = new Date(td.getAttribute('aria-date'));
+    const selectDay = getTwoDigitNumberString(selectDate.getDate());
+    const selectMonth = getTwoDigitNumberString(selectDate.getMonth() + 1);
+    const selectYear = selectDate.getFullYear();
+
+    if (!this.isStartSelect) {
+      this.isStartSelect = true;
+      this.arrivalDate = selectDate;
+      const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
+      this.arrivalInput.value = selectDateText;
+    } else {
+      this.isStartSelect = false;
+      this.departureDate = selectDate;
+      const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
+      this.departureInput.value = selectDateText;
+    }
+  };
+
   getCalendarTable = () => {
     const calendarTable = getHtmlElement('table', 'date-picker__calendar');
     const tHead = getHtmlElement('thead');
@@ -230,28 +251,7 @@ class DatePicker {
 
     tBody.appendChild(tableDate);
 
-    tBody.addEventListener('click', evt => {
-      evt.preventDefault();
-      const td = evt.target;
-      const selectDate = new Date(td.getAttribute('aria-date'));
-      const selectDay = getTwoDigitNumberString(selectDate.getDate());
-      const selectMonth = getTwoDigitNumberString(selectDate.getMonth() + 1);
-      const selectYear = selectDate.getFullYear();
-
-      if (!this.isStartSelect) {
-        this.isStartSelect = true;
-        this.arrivalDate = selectDate;
-        const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
-        this.arrivalInput.value = selectDateText;
-      } else {
-        this.isStartSelect = false;
-        this.departureDate = selectDate;
-        const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
-        this.departureInput.value = selectDateText;
-      }
-
-      console.log(this.departureInput);
-    });
+    tBody.addEventListener('click', this.onSelectDate);
 
     calendarTable.appendChild(tHead);
     calendarTable.appendChild(tBody);
