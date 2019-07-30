@@ -120,7 +120,6 @@ class DatePicker {
     let numberDay;
 
     if (lastWeekDayPrevMonth === 0) {
-      // numberDay = lastDayPrevMonth - 7;
       numberDay = 0;
       viewMonth = currentMonth;
     } else {
