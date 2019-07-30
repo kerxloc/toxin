@@ -36,7 +36,7 @@ class DatePicker {
     return date.getMonth() === this.currentDate.getMonth();
   };
 
-  hasCurrentDate = date => {
+  hasNowDate = date => {
     const compaireDay = date.getDate();
     const compaireMonth = date.getMonth();
     const compaireYear = date.getFullYear();
@@ -158,7 +158,7 @@ class DatePicker {
           tableTd.classList.add('date-picker__day--not-current');
         }
 
-        if (this.hasCurrentDate(viewDate)) {
+        if (this.hasNowDate(viewDate)) {
           tableTd.classList.add('date-picker__day--current');
         }
 
