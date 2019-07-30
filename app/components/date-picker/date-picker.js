@@ -27,6 +27,14 @@ function getHtmlElement(tagName, className, text) {
   return element;
 }
 
+function getTwoDigitNumberString(number) {
+  if (number < 10) {
+    return `0${number}`;
+  }
+
+  return number;
+}
+
 class DatePicker {
   constructor(domInfo = {}) {
     if (domInfo.parentNodeId) {
@@ -221,7 +229,14 @@ class DatePicker {
 
     tBody.addEventListener('click', evt => {
       evt.preventDefault();
-      console.log(this.arrivalInput);
+      const td = evt.target;
+      const selectDate = new Date(td.getAttribute('aria-date'));
+      const selectDay = getTwoDigitNumberString(selectDate.getDate());
+      const selectMonth = getTwoDigitNumberString(selectDate.getMonth() + 1);
+      const selectYear = selectDate.getFullYear();
+
+      const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
+      this.arrivalInput.value = selectDateText;
       console.log(this.departureInput);
     });
 
