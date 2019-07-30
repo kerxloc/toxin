@@ -28,9 +28,10 @@ function getHtmlElement(tagName, className, text) {
 }
 
 class DatePicker {
-  currentDate = new Date();
-
-  parentNode = document.body;
+  constructor(domInfo = {}) {
+    this.parentNode = domInfo.parentNode || document.body;
+    this.currentDate = new Date();
+  }
 
   hasCurrentMonth = date => {
     return date.getMonth() === this.currentDate.getMonth();
@@ -262,8 +263,7 @@ class DatePicker {
     calendarTable.appendChild(tBody);
   };
 
-  renderCalendar = (parentNode = document.body) => {
-    this.parentNode = parentNode;
+  renderCalendar = () => {
     const calendar = this.getCalendar();
     this.parentNode.appendChild(calendar);
   };
