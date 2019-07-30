@@ -215,6 +215,27 @@ class DatePicker {
     return tableFragment;
   };
 
+  paintingSelectCell = () => {
+    const cells = this.parentNode.querySelectorAll('td');
+    let isPaint = false;
+    cells.forEach(cell => {
+      const isCellStar = this.arrivalCell === cell;
+      const isCellEnd = this.departureCell === cell;
+
+      if (isCellEnd) {
+        isPaint = false;
+      }
+
+      if (isPaint) {
+        cell.classList.add('date-picker__day--select-space');
+      }
+
+      if (isCellStar) {
+        isPaint = true;
+      }
+    });
+  };
+
   onSelectDate = evt => {
     evt.preventDefault();
     const isTdTag = evt.target.tagName.toLowerCase() === 'td';
@@ -239,6 +260,7 @@ class DatePicker {
         this.isStartSelect = false;
         this.departureDate = selectDate;
         this.departureInput.value = selectDateText;
+        this.paintingSelectCell();
       }
     }
   };
