@@ -29,7 +29,24 @@ function getHtmlElement(tagName, className, text) {
 
 class DatePicker {
   constructor(domInfo = {}) {
-    this.parentNode = domInfo.parentNode || document.body;
+    if (domInfo.parentNodeId) {
+      this.parentNode = document.querySelector(`#${domInfo.parentNodeId}`);
+    } else {
+      console.error('Expected parentNodeId inside constructor object but not received');
+    }
+
+    if (domInfo.arrivalInputId) {
+      this.arrivalInput = document.querySelector(`#${domInfo.arrivalInputId}`);
+    } else {
+      console.error('Expected arrivalInputId inside constructor object but not received');
+    }
+
+    if (domInfo.departureInputId) {
+      this.departureInput = document.querySelector(`#${domInfo.departureInputId}`);
+    } else {
+      console.error('Expected departureInputId inside constructor object but not received');
+    }
+
     this.currentDate = new Date();
   }
 
