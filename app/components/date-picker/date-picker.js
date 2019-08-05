@@ -61,6 +61,7 @@ class DatePicker {
     this.arrivalCell = null;
     this.departureCell = null;
     this.isStartSelect = false;
+    this.isEndSelect = false;
   }
 
   hasCurrentMonth = date => {
@@ -236,6 +237,29 @@ class DatePicker {
     });
   };
 
+  clearSelectCell = () => {
+    const cells = this.parentNode.querySelectorAll('td');
+    cells.forEach(cell => {
+      const isCellSelectSpace = cell.classList.contains('date-picker__day--select-space');
+      const isCellStartSelect = cell.classList.contains('date-picker__day--select-start');
+      const isCellEndSelect = cell.classList.contains('date-picker__day--select-end');
+
+      if (isCellSelectSpace) {
+        cell.classList.remove('date-picker__day--select-space');
+      }
+
+      if (isCellStartSelect) {
+        cell.classList.remove('date-picker__day--select');
+        cell.classList.remove('date-picker__day--select-start');
+      }
+
+      if (isCellEndSelect) {
+        cell.classList.remove('date-picker__day--select');
+        cell.classList.remove('date-picker__day--select-end');
+      }
+    });
+  };
+
   onSelectDate = evt => {
     evt.preventDefault();
     const isTdTag = evt.target.tagName.toLowerCase() === 'td';
@@ -249,11 +273,17 @@ class DatePicker {
       const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
       const isCellDoubleSelect = td === this.arrivalCell;
 
+      if (this.isEndSelect) {
+        this.clearSelectCell();
+        this.isEndSelect = false;
+      }
+
       if (this.isStartSelect && !isCellDoubleSelect) {
         this.arrivalCell.classList.add('date-picker__day--select-start');
         td.classList.add('date-picker__day--select-end');
         this.departureCell = td;
         this.isStartSelect = false;
+        this.isEndSelect = true;
         this.departureDate = selectDate;
         this.departureInput.value = selectDateText;
         this.paintingSelectCell();
