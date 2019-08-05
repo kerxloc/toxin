@@ -247,13 +247,9 @@ class DatePicker {
       const selectMonth = getTwoDigitNumberString(selectDate.getMonth() + 1);
       const selectYear = selectDate.getFullYear();
       const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
+      const isCellDoubleSelect = td === this.arrivalCell;
 
-      if (!this.isStartSelect) {
-        this.arrivalCell = td;
-        this.isStartSelect = true;
-        this.arrivalDate = selectDate;
-        this.arrivalInput.value = selectDateText;
-      } else {
+      if (this.isStartSelect && !isCellDoubleSelect) {
         this.arrivalCell.classList.add('date-picker__day--select-start');
         td.classList.add('date-picker__day--select-end');
         this.departureCell = td;
@@ -261,6 +257,14 @@ class DatePicker {
         this.departureDate = selectDate;
         this.departureInput.value = selectDateText;
         this.paintingSelectCell();
+      } else if (isCellDoubleSelect) {
+        this.departureDate = selectDate;
+        this.departureInput.value = selectDateText;
+      } else {
+        this.arrivalCell = td;
+        this.isStartSelect = true;
+        this.arrivalDate = selectDate;
+        this.arrivalInput.value = selectDateText;
       }
     }
   };
