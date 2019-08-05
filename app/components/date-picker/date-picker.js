@@ -219,7 +219,7 @@ class DatePicker {
     const cells = this.parentNode.querySelectorAll('td');
     let isPaint = false;
     cells.forEach(cell => {
-      const isCellStar = this.arrivalCell === cell;
+      const isCellStart = this.arrivalCell === cell;
       const isCellEnd = this.departureCell === cell;
 
       if (isCellEnd) {
@@ -230,7 +230,7 @@ class DatePicker {
         cell.classList.add('date-picker__day--select-space');
       }
 
-      if (isCellStar) {
+      if (isCellStart) {
         isPaint = true;
       }
     });
