@@ -234,6 +234,7 @@ class DatePicker {
   clearSelectCell = () => {
     const cells = this.parentNode.querySelectorAll('td');
     cells.forEach(cell => {
+      const isCellSelect = cell.classList.contains('date-picker__day--select');
       const isCellSelectSpace = cell.classList.contains('date-picker__day--select-space');
       const isCellStartSelect = cell.classList.contains('date-picker__day--select-start');
       const isCellEndSelect = cell.classList.contains('date-picker__day--select-end');
@@ -242,13 +243,15 @@ class DatePicker {
         cell.classList.remove('date-picker__day--select-space');
       }
 
-      if (isCellStartSelect) {
+      if (isCellSelect) {
         cell.classList.remove('date-picker__day--select');
+      }
+
+      if (isCellStartSelect) {
         cell.classList.remove('date-picker__day--select-start');
       }
 
       if (isCellEndSelect) {
-        cell.classList.remove('date-picker__day--select');
         cell.classList.remove('date-picker__day--select-end');
       }
     });
@@ -258,6 +261,11 @@ class DatePicker {
     evt.preventDefault();
     const isTdTag = evt.target.tagName.toLowerCase() === 'td';
     if (isTdTag) {
+      if (this.isEndSelect) {
+        this.clearSelectCell();
+        this.isEndSelect = false;
+      }
+
       const td = evt.target;
       td.classList.add('date-picker__day--select');
       const selectDate = new Date(td.getAttribute('aria-date'));
@@ -266,11 +274,6 @@ class DatePicker {
       const selectYear = selectDate.getFullYear();
       const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
       const isCellDoubleSelect = td === this.arrivalCell;
-
-      if (this.isEndSelect) {
-        this.clearSelectCell();
-        this.isEndSelect = false;
-      }
 
       if (this.isStartSelect && !isCellDoubleSelect) {
         this.arrivalCell.classList.add('date-picker__day--select-start');
@@ -281,12 +284,16 @@ class DatePicker {
         this.departureDate = selectDate;
         this.departureInput.value = selectDateText;
         this.paintingSelectCell();
-      } else if (isCellDoubleSelect) {
+      } else if (isCellDoubleSelect && this.isEndSelect) {
+        this.departureCell = td;
+        this.isStartSelect = false;
+        this.isEndSelect = true;
         this.departureDate = selectDate;
         this.departureInput.value = selectDateText;
       } else {
         this.arrivalCell = td;
         this.isStartSelect = true;
+        this.isEndSelect = false;
         this.arrivalDate = selectDate;
         this.arrivalInput.value = selectDateText;
       }
