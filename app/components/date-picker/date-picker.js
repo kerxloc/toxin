@@ -201,12 +201,6 @@ class DatePicker {
         const viewDateAtr = `${viewDate.getFullYear()}-${viewMonthAtr}-${viewDate.getDate()}`;
 
         tableTd.setAttribute('aria-date', viewDateAtr);
-
-        // date-picker__day--select
-        // date-picker__day--select-start
-        // date-picker__day--select-end
-        // date-picker__day--select-space
-
         tableTr.appendChild(tableTd);
       }
 
