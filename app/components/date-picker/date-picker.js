@@ -273,7 +273,7 @@ class DatePicker {
       const selectMonth = getTwoDigitNumberString(selectDate.getMonth() + 1);
       const selectYear = selectDate.getFullYear();
       const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
-      const isCellDoubleSelect = td === this.arrivalCell;
+      const isCellDoubleSelect = td === this.arrivalCell || td === this.departureCell;
 
       if (this.isStartSelect && !isCellDoubleSelect) {
         this.arrivalCell.classList.add('date-picker__day--select-start');
