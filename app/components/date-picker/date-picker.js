@@ -290,6 +290,12 @@ class DatePicker {
         this.isEndSelect = true;
         this.departureDate = selectDate;
         this.departureInput.value = selectDateText;
+      } else if (isCellDoubleSelect && !this.isEndSelect) {
+        this.departureCell = td;
+        this.isStartSelect = false;
+        this.isEndSelect = true;
+        this.departureDate = selectDate;
+        this.departureInput.value = selectDateText;
       } else {
         this.arrivalCell = td;
         this.isStartSelect = true;
