@@ -263,6 +263,12 @@ class DatePicker {
     if (isTdTag) {
       if (this.isEndSelect) {
         this.clearSelectCell();
+        this.currentDate = new Date();
+        this.arrivalDate = null;
+        this.departureDate = null;
+        this.arrivalCell = null;
+        this.departureCell = null;
+        this.isStartSelect = false;
         this.isEndSelect = false;
       }
 
