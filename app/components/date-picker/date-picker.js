@@ -373,6 +373,7 @@ class DatePicker {
   updateCurrentDate = date => {
     this.currentDate = date;
     this.updateCalendar();
+    this.paintingSelectCell();
   };
 
   updateCalendar = () => {
