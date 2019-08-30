@@ -221,6 +221,8 @@ class DatePicker {
 
       if (isCellEnd) {
         isPaint = false;
+        cell.classList.add('date-picker__day--select-end');
+        cell.classList.add('date-picker__day--select');
       }
 
       if (isPaint) {
@@ -229,6 +231,8 @@ class DatePicker {
 
       if (isCellStart) {
         isPaint = true;
+        cell.classList.add('date-picker__day--select-start');
+        cell.classList.add('date-picker__day--select');
       }
     });
   };
