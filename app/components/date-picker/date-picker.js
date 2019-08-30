@@ -214,8 +214,10 @@ class DatePicker {
     const cells = this.parentNode.querySelectorAll('td');
     let isPaint = false;
     cells.forEach(cell => {
-      const isCellStart = this.arrivalCell === cell;
-      const isCellEnd = this.departureCell === cell;
+      const cellApprivalAriaDate = this.arrivalCell.getAttribute('aria-date');
+      const cellDepartureAriaDate = this.departureCell.getAttribute('aria-date');
+      const isCellStart = cellApprivalAriaDate === cell.getAttribute('aria-date');
+      const isCellEnd = cellDepartureAriaDate === cell.getAttribute('aria-date');
 
       if (isCellEnd) {
         isPaint = false;
