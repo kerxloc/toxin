@@ -1,4 +1,4 @@
-const monthMap = {
+const monthRusTranslate = {
   0: 'Январь',
   1: 'Февраль',
   2: 'Март',
@@ -117,7 +117,7 @@ class DatePicker {
       this.updateCurrentDate(prevMonthDate);
     });
 
-    const monthName = monthMap[this.currentDate.getMonth()];
+    const monthName = monthRusTranslate[this.currentDate.getMonth()];
     const yearName = this.currentDate.getFullYear();
 
     const datePickerHtmlTitle = getHtmlElement(
@@ -387,7 +387,7 @@ class DatePicker {
 
   updateCalendarTitle = () => {
     const title = document.querySelector('#date-picker-main-title');
-    const monthName = monthMap[this.currentDate.getMonth()];
+    const monthName = monthRusTranslate[this.currentDate.getMonth()];
     const yearName = this.currentDate.getFullYear();
     title.textContent = `${monthName} ${yearName}`;
   };
