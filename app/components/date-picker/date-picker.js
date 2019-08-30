@@ -288,8 +288,6 @@ class DatePicker {
       const isCellDoubleSelect = td === this.arrivalCell || td === this.departureCell;
 
       if (this.isStartSelect && !isCellDoubleSelect) {
-        this.arrivalCell.classList.add('date-picker__day--select-start');
-        td.classList.add('date-picker__day--select-end');
         this.departureCell = td;
         this.isStartSelect = false;
         this.isEndSelect = true;
