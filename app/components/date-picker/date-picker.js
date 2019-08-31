@@ -68,19 +68,6 @@ class DatePicker {
     return date.getMonth() === this.currentDate.getMonth();
   };
 
-  hasNowDate = date => {
-    const compaireDay = date.getDate();
-    const compaireMonth = date.getMonth();
-    const compaireYear = date.getFullYear();
-
-    const nowDate = new Date();
-    const nowDay = nowDate.getDate();
-    const nowMonth = nowDate.getMonth();
-    const nowYear = nowDate.getFullYear();
-
-    return compaireDay === nowDay && compaireMonth === nowMonth && compaireYear === nowYear;
-  };
-
   compaireDate = (firstDate, secondDate) => {
     const firstDay = firstDate.getDate();
     const firstMonth = firstDate.getMonth();
