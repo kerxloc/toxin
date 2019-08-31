@@ -118,7 +118,7 @@ class DatePicker {
       evt.preventDefault();
       const year = this.currentDate.getFullYear();
       const month = this.currentDate.getMonth();
-      const day = this.currentDate.getDay();
+      const day = 1;
       const prevMonthDate = new Date(year, month - 1, day);
       this.updateCurrentDate(prevMonthDate);
     });
@@ -135,7 +135,7 @@ class DatePicker {
       evt.preventDefault();
       const year = this.currentDate.getFullYear();
       const month = this.currentDate.getMonth();
-      const day = this.currentDate.getDay();
+      const day = 1;
       const prevMonthDate = new Date(year, month + 1, day);
       this.updateCurrentDate(prevMonthDate);
     });
@@ -302,7 +302,6 @@ class DatePicker {
     if (isTdTag) {
       if (this.isEndSelect) {
         this.clearSelectCell();
-        this.currentDate = new Date();
         this.arrivalDate = null;
         this.departureDate = null;
         this.arrivalCell = null;
