@@ -77,7 +77,31 @@ class DatePicker {
     const secondMonth = secondDate.getMonth();
     const secondYear = secondDate.getFullYear();
 
-    return firstDay === secondDay && firstMonth === secondMonth && firstYear === secondYear;
+    if (firstYear > secondYear) {
+      return 1;
+    }
+
+    if (firstYear < secondYear) {
+      return -1;
+    }
+
+    if (firstMonth > secondMonth) {
+      return 1;
+    }
+
+    if (firstMonth < secondMonth) {
+      return -1;
+    }
+
+    if (firstDay > secondDay) {
+      return 1;
+    }
+
+    if (firstDay < secondDay) {
+      return -1;
+    }
+
+    return 0;
   };
 
   getCalendarTopControl = () => {
@@ -187,7 +211,7 @@ class DatePicker {
       for (let j = 0; j < numberColumn; j++) {
         const viewDate = new Date(currentYear, viewMonth, ++numberDay);
         const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
-        const isNowDate = this.compaireDate(viewDate, nowDate);
+        const isNowDate = this.compaireDate(viewDate, nowDate) === 0;
 
         if (!this.hasCurrentMonth(viewDate) && !isNowDate) {
           tableTd.classList.add('date-picker__day--not-current');
