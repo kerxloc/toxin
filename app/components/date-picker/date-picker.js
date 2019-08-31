@@ -236,8 +236,10 @@ class DatePicker {
 
   paintingSelectCell = () => {
     const cells = this.parentNode.querySelectorAll('td');
-    const apprivalAriaDate = this.arrivalCell.getAttribute('aria-date');
-    const departureAriaDate = this.departureCell.getAttribute('aria-date');
+    const apprivalAriaDate = this.arrivalCell ? this.arrivalCell.getAttribute('aria-date') : false;
+    const departureAriaDate = this.departureCell
+      ? this.departureCell.getAttribute('aria-date')
+      : false;
     const apprivalDate = new Date(apprivalAriaDate);
     const departureDate = new Date(departureAriaDate);
 
@@ -259,8 +261,10 @@ class DatePicker {
         cell.classList.add('date-picker__day--select-space');
       }
 
-      if (isCellStart) {
+      if (isCellStart && departureAriaDate) {
         cell.classList.add('date-picker__day--select-start');
+        cell.classList.add('date-picker__day--select');
+      } else if (isCellStart) {
         cell.classList.add('date-picker__day--select');
       }
     });
