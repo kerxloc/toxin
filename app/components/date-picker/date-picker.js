@@ -81,6 +81,18 @@ class DatePicker {
     return compaireDay === nowDay && compaireMonth === nowMonth && compaireYear === nowYear;
   };
 
+  compaireDate = (firstDate, secondDate) => {
+    const firstDay = firstDate.getDate();
+    const firstMonth = firstDate.getMonth();
+    const firstYear = firstDate.getFullYear();
+
+    const secondDay = secondDate.getDate();
+    const secondMonth = secondDate.getMonth();
+    const secondYear = secondDate.getFullYear();
+
+    return firstDay === secondDay && firstMonth === secondMonth && firstYear === secondYear;
+  };
+
   getCalendarTopControl = () => {
     const datePickerHtmlControl = getHtmlElement('div', 'date-picker__control');
     const datePickerHtmlSliderBtnPrev = getHtmlElement(
