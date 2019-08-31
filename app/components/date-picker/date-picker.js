@@ -236,25 +236,30 @@ class DatePicker {
 
   paintingSelectCell = () => {
     const cells = this.parentNode.querySelectorAll('td');
-    let isPaint = false;
+    const apprivalAriaDate = this.arrivalCell.getAttribute('aria-date');
+    const departureAriaDate = this.departureCell.getAttribute('aria-date');
+    const apprivalDate = new Date(apprivalAriaDate);
+    const departureDate = new Date(departureAriaDate);
+
     cells.forEach(cell => {
-      const cellApprivalAriaDate = this.arrivalCell.getAttribute('aria-date');
-      const cellDepartureAriaDate = this.departureCell.getAttribute('aria-date');
-      const isCellStart = cellApprivalAriaDate === cell.getAttribute('aria-date');
-      const isCellEnd = cellDepartureAriaDate === cell.getAttribute('aria-date');
+      const isCellStart = apprivalAriaDate === cell.getAttribute('aria-date');
+      const isCellEnd = departureAriaDate === cell.getAttribute('aria-date');
+      const cellDate = new Date(cell.getAttribute('aria-date'));
 
       if (isCellEnd) {
-        isPaint = false;
         cell.classList.add('date-picker__day--select-end');
         cell.classList.add('date-picker__day--select');
       }
 
-      if (isPaint) {
+      const isCellDateMoreThanApprivalDate = this.compaireDate(cellDate, apprivalDate) > 0;
+      const isCellDateLessThanDepartureDate = this.compaireDate(cellDate, departureDate) < 0;
+      const isCellDateInRange = isCellDateMoreThanApprivalDate && isCellDateLessThanDepartureDate;
+
+      if (isCellDateInRange) {
         cell.classList.add('date-picker__day--select-space');
       }
 
       if (isCellStart) {
-        isPaint = true;
         cell.classList.add('date-picker__day--select-start');
         cell.classList.add('date-picker__day--select');
       }
