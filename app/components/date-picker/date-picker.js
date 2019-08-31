@@ -173,7 +173,7 @@ class DatePicker {
 
   getCalendarTableDate = () => {
     const tableFragment = document.createDocumentFragment();
-
+    const nowDate = new Date();
     const currentYear = this.currentDate.getFullYear();
     const currentMonth = this.currentDate.getMonth();
     const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
@@ -200,12 +200,13 @@ class DatePicker {
       for (let j = 0; j < numberColumn; j++) {
         const viewDate = new Date(currentYear, viewMonth, ++numberDay);
         const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
+        const isNowDate = this.compaireDate(viewDate, nowDate);
 
-        if (!this.hasCurrentMonth(viewDate) && !this.hasNowDate(viewDate)) {
+        if (!this.hasCurrentMonth(viewDate) && !isNowDate) {
           tableTd.classList.add('date-picker__day--not-current');
         }
 
-        if (this.hasNowDate(viewDate)) {
+        if (isNowDate) {
           tableTd.classList.add('date-picker__day--current');
         }
 
