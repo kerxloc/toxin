@@ -104,6 +104,14 @@ class DatePicker {
     return 0;
   };
 
+  showErrorAnimation = () => {
+    const datePicker = this.parentNode.querySelector('.date-picker');
+    datePicker.classList.add('date-picker--error-animation');
+    setTimeout(() => {
+      datePicker.classList.remove('date-picker--error-animation');
+    }, 700);
+  };
+
   getCalendarTopControl = () => {
     const datePickerHtmlControl = getHtmlElement('div', 'date-picker__control');
     const datePickerHtmlSliderBtnPrev = getHtmlElement(
@@ -321,7 +329,7 @@ class DatePicker {
       if (this.isStartSelect && !isCellDoubleSelect) {
         const isDateSelectLess = this.compaireDate(selectDate, this.arrivalDate) < 0;
         if (isDateSelectLess) {
-          console.log('Упс! Дата выезда меньше даты прибытия.');
+          this.showErrorAnimation();
         } else {
           this.departureCell = td;
           this.isStartSelect = false;
