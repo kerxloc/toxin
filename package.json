@@ -130,6 +130,7 @@
     "scss/selector-no-redundant-nesting-selector": true
   },
   "dependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.0.1",
+    "inputmask": "^4.0.8"
   }
 }
