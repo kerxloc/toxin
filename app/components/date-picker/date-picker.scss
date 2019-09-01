@@ -119,12 +119,21 @@
   font-weight: normal;
 
   &:hover {
-    color: darken($accentColor, 10%);
+    color: $mainColor !important;
+    font-weight: bold;
+    background: linear-gradient(180deg, $accentColor, $accentGradColor);
+    border-radius: 22px;
     cursor: pointer;
   }
 
+  &--error {
+    font-weight: bold;
+    background: tomato !important;
+    border-radius: 22px;
+  }
+
   &--current {
-    color: $mainColor;
+    color: $mainColor !important;
     font-weight: bold;
     background: linear-gradient(180deg, $accentSecondСolor, $accentGradSecondСolor);
     border-radius: 22px;
@@ -138,11 +147,7 @@
   }
 
   &--select-space {
-    background: linear-gradient(
-      180deg,
-      transparentize($accentColor, 0.75),
-      transparentize($accentGradColor, 0.75)
-    );
+    background: transparentize($accentColor, 0.75);
   }
 
   &--not-current {
