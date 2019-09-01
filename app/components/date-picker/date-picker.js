@@ -311,7 +311,6 @@ class DatePicker {
       }
 
       const td = evt.target;
-      td.classList.add('date-picker__day--select');
       const selectDate = new Date(td.getAttribute('aria-date'));
       const selectDay = getTwoDigitNumberString(selectDate.getDate());
       const selectMonth = getTwoDigitNumberString(selectDate.getMonth() + 1);
@@ -320,30 +319,39 @@ class DatePicker {
       const isCellDoubleSelect = td === this.arrivalCell || td === this.departureCell;
 
       if (this.isStartSelect && !isCellDoubleSelect) {
-        this.departureCell = td;
-        this.isStartSelect = false;
-        this.isEndSelect = true;
-        this.departureDate = selectDate;
-        this.departureInput.value = selectDateText;
-        this.paintingSelectCell();
+        const isDateSelectLess = this.compaireDate(selectDate, this.arrivalDate) < 0;
+        if (isDateSelectLess) {
+          console.log('Упс! Дата выезда меньше даты прибытия.');
+        } else {
+          this.departureCell = td;
+          this.isStartSelect = false;
+          this.isEndSelect = true;
+          this.departureDate = selectDate;
+          this.departureInput.value = selectDateText;
+          td.classList.add('date-picker__day--select');
+          this.paintingSelectCell();
+        }
       } else if (isCellDoubleSelect && this.isEndSelect) {
         this.departureCell = td;
         this.isStartSelect = false;
         this.isEndSelect = true;
         this.departureDate = selectDate;
         this.departureInput.value = selectDateText;
+        td.classList.add('date-picker__day--select');
       } else if (isCellDoubleSelect && !this.isEndSelect) {
         this.departureCell = td;
         this.isStartSelect = false;
         this.isEndSelect = true;
         this.departureDate = selectDate;
         this.departureInput.value = selectDateText;
+        td.classList.add('date-picker__day--select');
       } else {
         this.arrivalCell = td;
         this.isStartSelect = true;
         this.isEndSelect = false;
         this.arrivalDate = selectDate;
         this.arrivalInput.value = selectDateText;
+        td.classList.add('date-picker__day--select');
       }
     }
   };
