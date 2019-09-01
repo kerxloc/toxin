@@ -330,6 +330,10 @@ class DatePicker {
         const isDateSelectLess = this.compaireDate(selectDate, this.arrivalDate) < 0;
         if (isDateSelectLess) {
           this.showErrorAnimation();
+          td.classList.add('date-picker__day--error');
+          setTimeout(() => {
+            td.classList.remove('date-picker__day--error');
+          }, 700);
         } else {
           this.departureCell = td;
           this.isStartSelect = false;
