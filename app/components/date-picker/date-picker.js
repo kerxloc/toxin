@@ -112,6 +112,12 @@ class DatePicker {
     return 0;
   };
 
+  hasDataFull = textDate => {
+    const textDateSplit = textDate.split('.');
+    const isDataFullNumber = textDateSplit.every(item => !isNaN(item)); // eslint-disable-line
+    return isDataFullNumber;
+  };
+
   showErrorAnimation = () => {
     const datePicker = this.parentNode.querySelector('.date-picker');
     datePicker.classList.add('date-picker--error-animation');
