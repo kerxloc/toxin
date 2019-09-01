@@ -1,3 +1,5 @@
+import Inputmask from 'inputmask';
+
 const monthRusTranslate = {
   0: 'Январь',
   1: 'Февраль',
@@ -45,12 +47,18 @@ class DatePicker {
 
     if (domInfo.arrivalInputId) {
       this.arrivalInput = document.querySelector(`#${domInfo.arrivalInputId}`);
+      Inputmask({ mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ' }).mask(
+        `#${domInfo.arrivalInputId}`,
+      );
     } else {
       console.error('Expected arrivalInputId inside constructor object but not received');
     }
 
     if (domInfo.departureInputId) {
       this.departureInput = document.querySelector(`#${domInfo.departureInputId}`);
+      Inputmask({ mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ' }).mask(
+        `#${domInfo.departureInputId}`,
+      );
     } else {
       console.error('Expected departureInputId inside constructor object but not received');
     }
