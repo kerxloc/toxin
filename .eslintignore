@@ -5,3 +5,5 @@ static/**/*.js
 /.vscode
 node_modules
 prettier.config.js
+webpack.config.js
+webpack.parts.js
