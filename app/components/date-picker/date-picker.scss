@@ -117,36 +117,34 @@
 .date-picker__day {
   color: transparentize($contentColor, 0.5);
   font-weight: normal;
+  border-radius: 22px;
+  cursor: pointer;
 
   &:hover {
     color: $mainColor !important;
     font-weight: bold;
     background: linear-gradient(180deg, $accentColor, $accentGradColor);
-    border-radius: 22px;
-    cursor: pointer;
   }
 
   &--error {
     font-weight: bold;
     background: tomato !important;
-    border-radius: 22px;
   }
 
   &--current {
     color: $mainColor !important;
     font-weight: bold;
     background: linear-gradient(180deg, $accentSecondСolor, $accentGradSecondСolor);
-    border-radius: 22px;
   }
 
   &--select {
     color: $mainColor !important;
     font-weight: bold;
     background: linear-gradient(180deg, $accentColor, $accentGradColor);
-    border-radius: 22px;
   }
 
   &--select-space {
+    border-radius: 0;
     background: transparentize($accentColor, 0.75);
   }
 
