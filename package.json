@@ -131,6 +131,7 @@
   },
   "dependencies": {
     "gh-pages": "^2.0.1",
-    "inputmask": "^4.0.8"
+    "inputmask": "^4.0.8",
+    "validator": "^11.1.0"
   }
 }
