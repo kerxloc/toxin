@@ -1,4 +1,5 @@
 import Inputmask from 'inputmask';
+import isNumeric from 'validator/lib/isNumeric';
 
 const monthRusTranslate = {
   0: 'Январь',
@@ -50,6 +51,7 @@ class DatePicker {
       Inputmask({ mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ' }).mask(
         `#${domInfo.arrivalInputId}`,
       );
+      this.arrivalInput.addEventListener('blur', this.onInputDateArrival);
     } else {
       console.error('Expected arrivalInputId inside constructor object but not received');
     }
@@ -114,7 +116,7 @@ class DatePicker {
 
   hasDataFull = textDate => {
     const textDateSplit = textDate.split('.');
-    const isDataFullNumber = textDateSplit.every(item => !isNaN(item)); // eslint-disable-line
+    const isDataFullNumber = textDateSplit.every(item => isNumeric(item));
     return isDataFullNumber;
   };
 
@@ -316,6 +318,11 @@ class DatePicker {
         cell.classList.remove('date-picker__day--select-end');
       }
     });
+  };
+
+  onInputDateArrival = evt => {
+    const isDataFull = this.hasDataFull(evt.target.value);
+    console.log(isDataFull);
   };
 
   onSelectDate = evt => {
