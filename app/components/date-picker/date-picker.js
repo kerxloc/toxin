@@ -402,13 +402,6 @@ class DatePicker {
             td.classList.remove('date-picker__day--error');
           }, 700);
         } else {
-          // this.departureCell = td;
-          // this.isStartSelect = false;
-          // this.isEndSelect = true;
-          // this.departureDate = selectDate;
-          // this.departureInput.value = selectDateText;
-          // td.classList.add('date-picker__day--select');
-          // this.paintingSelectCell();
           this.onEndSelectRangeDate(td, selectDate);
           this.departureInput.value = selectDateText;
           this.paintingSelectCell();
