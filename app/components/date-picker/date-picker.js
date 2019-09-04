@@ -320,9 +320,33 @@ class DatePicker {
     });
   };
 
+  getCellByAriaDate = ariaDate => {
+    const cells = this.parentNode.querySelectorAll('td');
+    let cell;
+    console.log(ariaDate);
+    cells.forEach(item => {
+      const ariaDateItem = item.getAttribute('aria-date');
+      if (ariaDateItem === ariaDate) cell = item;
+    });
+    return cell;
+  };
+
   onInputDateArrival = evt => {
-    const isDataFull = this.hasDataFull(evt.target.value);
-    console.log(isDataFull);
+    const pickDate = evt.target.value;
+    const isDataFull = this.hasDataFull(pickDate);
+    if (isDataFull) {
+      const splitPickDate = pickDate.split('.');
+      const pickDay = splitPickDate[0];
+      const pickMonth = splitPickDate[1];
+      const pickYear = splitPickDate[2];
+      const convertePickDate = new Date(pickYear, pickMonth - 1, pickDay);
+      const ariaDay = convertePickDate.getDate();
+      const ariaMonth = convertePickDate.getMonth();
+      const ariaYear = convertePickDate.getFullYear();
+      const ariaDate = `${ariaYear}-${ariaMonth + 1}-${ariaDay}`;
+      const pickCell = this.getCellByAriaDate(ariaDate);
+      console.log(pickCell);
+    }
   };
 
   onSelectDate = evt => {
