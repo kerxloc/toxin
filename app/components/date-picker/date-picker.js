@@ -128,6 +128,14 @@ class DatePicker {
     }, 700);
   };
 
+  getConverteDateByUserInput = userDate => {
+    const splitUserDate = userDate.split('.');
+    const day = splitUserDate[0];
+    const month = splitUserDate[1];
+    const year = splitUserDate[2];
+    return new Date(year, month - 1, day);
+  };
+
   getCalendarTopControl = () => {
     const datePickerHtmlControl = getHtmlElement('div', 'date-picker__control');
     const datePickerHtmlSliderBtnPrev = getHtmlElement(
@@ -335,11 +343,7 @@ class DatePicker {
     const pickDate = evt.target.value;
     const isDataFull = this.hasDataFull(pickDate);
     if (isDataFull) {
-      const splitPickDate = pickDate.split('.');
-      const pickDay = splitPickDate[0];
-      const pickMonth = splitPickDate[1];
-      const pickYear = splitPickDate[2];
-      const convertePickDate = new Date(pickYear, pickMonth - 1, pickDay);
+      const convertePickDate = this.getConverteDateByUserInput(pickDate);
       const ariaDay = convertePickDate.getDate();
       const ariaMonth = convertePickDate.getMonth();
       const ariaYear = convertePickDate.getFullYear();
@@ -407,6 +411,7 @@ class DatePicker {
         this.isStartSelect = true;
         this.isEndSelect = false;
         this.arrivalDate = selectDate;
+        console.log(this.arrivalDate);
         this.arrivalInput.value = selectDateText;
         td.classList.add('date-picker__day--select');
       }
