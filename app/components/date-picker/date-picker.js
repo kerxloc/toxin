@@ -363,6 +363,14 @@ class DatePicker {
     cell.classList.add('date-picker__day--select');
   };
 
+  onEndSelectRangeDate = (cell, dateEnd) => {
+    this.departureCell = cell;
+    this.isStartSelect = false;
+    this.isEndSelect = true;
+    this.departureDate = dateEnd;
+    cell.classList.add('date-picker__day--select');
+  };
+
   onSelectDate = evt => {
     evt.preventDefault();
     const isTdTag = evt.target.tagName.toLowerCase() === 'td';
@@ -394,12 +402,15 @@ class DatePicker {
             td.classList.remove('date-picker__day--error');
           }, 700);
         } else {
-          this.departureCell = td;
-          this.isStartSelect = false;
-          this.isEndSelect = true;
-          this.departureDate = selectDate;
+          // this.departureCell = td;
+          // this.isStartSelect = false;
+          // this.isEndSelect = true;
+          // this.departureDate = selectDate;
+          // this.departureInput.value = selectDateText;
+          // td.classList.add('date-picker__day--select');
+          // this.paintingSelectCell();
+          this.onEndSelectRangeDate(td, selectDate);
           this.departureInput.value = selectDateText;
-          td.classList.add('date-picker__day--select');
           this.paintingSelectCell();
         }
       } else if (isCellDoubleSelect && this.isEndSelect) {
