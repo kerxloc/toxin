@@ -349,8 +349,18 @@ class DatePicker {
       const ariaYear = convertePickDate.getFullYear();
       const ariaDate = `${ariaYear}-${ariaMonth + 1}-${ariaDay}`;
       const pickCell = this.getCellByAriaDate(ariaDate);
-      console.log(pickCell);
+      if (pickCell) {
+        this.onStartSelectRangeDate(pickCell, convertePickDate);
+      }
     }
+  };
+
+  onStartSelectRangeDate = (cell, startDate) => {
+    this.arrivalCell = cell;
+    this.isStartSelect = true;
+    this.isEndSelect = false;
+    this.arrivalDate = startDate;
+    cell.classList.add('date-picker__day--select');
   };
 
   onSelectDate = evt => {
@@ -407,13 +417,8 @@ class DatePicker {
         this.departureInput.value = selectDateText;
         td.classList.add('date-picker__day--select');
       } else {
-        this.arrivalCell = td;
-        this.isStartSelect = true;
-        this.isEndSelect = false;
-        this.arrivalDate = selectDate;
-        console.log(this.arrivalDate);
+        this.onStartSelectRangeDate(td, selectDate);
         this.arrivalInput.value = selectDateText;
-        td.classList.add('date-picker__day--select');
       }
     }
   };
