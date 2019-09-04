@@ -52,6 +52,12 @@ class DatePicker {
         `#${domInfo.arrivalInputId}`,
       );
       this.arrivalInput.addEventListener('blur', this.onInputDateArrival);
+      this.arrivalInput.addEventListener('keydown', evt => {
+        if (evt.keyCode === 13) {
+          evt.preventDefault();
+          this.arrivalInput.blur();
+        }
+      });
     } else {
       console.error('Expected arrivalInputId inside constructor object but not received');
     }
@@ -62,6 +68,12 @@ class DatePicker {
         `#${domInfo.departureInputId}`,
       );
       this.departureInput.addEventListener('blur', this.onInputDateDeparture);
+      this.departureInput.addEventListener('keydown', evt => {
+        if (evt.keyCode === 13) {
+          evt.preventDefault();
+          this.departureInput.blur();
+        }
+      });
     } else {
       console.error('Expected departureInputId inside constructor object but not received');
     }
