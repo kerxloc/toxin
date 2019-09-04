@@ -61,6 +61,7 @@ class DatePicker {
       Inputmask({ mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ' }).mask(
         `#${domInfo.departureInputId}`,
       );
+      this.departureInput.addEventListener('blur', this.onInputDateDeparture);
     } else {
       console.error('Expected departureInputId inside constructor object but not received');
     }
@@ -331,7 +332,6 @@ class DatePicker {
   getCellByAriaDate = ariaDate => {
     const cells = this.parentNode.querySelectorAll('td');
     let cell;
-    console.log(ariaDate);
     cells.forEach(item => {
       const ariaDateItem = item.getAttribute('aria-date');
       if (ariaDateItem === ariaDate) cell = item;
@@ -350,7 +350,36 @@ class DatePicker {
       const ariaDate = `${ariaYear}-${ariaMonth + 1}-${ariaDay}`;
       const pickCell = this.getCellByAriaDate(ariaDate);
       if (pickCell) {
-        this.onStartSelectRangeDate(pickCell, convertePickDate);
+        const isArrivalCell = this.arrivalCell === pickCell;
+        if (!isArrivalCell) {
+          if (this.isEndSelect || this.isStartSelect) {
+            this.clearSelectCell();
+            this.onClearSelectRangeDate();
+            this.onStartSelectRangeDate(pickCell, convertePickDate);
+          } else {
+            this.onStartSelectRangeDate(pickCell, convertePickDate);
+          }
+        }
+      }
+    }
+  };
+
+  onInputDateDeparture = evt => {
+    const pickDate = evt.target.value;
+    const isDataFull = this.hasDataFull(pickDate);
+    if (isDataFull) {
+      const convertePickDate = this.getConverteDateByUserInput(pickDate);
+      const ariaDay = convertePickDate.getDate();
+      const ariaMonth = convertePickDate.getMonth();
+      const ariaYear = convertePickDate.getFullYear();
+      const ariaDate = `${ariaYear}-${ariaMonth + 1}-${ariaDay}`;
+      const pickCell = this.getCellByAriaDate(ariaDate);
+      if (pickCell) {
+        const isDepartureCell = this.departureCell === pickCell;
+        if (!isDepartureCell) {
+          this.onEndSelectRangeDate(pickCell, convertePickDate);
+          this.paintingSelectCell();
+        }
       }
     }
   };
