@@ -53,7 +53,8 @@ class DatePicker {
       );
       this.arrivalInput.addEventListener('blur', this.onInputDateArrival);
       this.arrivalInput.addEventListener('keydown', evt => {
-        if (evt.keyCode === 13) {
+        const isPressEnter = evt.keyCode === 13;
+        if (isPressEnter) {
           evt.preventDefault();
           this.arrivalInput.blur();
           this.departureInput.focus();
@@ -70,7 +71,8 @@ class DatePicker {
       );
       this.departureInput.addEventListener('blur', this.onInputDateDeparture);
       this.departureInput.addEventListener('keydown', evt => {
-        if (evt.keyCode === 13) {
+        const isPressEnter = evt.keyCode === 13;
+        if (isPressEnter) {
           evt.preventDefault();
           this.departureInput.blur();
         }
