@@ -250,6 +250,8 @@ class DatePicker {
             this.paintingSelectCell();
           }
         }
+      } else {
+        this.onEndSelectRangeDate(pickCell, convertePickDate);
       }
     }
   };
@@ -266,11 +268,14 @@ class DatePicker {
   };
 
   onEndSelectRangeDate = (cell, dateEnd) => {
-    this.departureCell = cell;
+    if (cell) {
+      this.departureCell = cell;
+      cell.classList.add('date-picker__day--select');
+    }
+
     this.isStartSelect = false;
     this.isEndSelect = true;
     this.departureDate = dateEnd;
-    cell.classList.add('date-picker__day--select');
   };
 
   onClearSelectRangeDate = () => {
