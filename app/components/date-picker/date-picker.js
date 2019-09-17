@@ -284,15 +284,15 @@ class DatePicker {
 
   paintingSelectCell = () => {
     const cells = this.parentNode.querySelectorAll('td');
-    const apprivalAriaDate = this.arrivalCell ? this.arrivalCell.getAttribute('aria-date') : false;
+    const arrivalAriaDate = this.arrivalCell ? this.arrivalCell.getAttribute('aria-date') : false;
     const departureAriaDate = this.departureCell
       ? this.departureCell.getAttribute('aria-date')
       : false;
-    const apprivalDate = new Date(apprivalAriaDate);
+    const arrivalDate = new Date(arrivalAriaDate);
     const departureDate = new Date(departureAriaDate);
 
     cells.forEach(cell => {
-      const isCellStart = apprivalAriaDate === cell.getAttribute('aria-date');
+      const isCellStart = arrivalAriaDate === cell.getAttribute('aria-date');
       const isCellEnd = departureAriaDate === cell.getAttribute('aria-date');
       const cellDate = new Date(cell.getAttribute('aria-date'));
 
@@ -301,9 +301,9 @@ class DatePicker {
         cell.classList.add('date-picker__day--select');
       }
 
-      const isCellDateMoreThanApprivalDate = this.compaireDate(cellDate, apprivalDate) > 0;
+      const isCellDateMoreThanArrivalDate = this.compaireDate(cellDate, arrivalDate) > 0;
       const isCellDateLessThanDepartureDate = this.compaireDate(cellDate, departureDate) < 0;
-      const isCellDateInRange = isCellDateMoreThanApprivalDate && isCellDateLessThanDepartureDate;
+      const isCellDateInRange = isCellDateMoreThanArrivalDate && isCellDateLessThanDepartureDate;
 
       if (isCellDateInRange) {
         cell.classList.add('date-picker__day--select-space');
