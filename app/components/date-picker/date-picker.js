@@ -146,34 +146,45 @@ class DatePicker {
 
   paintingSelectCell = () => {
     const cells = this.parentNode.querySelectorAll('td');
-    const arrivalAriaDate = this.getAriaDateByDate(this.arrivalDate);
-    const departureAriaDate = this.getAriaDateByDate(this.departureDate);
+    if (this.arrivalDate && this.departureDate) {
+      const arrivalAriaDate = this.getAriaDateByDate(this.arrivalDate);
+      const departureAriaDate = this.getAriaDateByDate(this.departureDate);
 
-    cells.forEach(cell => {
-      const isCellStart = arrivalAriaDate === cell.getAttribute('aria-date');
-      const isCellEnd = departureAriaDate === cell.getAttribute('aria-date');
-      const cellDate = new Date(cell.getAttribute('aria-date'));
+      cells.forEach(cell => {
+        const isCellStart = arrivalAriaDate === cell.getAttribute('aria-date');
+        const isCellEnd = departureAriaDate === cell.getAttribute('aria-date');
+        const cellDate = new Date(cell.getAttribute('aria-date'));
 
-      if (isCellEnd) {
-        cell.classList.add('date-picker__day--select-end');
-        cell.classList.add('date-picker__day--select');
-      }
+        if (isCellEnd) {
+          cell.classList.add('date-picker__day--select-end');
+          cell.classList.add('date-picker__day--select');
+        }
 
-      const isCellDateMoreThanArrivalDate = this.compaireDate(cellDate, this.arrivalDate) > 0;
-      const isCellDateLessThanDepartureDate = this.compaireDate(cellDate, this.departureDate) < 0;
-      const isCellDateInRange = isCellDateMoreThanArrivalDate && isCellDateLessThanDepartureDate;
+        const isCellDateMoreThanArrivalDate = this.compaireDate(cellDate, this.arrivalDate) > 0;
+        const isCellDateLessThanDepartureDate = this.compaireDate(cellDate, this.departureDate) < 0;
+        const isCellDateInRange = isCellDateMoreThanArrivalDate && isCellDateLessThanDepartureDate;
 
-      if (isCellDateInRange) {
-        cell.classList.add('date-picker__day--select-space');
-      }
+        if (isCellDateInRange) {
+          cell.classList.add('date-picker__day--select-space');
+        }
 
-      if (isCellStart && departureAriaDate) {
-        cell.classList.add('date-picker__day--select-start');
-        cell.classList.add('date-picker__day--select');
-      } else if (isCellStart) {
-        cell.classList.add('date-picker__day--select');
-      }
-    });
+        if (isCellStart && departureAriaDate) {
+          cell.classList.add('date-picker__day--select-start');
+          cell.classList.add('date-picker__day--select');
+        } else if (isCellStart) {
+          cell.classList.add('date-picker__day--select');
+        }
+      });
+    } else if (this.arrivalDate) {
+      const arrivalAriaDate = this.getAriaDateByDate(this.arrivalDate);
+
+      cells.forEach(cell => {
+        const isCellStart = arrivalAriaDate === cell.getAttribute('aria-date');
+        if (isCellStart) {
+          cell.classList.add('date-picker__day--select');
+        }
+      });
+    }
   };
 
   clearSelectCell = () => {
