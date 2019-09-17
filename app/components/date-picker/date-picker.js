@@ -370,12 +370,11 @@ class DatePicker {
           if (this.isEndSelect || this.isStartSelect) {
             this.clearSelectCell();
             this.onClearSelectRangeDate();
-            this.onStartSelectRangeDate(pickCell, convertePickDate);
-          } else {
-            this.onStartSelectRangeDate(pickCell, convertePickDate);
           }
         }
       }
+
+      this.onStartSelectRangeDate(pickCell, convertePickDate);
     }
   };
 
