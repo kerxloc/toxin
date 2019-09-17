@@ -144,144 +144,6 @@ class DatePicker {
     }, 700);
   };
 
-  getConverteDateByUserInput = userDate => {
-    const splitUserDate = userDate.split('.');
-    const day = splitUserDate[0];
-    const month = splitUserDate[1];
-    const year = splitUserDate[2];
-    return new Date(year, month - 1, day);
-  };
-
-  getCalendarTopControl = () => {
-    const datePickerHtmlControl = getHtmlElement('div', 'date-picker__control');
-    const datePickerHtmlSliderBtnPrev = getHtmlElement(
-      'button',
-      'date-picker__slider-btn',
-      'Назад',
-    );
-    datePickerHtmlSliderBtnPrev.classList.add('date-picker__slider-btn--prev');
-    datePickerHtmlSliderBtnPrev.type = 'button';
-
-    datePickerHtmlSliderBtnPrev.addEventListener('click', evt => {
-      evt.preventDefault();
-      const year = this.currentDate.getFullYear();
-      const month = this.currentDate.getMonth();
-      const day = 1;
-      const prevMonthDate = new Date(year, month - 1, day);
-      this.updateCurrentDate(prevMonthDate);
-    });
-
-    const datePickerHtmlSliderBtnNext = getHtmlElement(
-      'button',
-      'date-picker__slider-btn',
-      'Вперед',
-    );
-    datePickerHtmlSliderBtnNext.classList.add('date-picker__slider-btn--next');
-    datePickerHtmlSliderBtnNext.type = 'button';
-
-    datePickerHtmlSliderBtnNext.addEventListener('click', evt => {
-      evt.preventDefault();
-      const year = this.currentDate.getFullYear();
-      const month = this.currentDate.getMonth();
-      const day = 1;
-      const prevMonthDate = new Date(year, month + 1, day);
-      this.updateCurrentDate(prevMonthDate);
-    });
-
-    const monthName = monthRusTranslate[this.currentDate.getMonth()];
-    const yearName = this.currentDate.getFullYear();
-
-    const datePickerHtmlTitle = getHtmlElement(
-      'h2',
-      'date-picker__title',
-      `${monthName} ${yearName}`,
-    );
-
-    datePickerHtmlTitle.id = 'date-picker-main-title';
-
-    datePickerHtmlControl.appendChild(datePickerHtmlSliderBtnPrev);
-    datePickerHtmlControl.appendChild(datePickerHtmlTitle);
-    datePickerHtmlControl.appendChild(datePickerHtmlSliderBtnNext);
-
-    return datePickerHtmlControl;
-  };
-
-  getNumberRow = () => {
-    const currentYear = this.currentDate.getFullYear();
-    const currentMonth = this.currentDate.getMonth();
-    const lastDayCurrentMonth = new Date(currentYear + 1, currentMonth + 1, 0).getDate();
-    const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
-    const isLastWeekDaySuterday = lastWeekDayPrevMonth === 6;
-    const isLastWeekDayFriday = lastWeekDayPrevMonth === 5;
-    const isLastWeekDaySunday = lastWeekDayPrevMonth === 0;
-    let numberRow = 5;
-
-    if (isLastWeekDaySuterday && lastDayCurrentMonth >= 30) {
-      numberRow = 6;
-    }
-
-    if (isLastWeekDayFriday && lastDayCurrentMonth === 31) {
-      numberRow = 6;
-    }
-
-    if (isLastWeekDaySunday && lastDayCurrentMonth === 28) {
-      numberRow = 4;
-    }
-    return numberRow;
-  };
-
-  getCalendarTableDate = () => {
-    const tableFragment = document.createDocumentFragment();
-    const nowDate = new Date();
-    const currentYear = this.currentDate.getFullYear();
-    const currentMonth = this.currentDate.getMonth();
-    const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
-    const lastDayPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
-    const numberColumn = 7;
-    const numberRow = this.getNumberRow();
-
-    let viewMonth;
-    let numberDay;
-
-    const isLastWeekDaySunday = lastWeekDayPrevMonth === 0;
-
-    if (isLastWeekDaySunday) {
-      numberDay = 0;
-      viewMonth = currentMonth;
-    } else {
-      numberDay = lastDayPrevMonth - lastWeekDayPrevMonth;
-      viewMonth = currentMonth - 1;
-    }
-
-    for (let i = 0; i < numberRow; i++) {
-      const tableTr = getHtmlElement('tr');
-
-      for (let j = 0; j < numberColumn; j++) {
-        const viewDate = new Date(currentYear, viewMonth, ++numberDay);
-        const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
-        const isNowDate = this.compaireDate(viewDate, nowDate) === 0;
-
-        if (!this.hasCurrentMonth(viewDate) && !isNowDate) {
-          tableTd.classList.add('date-picker__day--not-current');
-        }
-
-        if (isNowDate) {
-          tableTd.classList.add('date-picker__day--current');
-        }
-
-        const viewMonthAtr = viewDate.getMonth() + 1;
-        const viewDateAtr = `${viewDate.getFullYear()}-${viewMonthAtr}-${viewDate.getDate()}`;
-
-        tableTd.setAttribute('aria-date', viewDateAtr);
-        tableTr.appendChild(tableTd);
-      }
-
-      tableFragment.appendChild(tableTr);
-    }
-
-    return tableFragment;
-  };
-
   paintingSelectCell = () => {
     const cells = this.parentNode.querySelectorAll('td');
     const arrivalAriaDate = this.arrivalCell ? this.arrivalCell.getAttribute('aria-date') : false;
@@ -340,16 +202,6 @@ class DatePicker {
         cell.classList.remove('date-picker__day--select-end');
       }
     });
-  };
-
-  getCellByAriaDate = ariaDate => {
-    const cells = this.parentNode.querySelectorAll('td');
-    let cell;
-    cells.forEach(item => {
-      const ariaDateItem = item.getAttribute('aria-date');
-      if (ariaDateItem === ariaDate) cell = item;
-    });
-    return cell;
   };
 
   onInputDateArrival = evt => {
@@ -478,6 +330,168 @@ class DatePicker {
     }
   };
 
+  getConverteDateByUserInput = userDate => {
+    const splitUserDate = userDate.split('.');
+    const day = splitUserDate[0];
+    const month = splitUserDate[1];
+    const year = splitUserDate[2];
+    return new Date(year, month - 1, day);
+  };
+
+  getNumberRow = () => {
+    const currentYear = this.currentDate.getFullYear();
+    const currentMonth = this.currentDate.getMonth();
+    const lastDayCurrentMonth = new Date(currentYear + 1, currentMonth + 1, 0).getDate();
+    const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
+    const isLastWeekDaySuterday = lastWeekDayPrevMonth === 6;
+    const isLastWeekDayFriday = lastWeekDayPrevMonth === 5;
+    const isLastWeekDaySunday = lastWeekDayPrevMonth === 0;
+    let numberRow = 5;
+
+    if (isLastWeekDaySuterday && lastDayCurrentMonth >= 30) {
+      numberRow = 6;
+    }
+
+    if (isLastWeekDayFriday && lastDayCurrentMonth === 31) {
+      numberRow = 6;
+    }
+
+    if (isLastWeekDaySunday && lastDayCurrentMonth === 28) {
+      numberRow = 4;
+    }
+    return numberRow;
+  };
+
+  getCalendarTableDate = () => {
+    const tableFragment = document.createDocumentFragment();
+    const nowDate = new Date();
+    const currentYear = this.currentDate.getFullYear();
+    const currentMonth = this.currentDate.getMonth();
+    const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
+    const lastDayPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
+    const numberColumn = 7;
+    const numberRow = this.getNumberRow();
+
+    let viewMonth;
+    let numberDay;
+
+    const isLastWeekDaySunday = lastWeekDayPrevMonth === 0;
+
+    if (isLastWeekDaySunday) {
+      numberDay = 0;
+      viewMonth = currentMonth;
+    } else {
+      numberDay = lastDayPrevMonth - lastWeekDayPrevMonth;
+      viewMonth = currentMonth - 1;
+    }
+
+    for (let i = 0; i < numberRow; i++) {
+      const tableTr = getHtmlElement('tr');
+
+      for (let j = 0; j < numberColumn; j++) {
+        const viewDate = new Date(currentYear, viewMonth, ++numberDay);
+        const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
+        const isNowDate = this.compaireDate(viewDate, nowDate) === 0;
+
+        if (!this.hasCurrentMonth(viewDate) && !isNowDate) {
+          tableTd.classList.add('date-picker__day--not-current');
+        }
+
+        if (isNowDate) {
+          tableTd.classList.add('date-picker__day--current');
+        }
+
+        const viewMonthAtr = viewDate.getMonth() + 1;
+        const viewDateAtr = `${viewDate.getFullYear()}-${viewMonthAtr}-${viewDate.getDate()}`;
+
+        tableTd.setAttribute('aria-date', viewDateAtr);
+        tableTr.appendChild(tableTd);
+      }
+
+      tableFragment.appendChild(tableTr);
+    }
+
+    return tableFragment;
+  };
+
+  getCellByAriaDate = ariaDate => {
+    const cells = this.parentNode.querySelectorAll('td');
+    let cell;
+    cells.forEach(item => {
+      const ariaDateItem = item.getAttribute('aria-date');
+      if (ariaDateItem === ariaDate) cell = item;
+    });
+    return cell;
+  };
+
+  getCalendar = () => {
+    const datePickerHtmlSection = getHtmlElement('section', 'date-picker');
+    const datePickerHtmlWrap = getHtmlElement('div', 'date-picker__wrap');
+    const datePickerHtmlControl = this.getCalendarTopControl();
+    const datePickerHtmlTable = this.getCalendarTable();
+    const datePickerHtmlBotControl = this.getCalendarBotControl();
+    datePickerHtmlWrap.appendChild(datePickerHtmlControl);
+    datePickerHtmlWrap.appendChild(datePickerHtmlTable);
+    datePickerHtmlWrap.appendChild(datePickerHtmlBotControl);
+    datePickerHtmlSection.appendChild(datePickerHtmlWrap);
+
+    return datePickerHtmlSection;
+  };
+
+  getCalendarTopControl = () => {
+    const datePickerHtmlControl = getHtmlElement('div', 'date-picker__control');
+    const datePickerHtmlSliderBtnPrev = getHtmlElement(
+      'button',
+      'date-picker__slider-btn',
+      'Назад',
+    );
+    datePickerHtmlSliderBtnPrev.classList.add('date-picker__slider-btn--prev');
+    datePickerHtmlSliderBtnPrev.type = 'button';
+
+    datePickerHtmlSliderBtnPrev.addEventListener('click', evt => {
+      evt.preventDefault();
+      const year = this.currentDate.getFullYear();
+      const month = this.currentDate.getMonth();
+      const day = 1;
+      const prevMonthDate = new Date(year, month - 1, day);
+      this.updateCurrentDate(prevMonthDate);
+    });
+
+    const datePickerHtmlSliderBtnNext = getHtmlElement(
+      'button',
+      'date-picker__slider-btn',
+      'Вперед',
+    );
+    datePickerHtmlSliderBtnNext.classList.add('date-picker__slider-btn--next');
+    datePickerHtmlSliderBtnNext.type = 'button';
+
+    datePickerHtmlSliderBtnNext.addEventListener('click', evt => {
+      evt.preventDefault();
+      const year = this.currentDate.getFullYear();
+      const month = this.currentDate.getMonth();
+      const day = 1;
+      const prevMonthDate = new Date(year, month + 1, day);
+      this.updateCurrentDate(prevMonthDate);
+    });
+
+    const monthName = monthRusTranslate[this.currentDate.getMonth()];
+    const yearName = this.currentDate.getFullYear();
+
+    const datePickerHtmlTitle = getHtmlElement(
+      'h2',
+      'date-picker__title',
+      `${monthName} ${yearName}`,
+    );
+
+    datePickerHtmlTitle.id = 'date-picker-main-title';
+
+    datePickerHtmlControl.appendChild(datePickerHtmlSliderBtnPrev);
+    datePickerHtmlControl.appendChild(datePickerHtmlTitle);
+    datePickerHtmlControl.appendChild(datePickerHtmlSliderBtnNext);
+
+    return datePickerHtmlControl;
+  };
+
   getCalendarTable = () => {
     const calendarTable = getHtmlElement('table', 'date-picker__calendar');
     const tHead = getHtmlElement('thead');
@@ -520,20 +534,6 @@ class DatePicker {
     });
 
     return datePickerHtmlControl;
-  };
-
-  getCalendar = () => {
-    const datePickerHtmlSection = getHtmlElement('section', 'date-picker');
-    const datePickerHtmlWrap = getHtmlElement('div', 'date-picker__wrap');
-    const datePickerHtmlControl = this.getCalendarTopControl();
-    const datePickerHtmlTable = this.getCalendarTable();
-    const datePickerHtmlBotControl = this.getCalendarBotControl();
-    datePickerHtmlWrap.appendChild(datePickerHtmlControl);
-    datePickerHtmlWrap.appendChild(datePickerHtmlTable);
-    datePickerHtmlWrap.appendChild(datePickerHtmlBotControl);
-    datePickerHtmlSection.appendChild(datePickerHtmlWrap);
-
-    return datePickerHtmlSection;
   };
 
   updateCurrentDate = date => {
