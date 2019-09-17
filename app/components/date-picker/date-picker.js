@@ -146,10 +146,8 @@ class DatePicker {
 
   paintingSelectCell = () => {
     const cells = this.parentNode.querySelectorAll('td');
-    const arrivalAriaDate = this.arrivalCell ? this.arrivalCell.getAttribute('aria-date') : false;
-    const departureAriaDate = this.departureCell
-      ? this.departureCell.getAttribute('aria-date')
-      : false;
+    const arrivalAriaDate = this.getAriaDateByDate(this.arrivalDate);
+    const departureAriaDate = this.getAriaDateByDate(this.departureDate);
 
     cells.forEach(cell => {
       const isCellStart = arrivalAriaDate === cell.getAttribute('aria-date');
