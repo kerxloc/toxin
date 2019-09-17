@@ -414,11 +414,14 @@ class DatePicker {
   };
 
   onStartSelectRangeDate = (cell, startDate) => {
-    this.arrivalCell = cell;
+    if (cell) {
+      this.arrivalCell = cell;
+      cell.classList.add('date-picker__day--select');
+    }
+
     this.isStartSelect = true;
     this.isEndSelect = false;
     this.arrivalDate = startDate;
-    cell.classList.add('date-picker__day--select');
   };
 
   onEndSelectRangeDate = (cell, dateEnd) => {
