@@ -209,10 +209,7 @@ class DatePicker {
     const isDataFull = this.hasDataFull(pickDate);
     if (isDataFull) {
       const convertePickDate = this.getConverteDateByUserInput(pickDate);
-      const ariaDay = convertePickDate.getDate();
-      const ariaMonth = convertePickDate.getMonth();
-      const ariaYear = convertePickDate.getFullYear();
-      const ariaDate = `${ariaYear}-${ariaMonth + 1}-${ariaDay}`;
+      const ariaDate = this.getAriaDateByDate(convertePickDate);
       const pickCell = this.getCellByAriaDate(ariaDate);
       if (pickCell) {
         const isArrivalCell = this.arrivalCell === pickCell;
@@ -233,10 +230,7 @@ class DatePicker {
     const isDataFull = this.hasDataFull(pickDate);
     if (isDataFull) {
       const convertePickDate = this.getConverteDateByUserInput(pickDate);
-      const ariaDay = convertePickDate.getDate();
-      const ariaMonth = convertePickDate.getMonth();
-      const ariaYear = convertePickDate.getFullYear();
-      const ariaDate = `${ariaYear}-${ariaMonth + 1}-${ariaDay}`;
+      const ariaDate = this.getAriaDateByDate(convertePickDate);
       const pickCell = this.getCellByAriaDate(ariaDate);
       if (pickCell) {
         const isDateSelectLess = this.compaireDate(convertePickDate, this.arrivalDate) < 0;
@@ -328,6 +322,14 @@ class DatePicker {
         this.arrivalInput.value = selectDateText;
       }
     }
+  };
+
+  getAriaDateByDate = date => {
+    const ariaDay = date.getDate();
+    const ariaMonth = date.getMonth();
+    const ariaYear = date.getFullYear();
+    const ariaDate = `${ariaYear}-${ariaMonth + 1}-${ariaDay}`;
+    return ariaDate;
   };
 
   getConverteDateByUserInput = userDate => {
