@@ -193,8 +193,17 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: $accentColor;
+  }
 
   &--accent {
     color: $accentColor;
+
+    &:hover {
+      color: transparentize($contentColor, 0.5);
+    }
   }
 }
