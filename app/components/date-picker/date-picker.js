@@ -388,10 +388,20 @@ class DatePicker {
       const ariaDate = `${ariaYear}-${ariaMonth + 1}-${ariaDay}`;
       const pickCell = this.getCellByAriaDate(ariaDate);
       if (pickCell) {
-        const isDepartureCell = this.departureCell === pickCell;
-        if (!isDepartureCell) {
-          this.onEndSelectRangeDate(pickCell, convertePickDate);
-          this.paintingSelectCell();
+        const isDateSelectLess = this.compaireDate(convertePickDate, this.arrivalDate) < 0;
+        if (isDateSelectLess) {
+          this.showErrorAnimation();
+          pickCell.classList.add('date-picker__day--error');
+          setTimeout(() => {
+            pickCell.classList.remove('date-picker__day--error');
+          }, 700);
+          this.departureInput.value = '';
+        } else {
+          const isDepartureCell = this.departureCell === pickCell;
+          if (!isDepartureCell) {
+            this.onEndSelectRangeDate(pickCell, convertePickDate);
+            this.paintingSelectCell();
+          }
         }
       }
     }
