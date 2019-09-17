@@ -56,6 +56,7 @@ class DatePicker {
         if (evt.keyCode === 13) {
           evt.preventDefault();
           this.arrivalInput.blur();
+          this.departureInput.focus();
         }
       });
     } else {
