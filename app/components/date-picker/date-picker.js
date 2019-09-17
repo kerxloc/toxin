@@ -399,6 +399,10 @@ class DatePicker {
         } else {
           const isDepartureCell = this.departureCell === pickCell;
           if (!isDepartureCell) {
+            if (this.isEndSelect) {
+              this.clearSelectCell();
+            }
+
             this.onEndSelectRangeDate(pickCell, convertePickDate);
             this.paintingSelectCell();
           }
