@@ -300,6 +300,13 @@ class DatePicker {
     this.isEndSelect = false;
   };
 
+  onClearRangeAndInput = () => {
+    this.onClearSelectRangeDate();
+    this.clearSelectCell();
+    this.arrivalInput.value = '';
+    this.departureInput.value = '';
+  };
+
   onSelectDate = evt => {
     evt.preventDefault();
     const isTdTag = evt.target.tagName.toLowerCase() === 'td';
@@ -536,7 +543,7 @@ class DatePicker {
   getCalendarBotControl = () => {
     const datePickerHtmlControl = getHtmlElement('div', 'date-picker__control');
     const datePickerButtons = [
-      { text: 'Очистить', isAccent: false },
+      { text: 'Очистить', isAccent: false, clickHandler: this.onClearRangeAndInput },
       { text: 'Применить', isAccent: true },
     ];
 
@@ -546,6 +553,13 @@ class DatePicker {
 
       if (item.isAccent) {
         btn.classList.add('date-picker__button--accent');
+      }
+
+      if (item.clickHandler) {
+        btn.addEventListener('click', evt => {
+          evt.preventDefault();
+          item.clickHandler();
+        });
       }
 
       datePickerHtmlControl.appendChild(btn);
