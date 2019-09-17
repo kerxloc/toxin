@@ -288,8 +288,6 @@ class DatePicker {
     const departureAriaDate = this.departureCell
       ? this.departureCell.getAttribute('aria-date')
       : false;
-    const arrivalDate = new Date(arrivalAriaDate);
-    const departureDate = new Date(departureAriaDate);
 
     cells.forEach(cell => {
       const isCellStart = arrivalAriaDate === cell.getAttribute('aria-date');
@@ -301,8 +299,8 @@ class DatePicker {
         cell.classList.add('date-picker__day--select');
       }
 
-      const isCellDateMoreThanArrivalDate = this.compaireDate(cellDate, arrivalDate) > 0;
-      const isCellDateLessThanDepartureDate = this.compaireDate(cellDate, departureDate) < 0;
+      const isCellDateMoreThanArrivalDate = this.compaireDate(cellDate, this.arrivalDate) > 0;
+      const isCellDateLessThanDepartureDate = this.compaireDate(cellDate, this.departureDate) < 0;
       const isCellDateInRange = isCellDateMoreThanArrivalDate && isCellDateLessThanDepartureDate;
 
       if (isCellDateInRange) {
