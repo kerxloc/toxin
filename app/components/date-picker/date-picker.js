@@ -262,7 +262,9 @@ class DatePicker {
           }
         }
       } else {
+        this.clearSelectCell();
         this.onEndSelectRangeDate(pickCell, convertePickDate);
+        this.paintingSelectCell();
       }
     }
   };
