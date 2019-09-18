@@ -311,9 +311,15 @@ class DatePicker {
           }
         }
       } else {
-        this.clearSelectCell();
-        this.onEndSelectRangeDate(pickCell, convertePickDate);
-        this.paintingSelectCell();
+        const isDateSelectLess = this.compaireDate(convertePickDate, this.arrivalDate) < 0;
+        if (isDateSelectLess) {
+          this.showErrorAnimation();
+          this.departureInput.value = '';
+        } else {
+          this.clearSelectCell();
+          this.onEndSelectRangeDate(pickCell, convertePickDate);
+          this.paintingSelectCell();
+        }
       }
     }
   };
