@@ -150,7 +150,7 @@ class DatePicker {
     return isDataFullNumber;
   };
 
-  showCalendarAnimation = () => {
+  showCalendar = () => {
     const calendar = this.parentNode.querySelector('.date-picker');
     const isHaveShowClass = calendar.classList.contains('date-picker--show');
     if (!isHaveShowClass) {
@@ -158,7 +158,7 @@ class DatePicker {
     }
   };
 
-  unShowCalendarAnimation = () => {
+  unshowCalendar = () => {
     const calendar = this.parentNode.querySelector('.date-picker');
     const isHaveShowClass = calendar.classList.contains('date-picker--show');
     if (isHaveShowClass) {
@@ -575,7 +575,7 @@ class DatePicker {
     const datePickerHtmlControl = getHtmlElement('div', 'date-picker__control');
     const datePickerButtons = [
       { text: 'Очистить', isAccent: false, clickHandler: this.onClearRangeAndInput },
-      { text: 'Применить', isAccent: true, clickHandler: this.unShowCalendarAnimation },
+      { text: 'Применить', isAccent: true, clickHandler: this.unshowCalendar },
     ];
 
     datePickerButtons.forEach(item => {
