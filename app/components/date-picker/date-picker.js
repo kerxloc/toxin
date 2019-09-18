@@ -270,7 +270,12 @@ class DatePicker {
       const ariaDate = this.getAriaDateByDate(convertePickDate);
       const pickCell = this.getCellByAriaDate(ariaDate);
       if (pickCell) {
-        const isArrivalCell = this.arrivalCell === pickCell;
+        let isArrivalCell = false;
+
+        if (this.arrivalDate) {
+          isArrivalCell = convertePickDate.toDateString() === this.arrivalDate.toDateString();
+        }
+
         if (!isArrivalCell) {
           if (this.isEndSelect || this.isStartSelect) {
             this.clearSelectCell();
