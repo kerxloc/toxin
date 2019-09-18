@@ -52,7 +52,7 @@ class DatePicker {
         `#${domInfo.arrivalInputId}`,
       );
       this.arrivalInput.addEventListener('focus', this.showCalendar);
-      this.arrivalInput.addEventListener('blur', this.onInputDateArrival);
+      this.arrivalInput.addEventListener('blur', this.showArrivalMonthCalendar);
       this.arrivalInput.addEventListener('keydown', evt => {
         const isPressEnter = evt.keyCode === 13;
         if (isPressEnter) {
@@ -71,7 +71,7 @@ class DatePicker {
         `#${domInfo.departureInputId}`,
       );
       this.departureInput.addEventListener('focus', this.showCalendar);
-      this.departureInput.addEventListener('blur', this.onInputDateDeparture);
+      this.departureInput.addEventListener('blur', this.showDepartureMonthCalendar);
       this.departureInput.addEventListener('keydown', evt => {
         const isPressEnter = evt.keyCode === 13;
         if (isPressEnter) {
@@ -85,14 +85,14 @@ class DatePicker {
 
     if (domInfo.arrivalSplitBtnId) {
       this.arrivalSplitBtn = document.querySelector(`#${domInfo.arrivalSplitBtnId}`);
-      console.log(this.arrivalSplitBtn);
+      this.arrivalSplitBtn.addEventListener('click', this.showArrivalMonthCalendar);
     } else {
       console.error('Expected arrivalSplitBtnId inside constructor object but not received');
     }
 
     if (domInfo.departureSplitBtnId) {
       this.departureSplitBtn = document.querySelector(`#${domInfo.departureSplitBtnId}`);
-      console.log(this.departureSplitBtn);
+      this.departureSplitBtn.addEventListener('click', this.showDepartureMonthCalendar);
     } else {
       console.error('Expected departureSplitBtnId inside constructor object but not received');
     }
@@ -165,6 +165,22 @@ class DatePicker {
     const isHaveShowClass = calendar.classList.contains('date-picker--show');
     if (isHaveShowClass) {
       calendar.classList.remove('date-picker--show');
+    }
+  };
+
+  showArrivalMonthCalendar = () => {
+    this.showCalendar();
+    this.onInputDateArrival();
+    if (this.arrivalDate) {
+      this.updateCurrentDate(this.arrivalDate);
+    }
+  };
+
+  showDepartureMonthCalendar = () => {
+    this.showCalendar();
+    this.onInputDateDeparture();
+    if (this.departureDate) {
+      this.updateCurrentDate(this.departureDate);
     }
   };
 
