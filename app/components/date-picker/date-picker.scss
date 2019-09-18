@@ -193,10 +193,14 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, transform 0.1s ease-in-out;
 
   &:hover {
     color: $accentColor;
+  }
+
+  &:active {
+    transform: translateY(3px);
   }
 
   &--accent {
