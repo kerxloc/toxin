@@ -149,13 +149,14 @@ class DatePicker {
     if (this.arrivalDate && this.departureDate) {
       const arrivalAriaDate = this.getAriaDateByDate(this.arrivalDate);
       const departureAriaDate = this.getAriaDateByDate(this.departureDate);
+      const isDoubleSelect = arrivalAriaDate === departureAriaDate;
 
       cells.forEach(cell => {
         const isCellStart = arrivalAriaDate === cell.getAttribute('aria-date');
         const isCellEnd = departureAriaDate === cell.getAttribute('aria-date');
         const cellDate = new Date(cell.getAttribute('aria-date'));
 
-        if (isCellEnd) {
+        if (isCellEnd && !isDoubleSelect) {
           cell.classList.add('date-picker__day--select-end');
           cell.classList.add('date-picker__day--select');
         }
@@ -168,7 +169,7 @@ class DatePicker {
           cell.classList.add('date-picker__day--select-space');
         }
 
-        if (isCellStart && departureAriaDate) {
+        if (isCellStart && departureAriaDate && !isDoubleSelect) {
           cell.classList.add('date-picker__day--select-start');
           cell.classList.add('date-picker__day--select');
         } else if (isCellStart) {
