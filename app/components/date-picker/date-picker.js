@@ -333,11 +333,12 @@ class DatePicker {
     this.isEndSelect = false;
   };
 
-  onClearRangeAndInput = () => {
+  onFullClearCalendar = () => {
     this.onClearSelectRangeDate();
     this.clearSelectCell();
     this.arrivalInput.value = '';
     this.departureInput.value = '';
+    this.updateCurrentDate(new Date());
   };
 
   onSelectDate = evt => {
@@ -576,7 +577,7 @@ class DatePicker {
   getCalendarBotControl = () => {
     const datePickerHtmlControl = getHtmlElement('div', 'date-picker__control');
     const datePickerButtons = [
-      { text: 'Очистить', isAccent: false, clickHandler: this.onClearRangeAndInput },
+      { text: 'Очистить', isAccent: false, clickHandler: this.onFullClearCalendar },
       { text: 'Применить', isAccent: true, clickHandler: this.unshowCalendar },
     ];
 
