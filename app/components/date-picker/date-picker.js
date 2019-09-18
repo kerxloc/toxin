@@ -246,8 +246,8 @@ class DatePicker {
     });
   };
 
-  onInputDateArrival = evt => {
-    const pickDate = evt.target.value;
+  onInputDateArrival = () => {
+    const pickDate = this.arrivalInput.value;
     const isDataFull = this.hasDataFull(pickDate);
     if (isDataFull) {
       const convertePickDate = this.getConverteDateByUserInput(pickDate);
@@ -267,8 +267,8 @@ class DatePicker {
     }
   };
 
-  onInputDateDeparture = evt => {
-    const pickDate = evt.target.value;
+  onInputDateDeparture = () => {
+    const pickDate = this.departureInput.value;
     const isDataFull = this.hasDataFull(pickDate);
     if (isDataFull) {
       const convertePickDate = this.getConverteDateByUserInput(pickDate);
