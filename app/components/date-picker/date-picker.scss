@@ -34,6 +34,16 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  transform: translateY(-10px);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+
+  &--show {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
 
   &--error-animation {
     transform: translate3d(0, 0, 0);
