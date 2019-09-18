@@ -51,6 +51,7 @@ class DatePicker {
       Inputmask({ mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ' }).mask(
         `#${domInfo.arrivalInputId}`,
       );
+      this.arrivalInput.addEventListener('focus', this.showCalendar);
       this.arrivalInput.addEventListener('blur', this.onInputDateArrival);
       this.arrivalInput.addEventListener('keydown', evt => {
         const isPressEnter = evt.keyCode === 13;
@@ -69,6 +70,7 @@ class DatePicker {
       Inputmask({ mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ' }).mask(
         `#${domInfo.departureInputId}`,
       );
+      this.departureInput.addEventListener('focus', this.showCalendar);
       this.departureInput.addEventListener('blur', this.onInputDateDeparture);
       this.departureInput.addEventListener('keydown', evt => {
         const isPressEnter = evt.keyCode === 13;
