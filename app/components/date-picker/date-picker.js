@@ -81,6 +81,20 @@ class DatePicker {
       console.error('Expected departureInputId inside constructor object but not received');
     }
 
+    if (domInfo.arrivalSplitBtnId) {
+      this.arrivalSplitBtn = document.querySelector(`#${domInfo.arrivalSplitBtnId}`);
+      console.log(this.arrivalSplitBtn);
+    } else {
+      console.error('Expected arrivalSplitBtnId inside constructor object but not received');
+    }
+
+    if (domInfo.departureSplitBtnId) {
+      this.departureSplitBtn = document.querySelector(`#${domInfo.departureSplitBtnId}`);
+      console.log(this.departureSplitBtn);
+    } else {
+      console.error('Expected departureSplitBtnId inside constructor object but not received');
+    }
+
     this.currentDate = new Date();
     this.arrivalDate = null;
     this.departureDate = null;
