@@ -158,14 +158,7 @@ class DatePicker {
       calendar.classList.add('date-picker--show');
     }
     setTimeout(() => {
-      document.body.addEventListener('mouseup', evt => {
-        const isInputClick = evt.target === this.arrivalInput || evt.target === this.departureInput;
-        const isCalendarClick = calendar.contains(evt.target);
-        const isOutsideClick = !isInputClick && !isCalendarClick;
-        if (isOutsideClick) {
-          this.unshowCalendar();
-        }
-      });
+      document.body.addEventListener('mouseup', this.onClickShowCalendar);
     }, 500);
   };
 
@@ -176,7 +169,7 @@ class DatePicker {
     if (isHaveShowClass) {
       calendar.classList.remove('date-picker--show');
     }
-    document.body.removeEventListener('click', this.unshowCalendar);
+    document.body.removeEventListener('mouseup', this.onClickShowCalendar);
   };
 
   showArrivalMonthCalendar = () => {
@@ -273,6 +266,16 @@ class DatePicker {
         cell.classList.remove('date-picker__day--select-end');
       }
     });
+  };
+
+  onClickShowCalendar = evt => {
+    const calendar = this.parentNode.querySelector('.date-picker');
+    const isInputClick = evt.target === this.arrivalInput || evt.target === this.departureInput;
+    const isCalendarClick = calendar.contains(evt.target);
+    const isOutsideClick = !isInputClick && !isCalendarClick;
+    if (isOutsideClick) {
+      this.unshowCalendar();
+    }
   };
 
   onFocusArrivalInput = () => {
