@@ -52,12 +52,11 @@ class DatePicker {
         `#${domInfo.arrivalInputId}`,
       );
       this.arrivalInput.addEventListener('focus', this.showCalendar);
-      this.arrivalInput.addEventListener('blur', this.showArrivalMonthCalendar);
       this.arrivalInput.addEventListener('keydown', evt => {
         const isPressEnter = evt.keyCode === 13;
         if (isPressEnter) {
           evt.preventDefault();
-          this.arrivalInput.blur();
+          this.showArrivalMonthCalendar();
           this.departureInput.focus();
         }
       });
@@ -71,12 +70,11 @@ class DatePicker {
         `#${domInfo.departureInputId}`,
       );
       this.departureInput.addEventListener('focus', this.showCalendar);
-      this.departureInput.addEventListener('blur', this.showDepartureMonthCalendar);
       this.departureInput.addEventListener('keydown', evt => {
         const isPressEnter = evt.keyCode === 13;
         if (isPressEnter) {
           evt.preventDefault();
-          this.departureInput.blur();
+          this.showDepartureMonthCalendar();
         }
       });
     } else {
@@ -162,7 +160,6 @@ class DatePicker {
   };
 
   unshowCalendar = () => {
-    console.log('unshowCalendar');
     const calendar = this.parentNode.querySelector('.date-picker');
     const isHaveShowClass = calendar.classList.contains('date-picker--show');
     if (isHaveShowClass) {
