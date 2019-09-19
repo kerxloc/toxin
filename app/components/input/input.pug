@@ -12,13 +12,23 @@ mixin input(options = {})
       inputClass += "  input-group__input--icon"
     }
 
+    var splitButtonClass = "input-group__button-split"
+
+    if (options.isDownSplitAnimation) {
+      splitButtonClass += " input-group__button-split--down-animation"
+    }
+
+    if (options.isRightSplitAnimation) {
+      splitButtonClass += " input-group__button-split--right-animation"
+    }
+
   if options.isButtonSplit
     div(class=inputGroupClass)
       if options.labelName
         label(class='input-group__label' for=`${options.id}`)= options.labelName
       p.input-group__split
         input(id=`${options.id}` class=inputClass type=options.type name=options.name placeholder=options.placeholder)
-        button(id=`${options.splitId}` class='input-group__button-split' type='button')
+        button(id=`${options.splitId}` class=`${splitButtonClass}` type='button')
           img(src=`components/input/${options.iconSrc}`, alt="")
   else
     p(class=inputGroupClass)

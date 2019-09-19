@@ -71,6 +71,7 @@
 .input-group__button-split {
   box-sizing: border-box;
   width: 44px;
+  padding: 0;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center center;
@@ -85,9 +86,19 @@
     transition: transform 0.1s ease;
   }
 
-  &:active {
-    img {
-      transform: translateX(5px);
+  &--down-animation {
+    &:active {
+      img {
+        transform: translateY(2px);
+      }
+    }
+  }
+
+  &--right-animation {
+    &:active {
+      img {
+        transform: translateX(5px);
+      }
     }
   }
 }
