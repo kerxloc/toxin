@@ -57,7 +57,10 @@ class DatePicker {
         if (isPressEnter) {
           evt.preventDefault();
           this.showArrivalMonthCalendar();
-          this.departureInput.focus();
+          const arrivalInputDate = this.arrivalInput.value;
+          if (this.hasDataFull(arrivalInputDate)) {
+            this.departureInput.focus();
+          }
         }
       });
     } else {
@@ -176,9 +179,12 @@ class DatePicker {
 
   showArrivalMonthCalendar = () => {
     console.log('showArrivalMonthCalendar');
+    const inputDate = this.arrivalInput.value;
+    const arrivalInputDate = this.getConverteDateByUserInput(inputDate);
+    const dateMoreThisDate = this.compaireDate(arrivalInputDate, new Date()) >= 0;
     this.showCalendar();
     this.onInputDateArrival();
-    if (this.arrivalDate) {
+    if (this.arrivalDate && dateMoreThisDate) {
       this.updateCurrentDate(this.arrivalDate);
     }
   };
@@ -293,7 +299,11 @@ class DatePicker {
     const inputDate = this.arrivalInput.value;
     const isInputDateFull = this.hasDataFull(inputDate);
     if (isInputDateFull) {
-      this.showArrivalMonthCalendar();
+      const arrivalInputDate = this.getConverteDateByUserInput(inputDate);
+      const dateMoreThisDate = this.compaireDate(arrivalInputDate, new Date()) >= 0;
+      if (dateMoreThisDate) {
+        this.showArrivalMonthCalendar();
+      }
     } else {
       this.showCalendar();
     }
@@ -320,40 +330,53 @@ class DatePicker {
       if (this.departureDate) {
         isArrivalDateMore = this.compaireDate(convertePickDate, this.departureDate) > 0;
       }
-      if (pickCell) {
-        let isArrivalCell = false;
-
-        if (this.arrivalDate) {
-          isArrivalCell = convertePickDate.toDateString() === this.arrivalDate.toDateString();
+      const pickDateLessThisDate = this.compaireDate(convertePickDate, new Date()) < 0;
+      if (pickDateLessThisDate) {
+        this.showErrorAnimation();
+        if (pickCell) {
+          pickCell.classList.add('date-picker__day--error');
+          setTimeout(() => {
+            pickCell.classList.remove('date-picker__day--error');
+          }, 700);
         }
-
-        if (!isArrivalCell) {
-          let isArrDateLessDepDate = false;
-
-          if (this.departureDate) {
-            isArrDateLessDepDate = this.compaireDate(convertePickDate, this.departureDate) < 0;
-          }
-
-          if (isArrDateLessDepDate) {
-            this.clearSelectCell();
-            this.onStartSelectRangeDate(pickCell, convertePickDate);
-            this.paintingSelectCell();
-          } else if (isArrivalDateMore) {
-            this.clearSelectCell();
-            this.onClearSelectRangeDate();
-            this.departureInput.value = '';
-          } else if (this.isEndSelect || this.isStartSelect) {
-            this.clearSelectCell();
-            this.onClearSelectRangeDate();
-          }
-        }
-      } else if (isArrivalDateMore) {
+        this.arrivalInput.value = '';
         this.clearSelectCell();
-        this.onClearSelectRangeDate();
-        this.departureInput.value = '';
-      }
+      } else {
+        if (pickCell) {
+          let isArrivalCell = false;
 
-      this.onStartSelectRangeDate(pickCell, convertePickDate);
+          if (this.arrivalDate) {
+            isArrivalCell = convertePickDate.toDateString() === this.arrivalDate.toDateString();
+          }
+
+          if (!isArrivalCell) {
+            let isArrDateLessDepDate = false;
+
+            if (this.departureDate) {
+              isArrDateLessDepDate = this.compaireDate(convertePickDate, this.departureDate) < 0;
+            }
+
+            if (isArrDateLessDepDate) {
+              this.clearSelectCell();
+              this.onStartSelectRangeDate(pickCell, convertePickDate);
+              this.paintingSelectCell();
+            } else if (isArrivalDateMore) {
+              this.clearSelectCell();
+              this.onClearSelectRangeDate();
+              this.departureInput.value = '';
+            } else if (this.isEndSelect || this.isStartSelect) {
+              this.clearSelectCell();
+              this.onClearSelectRangeDate();
+            }
+          }
+        } else if (isArrivalDateMore) {
+          this.clearSelectCell();
+          this.onClearSelectRangeDate();
+          this.departureInput.value = '';
+        }
+
+        this.onStartSelectRangeDate(pickCell, convertePickDate);
+      }
     }
   };
 
@@ -464,8 +487,14 @@ class DatePicker {
       const selectYear = selectDate.getFullYear();
       const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
       const isCellDoubleSelect = td === this.arrivalCell || td === this.departureCell;
-
-      if (this.isStartSelect && !isCellDoubleSelect) {
+      const isDateLessThisDate = this.compaireDate(selectDate, new Date()) < 0;
+      if (isDateLessThisDate) {
+        this.showErrorAnimation();
+        td.classList.add('date-picker__day--error');
+        setTimeout(() => {
+          td.classList.remove('date-picker__day--error');
+        }, 700);
+      } else if (this.isStartSelect && !isCellDoubleSelect) {
         const isDateSelectLess = this.compaireDate(selectDate, this.arrivalDate) < 0;
         if (isDateSelectLess) {
           this.showErrorAnimation();
