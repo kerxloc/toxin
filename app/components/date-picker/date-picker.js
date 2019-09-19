@@ -366,10 +366,6 @@ class DatePicker {
       this.showErrorAnimation();
       this.arrivalInput.focus();
     } else {
-      if (!isPickDateFull) {
-        this.showErrorAnimation();
-        this.departureInput.focus();
-      }
       if (isArrivalDateFull) {
         this.onInputDateArrival();
       }
