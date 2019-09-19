@@ -281,7 +281,17 @@ class DatePicker {
         }
 
         if (!isArrivalCell) {
-          if (this.isEndSelect || this.isStartSelect) {
+          let isArrDateLessDepDate = false;
+
+          if (this.departureDate) {
+            isArrDateLessDepDate = this.compaireDate(convertePickDate, this.departureDate) < 0;
+          }
+
+          if (isArrDateLessDepDate) {
+            this.clearSelectCell();
+            this.onStartSelectRangeDate(pickCell, convertePickDate);
+            this.paintingSelectCell();
+          } else if (this.isEndSelect || this.isStartSelect) {
             this.clearSelectCell();
             this.onClearSelectRangeDate();
           }
