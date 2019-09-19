@@ -160,6 +160,7 @@ class DatePicker {
     setTimeout(() => {
       document.body.addEventListener('mouseup', this.onClickShowCalendar);
     }, 500);
+    document.addEventListener('keyup', this.onEscUnshowCalendar);
   };
 
   unshowCalendar = () => {
@@ -170,6 +171,7 @@ class DatePicker {
       calendar.classList.remove('date-picker--show');
     }
     document.body.removeEventListener('mouseup', this.onClickShowCalendar);
+    document.removeEventListener('keyup', this.onEscUnshowCalendar);
   };
 
   showArrivalMonthCalendar = () => {
@@ -275,6 +277,15 @@ class DatePicker {
     const isOutsideClick = !isInputClick && !isCalendarClick;
     if (isOutsideClick) {
       this.unshowCalendar();
+    }
+  };
+
+  onEscUnshowCalendar = evt => {
+    // ESC
+    if (evt.keyCode === 27) {
+      this.unshowCalendar();
+      this.arrivalInput.blur();
+      this.departureInput.blur();
     }
   };
 
