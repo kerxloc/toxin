@@ -333,41 +333,56 @@ class DatePicker {
   };
 
   onInputDateDeparture = () => {
+    const inputArrivalDate = this.arrivalInput.value;
+    const isArrivalDateFull = this.hasDataFull(inputArrivalDate);
     const pickDate = this.departureInput.value;
-    const isDataFull = this.hasDataFull(pickDate);
-    if (isDataFull) {
-      const convertePickDate = this.getConverteDateByUserInput(pickDate);
-      const ariaDate = this.getAriaDateByDate(convertePickDate);
-      const pickCell = this.getCellByAriaDate(ariaDate);
-      if (pickCell) {
-        const isDateSelectLess = this.compaireDate(convertePickDate, this.arrivalDate) < 0;
-        if (isDateSelectLess) {
-          this.showErrorAnimation();
-          pickCell.classList.add('date-picker__day--error');
-          setTimeout(() => {
-            pickCell.classList.remove('date-picker__day--error');
-          }, 700);
-          this.departureInput.value = '';
-        } else {
-          const isDepartureCell = this.departureCell === pickCell;
-          if (!isDepartureCell) {
-            if (this.isEndSelect) {
-              this.clearSelectCell();
-            }
+    const isPickDateFull = this.hasDataFull(pickDate);
+    if (!isArrivalDateFull && isPickDateFull) {
+      this.showErrorAnimation();
+      this.arrivalInput.focus();
+    } else {
+      if (!isPickDateFull) {
+        this.showErrorAnimation();
+        this.departureInput.focus();
+      }
+      if (isArrivalDateFull) {
+        this.onInputDateArrival();
+      }
 
+      if (isPickDateFull) {
+        const convertePickDate = this.getConverteDateByUserInput(pickDate);
+        const ariaDate = this.getAriaDateByDate(convertePickDate);
+        const pickCell = this.getCellByAriaDate(ariaDate);
+        if (pickCell) {
+          const isDateSelectLess = this.compaireDate(convertePickDate, this.arrivalDate) < 0;
+          if (isDateSelectLess) {
+            this.showErrorAnimation();
+            pickCell.classList.add('date-picker__day--error');
+            setTimeout(() => {
+              pickCell.classList.remove('date-picker__day--error');
+            }, 700);
+            this.departureInput.value = '';
+          } else {
+            const isDepartureCell = this.departureCell === pickCell;
+            if (!isDepartureCell) {
+              if (this.isEndSelect) {
+                this.clearSelectCell();
+              }
+
+              this.onEndSelectRangeDate(pickCell, convertePickDate);
+              this.paintingSelectCell();
+            }
+          }
+        } else {
+          const isDateSelectLess = this.compaireDate(convertePickDate, this.arrivalDate) < 0;
+          if (isDateSelectLess) {
+            this.showErrorAnimation();
+            this.departureInput.value = '';
+          } else {
+            this.clearSelectCell();
             this.onEndSelectRangeDate(pickCell, convertePickDate);
             this.paintingSelectCell();
           }
-        }
-      } else {
-        const isDateSelectLess = this.compaireDate(convertePickDate, this.arrivalDate) < 0;
-        if (isDateSelectLess) {
-          this.showErrorAnimation();
-          this.departureInput.value = '';
-        } else {
-          this.clearSelectCell();
-          this.onEndSelectRangeDate(pickCell, convertePickDate);
-          this.paintingSelectCell();
         }
       }
     }
