@@ -154,7 +154,6 @@ class DatePicker {
   };
 
   showCalendar = () => {
-    console.log('showCalendar');
     const calendar = this.parentNode.querySelector('.date-picker');
     const isHaveShowClass = calendar.classList.contains('date-picker--show');
     if (!isHaveShowClass) {
@@ -167,7 +166,6 @@ class DatePicker {
   };
 
   unshowCalendar = () => {
-    console.log('unshowCalendar');
     const calendar = this.parentNode.querySelector('.date-picker');
     const isHaveShowClass = calendar.classList.contains('date-picker--show');
     if (isHaveShowClass) {
@@ -178,7 +176,6 @@ class DatePicker {
   };
 
   showArrivalMonthCalendar = () => {
-    console.log('showArrivalMonthCalendar');
     const inputDate = this.arrivalInput.value;
     const arrivalInputDate = this.getConverteDateByUserInput(inputDate);
     const dateMoreThisDate = this.compaireDate(arrivalInputDate, new Date()) >= 0;
@@ -190,7 +187,6 @@ class DatePicker {
   };
 
   showDepartureMonthCalendar = () => {
-    console.log('showDepartureMonthCalendar');
     this.showCalendar();
     this.onInputDateDeparture();
     if (this.departureDate) {
