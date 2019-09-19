@@ -51,7 +51,7 @@ class DatePicker {
       Inputmask({ mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ' }).mask(
         `#${domInfo.arrivalInputId}`,
       );
-      this.arrivalInput.addEventListener('focus', this.showCalendar);
+      this.arrivalInput.addEventListener('focus', this.onFocusArrivalInput);
       this.arrivalInput.addEventListener('keydown', evt => {
         const isPressEnter = evt.keyCode === 13;
         if (isPressEnter) {
@@ -69,7 +69,7 @@ class DatePicker {
       Inputmask({ mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ' }).mask(
         `#${domInfo.departureInputId}`,
       );
-      this.departureInput.addEventListener('focus', this.showCalendar);
+      this.departureInput.addEventListener('focus', this.onFocusDepartureInput);
       this.departureInput.addEventListener('keydown', evt => {
         const isPressEnter = evt.keyCode === 13;
         if (isPressEnter) {
@@ -266,6 +266,26 @@ class DatePicker {
         cell.classList.remove('date-picker__day--select-end');
       }
     });
+  };
+
+  onFocusArrivalInput = () => {
+    const inputDate = this.arrivalInput.value;
+    const isInputDateFull = this.hasDataFull(inputDate);
+    if (isInputDateFull) {
+      this.showArrivalMonthCalendar();
+    } else {
+      this.showCalendar();
+    }
+  };
+
+  onFocusDepartureInput = () => {
+    const inputDate = this.departureInput.value;
+    const isInputDateFull = this.hasDataFull(inputDate);
+    if (isInputDateFull) {
+      this.showDepartureMonthCalendar();
+    } else {
+      this.showCalendar();
+    }
   };
 
   onInputDateArrival = () => {
