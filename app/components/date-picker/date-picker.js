@@ -156,8 +156,6 @@ class DatePicker {
     const isHaveShowClass = calendar.classList.contains('date-picker--show');
     if (!isHaveShowClass) {
       calendar.classList.add('date-picker--show');
-      this.arrivalInput.removeEventListener('focus', this.showCalendar);
-      this.departureInput.removeEventListener('focus', this.showCalendar);
     }
   };
 
@@ -167,8 +165,6 @@ class DatePicker {
     const isHaveShowClass = calendar.classList.contains('date-picker--show');
     if (isHaveShowClass) {
       calendar.classList.remove('date-picker--show');
-      this.arrivalInput.addEventListener('focus', this.showCalendar);
-      this.departureInput.addEventListener('focus', this.showCalendar);
     }
   };
 
