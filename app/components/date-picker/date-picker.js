@@ -269,6 +269,10 @@ class DatePicker {
       const convertePickDate = this.getConverteDateByUserInput(pickDate);
       const ariaDate = this.getAriaDateByDate(convertePickDate);
       const pickCell = this.getCellByAriaDate(ariaDate);
+      let isArrivalDateMore = false;
+      if (this.departureDate) {
+        isArrivalDateMore = this.compaireDate(convertePickDate, this.departureDate) > 0;
+      }
       if (pickCell) {
         let isArrivalCell = false;
 
@@ -282,6 +286,10 @@ class DatePicker {
             this.onClearSelectRangeDate();
           }
         }
+      } else if (isArrivalDateMore) {
+        this.clearSelectCell();
+        this.onClearSelectRangeDate();
+        this.departureInput.value = '';
       }
 
       this.onStartSelectRangeDate(pickCell, convertePickDate);
