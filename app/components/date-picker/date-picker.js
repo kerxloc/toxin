@@ -502,13 +502,16 @@ class DatePicker {
           this.onEndSelectRangeDate(td, selectDate);
           this.departureInput.value = selectDateText;
           this.paintingSelectCell();
+          this.updateCurrentDate(selectDate);
         }
       } else if (isCellDoubleSelect && !this.isEndSelect) {
         this.onEndSelectRangeDate(td, selectDate);
         this.departureInput.value = selectDateText;
+        this.updateCurrentDate(selectDate);
       } else {
         this.onStartSelectRangeDate(td, selectDate);
         this.arrivalInput.value = selectDateText;
+        this.updateCurrentDate(selectDate);
       }
     }
   };
