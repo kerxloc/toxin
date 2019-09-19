@@ -281,8 +281,8 @@ class DatePicker {
   };
 
   onEscUnshowCalendar = evt => {
-    // ESC
-    if (evt.keyCode === 27) {
+    const isEscPress = evt.keyCode === 27;
+    if (isEscPress) {
       this.unshowCalendar();
       this.arrivalInput.blur();
       this.departureInput.blur();
