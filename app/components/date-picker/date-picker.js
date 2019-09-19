@@ -157,6 +157,16 @@ class DatePicker {
     if (!isHaveShowClass) {
       calendar.classList.add('date-picker--show');
     }
+    setTimeout(() => {
+      document.body.addEventListener('mouseup', evt => {
+        const isInputClick = evt.target === this.arrivalInput || evt.target === this.departureInput;
+        const isCalendarClick = calendar.contains(evt.target);
+        const isOutsideClick = !isInputClick && !isCalendarClick;
+        if (isOutsideClick) {
+          this.unshowCalendar();
+        }
+      });
+    }, 500);
   };
 
   unshowCalendar = () => {
@@ -166,6 +176,7 @@ class DatePicker {
     if (isHaveShowClass) {
       calendar.classList.remove('date-picker--show');
     }
+    document.body.removeEventListener('click', this.unshowCalendar);
   };
 
   showArrivalMonthCalendar = () => {
