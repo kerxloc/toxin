@@ -85,15 +85,27 @@ class DropDown {
       const countItemName = getHtmlElement('p', 'drop-down__count-item-name', element.name);
       const counterMenu = getHtmlElement('div', 'drop-down__counter-menu');
       const countItemMinus = getHtmlElement('button', 'drop-down__counter-btn');
-      countItemMinus.classList.add('drop-down__counter-btn--plus');
+      countItemMinus.classList.add('drop-down__counter-btn--minus');
       const countItemView = getHtmlElement('p', 'drop-down__select-view', '0');
       const countItemPlus = getHtmlElement('button', 'drop-down__counter-btn');
-      countItemPlus.classList.add('drop-down__counter-btn--minus');
+      countItemPlus.classList.add('drop-down__counter-btn--plus');
       countItemMinus.type = 'button';
       countItemPlus.type = 'button';
-      counterMenu.appendChild(countItemPlus);
-      counterMenu.appendChild(countItemView);
+      let counter = 0;
+
+      countItemPlus.addEventListener('click', () => {
+        counter++;
+        countItemView.textContent = counter;
+      });
+
+      countItemMinus.addEventListener('click', () => {
+        counter--;
+        countItemView.textContent = counter;
+      });
+
       counterMenu.appendChild(countItemMinus);
+      counterMenu.appendChild(countItemView);
+      counterMenu.appendChild(countItemPlus);
       countItem.appendChild(countItemName);
       countItem.appendChild(counterMenu);
       countListFragment.appendChild(countItem);
