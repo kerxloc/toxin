@@ -159,9 +159,7 @@ class DatePicker {
     if (!isHaveShowClass) {
       calendar.classList.add('date-picker--show');
     }
-    setTimeout(() => {
-      document.body.addEventListener('mouseup', this.onClickShowCalendar);
-    }, 500);
+    document.body.addEventListener('mouseup', this.onClickShowCalendar);
     document.addEventListener('keyup', this.onEscUnshowCalendar);
   };
 
