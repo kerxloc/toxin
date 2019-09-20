@@ -41,7 +41,7 @@ class DropDown {
     const isHaveClass = this.dropDownParent.classList.contains('drop-down--show');
     if (!isHaveClass) {
       this.dropDownParent.classList.add('drop-down--show');
-      window.addEventListener('mouseup', this.hide);
+      window.addEventListener('mouseup', this.onClickHide);
     }
   };
 
@@ -50,7 +50,16 @@ class DropDown {
     const isHaveClass = this.dropDownParent.classList.contains('drop-down--show');
     if (isHaveClass) {
       this.dropDownParent.classList.remove('drop-down--show');
-      window.removeEventListener('mouseup', this.hide);
+      window.removeEventListener('mouseup', this.onClickHide);
+    }
+  };
+
+  onClickHide = evt => {
+    const isInputClick = evt.target === this.input;
+    const isCalendarClick = this.dropDownParent.contains(evt.target);
+    const isOutsideClick = !isInputClick && !isCalendarClick;
+    if (isOutsideClick) {
+      this.hide();
     }
   };
 
