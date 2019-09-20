@@ -1,0 +1,122 @@
+.drop-down {
+  position: absolute;
+  top: -2px;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 320px;
+  background: $mainColor;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+}
+
+.drop-down__wrap {
+  padding: 10px;
+}
+
+.drop-down__count-list {
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.drop-down__count-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.drop-down__counter-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 92px;
+}
+
+.drop-down__count-item-name {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.drop-down__select-view {
+  margin: 0;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+}
+
+.drop-down__counter-btn {
+  position: relative;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  color: transparentize($contentColor, 0.5);
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+  background: $mainColor;
+  border: 1px solid transparentize($contentColor, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+
+  &--plus::after {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '+';
+  }
+
+  &--minus::after {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '-';
+  }
+}
+
+.drop-down__control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drop-down__button {
+  padding: 0;
+  color: transparentize($contentColor, 0.5);
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, transform 0.1s ease-in-out;
+
+  &:hover {
+    color: $accentColor;
+  }
+
+  &:active {
+    transform: translateY(3px);
+  }
+
+  &--accent {
+    color: $accentColor;
+
+    &:hover {
+      color: transparentize($contentColor, 0.5);
+    }
+  }
+}
