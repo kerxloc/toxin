@@ -42,6 +42,7 @@ class DropDown {
     if (!isHaveClass) {
       this.dropDownParent.classList.add('drop-down--show');
       window.addEventListener('mouseup', this.onClickHide);
+      window.addEventListener('keyup', this.onPressHide);
     }
   };
 
@@ -51,6 +52,7 @@ class DropDown {
     if (isHaveClass) {
       this.dropDownParent.classList.remove('drop-down--show');
       window.removeEventListener('mouseup', this.onClickHide);
+      window.removeEventListener('keyup', this.onPressHide);
     }
   };
 
@@ -59,6 +61,13 @@ class DropDown {
     const isCalendarClick = this.dropDownParent.contains(evt.target);
     const isOutsideClick = !isInputClick && !isCalendarClick;
     if (isOutsideClick) {
+      this.hide();
+    }
+  };
+
+  onPressHide = evt => {
+    const isEscPress = evt.keyCode === 27;
+    if (isEscPress) {
       this.hide();
     }
   };
