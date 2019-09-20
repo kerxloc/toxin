@@ -37,7 +37,6 @@ class DropDown {
   }
 
   show = () => {
-    console.log('show');
     const isHaveClass = this.dropDownParent.classList.contains('drop-down--show');
     if (!isHaveClass) {
       this.dropDownParent.classList.add('drop-down--show');
@@ -47,7 +46,6 @@ class DropDown {
   };
 
   hide = () => {
-    console.log('hide');
     const isHaveClass = this.dropDownParent.classList.contains('drop-down--show');
     if (isHaveClass) {
       this.dropDownParent.classList.remove('drop-down--show');
