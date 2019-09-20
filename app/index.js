@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 import './styles/main.scss';
 import DatePicker from './components/date-picker/date-picker';
+import DropDown from './components/drop-down/drop-down';
 
 if (process.env.NODE_ENV !== 'production') {
   require('./index.pug');
@@ -17,3 +18,14 @@ const datePickerDomInfo = {
 
 const datePicker = new DatePicker(datePickerDomInfo);
 datePicker.renderCalendar();
+
+const dropDownContainer = document.querySelector('#drop-down-container');
+const inputDropDown = document.querySelector('#number-guests-input');
+
+const dropDownOptions = {
+  container: dropDownContainer,
+  input: inputDropDown,
+};
+
+const dropDown = new DropDown(dropDownOptions);
+dropDown.init();
