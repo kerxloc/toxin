@@ -25,6 +25,7 @@ const inputDropDown = document.querySelector('#number-guests-input');
 const dropDownOptions = {
   container: dropDownContainer,
   input: inputDropDown,
+  countElements: [{ name: 'Взрослые' }, { name: 'Дети' }, { name: 'Младенцы' }],
 };
 
 const dropDown = new DropDown(dropDownOptions);
