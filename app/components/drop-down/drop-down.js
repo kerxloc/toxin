@@ -16,12 +16,15 @@ class DropDown {
   constructor(options) {
     if (options.container) {
       this.container = options.container;
+      const dropDownParent = getHtmlElement('section', 'drop-down');
+      this.dropDownParent = dropDownParent;
     } else {
       console.error('Expected container(node) inside constructor object but not received');
     }
 
     if (options.input) {
       this.input = options.input;
+      this.input.addEventListener('click', this.show);
     } else {
       console.error('Expected input(node) inside constructor object but not received');
     }
@@ -33,8 +36,25 @@ class DropDown {
     }
   }
 
+  show = () => {
+    console.log('show');
+    const isHaveClass = this.dropDownParent.classList.contains('drop-down--show');
+    if (!isHaveClass) {
+      this.dropDownParent.classList.add('drop-down--show');
+      window.addEventListener('mouseup', this.hide);
+    }
+  };
+
+  hide = () => {
+    console.log('hide');
+    const isHaveClass = this.dropDownParent.classList.contains('drop-down--show');
+    if (isHaveClass) {
+      this.dropDownParent.classList.remove('drop-down--show');
+      window.removeEventListener('mouseup', this.hide);
+    }
+  };
+
   init = () => {
-    const dropDownParent = getHtmlElement('section', 'drop-down');
     const dropDownParentWrap = getHtmlElement('div', 'drop-down__wrap');
     const countList = getHtmlElement('ul', 'drop-down__count-list');
     const dropDownControl = getHtmlElement('div', 'drop-down__control');
@@ -67,8 +87,8 @@ class DropDown {
     dropDownControl.appendChild(acceptBtn);
     dropDownParentWrap.appendChild(countList);
     dropDownParentWrap.appendChild(dropDownControl);
-    dropDownParent.appendChild(dropDownParentWrap);
-    this.container.appendChild(dropDownParent);
+    this.dropDownParent.appendChild(dropDownParentWrap);
+    this.container.appendChild(this.dropDownParent);
   };
 }
 
