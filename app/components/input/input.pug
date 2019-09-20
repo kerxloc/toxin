@@ -26,6 +26,8 @@ mixin input(options = {})
    - var inputFakeClass = 'input-group__input  input-group__input--fake'
    - if (options.isHaveIcon) inputFakeClass += '  input-group__input--icon'
    - if (options.isDownSplitAnimation) inputFakeClass += '  input-group__button-split--down-animation'
+   if options.labelName
+    p(class='input-group__label' id=`for-${options.id}`)= options.labelName
     div(id=`${options.id}` class=`${inputFakeClass}` type=options.type name=options.name)= options.placeholder
   else if options.isButtonSplit
     div(class=inputGroupClass)
