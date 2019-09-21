@@ -26,7 +26,7 @@ const dropDownOptions = {
   container: dropDownContainer,
   input: inputDropDown,
   countElements: [
-    { name: 'Взрослые', minValue: 1 },
+    { name: 'Взрослые', minValue: 0 },
     { name: 'Дети', minValue: 0 },
     { name: 'Младенцы', minValue: 0 },
   ],
