@@ -70,6 +70,54 @@ class DropDown {
     }
   };
 
+  getCountItem = element => {
+    const countItem = getHtmlElement('li', 'drop-down__count-item');
+    const countItemName = getHtmlElement('p', 'drop-down__count-item-name', element.name);
+    const counterMenu = getHtmlElement('div', 'drop-down__counter-menu');
+    const countItemMinus = getHtmlElement('button', 'drop-down__counter-btn');
+    countItemMinus.classList.add('drop-down__counter-btn--minus');
+    countItemMinus.classList.add('drop-down__counter-btn--disabled');
+    countItemMinus.setAttribute('disabled', 'true');
+    const countItemView = getHtmlElement('p', 'drop-down__select-view', '0');
+    const countItemPlus = getHtmlElement('button', 'drop-down__counter-btn');
+    countItemPlus.classList.add('drop-down__counter-btn--plus');
+    countItemMinus.type = 'button';
+    countItemPlus.type = 'button';
+    let counter = 0;
+
+    if (element.minValue) {
+      counter = element.minValue;
+      countItemView.textContent = element.minValue;
+    }
+
+    countItemPlus.addEventListener('click', () => {
+      counter++;
+      countItemView.textContent = counter;
+      if (countItemMinus.classList.contains('drop-down__counter-btn--disabled')) {
+        countItemMinus.classList.remove('drop-down__counter-btn--disabled');
+        countItemMinus.removeAttribute('disabled');
+      }
+    });
+
+    countItemMinus.addEventListener('click', () => {
+      const minValue = element.minValue ? element.minValue : 0;
+      counter--;
+      countItemView.textContent = counter;
+      const nextDecrimentCounter = counter - 1;
+      if (nextDecrimentCounter < minValue) {
+        countItemMinus.classList.add('drop-down__counter-btn--disabled');
+        countItemMinus.setAttribute('disabled', 'true');
+      }
+    });
+
+    counterMenu.appendChild(countItemMinus);
+    counterMenu.appendChild(countItemView);
+    counterMenu.appendChild(countItemPlus);
+    countItem.appendChild(countItemName);
+    countItem.appendChild(counterMenu);
+    return countItem;
+  };
+
   init = () => {
     const dropDownParentWrap = getHtmlElement('div', 'drop-down__wrap');
     const countList = getHtmlElement('ul', 'drop-down__count-list');
@@ -80,52 +128,12 @@ class DropDown {
     acceptBtn.type = 'button';
     acceptBtn.classList.add('drop-down__button--accent');
     const countListFragment = document.createDocumentFragment();
+
     this.countElements.forEach(element => {
-      const countItem = getHtmlElement('li', 'drop-down__count-item');
-      const countItemName = getHtmlElement('p', 'drop-down__count-item-name', element.name);
-      const counterMenu = getHtmlElement('div', 'drop-down__counter-menu');
-      const countItemMinus = getHtmlElement('button', 'drop-down__counter-btn');
-      countItemMinus.classList.add('drop-down__counter-btn--minus');
-      countItemMinus.classList.add('drop-down__counter-btn--disabled');
-      countItemMinus.setAttribute('disabled', 'true');
-      const countItemView = getHtmlElement('p', 'drop-down__select-view', '0');
-      const countItemPlus = getHtmlElement('button', 'drop-down__counter-btn');
-      countItemPlus.classList.add('drop-down__counter-btn--plus');
-      countItemMinus.type = 'button';
-      countItemPlus.type = 'button';
-      let counter = 0;
-
-      if (element.minValue) {
-        counter = element.minValue;
-        countItemView.textContent = element.minValue;
-      }
-
-      countItemPlus.addEventListener('click', () => {
-        counter++;
-        countItemView.textContent = counter;
-        if (countItemMinus.classList.contains('drop-down__counter-btn--disabled')) {
-          countItemMinus.classList.remove('drop-down__counter-btn--disabled');
-          countItemMinus.removeAttribute('disabled');
-        }
-      });
-
-      countItemMinus.addEventListener('click', () => {
-        const minValue = element.minValue ? element.minValue : 0;
-        counter--;
-        countItemView.textContent = counter;
-        if (counter - 1 < minValue) {
-          countItemMinus.classList.add('drop-down__counter-btn--disabled');
-          countItemMinus.setAttribute('disabled', 'true');
-        }
-      });
-
-      counterMenu.appendChild(countItemMinus);
-      counterMenu.appendChild(countItemView);
-      counterMenu.appendChild(countItemPlus);
-      countItem.appendChild(countItemName);
-      countItem.appendChild(counterMenu);
+      const countItem = this.getCountItem(element);
       countListFragment.appendChild(countItem);
     });
+
     countList.appendChild(countListFragment);
     dropDownControl.appendChild(clearBtn);
     dropDownControl.appendChild(acceptBtn);
