@@ -43,9 +43,11 @@ class DropDown {
 
   getModifiedCountElements = () => {
     const modifiedCountElements = this.countElements.map((item, index) => {
-      const counter = item.minValue ? item.minValue : 0;
+      const minValue = item.minValue ? item.minValue : 0;
+      const counter = minValue;
       item.id = `${index}${getRandomNumber(1, 10000)}`;
       item.counter = counter;
+      item.minValue = minValue;
       return item;
     });
 
@@ -99,16 +101,11 @@ class DropDown {
     countItemPlus.classList.add('drop-down__counter-btn--plus');
     countItemMinus.type = 'button';
     countItemPlus.type = 'button';
-    let counter = 0;
-
-    if (element.minValue) {
-      counter = element.minValue;
-      countItemView.textContent = element.minValue;
-    }
+    countItemView.textContent = element.counter;
 
     countItemPlus.addEventListener('click', () => {
-      counter++;
-      countItemView.textContent = counter;
+      element.counter++;
+      countItemView.textContent = element.counter;
       if (countItemMinus.classList.contains('drop-down__counter-btn--disabled')) {
         countItemMinus.classList.remove('drop-down__counter-btn--disabled');
         countItemMinus.removeAttribute('disabled');
@@ -116,11 +113,10 @@ class DropDown {
     });
 
     countItemMinus.addEventListener('click', () => {
-      const minValue = element.minValue ? element.minValue : 0;
-      counter--;
-      countItemView.textContent = counter;
-      const nextDecrimentCounter = counter - 1;
-      if (nextDecrimentCounter < minValue) {
+      element.counter--;
+      countItemView.textContent = element.counter;
+      const nextDecrimentCounter = element.counter - 1;
+      if (nextDecrimentCounter < element.minValue) {
         countItemMinus.classList.add('drop-down__counter-btn--disabled');
         countItemMinus.setAttribute('disabled', 'true');
       }
