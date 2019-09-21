@@ -112,15 +112,10 @@ class DropDown {
       countItemMinus.addEventListener('click', () => {
         const minValue = element.minValue ? element.minValue : 0;
         counter--;
-        if (counter < minValue) {
+        countItemView.textContent = counter;
+        if (counter - 1 < minValue) {
           countItemMinus.classList.add('drop-down__counter-btn--disabled');
           countItemMinus.setAttribute('disabled', 'true');
-        } else {
-          countItemView.textContent = counter;
-          if (counter - 1 < minValue) {
-            countItemMinus.classList.add('drop-down__counter-btn--disabled');
-            countItemMinus.setAttribute('disabled', 'true');
-          }
         }
       });
 
