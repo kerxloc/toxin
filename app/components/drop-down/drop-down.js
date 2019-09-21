@@ -12,6 +12,11 @@ function getHtmlElement(tagName, className, text) {
   return element;
 }
 
+function getRandomNumber(min, max) {
+  const randomNumber = Math.floor(Math.random() * (+max - +min)) + +min;
+  return randomNumber;
+}
+
 class DropDown {
   constructor(options) {
     if (options.container) {
@@ -35,6 +40,17 @@ class DropDown {
       console.error('Expected countElements(Array) inside constructor object but not received');
     }
   }
+
+  getModifiedCountElements = () => {
+    const modifiedCountElements = this.countElements.map((item, index) => {
+      const counter = item.minValue ? item.minValue : 0;
+      item.id = `${index}${getRandomNumber(1, 10000)}`;
+      item.counter = counter;
+      return item;
+    });
+
+    return modifiedCountElements;
+  };
 
   show = () => {
     const isHaveClass = this.dropDownParent.classList.contains('drop-down--show');
@@ -119,6 +135,8 @@ class DropDown {
   };
 
   init = () => {
+    const modifiedCountElements = this.getModifiedCountElements();
+    this.countElements = modifiedCountElements;
     const dropDownParentWrap = getHtmlElement('div', 'drop-down__wrap');
     const countList = getHtmlElement('ul', 'drop-down__count-list');
     const dropDownControl = getHtmlElement('div', 'drop-down__control');
