@@ -43,6 +43,7 @@ class DropDown {
 
   getModifiedCountElements = () => {
     const modifiedCountElements = this.countElements.map((item, index) => {
+      console.log(item);
       const minValue = item.minValue ? item.minValue : 0;
       const counter = minValue;
       item.id = `${index}${getRandomNumber(1, 10000)}`;
@@ -88,6 +89,25 @@ class DropDown {
     }
   };
 
+  onClickClear = evt => {
+    evt.preventDefault();
+    this.discardCounter();
+  };
+
+  discardCounter = () => {
+    this.countElements.forEach(item => {
+      const viewCounter = this.dropDownParent.querySelector(`#view-${item.id}`);
+      viewCounter.textContent = item.minValue;
+      item.counter = item.minValue;
+    });
+
+    const minusButtons = this.dropDownParent.querySelectorAll('.drop-down__counter-btn--minus');
+    minusButtons.forEach(item => {
+      item.classList.add('drop-down__counter-btn--disabled');
+      item.setAttribute('disabled', 'true');
+    });
+  };
+
   getCountItem = element => {
     const countItem = getHtmlElement('li', 'drop-down__count-item');
     const countItemName = getHtmlElement('p', 'drop-down__count-item-name', element.name);
@@ -96,12 +116,13 @@ class DropDown {
     countItemMinus.classList.add('drop-down__counter-btn--minus');
     countItemMinus.classList.add('drop-down__counter-btn--disabled');
     countItemMinus.setAttribute('disabled', 'true');
-    const countItemView = getHtmlElement('p', 'drop-down__select-view', '0');
+    countItemMinus.type = 'button';
+    const countItemView = getHtmlElement('p', 'drop-down__select-view');
+    countItemView.textContent = element.counter;
+    countItemView.id = `view-${element.id}`;
     const countItemPlus = getHtmlElement('button', 'drop-down__counter-btn');
     countItemPlus.classList.add('drop-down__counter-btn--plus');
-    countItemMinus.type = 'button';
     countItemPlus.type = 'button';
-    countItemView.textContent = element.counter;
 
     countItemPlus.addEventListener('click', () => {
       element.counter++;
@@ -138,6 +159,7 @@ class DropDown {
     const dropDownControl = getHtmlElement('div', 'drop-down__control');
     const clearBtn = getHtmlElement('button', 'drop-down__button', 'Очистить');
     clearBtn.type = 'button';
+    clearBtn.addEventListener('click', this.onClickClear);
     const acceptBtn = getHtmlElement('button', 'drop-down__button', 'Применить');
     acceptBtn.type = 'button';
     acceptBtn.classList.add('drop-down__button--accent');
