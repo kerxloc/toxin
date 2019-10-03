@@ -128,7 +128,8 @@ class DropDown {
     countItemPlus.addEventListener('click', () => {
       element.counter++;
       countItemView.textContent = element.counter;
-      if (countItemMinus.classList.contains('drop-down__counter-btn--disabled')) {
+      const isMinusDisabled = countItemMinus.classList.contains('drop-down__counter-btn--disabled');
+      if (isMinusDisabled) {
         countItemMinus.classList.remove('drop-down__counter-btn--disabled');
         countItemMinus.removeAttribute('disabled');
       }
