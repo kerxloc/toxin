@@ -45,7 +45,6 @@ class DropDown {
 
   getModifiedCountElements = () => {
     const modifiedCountElements = this.countElements.map((item, index) => {
-      console.log(item);
       const minValue = item.minValue ? item.minValue : 0;
       const counter = minValue;
       item.id = `${index}${getRandomNumber(1, 10000)}`;
