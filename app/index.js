@@ -26,6 +26,7 @@ const dropDownOptions = {
   container: dropDownContainer,
   input: inputDropDown,
   countElements: [{ name: 'Взрослые' }, { name: 'Дети' }, { name: 'Младенцы' }],
+  placeholder: 'Cколько гостей',
 };
 
 const dropDown = new DropDown(dropDownOptions);
