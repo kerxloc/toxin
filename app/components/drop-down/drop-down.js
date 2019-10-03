@@ -28,7 +28,9 @@ class DropDown {
     }
 
     if (options.input) {
+      const placeholder = options.placeholder ? options.placeholder : 'Выберите элимент';
       this.input = options.input;
+      this.input.textContent = placeholder;
       this.input.addEventListener('click', this.show);
     } else {
       console.error('Expected input(node) inside constructor object but not received');
