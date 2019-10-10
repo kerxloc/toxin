@@ -107,6 +107,7 @@ class DropDown {
   onClickClear = evt => {
     evt.preventDefault();
     this.discardCounter();
+    this.discardViewCounter();
     this.input.textContent = this.placeholder;
   };
 
@@ -121,6 +122,12 @@ class DropDown {
     minusButtons.forEach(item => {
       item.classList.add('drop-down__counter-btn--disabled');
       item.setAttribute('disabled', 'true');
+    });
+  };
+
+  discardViewCounter = () => {
+    Object.keys(this.countGroupView).forEach(item => {
+      this.countGroupView[item].counter = 0;
     });
   };
 
