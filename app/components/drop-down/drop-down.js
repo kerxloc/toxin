@@ -29,6 +29,7 @@ class DropDown {
 
     if (options.input) {
       const placeholder = options.placeholder ? options.placeholder : 'Выберите элимент';
+      this.placeholder = placeholder;
       this.input = options.input;
       this.input.textContent = placeholder;
       this.input.addEventListener('click', this.show);
