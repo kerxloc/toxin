@@ -17,6 +17,13 @@ function getRandomNumber(min, max) {
   return randomNumber;
 }
 
+function declOfNum(number, titles) {
+  const cases = [2, 0, 1, 1, 1, 2];
+  return titles[
+    number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]
+  ];
+}
+
 class DropDown {
   constructor(options) {
     if (options.container) {
@@ -134,8 +141,12 @@ class DropDown {
     countItemPlus.type = 'button';
 
     countItemPlus.addEventListener('click', () => {
+      const groupView = this.countGroupView[element.countGroupName];
       element.counter++;
+      groupView.counter++;
       countItemView.textContent = element.counter;
+      const wordOfNum = declOfNum(groupView.counter, groupView.views);
+      this.input.textContent = `${groupView.counter} ${wordOfNum}`;
       const isMinusDisabled = countItemMinus.classList.contains('drop-down__counter-btn--disabled');
       if (isMinusDisabled) {
         countItemMinus.classList.remove('drop-down__counter-btn--disabled');
@@ -144,12 +155,20 @@ class DropDown {
     });
 
     countItemMinus.addEventListener('click', () => {
+      const groupView = this.countGroupView[element.countGroupName];
       element.counter--;
+      groupView.counter--;
       countItemView.textContent = element.counter;
+      const wordOfNum = declOfNum(groupView.counter, groupView.views);
+      this.input.textContent = `${groupView.counter} ${wordOfNum}`;
       const nextDecrimentCounter = element.counter - 1;
       if (nextDecrimentCounter < element.minValue) {
         countItemMinus.classList.add('drop-down__counter-btn--disabled');
         countItemMinus.setAttribute('disabled', 'true');
+      }
+
+      if (groupView.counter === 0) {
+        this.input.textContent = this.placeholder;
       }
     });
 
