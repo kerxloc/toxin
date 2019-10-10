@@ -41,6 +41,12 @@ class DropDown {
     } else {
       console.error('Expected countElements(Array) inside constructor object but not received');
     }
+
+    if (options.countGroupView) {
+      this.countGroupView = options.countGroupView;
+    } else {
+      console.error('Expected countGroupView(Array) inside constructor object but not received');
+    }
   }
 
   getModifiedCountElements = () => {
