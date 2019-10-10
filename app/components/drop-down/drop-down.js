@@ -100,6 +100,7 @@ class DropDown {
   onClickClear = evt => {
     evt.preventDefault();
     this.discardCounter();
+    this.input.textContent = this.placeholder;
   };
 
   discardCounter = () => {
