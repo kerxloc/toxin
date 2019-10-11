@@ -132,27 +132,20 @@ class DropDown {
     });
   };
 
-  renderViewCount = countGroupName => {
-    const isWordMulty = Object.keys(this.countGroupView).every(item => {
-      return this.countGroupView[item].counter > 0;
-    });
-    if (isWordMulty) {
-      let wordOfNum = '';
-      Object.keys(this.countGroupView).forEach((item, index) => {
+  renderViewCount = () => {
+    let wordOfNum = '';
+    Object.keys(this.countGroupView).forEach((item, index) => {
+      if (this.countGroupView[item].counter > 0) {
         const currentCounterGroup = this.countGroupView[item];
         const currentCounter = currentCounterGroup.counter;
         const currentWord = declOfNum(currentCounter, currentCounterGroup.views);
-        if (index > 0) {
+        if (index > 0 && wordOfNum.length > 1) {
           wordOfNum += ', ';
         }
         wordOfNum += `${currentCounter} ${currentWord}`;
-      });
-      this.input.textContent = wordOfNum;
-    } else {
-      const groupView = this.countGroupView[countGroupName];
-      const wordOfNum = declOfNum(groupView.counter, groupView.views);
-      this.input.textContent = `${groupView.counter} ${wordOfNum}`;
-    }
+      }
+    });
+    this.input.textContent = wordOfNum;
   };
 
   getCountItem = element => {
@@ -176,7 +169,7 @@ class DropDown {
       element.counter++;
       groupView.counter++;
       countItemView.textContent = element.counter;
-      this.renderViewCount(element.countGroupName);
+      this.renderViewCount();
       const isMinusDisabled = countItemMinus.classList.contains('drop-down__counter-btn--disabled');
       if (isMinusDisabled) {
         countItemMinus.classList.remove('drop-down__counter-btn--disabled');
@@ -193,21 +186,14 @@ class DropDown {
       if (nextDecrimentCounter < element.minValue) {
         countItemMinus.classList.add('drop-down__counter-btn--disabled');
         countItemMinus.setAttribute('disabled', 'true');
-      } else {
-        this.renderViewCount(element.countGroupName);
       }
-
+      this.renderViewCount();
       if (groupView.counter === 0) {
         const isCounterGroupClear = Object.keys(this.countGroupView).every(item => {
           return this.countGroupView[item].counter === 0;
         });
         if (isCounterGroupClear) {
           this.input.textContent = this.placeholder;
-        } else {
-          const wordOfNum = declOfNum(groupView.counter + 1, groupView.views);
-          const inputWord = `${groupView.counter + 1} ${wordOfNum}`;
-          const newInputWord = this.input.textContent.replace(inputWord, '');
-          this.input.textContent = newInputWord;
         }
       }
     });
