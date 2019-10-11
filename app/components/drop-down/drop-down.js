@@ -75,6 +75,7 @@ class DropDown {
     const isHaveClass = this.dropDownParent.classList.contains('drop-down--show');
     if (!isHaveClass) {
       this.dropDownParent.classList.add('drop-down--show');
+      this.input.classList.add('input-group__input--active');
       window.addEventListener('mouseup', this.onClickHide);
       window.addEventListener('keyup', this.onPressHide);
     }
@@ -84,6 +85,7 @@ class DropDown {
     const isHaveClass = this.dropDownParent.classList.contains('drop-down--show');
     if (isHaveClass) {
       this.dropDownParent.classList.remove('drop-down--show');
+      this.input.classList.remove('input-group__input--active');
       window.removeEventListener('mouseup', this.onClickHide);
       window.removeEventListener('keyup', this.onPressHide);
     }

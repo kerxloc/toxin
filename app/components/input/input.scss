@@ -57,6 +57,10 @@
     cursor: pointer;
   }
 
+  &--active {
+    border-color: transparentize($contentColor, 0.5);
+  }
+
   &::placeholder {
     color: transparentize($contentColor, 0.25);
     font-size: 14px;
