@@ -218,6 +218,7 @@ class DropDown {
     const acceptBtn = getHtmlElement('button', 'drop-down__button', 'Применить');
     acceptBtn.type = 'button';
     acceptBtn.classList.add('drop-down__button--accent');
+    acceptBtn.addEventListener('click', this.hide);
     const countListFragment = document.createDocumentFragment();
 
     this.countElements.forEach(element => {
