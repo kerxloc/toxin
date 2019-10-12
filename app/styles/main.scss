@@ -10,28 +10,17 @@ body {
 
 .container {
   position: relative;
-  flex: 0 0 auto;
-  width: 100%;
-  max-width: $desktopWidth;
+  width: 80.5556%;
+  max-width: 1920px;
+  min-width: 320px;
   margin: 0 auto;
   padding: 0 10px;
-
-  @media screen and (max-width: $smDesktopWidth) {
-    max-width: $tableWidth;
-  }
-
-  @media screen and (max-width: $tableWidth) {
-    max-width: $phoneWidth;
-  }
-
-  @media screen and (max-width: $phoneWidth) {
-    max-width: $smPhoneWidth;
-  }
 }
 
 .index-block {
   box-sizing: border-box;
   height: 830px;
+  background-size: cover;
   background-image: url('../images/interior.jpg');
   background-repeat: no-repeat;
   background-position: center -69px;
