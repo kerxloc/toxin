@@ -23,7 +23,6 @@ body {
   background-image: url('../images/interior.jpg');
   background-repeat: no-repeat;
   background-position: center -69px;
-  background-size: cover;
 }
 
 .index-block__wrap {
@@ -44,6 +43,12 @@ body {
     font-size: 14px;
     line-height: 24px;
     text-align: right;
+  }
+}
+
+@media (min-width: 1440px) {
+  .index-block {
+    background-size: cover;
   }
 }
 
