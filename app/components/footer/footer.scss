@@ -68,6 +68,18 @@
   margin-right: 3.5%;
 }
 
+@media (max-width: 1100px) {
+  .page-footer__col-group {
+    flex-wrap: wrap;
+
+    .page-footer__col {
+      box-sizing: border-box;
+      width: 50%;
+      margin-bottom: 40px;
+    }
+  }
+}
+
 @media (width: 1440px) {
   .page-footer__col {
     &:nth-child(2) {
