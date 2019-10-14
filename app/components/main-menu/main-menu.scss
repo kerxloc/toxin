@@ -15,6 +15,8 @@
 .main-menu__burger-icon {
   position: relative;
   width: 25px;
+  height: 16px;
+  cursor: pointer;
 
   span {
     position: absolute;
@@ -24,12 +26,12 @@
     vertical-align: top;
     background-color: $contentColor;
 
-    &:first-child {
+    &:nth-child(2) {
       top: 7px;
     }
 
     &:last-child {
-      top: -7px;
+      top: 14px;
     }
   }
 }
