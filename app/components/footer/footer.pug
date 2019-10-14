@@ -13,38 +13,39 @@ mixin footer()
           div(class='page-footer__col  page-footer__col--large')
             +logo()
             +textContent({ text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»' })
-          .page-footer__col
-            +navMenu({ 
-              title: 'Навигация',
-              list: [
-                { label: 'О нас', path: '#' },
-                { label: 'Новости', path: '#' },
-                { label: 'Служба поддержки', path: '#' },
-                { label: 'Услуги', path: '#' }
-              ]
-            })
-          .page-footer__col
-            +navMenu({ 
-              title: 'О нас',
-              list: [
-                { label: 'О сервисе', path: '#' },
-                { label: 'Наша команда', path: '#' },
-                { label: 'Вакансии', path: '#' },
-                { label: 'Инвесторы', path: '#' }
-              ]
-            })
-          .page-footer__col
-            +navMenu({ 
-              title: 'Служба поддержки',
-              list: [
-                { label: 'Соглашения', path: '#' },
-                { label: 'Сообщества', path: '#' },
-                { label: 'Связь с нами', path: '#' }
-              ]
-            })
-          div(class='page-footer__col  page-footer__col--large')
-            +textContent({ title: 'Подписка', text: 'Получайте специальные предложения и новости сервиса' })
-            +input({ isButtonSplit: true, iconSrc: 'arrow_forward.svg', type: 'email', placeholder: 'Email', isRightSplitAnimation: true })
+          .page-footer__col-group
+            .page-footer__col
+              +navMenu({ 
+                title: 'Навигация',
+                list: [
+                  { label: 'О нас', path: '#' },
+                  { label: 'Новости', path: '#' },
+                  { label: 'Служба поддержки', path: '#' },
+                  { label: 'Услуги', path: '#' }
+                ]
+              })
+            .page-footer__col
+              +navMenu({ 
+                title: 'О нас',
+                list: [
+                  { label: 'О сервисе', path: '#' },
+                  { label: 'Наша команда', path: '#' },
+                  { label: 'Вакансии', path: '#' },
+                  { label: 'Инвесторы', path: '#' }
+                ]
+              })
+            .page-footer__col
+              +navMenu({ 
+                title: 'Служба поддержки',
+                list: [
+                  { label: 'Соглашения', path: '#' },
+                  { label: 'Сообщества', path: '#' },
+                  { label: 'Связь с нами', path: '#' }
+                ]
+              })
+            div(class='page-footer__col  page-footer__col--large')
+              +textContent({ title: 'Подписка', text: 'Получайте специальные предложения и новости сервиса' })
+              +input({ isButtonSplit: true, iconSrc: 'arrow_forward.svg', type: 'email', placeholder: 'Email', isRightSplitAnimation: true })
         .page-footer__side-info
           +copyright({ year: 2018 })
           +socialButtons()
