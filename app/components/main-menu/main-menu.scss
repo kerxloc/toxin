@@ -25,6 +25,7 @@
     height: 2px;
     vertical-align: top;
     background-color: $contentColor;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
 
     &:nth-child(2) {
       top: 7px;
