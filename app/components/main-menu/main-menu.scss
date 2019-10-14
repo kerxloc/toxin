@@ -39,7 +39,7 @@
 .main-menu__burger-icon--active {
   span {
     &:first-child {
-      transform: rotate(45deg) translate(-7px, -5px);
+      transform: rotate(45deg) translate(7px, 3px);
     }
 
     &:nth-child(2) {
@@ -47,7 +47,7 @@
     }
 
     &:last-child {
-      transform: rotate(-45deg) translate(-5px, 3px);
+      transform: rotate(-45deg) translate(7px, -3px);
     }
   }
 }
