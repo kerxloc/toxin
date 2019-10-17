@@ -164,3 +164,69 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .main-menu {
+    order: 3;
+    margin-left: 0;
+
+    nav {
+      position: absolute;
+      bottom: -290px;
+      left: -48px;
+      display: none;
+      width: 100vw;
+      background: $mainColor;
+    }
+
+    &--active {
+      nav {
+        display: block;
+      }
+    }
+  }
+
+  .main-menu__sub-menu {
+    top: 45px;
+    transform: translate(0, 0);
+  }
+
+  .main-menu__item {
+    width: 100%;
+
+    &:last-child {
+      margin-right: auto;
+    }
+  }
+
+  .main-menu__item > a {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    vertical-align: top;
+    border-top: 1px solid transparentize($contentColor, 0.75);
+  }
+
+  .main-menu__list {
+    flex-direction: column;
+  }
+
+  .main-menu__burger-icon {
+    display: block;
+  }
+
+  .main-menu__item--sub-menu {
+    &::after {
+      display: none;
+    }
+
+    > a {
+      &::after {
+        top: 48.5%;
+        right: auto;
+        margin-left: 10px;
+      }
+    }
+  }
+}
