@@ -52,6 +52,10 @@
   opacity: 0.5;
 }
 
+.page-header__auth-profile {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .page-header__auth {
     order: 2;
