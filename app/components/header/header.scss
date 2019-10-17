@@ -33,7 +33,9 @@
 }
 
 .page-header__auth-list {
-  display: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .page-header__auth .button {
@@ -80,10 +82,13 @@
     padding: 0;
     list-style: none;
     background: $mainColor;
-    transform: translateX(-50%);
+    transform: translate(-50%, -20px);
+    transition: all 0.2s ease-out;
 
     &--active {
-      display: list-item;
+      transform: translate(-50%, 0);
+      visibility: visible;
+      opacity: 1;
     }
 
     .page-header__auth-item {
