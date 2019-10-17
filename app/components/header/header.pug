@@ -37,5 +37,12 @@ mixin header( options = {} )
           if options.userName
             p.page-header__user-name= options.userName
           else
-            +button({ title: 'Войти', path: '#', isEmptyStyle: true })
-            +button({ title: 'Зарегистрироваться', path: '#' })
+            .page-header__auth-buttons
+              +button({ title: 'Войти', path: '#', isEmptyStyle: true })
+              +button({ title: 'Зарегистрироваться', path: '#' })
+            ul.page-header__auth-list
+              li.page-header__auth-item
+                a Войти
+              li.page-header__auth-item
+                a Зарегистрироваться
+            button(id="authProfile" class="page-header__auth-profile" type="button")

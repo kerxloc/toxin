@@ -5,6 +5,7 @@
 }
 
 .page-header__wrap {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   padding: 17px 0 16px;
@@ -31,6 +32,10 @@
   }
 }
 
+.page-header__auth-list {
+  display: none;
+}
+
 .page-header__auth .button {
   margin-right: 20px;
 
@@ -43,4 +48,60 @@
   margin: 0;
   color: $contentColor;
   opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+  .page-header__auth {
+    position: relative;
+    order: 2;
+    margin-left: auto;
+  }
+
+  .page-header__auth-profile {
+    position: absolute;
+    left: -40px;
+    display: block;
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    background: url('./user.svg');
+    border: none;
+    content: '';
+
+    &--hide {
+      display: none;
+    }
+  }
+
+  .page-header__auth-list {
+    position: absolute;
+    bottom: -144px;
+    left: -92.5vw;
+    width: 100vw;
+    padding: 0;
+    list-style: none;
+    background: $mainColor;
+
+    &--active {
+      display: list-item;
+    }
+
+    .page-header__auth-item {
+      width: 100%;
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+      padding: 20px 0;
+      color: transparentize($contentColor, 0.5);
+      text-align: center;
+      vertical-align: top;
+      border-top: 1px solid transparentize($contentColor, 0.75);
+    }
+  }
+
+  .page-header__auth-buttons {
+    display: none;
+  }
 }
