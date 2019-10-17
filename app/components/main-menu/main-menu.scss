@@ -174,15 +174,19 @@
       position: absolute;
       top: 71px;
       left: 50%;
-      display: none;
       width: 100vw;
+      overflow: hidden;
       background: $mainColor;
-      transform: translateX(-50%);
+      transform: translate(-50%, -10px);
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
     }
 
     &--active {
       nav {
-        display: block;
+        transform: translate(-50%, 0);
+        visibility: visible;
+        opacity: 1;
       }
     }
   }
