@@ -172,11 +172,12 @@
 
     nav {
       position: absolute;
-      bottom: -290px;
-      left: -48px;
+      top: 71px;
+      left: 50%;
       display: none;
       width: 100vw;
       background: $mainColor;
+      transform: translateX(-50%);
     }
 
     &--active {

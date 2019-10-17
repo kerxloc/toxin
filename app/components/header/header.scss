@@ -52,14 +52,13 @@
 
 @media (max-width: 1024px) {
   .page-header__auth {
-    position: relative;
     order: 2;
     margin-left: auto;
   }
 
   .page-header__auth-profile {
     position: absolute;
-    left: -40px;
+    right: 40px;
     display: block;
     box-sizing: border-box;
     width: 24px;
@@ -75,12 +74,13 @@
 
   .page-header__auth-list {
     position: absolute;
-    bottom: -144px;
-    left: -92.5vw;
+    top: 57px;
+    left: 50%;
     width: 100vw;
     padding: 0;
     list-style: none;
     background: $mainColor;
+    transform: translateX(-50%);
 
     &--active {
       display: list-item;
