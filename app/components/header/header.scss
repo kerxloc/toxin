@@ -86,8 +86,8 @@
     padding: 0;
     list-style: none;
     background: $mainColor;
-    transform: translate(-50%, -20px);
-    transition: all 0.2s ease-out;
+    transform: translate(-50%, -10px);
+    transition: all 0.3s ease-in-out;
 
     &--active {
       transform: translate(-50%, 0);
