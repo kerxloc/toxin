@@ -64,3 +64,36 @@
   font-size: 24px;
   line-height: 30px;
 }
+
+@media (max-width: 380px) {
+  .date-wishes {
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+  }
+
+  .date-wishes__group {
+    .input-group {
+      margin-right: 20px;
+
+      &:nth-child(2) {
+        margin-right: 0;
+      }
+    }
+
+    .input-group__input--button-split {
+      width: 100%;
+    }
+
+    .input-group__button-split {
+      width: 28%;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .date-wishes {
+    margin: 0 auto;
+  }
+}
