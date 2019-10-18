@@ -32,3 +32,18 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .nav-menu__title {
+    padding-bottom: 10px;
+    border-bottom: 2px solid $contentColor;
+  }
+
+  .nav-menu__item {
+    a {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+    }
+  }
+}
