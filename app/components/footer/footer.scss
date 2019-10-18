@@ -182,6 +182,31 @@
   }
 }
 
+@media (max-width: 555px) {
+  .page-footer {
+    &::after {
+      bottom: 120px;
+    }
+  }
+
+  .page-footer__side-info {
+    flex-direction: column;
+
+    .copyright {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 394px) {
+  .page-footer {
+    &::after {
+      bottom: 135px;
+    }
+  }
+}
+
 @media (max-width: 425px) {
   .page-footer__wrap {
     padding-right: 20px;
