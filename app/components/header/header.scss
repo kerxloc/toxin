@@ -71,6 +71,7 @@
     height: 24px;
     background: url('./user.svg');
     border: none;
+    cursor: pointer;
     content: '';
 
     &--hide {
