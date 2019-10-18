@@ -46,16 +46,6 @@ body {
   }
 }
 
-@media (max-width: 420px) {
-  .index-block {
-    .container {
-      width: auto;
-      margin: 0;
-      padding: 0;
-    }
-  }
-}
-
 @media (max-width: 1300px) {
   .container {
     width: 90.5556%;
@@ -65,6 +55,14 @@ body {
 @media (min-width: 1440px) {
   .index-block {
     background-size: cover;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    width: auto;
+    margin: 0;
+    padding: 0;
   }
 }
 
