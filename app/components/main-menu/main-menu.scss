@@ -175,9 +175,9 @@
       top: 71px;
       left: 50%;
       width: 100vw;
-      overflow: hidden;
       background: $mainColor;
       transform: translate(-50%, -10px);
+      visibility: hidden;
       opacity: 0;
       transition: all 0.3s ease-in-out;
     }
