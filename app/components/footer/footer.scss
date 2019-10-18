@@ -83,7 +83,25 @@
 
       &:last-child {
         margin-bottom: 0;
+
+        .text-content {
+          width: 85%;
+        }
+
+        .input-group__input {
+          width: 83.07%;
+        }
       }
+    }
+  }
+
+  .page-footer__content > .page-footer__col {
+    box-sizing: border-box;
+    width: 240px;
+    margin-right: 14%;
+
+    .text-content {
+      width: 100%;
     }
   }
 
