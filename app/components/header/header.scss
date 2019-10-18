@@ -62,6 +62,10 @@
     margin-left: auto;
   }
 
+  .page-header__auth > .button {
+    display: none;
+  }
+
   .page-header__auth-profile {
     position: absolute;
     right: 40px;
@@ -111,9 +115,5 @@
       vertical-align: top;
       border-top: 1px solid transparentize($contentColor, 0.75);
     }
-  }
-
-  .page-header__auth-buttons {
-    display: none;
   }
 }
