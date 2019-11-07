@@ -140,3 +140,10 @@
     }
   }
 }
+
+@media (max-width: 380px) {
+  .drop-down {
+    width: 100%;
+    margin-left: -50%;
+  }
+}
