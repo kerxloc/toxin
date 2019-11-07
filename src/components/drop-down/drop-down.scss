@@ -1,6 +1,6 @@
 .drop-down {
   position: absolute;
-  top: 50%;
+  top: 198px;
   left: 50%;
   z-index: 100;
   box-sizing: border-box;
@@ -87,7 +87,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    content: '+';
+    content: "+";
   }
 
   &--minus::after {
@@ -96,7 +96,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    content: '-';
+    content: "-";
   }
 
   &--disabled {
