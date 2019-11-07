@@ -1,6 +1,7 @@
-@import 'utils/normolize';
-@import 'utils/variables';
-@import 'fonts';
+@import "utils/normolize";
+@import "utils/variables";
+@import "_fonts";
+
 
 body {
   color: $contentColor;
@@ -20,7 +21,7 @@ body {
 .index-block {
   box-sizing: border-box;
   height: 830px;
-  background-image: url('../images/interior.jpg');
+  background-image: url('./interior.jpg');
   background-repeat: no-repeat;
   background-position: center -69px;
 }
@@ -70,10 +71,10 @@ body {
   }
 }
 
-@import '../components/header/header';
-@import '../components/logo/logo';
-@import '../components/main-menu/main-menu';
-@import '../components/button/button';
+@import "../components/header/header";
+@import "../components/logo/logo";
+@import "../components/main-menu/main-menu";
+@import "../components/button/button";
 @import '../components/text-content/text-content';
 @import '../components/nav-menu/nav-menu';
 @import '../components/input/input';
@@ -83,3 +84,4 @@ body {
 @import '../components/date-picker/date-picker';
 @import '../components/drop-down/drop-down';
 @import '../components/footer/footer';
+

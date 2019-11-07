@@ -1,13 +1,7 @@
-/* eslint-disable global-require */
-import './styles/main.scss';
+import './style/main.scss';
 import DatePicker from './components/date-picker/date-picker';
 import DropDown from './components/drop-down/drop-down';
 import './components/main-menu/main-menu';
-
-if (process.env.NODE_ENV !== 'production') {
-  require('./index.pug');
-  require('./pages/about.pug');
-}
 
 const datePickerDomInfo = {
   parentNodeId: 'date-picker-container',

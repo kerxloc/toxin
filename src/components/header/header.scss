@@ -27,7 +27,7 @@
       height: 30px;
       background: $contentColor;
       opacity: 0.1;
-      content: '';
+      content: "";
     }
   }
 }
@@ -73,10 +73,10 @@
     box-sizing: border-box;
     width: 24px;
     height: 24px;
-    background: url('./user.svg');
+    background: url("../components/header/user.svg");
     border: none;
     cursor: pointer;
-    content: '';
+    content: "";
 
     &--hide {
       display: none;
@@ -118,7 +118,6 @@
       text-decoration: none;
       vertical-align: top;
       border-top: 1px solid transparentize($contentColor, 0.75);
-
 
       &:hover {
         color: darken($accentColor, 10%);

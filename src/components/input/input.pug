@@ -36,7 +36,7 @@ mixin input(options = {})
       p.input-group__split
         input(id=`${options.id}` class=inputClass type=options.type name=options.name placeholder=options.placeholder)
         button(id=`${options.splitId}` class=`${splitButtonClass}` type='button')
-          img(src=`components/input/${options.iconSrc}`, alt="")
+          img(src=`../components/input/${options.iconSrc}`, alt="")
   else
     p(class=inputGroupClass)
       if options.labelName

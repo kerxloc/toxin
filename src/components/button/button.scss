@@ -23,11 +23,14 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(darken($accentColor, 10%), darken($accentGradColor, 10%));
+    background-image: linear-gradient(
+      darken($accentColor, 10%),
+      darken($accentGradColor, 10%)
+    );
     border-radius: inherit;
     opacity: 0;
     transition: opacity 0.4s ease;
-    content: '';
+    content: "";
   }
 
   &:hover {
@@ -62,13 +65,13 @@
         &:first-of-type {
           opacity: 1;
           fill: transparent;
-          stroke: url('#linearGradient-1');
+          stroke: url("#linearGradient-1");
           stroke-width: 7;
         }
 
         &.icon--plain {
           opacity: 0;
-          stroke: url('#linearGradient-1');
+          stroke: url("#linearGradient-1");
           stroke-width: 7;
         }
       }
@@ -108,10 +111,10 @@
     width: 44px;
     height: 44px;
     margin-top: -22px;
-    background: url('./arrow_forward.svg') no-repeat;
+    background: url("../components/button/arrow_forward.svg") no-repeat;
     background-position: center center;
     transition: background 0.2s ease;
-    content: '';
+    content: "";
   }
 
   &:active {

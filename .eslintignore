@@ -1,9 +1,0 @@
-build/**/*.js
-dist/**/*.js
-static/**/*.js
-/.git
-/.vscode
-node_modules
-prettier.config.js
-webpack.config.js
-webpack.parts.js
