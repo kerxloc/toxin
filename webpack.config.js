@@ -1,9 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const autoprefixer = require("autoprefixer");
 
 module.exports = {
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist",
     hot: true
@@ -37,7 +38,21 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              plugins: [
+                autoprefixer({
+                  browsers: ["ie >= 8", "last 4 version"]
+                })
+              ]
+            }
+          },
+          "sass-loader"
+        ]
       },
       {
         test: /\.pug$/,
