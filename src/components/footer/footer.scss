@@ -12,6 +12,12 @@
   }
 }
 
+.page-footer {
+  .input-group__input--button-split::placeholder {
+    color: transparentize($contentColor, 0.76) !important;
+  }
+}
+
 .page-footer__content {
   display: flex;
   padding: 101px 0 75px;
