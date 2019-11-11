@@ -12,6 +12,9 @@
   &:focus {
     .input-group__input {
       border-color: transparentize($contentColor, 0.25);
+      &::placeholder {
+        color: transparentize($contentColor, 0.25);
+      }
     }
 
     .input-group__button-split {
@@ -28,7 +31,7 @@
 .input-group__descr {
   margin: 0;
   padding-bottom: 4px;
-  color: transparentize($contentColor, 0.65);
+  color: transparentize($contentColor, 0.55);
   font-family: Montserrat;
   font-size: 12px;
   line-height: 15px;
@@ -86,6 +89,7 @@
     color: transparentize($contentColor, 0.76);
     font-family: Montserrat;
     font-size: 14px;
+    transition: color 0.4s ease;
   }
 
   &:hover,
