@@ -8,13 +8,14 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  padding: 17px 0 16px;
+  padding: 17px 0 15px;
 }
 
 .page-header__auth {
   display: flex;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 22px;
+  padding-bottom: 1px;
 
   &--is-auth {
     position: relative;
@@ -42,8 +43,10 @@
 .page-header__auth .button {
   margin-right: 20px;
 
-  &:last-child {
+  &:nth-child(2) {
     margin-right: 0;
+    padding-left: 18px;
+    letter-spacing: 0.3px;
   }
 }
 
