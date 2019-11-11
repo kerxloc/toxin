@@ -9,6 +9,10 @@ module.exports = {
     contentBase: "./dist",
     hot: true
   },
+  entry: {
+    index: "./src/index.js",
+    "form-elements": "./src/page/form-elements.js"
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js"
@@ -63,7 +67,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "./src/page/index.pug"
+      template: "./src/page/index.pug",
+      chunks: ["index"]
     }),
     new HtmlWebpackPlugin({
       filename: "rooms.html",
@@ -71,7 +76,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "form-elements.html",
-      template: "./src/page/form-elements.pug"
+      template: "./src/page/form-elements.pug",
+      chunks: ["form-elements"]
     })
   ]
 };
