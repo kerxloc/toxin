@@ -1,1 +1,9 @@
 extends ../layout/ui-kit.pug
+include ../components/input/input
+
+block content
+  .container
+    .ui-kit
+      .ui-kit__wrap
+        .ui-kit__inputs
+          +input({ id:'textField', type: 'text', placeholder: 'Email', labelName: 'Text field', isBigLabel: true })
