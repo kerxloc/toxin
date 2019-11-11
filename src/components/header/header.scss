@@ -65,6 +65,17 @@
   .page-header__auth {
     order: 2;
     margin-left: auto;
+
+    &--is-auth {
+      margin-right: 20px;
+      padding-left: 0;
+      padding-right: 20px;
+
+      &::before {
+        left: auto;
+        right: 0;
+      }
+    }
   }
 
   .page-header__auth > .button {
@@ -140,5 +151,15 @@
 
   .page-header__auth-profile {
     right: 60px;
+  }
+}
+
+@media (max-width: 380px) {
+  .page-header__auth--is-auth {
+    margin-right: 10px;
+    padding-right: 0;
+    &::before {
+      display: none;
+    }
   }
 }
