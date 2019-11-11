@@ -12,12 +12,6 @@
   }
 }
 
-.page-footer {
-  .input-group__input--button-split::placeholder {
-    color: transparentize($contentColor, 0.76) !important;
-  }
-}
-
 .page-footer__content {
   display: flex;
   padding: 101px 0 75px;
@@ -64,10 +58,6 @@
 
 .page-footer .input-group__input--button-split {
   width: 216px;
-}
-
-.page-footer .input-group__input::placeholder {
-  color: transparentize($contentColor, 0.55);
 }
 
 .page-footer__col--large:first-child {

@@ -71,9 +71,8 @@
   }
 
   &::placeholder {
-    color: transparentize($contentColor, 0.25);
+    color: transparentize($contentColor, 0.76);
     font-size: 14px;
-    // line-height: 14px;
   }
 
   &:hover,
@@ -83,6 +82,12 @@
     + .input-group__button-split {
       border-color: transparentize($contentColor, 0.25);
     }
+  }
+}
+
+.input-group__input--dark-placeholder {
+  &::placeholder {
+    color: transparentize($contentColor, 0.25);
   }
 }
 

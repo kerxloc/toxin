@@ -8,6 +8,10 @@ mixin input(options = {})
       inputClass += "  input-group__input--button-split"
     }
 
+    if (options.isDarkPlaceholder) {
+      inputClass += "  input-group__input--dark-placeholder"
+    }
+
     if (options.isHaveIcon) {
       inputClass += "  input-group__input--icon"
     }
