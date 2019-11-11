@@ -42,7 +42,9 @@ mixin input(options = {})
         button(id=`${options.splitId}` class=`${splitButtonClass}` type='button')
           img(src=`../components/input/${options.iconSrc}`, alt="")
   else
-    p(class=inputGroupClass)
+    div(class=inputGroupClass)
       if options.labelName
         label(class=labelClass for=`${options.id}`)= options.labelName
+      if options.descrText
+        p.input-group__descr= options.descrText
       input(id=`${options.id}` class=inputClass type=options.type name=options.name placeholder=options.placeholder)

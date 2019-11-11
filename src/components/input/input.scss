@@ -3,7 +3,9 @@
   margin: 0;
 
   &--column {
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   &:hover,
@@ -21,6 +23,16 @@
 .input-group__label {
   margin: 0;
   margin-bottom: 5px;
+}
+
+.input-group__descr {
+  margin: 0;
+  padding-bottom: 4px;
+  color: transparentize($contentColor, 0.65);
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
 }
 
 .input-group__label--big {
