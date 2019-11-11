@@ -16,6 +16,10 @@ mixin input(options = {})
       inputClass += "  input-group__input--icon"
     }
 
+    if (options.isHover) {
+      inputClass += "  input-group__input--hover"
+    }
+
     var splitButtonClass = "input-group__button-split"
 
     if (options.isDownSplitAnimation) {

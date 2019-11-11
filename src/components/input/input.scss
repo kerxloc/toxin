@@ -85,6 +85,14 @@
     border-color: transparentize($contentColor, 0.5);
   }
 
+  &--hover {
+    border-color: transparentize($contentColor, 0.25);
+
+    &::placeholder {
+      color: transparentize($contentColor, 0.25) !important;
+    }
+  }
+
   &::placeholder {
     color: transparentize($contentColor, 0.76);
     font-family: Montserrat;
