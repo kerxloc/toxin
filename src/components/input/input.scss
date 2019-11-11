@@ -23,6 +23,15 @@
   margin-bottom: 5px;
 }
 
+.input-group__label--big {
+  font-size: 12px;
+  line-height: 15px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .input-group__split {
   display: flex;
   margin: 0;
