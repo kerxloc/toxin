@@ -14,3 +14,22 @@
     }
   }
 }
+
+.ui-kit__inputs-column {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 43px;
+
+  .input-group {
+    margin-bottom: 0;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .input-group__button-split {
+    width: 66px;
+  }
+}
