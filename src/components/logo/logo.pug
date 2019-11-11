@@ -1,6 +1,6 @@
 mixin logo(options = {})
   if (options.isBig) 
-    .logo
+    div(class="logo logo--big")
       img(width="48" height="48" src="../components/logo/logo--big.png", alt="toxin")
   else
     div(class="logo")
