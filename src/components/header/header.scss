@@ -34,6 +34,7 @@
 
 .page-header__auth-list {
   position: absolute;
+  display: none;
   visibility: hidden;
   opacity: 0;
 }
@@ -87,6 +88,7 @@
     position: absolute;
     top: 57px;
     left: 50%;
+    display: block;
     width: 100vw;
     padding: 0;
     list-style: none;
