@@ -70,6 +70,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "rooms.html",
       template: "./src/page/rooms.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "form-elements.html",
+      template: "./src/page/form-elements.pug"
     })
   ]
 };
