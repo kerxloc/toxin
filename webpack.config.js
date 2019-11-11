@@ -11,7 +11,7 @@ module.exports = {
   },
   entry: {
     index: "./src/index.js",
-    "form-elements": "./src/page/form-elements.js"
+    "form-elements": "./src/form-elements.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
