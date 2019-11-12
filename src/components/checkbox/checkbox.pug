@@ -2,3 +2,7 @@ mixin checkbox(options = {})
   .checkbox
     if options.title
      p.checkbox__title= options.title
+    each item in options.items
+      p.checkbox__item
+        input(id=item.id type="checkbox" checked=item.isChecked)
+        label(for=item.id)= item.title
