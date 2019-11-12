@@ -1,0 +1,73 @@
+.radiobtn__title {
+  margin: 0;
+  margin-bottom: 18px;
+  font-size: 12px;
+  line-height: 15px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.radiobtn__item {
+  display: inline-block;
+  margin: 0;
+  margin-right: 16px;
+  vertical-align: top;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.radiobtn__item input[type="radio"] {
+  display: none;
+}
+
+.radiobtn__item label {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  color: transparentize($contentColor, 0.55);
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  cursor: pointer;
+
+  &::before {
+    box-sizing: border-box;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-color: transparent;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 50%;
+    transition: border 0.3s ease 0s;
+  }
+
+  &::after {
+    content: "";
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, $accentColor 0%, $accentGradColor 100%);
+    transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+  }
+}
+
+.radiobtn__item input[type="radio"]:checked + label::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.radiobtn__item input[type="radio"]:checked + label::before {
+  border-color: $accentColor;
+}
