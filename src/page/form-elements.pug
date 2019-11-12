@@ -1,6 +1,7 @@
 extends ../layout/ui-kit.pug
 include ../components/input/input
 include ../components/checkbox/checkbox
+include ../components/radiobtn/radiobtn
 
 block content
   .container
@@ -26,5 +27,13 @@ block content
                 { id: "smoke", title: "Можно курить" },
                 { id: "pets", title: "Можно с питомцами", isChecked: true },
                 { id: "guest", title: "Можно пригласить гостей (до 10 человек)", isChecked: true }
+              ]
+            })
+          .ui-kit__column-row
+            +radiobtn({
+              title: "Radio Buttons",
+              items: [
+                { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
+                { groupName: "gender", id: "famale", title: "Женщина" }
               ]
             })
