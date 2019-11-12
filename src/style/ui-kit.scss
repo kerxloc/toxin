@@ -21,6 +21,10 @@
   margin-left: 126px;
 }
 
+.ui-kit__column-row {
+  margin-bottom: 40px;
+}
+
 .ui-kit__inputs-column {
   display: flex;
   justify-content: space-between;
@@ -49,3 +53,4 @@
 }
 
 @import "../components/checkbox/checkbox";
+@import "../components/radiobtn/radiobtn";
