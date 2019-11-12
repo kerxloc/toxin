@@ -19,4 +19,12 @@ block content
           div(class="ui-kit__inputs-column  ui-kit__inputs-column--small")
             +input({ isButtonSplit: true, labelName: 'Subscription text field',  isBigLabel: true, iconSrc: 'arrow_forward.svg', type: 'email', placeholder: 'Email', isRightSplitAnimation: true })
         .ui-kit__column
-          +checkbox({title: 'Checkbox Buttons'})
+          .ui-kit__column-row
+            +checkbox({
+              title: "Checkbox Buttons",
+              items: [
+                { id: "smoke", title: "Можно курить" },
+                { id: "pets", title: "Можно с питомцами", isChecked: true },
+                { id: "guest", title: "Можно пригласить гостей (до 10 человек)", isChecked: true }
+              ]
+            })
