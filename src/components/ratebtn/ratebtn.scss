@@ -1,0 +1,45 @@
+.ratebtn__title {
+  margin: 0;
+  margin-bottom: 18px;
+  font-size: 12px;
+  line-height: 15px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ratebtn__item:not(:checked) > input {
+  display: none;
+}
+.ratebtn__item:not(:checked) > label {
+  width: 42px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 50px;
+  line-height: 50px;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+.ratebtn__item:not(:checked) > label:before {
+  content: "★";
+}
+.ratebtn__item > input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.ratebtn__item:not(:checked) > label:hover,
+.ratebtn__item:not(:checked) > label:hover ~ label {
+  color: gold;
+}
+.ratebtn__item > input:checked + label:hover,
+.ratebtn__item > input:checked + label:hover ~ label,
+.ratebtn__item > input:checked ~ label:hover,
+.ratebtn__item > input:checked ~ label:hover ~ label,
+.ratebtn__item > label:hover ~ input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.ratebtn__item > label:active {
+  position: relative;
+}
