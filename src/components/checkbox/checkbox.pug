@@ -1,2 +1,4 @@
 mixin checkbox(options = {})
-  div checkbox
+  .checkbox
+    if options.title
+     p.checkbox__title= options.title
