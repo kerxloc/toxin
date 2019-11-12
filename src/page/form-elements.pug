@@ -1,5 +1,6 @@
 extends ../layout/ui-kit.pug
 include ../components/input/input
+include ../components/checkbox/checkbox
 
 block content
   .container
@@ -17,3 +18,5 @@ block content
             +input({ id: 'filterDateDropdown', isFakeInput: true, labelName: 'Filter date dropdown', isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: '19 авг - 23 авг', isBigLabel: true })
           div(class="ui-kit__inputs-column  ui-kit__inputs-column--small")
             +input({ isButtonSplit: true, labelName: 'Subscription text field',  isBigLabel: true, iconSrc: 'arrow_forward.svg', type: 'email', placeholder: 'Email', isRightSplitAnimation: true })
+        .ui-kit__column
+          +checkbox()
