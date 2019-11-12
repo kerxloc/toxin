@@ -2,6 +2,7 @@ extends ../layout/ui-kit.pug
 include ../components/input/input
 include ../components/checkbox/checkbox
 include ../components/radiobtn/radiobtn
+include ../components/toggle/toggle
 
 block content
   .container
@@ -35,5 +36,13 @@ block content
               items: [
                 { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
                 { groupName: "gender", id: "famale", title: "Женщина" }
+              ]
+            })
+          .ui-kit__column-row
+            +toggle({
+              title: "Toggle",
+              items: [
+                { id: "giveSpec", title: "Получать спецпредложения", isChecked: true },
+                { id: "notGiveSpec", title: "Получать спецпредложения" }
               ]
             })

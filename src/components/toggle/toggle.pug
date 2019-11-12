@@ -1,0 +1,8 @@
+mixin toggle(options = {})
+  .toggle
+    if options.title
+     p.toggle__title= options.title
+    each item in options.items
+      p.toggle__item
+        input(id=item.id type="checkbox" checked=item.isChecked)
+        label(for=item.id)= item.title
