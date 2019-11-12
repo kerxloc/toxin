@@ -37,6 +37,8 @@ mixin input(options = {})
    if options.labelName
     div(class=inputGroupClass)
       p(class=labelClass id=`for-${options.id}`)= options.labelName
+      if options.descrText
+        p.input-group__descr= options.descrText
       div(id=`${options.id}` class=`${inputFakeClass}` type=options.type name=options.name)= options.placeholder
   else if options.isButtonSplit
     div(class=inputGroupClass)
