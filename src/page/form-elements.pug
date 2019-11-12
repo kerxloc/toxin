@@ -4,6 +4,7 @@ include ../components/checkbox/checkbox
 include ../components/radiobtn/radiobtn
 include ../components/toggle/toggle
 include ../components/likebtn/likebtn
+include ../components/ratebtn/ratebtn
 
 block content
   .container
@@ -53,5 +54,13 @@ block content
               items: [
                 { count: 2 },
                 { count: 12, isLike: true }
+              ]
+            })
+          .ui-kit__column-row
+            +ratebtn({
+              title: "rate button",
+              items: [
+                { idGroup: "rating1", currentRating: 4 },
+                { idGroup: "rating2", currentRating: 5 }
               ]
             })
