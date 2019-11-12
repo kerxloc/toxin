@@ -1,4 +1,5 @@
 .ui-kit__wrap {
+  display: flex;
   padding-top: 62px;
   padding-left: 1px;
 }
@@ -13,6 +14,10 @@
       margin-bottom: 0;
     }
   }
+}
+
+.ui-kit__column {
+  margin-left: 126px;
 }
 
 .ui-kit__inputs-column {
