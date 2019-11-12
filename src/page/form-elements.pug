@@ -3,6 +3,7 @@ include ../components/input/input
 include ../components/checkbox/checkbox
 include ../components/radiobtn/radiobtn
 include ../components/toggle/toggle
+include ../components/likebtn/likebtn
 
 block content
   .container
@@ -44,5 +45,13 @@ block content
               items: [
                 { id: "giveSpec", title: "Получать спецпредложения", isChecked: true },
                 { id: "notGiveSpec", title: "Получать спецпредложения" }
+              ]
+            })
+          .ui-kit__column-row
+            +likebtn({
+              title: "like button",
+              items: [
+                { count: 2 },
+                { count: 12, isLike: true }
               ]
             })
