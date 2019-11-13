@@ -2,10 +2,11 @@ mixin ratebtn(options = {})
   .ratebtn
     if options.title
       p.ratebtn__title= options.title
-    each item in options.items
-      .ratebtn__item
-        - for (var i = 1; i < 6; ++i) {
-          - var isChecked = i === item.currentRating;        
-          input(type="radio" id=`star-${i}` name=item.idGroup value=`${i}` checked=isChecked)
-          label(for=`star-${i}`)
-        - }
+    .ratebtn__item-wrap
+      each item in options.items
+        .ratebtn__item
+          - for (var i = 1; i < 6; ++i) {
+            - var isChecked = i === item.currentRating;        
+            input(type="radio" id=`star-${i}` name=item.idGroup value=`${i}` checked=isChecked)
+            label(for=`star-${i}`)
+          - }
