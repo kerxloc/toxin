@@ -9,37 +9,45 @@
   text-transform: uppercase;
 }
 
-.ratebtn__item:not(:checked) > input {
-  display: none;
+.ratebtn__item {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin-right: 25px;
+  font-size: 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-left: 4px;
+    background: url("../components/ratebtn/star.png") no-repeat;
+    cursor: pointer;
+
+    &:last-child {
+      margin-left: 0;
+    }
+  }
 }
-.ratebtn__item:not(:checked) > label {
-  width: 42px;
-  padding: 0;
-  cursor: pointer;
-  font-size: 50px;
-  line-height: 50px;
-  color: lightgrey;
-  text-shadow: 1px 1px #bbb;
+
+.ratebtn__item label:hover,
+.ratebtn__item label:hover ~ label {
+  background: url("../components/ratebtn/star-active.png") no-repeat;
 }
-.ratebtn__item:not(:checked) > label:before {
-  content: "★";
+
+.ratebtn__item input:checked ~ label {
+  background: url("../components/ratebtn/star-active.png") no-repeat;
 }
-.ratebtn__item > input:checked ~ label {
-  color: gold;
-  text-shadow: 1px 1px #c60;
-}
-.ratebtn__item:not(:checked) > label:hover,
-.ratebtn__item:not(:checked) > label:hover ~ label {
-  color: gold;
-}
-.ratebtn__item > input:checked + label:hover,
-.ratebtn__item > input:checked + label:hover ~ label,
-.ratebtn__item > input:checked ~ label:hover,
-.ratebtn__item > input:checked ~ label:hover ~ label,
-.ratebtn__item > label:hover ~ input:checked ~ label {
-  color: gold;
-  text-shadow: 1px 1px goldenrod;
-}
-.ratebtn__item > label:active {
-  position: relative;
+
+.ratebtn__item-wrap {
+  display: flex;
 }
