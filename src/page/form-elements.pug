@@ -5,6 +5,7 @@ include ../components/radiobtn/radiobtn
 include ../components/toggle/toggle
 include ../components/likebtn/likebtn
 include ../components/ratebtn/ratebtn
+include ../components/range-slider/range-slider
 
 block content
   .container
@@ -64,3 +65,6 @@ block content
                 { idGroup: "rating2", currentRating: 5 }
               ]
             })
+        .ui-kit__column
+          .ui-kit__column-row
+            +rangeSlider({ title: "Range Slider" })

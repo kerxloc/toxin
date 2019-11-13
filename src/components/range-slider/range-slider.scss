@@ -1,0 +1,68 @@
+$accentSecondColor: #6fcf97;
+$accentSecondGradColor: #66d2ea;
+
+.range__wrap {
+  position: relative;
+}
+
+.range__title {
+  margin: 0;
+  margin-bottom: 18px;
+  font-size: 12px;
+  line-height: 15px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.range__bar {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  margin: auto;
+  border-radius: 3px;
+  border: 1px solid transparentize($contentColor, 0.75);
+  background-color: $mainColor;
+}
+
+.range__scale {
+  position: absolute;
+  left: 90px;
+  top: 0;
+  height: 4px;
+  background: linear-gradient(
+    180deg,
+    $accentSecondColor 0%,
+    $accentSecondGradColor 100%
+  );
+}
+
+.range__toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    $accentSecondColor 0%,
+    $accentSecondGradColor 100%
+  );
+  cursor: pointer;
+  transition: background 0.4s ease 0s, border 0.4s ease 0s;
+
+  &--min {
+    left: 75px;
+  }
+
+  &--max {
+    left: 160px;
+  }
+}

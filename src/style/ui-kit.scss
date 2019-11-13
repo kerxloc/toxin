@@ -19,6 +19,11 @@
 .ui-kit__column {
   width: 260px;
   margin-left: 126px;
+  
+  &:nth-child(3) {
+    width: 263px;
+    margin-left: 132px;
+  }
 }
 
 .ui-kit__column-row {

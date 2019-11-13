@@ -1,0 +1,9 @@
+mixin rangeSlider(options = {})
+  .range
+    if options.title
+     p.range__title= options.title
+    .range__wrap
+      .range__bar
+        div(class="range__scale" style="width: 27%;")
+      div(class="range__toggle  range__toggle--min")
+      div(class="range__toggle  range__toggle--max")
