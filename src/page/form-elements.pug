@@ -6,6 +6,8 @@ include ../components/toggle/toggle
 include ../components/likebtn/likebtn
 include ../components/ratebtn/ratebtn
 include ../components/range-slider/range-slider
+include ../components/button/button
+include ../components/title/title
 
 block content
   .container
@@ -68,3 +70,10 @@ block content
         .ui-kit__column
           .ui-kit__column-row
             +rangeSlider({ title: "Range Slider", min: '5 000', max: '10 000' })
+          .ui-kit__column-row
+            +title({ title: "Buttons" })
+            +button({ title: "Click me" })
+            +button({ title: "Click me", isDisabled: true })
+          .ui-kit__column-row
+            +button({ title: "Click me", isEmptyStyle: true })
+            +button({ title: "Click me", isEmptyStyle: true, isDisabled: true })
