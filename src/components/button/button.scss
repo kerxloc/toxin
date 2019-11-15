@@ -15,6 +15,17 @@
   border-radius: 22px;
   cursor: pointer;
 
+  &--disable {
+    opacity: 0.5;
+    cursor: default;
+
+    &:hover {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
   &::before {
     position: absolute;
     top: 0;
@@ -23,7 +34,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(
+    background: linear-gradient(
       darken($accentColor, 10%),
       darken($accentGradColor, 10%)
     );
@@ -40,63 +51,30 @@
   }
 
   &--empty-style {
-    position: relative;
-    z-index: 0;
-    padding: 11px 21px;
+    padding: 8px 18px;
     color: $accentColor;
-    background: none;
-    transition: color 0.4s ease;
+    background: $mainColor;
+    border: 2px solid $accentColor;
 
     &::before {
       display: none;
     }
 
-    .icon {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-
-      path {
-        transition: opacity 0.4s ease;
-
-        &:first-of-type {
-          opacity: 1;
-          fill: transparent;
-          stroke: url("#linearGradient-1");
-          stroke-width: 7;
-        }
-
-        &.icon--plain {
-          opacity: 0;
-          stroke: url("#linearGradient-1");
-          stroke-width: 7;
-        }
-      }
+    &:hover {
+      color: darken($accentColor, 10%);
+      border-color: darken($accentColor, 10%);
+      background: $mainColor;
     }
+  }
+
+  &--empty-disable {
+    opacity: 0.5;
+    cursor: default;
 
     &:hover {
-      color: $mainColor;
-
-      .button__top-gradient {
-        stop-color: darken($accentColor, 10%);
-      }
-
-      .button__bot-gradient {
-        stop-color: darken($accentGradColor, 10%);
-      }
-
-      path {
-        &:first-of-type {
-          opacity: 0;
-        }
-
-        &.icon--plain {
-          opacity: 1;
-        }
-      }
+      color: $accentColor !important;
+      background: $mainColor !important;
+      border-color: $accentColor !important;
     }
   }
 }
@@ -122,12 +100,4 @@
       background-position: 20px center;
     }
   }
-}
-
-.button__top-gradient {
-  stop-color: $accentColor;
-}
-
-.button__bot-gradient {
-  stop-color: $accentColor;
 }
