@@ -10,18 +10,17 @@ mixin button(options)
       buttonClass += "  button--icon"
     }
 
+    if (options.isDisable) {
+      buttonClass += "  button--disable"
+    }
+
+    if (options.isDisable && options.isEmptyStyle) {
+      buttonClass = "button  button--empty-style  button--empty-disable";
+    }
+
     var buttonType = options.buttonType ? options.buttonType : "button"
     
-  if options.path && options.isEmptyStyle
-    a(href=options.path class=buttonClass )= options.title
-      svg(class="icon" viewBox="0 0 250 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
-        defs
-          linearGradient(x1="0" y1="0%" x2="0%" y2="1" id="linearGradient-1")
-            stop(class="button__top-gradient" offset="0%")
-            stop(class="button__bot-gradient" offset="100%")
-        path(fill="none" d='M50,95 a45,45 0 0,1 0,-90 h150 a45,45 0 1,1 0,90 h-150')
-        path(class="icon--plain" fill="url(#linearGradient-1)" d='M50,95 a45,45 0 0,1 0,-90 h150 a45,45 0 1,1 0,90 h-150')
-  else if options.path
+  if options.path
     a(class=buttonClass href=options.path)= options.title
   else
     button(class=buttonClass type=buttonType)= options.title
