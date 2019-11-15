@@ -68,12 +68,12 @@ block content
               ]
             })
         .ui-kit__column
-          .ui-kit__column-row
+          div(class="ui-kit__column-row  ui-kit__column-row--large")
             +rangeSlider({ title: "Range Slider", min: '5 000', max: '10 000' })
-          .ui-kit__column-row
+          div(class="ui-kit__column-row  ui-kit__column-row--small")
             +title({ title: "Buttons" })
             +button({ title: "Click me" })
-            +button({ title: "Click me", isDisabled: true })
+            +button({ title: "Click me", isDisable: true })
           .ui-kit__column-row
             +button({ title: "Click me", isEmptyStyle: true })
-            +button({ title: "Click me", isEmptyStyle: true, isDisabled: true })
+            +button({ title: "Click me", isEmptyStyle: true, isDisable: true })

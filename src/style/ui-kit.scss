@@ -31,9 +31,22 @@
   margin-bottom: 40px;
   font-size: 0;
 
+  &--large {
+    margin-bottom: 55px;
+  }
+
+  &--small {
+    margin-bottom: 30px;
+  }
+
   .button {
     margin-right: 20px;
-    padding: 13px 23px;
+    padding: 14px 23px;
+    font-weight: bold;
+  }
+
+  .button--empty-style {
+    padding: 13px 21px;
   }
 }
 
