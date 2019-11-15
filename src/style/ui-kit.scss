@@ -17,6 +17,7 @@
 }
 
 .ui-kit__column {
+  position: relative;
   width: 260px;
   margin-left: 126px;
   
@@ -28,6 +29,12 @@
 
 .ui-kit__column-row {
   margin-bottom: 40px;
+  font-size: 0;
+
+  .button {
+    margin-right: 20px;
+    padding: 13px 23px;
+  }
 }
 
 .ui-kit__inputs-column {
