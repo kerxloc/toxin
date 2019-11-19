@@ -77,6 +77,14 @@
   }
 }
 
+.ui-kit__column-row--lwidth {
+  width: 320px;
+
+  .button {
+    width: 100%;
+  }
+}
+
 .ui-kit__link {
   display: inline-block;
   margin-right: 20px;
