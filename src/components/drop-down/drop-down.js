@@ -44,7 +44,12 @@ class DropDown {
         : "Выберите элимент";
       this.placeholder = placeholder;
       this.input = options.input;
-      this.input.textContent = placeholder;
+      const isHaveStartValue = this.hasHaveStartValue(options.countElements);
+      if (isHaveStartValue) {
+        this.renderStartCount(options);
+      } else {
+        this.input.textContent = placeholder;
+      }
       this.input.addEventListener("click", this.show);
     } else {
       console.error(
@@ -70,10 +75,18 @@ class DropDown {
     }
   }
 
+  hasHaveStartValue = countElements => {
+    return countElements.some(item => {
+      if (item.startValue) {
+        return item.startValue > 0;
+      }
+    });
+  };
+
   getModifiedCountElements = () => {
     const modifiedCountElements = this.countElements.map((item, index) => {
       const minValue = item.minValue ? item.minValue : 0;
-      const counter = minValue;
+      const counter = item.startValue ? item.startValue : minValue;
       item.id = `${index}${getRandomNumber(1, 10000)}`;
       item.counter = counter;
       item.minValue = minValue;
@@ -171,6 +184,26 @@ class DropDown {
     this.input.textContent = wordOfNum;
   };
 
+  renderStartCount = options => {
+    const countElements = options.countElements;
+    let wordOfNum = "";
+    countElements.forEach((item, index) => {
+      if (item.startValue > 0) {
+        const currentCounterGroup = options.countGroupView[item.countGroupName];
+        const currentCounter = currentCounterGroup.counter;
+        const currentWord = declOfNum(
+          currentCounter,
+          currentCounterGroup.views
+        );
+        if (index > 0 && wordOfNum.length > 1) {
+          wordOfNum += ", ";
+        }
+        wordOfNum += `${currentCounter} ${currentWord}`;
+      }
+    });
+    this.input.textContent = wordOfNum;
+  };
+
   getCountItem = element => {
     const countItem = getHtmlElement("li", "drop-down__count-item");
     const countItemName = getHtmlElement(
@@ -181,8 +214,15 @@ class DropDown {
     const counterMenu = getHtmlElement("div", "drop-down__counter-menu");
     const countItemMinus = getHtmlElement("button", "drop-down__counter-btn");
     countItemMinus.classList.add("drop-down__counter-btn--minus");
-    countItemMinus.classList.add("drop-down__counter-btn--disabled");
-    countItemMinus.setAttribute("disabled", "true");
+    if (element.startValue) {
+      if (element.startValue === element.minValue) {
+        countItemMinus.classList.add("drop-down__counter-btn--disabled");
+        countItemMinus.setAttribute("disabled", "true");
+      }
+    } else {
+      countItemMinus.classList.add("drop-down__counter-btn--disabled");
+      countItemMinus.setAttribute("disabled", "true");
+    }
     countItemMinus.type = "button";
     const countItemView = getHtmlElement("p", "drop-down__select-view");
     countItemView.textContent = element.counter;
