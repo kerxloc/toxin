@@ -74,6 +74,10 @@ block content
             +title({ title: "Buttons" })
             +button({ title: "Click me" })
             +button({ title: "Click me", isDisable: true })
-          .ui-kit__column-row
+          div(class="ui-kit__column-row  ui-kit__column-row--small")
             +button({ title: "Click me", isEmptyStyle: true })
             +button({ title: "Click me", isEmptyStyle: true, isDisable: true })
+          div(class="ui-kit__column-row  ui-kit__column-row--small")
+            a(href="#" class="ui-kit__link  ui-kit__link--hover") click me
+            a(href="#" class="ui-kit__link") click me
+
