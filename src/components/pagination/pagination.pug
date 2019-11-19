@@ -1,4 +1,21 @@
 mixin pagination(options = {})
   .pagination
-    if options.title
-      p.pagination__title= options.title
+    .pagination__wrap
+      if options.title
+        p.pagination__title= options.title
+      ul.pagination__pages
+        li(class="pagination__page-item  pagination__page-item--active")
+          a(href="#") 1
+        li.pagination__page-item
+          a(href="#") 2
+        li.pagination__page-item
+          a(href="#") 3
+        li.pagination__page-item
+          a(href="#") ...
+        li.pagination__page-item
+          a(href="#") 15
+        li(class="pagination__page-item  pagination__page-next")
+          a(href="#") Далее
+      .pagination__overview
+        p 1 – 12 из 100+ вариантов аренды
+
