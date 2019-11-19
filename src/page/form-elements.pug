@@ -14,74 +14,78 @@ block content
   .container
     .ui-kit
       .ui-kit__wrap
-        .ui-kit__inputs
-          +input({ id:'textField', type: 'text', placeholder: 'Email', labelName: 'Text field', isBigLabel: true, descrText: 'Default' })
-          +input({ id:'textFieldHover', type: 'text', placeholder: 'This is pretty awesome', labelName: 'Text field', isBigLabel: true, descrText: 'Hover / Focus', isHover: true })
-          +input({ id: 'number-guests-input', isFakeInput: true, labelName: 'Dropdown', isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: 'Сколько гостей', isBigLabel: true, descrText: 'Default' })
-          +input({ id:'maskedTextField', type: 'text', placeholder: 'ДД.ММ.ГГГГ', labelName: 'Masked text field', isBigLabel: true, descrText: 'Default' })
-          .ui-kit__inputs-column
-            +input({ id: 'arrival-input', splitId: 'arrival-split-btn', labelName: 'Date Dropdown', isButtonSplit: true, isDownSplitAnimation: true, iconSrc: 'expand_more.svg', placeholder: 'ДД.ММ.ГГГГ', isDarkPlaceholder: true, isBigLabel: true })
-            +input({ id: 'departure-input', splitId: 'departure-split-btn', labelName: 'Date Dropdown', isButtonSplit: true, isDownSplitAnimation: true, iconSrc: 'expand_more.svg', placeholder: '19.08.2019', isDarkPlaceholder: true, isBigLabel: true })
-          div(class="ui-kit__inputs-column  ui-kit__inputs-column--small")
-            +input({ id: 'filterDateDropdown', isFakeInput: true, labelName: 'Filter date dropdown', isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: '19 авг - 23 авг', isBigLabel: true })
-          div(class="ui-kit__inputs-column  ui-kit__inputs-column--small")
-            +input({ isButtonSplit: true, labelName: 'Subscription text field',  isBigLabel: true, iconSrc: 'arrow_forward.svg', type: 'email', placeholder: 'Email', isRightSplitAnimation: true })
-        .ui-kit__column
-          .ui-kit__column-row
-            +checkbox({
-              title: "Checkbox Buttons",
-              items: [
-                { id: "smoke", title: "Можно курить" },
-                { id: "pets", title: "Можно с питомцами", isChecked: true },
-                { id: "guest", title: "Можно пригласить гостей (до 10 человек)", isChecked: true }
-              ]
-            })
-          .ui-kit__column-row
-            +radiobtn({
-              title: "Radio Buttons",
-              items: [
-                { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
-                { groupName: "gender", id: "famale", title: "Женщина" }
-              ]
-            })
-          .ui-kit__column-row
-            +toggle({
-              title: "Toggle",
-              items: [
-                { id: "giveSpec", title: "Получать спецпредложения", isChecked: true },
-                { id: "notGiveSpec", title: "Получать спецпредложения" }
-              ]
-            })
-          .ui-kit__column-row
-            +likebtn({
-              title: "like button",
-              items: [
-                { count: 2 },
-                { count: 12, isLike: true }
-              ]
-            })
-          .ui-kit__column-row
-            +ratebtn({
-              title: "rate button",
-              items: [
-                { idGroup: "rating1", currentRating: 4 },
-                { idGroup: "rating2", currentRating: 5 }
-              ]
-            })
-        .ui-kit__column
-          div(class="ui-kit__column-row  ui-kit__column-row--large")
-            +rangeSlider({ title: "Range Slider", min: '5 000', max: '10 000' })
-          div(class="ui-kit__column-row  ui-kit__column-row--small")
-            +title({ title: "Buttons" })
-            +button({ title: "Click me" })
-            +button({ title: "Click me", isDisable: true })
-          div(class="ui-kit__column-row  ui-kit__column-row--small")
-            +button({ title: "Click me", isEmptyStyle: true })
-            +button({ title: "Click me", isEmptyStyle: true, isDisable: true })
-          div(class="ui-kit__column-row  ui-kit__column-row--small")
-            a(href="#" class="ui-kit__link  ui-kit__link--hover") click me
-            a(href="#" class="ui-kit__link") click me
-          div(class="ui-kit__column-row  ui-kit__column-row--lwidth")
-            +button({ title: 'Перейти к оплате', isHaveIcon: true, buttonType: 'submit' })
-          .ui-kit__column-row
-            +pagination({ title: 'Pagination' })
+        .ui-kit__box
+          .ui-kit__inputs
+            +input({ id:'textField', type: 'text', placeholder: 'Email', labelName: 'Text field', isBigLabel: true, descrText: 'Default' })
+            +input({ id:'textFieldHover', type: 'text', placeholder: 'This is pretty awesome', labelName: 'Text field', isBigLabel: true, descrText: 'Hover / Focus', isHover: true })
+            +input({ id: 'number-guests-input', isFakeInput: true, labelName: 'Dropdown', isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: 'Сколько гостей', isBigLabel: true, descrText: 'Default' })
+            +input({ id:'maskedTextField', type: 'text', placeholder: 'ДД.ММ.ГГГГ', labelName: 'Masked text field', isBigLabel: true, descrText: 'Default' })
+            .ui-kit__inputs-column
+              +input({ id: 'arrival-input', splitId: 'arrival-split-btn', labelName: 'Date Dropdown', isButtonSplit: true, isDownSplitAnimation: true, iconSrc: 'expand_more.svg', placeholder: 'ДД.ММ.ГГГГ', isDarkPlaceholder: true, isBigLabel: true })
+              +input({ id: 'departure-input', splitId: 'departure-split-btn', labelName: 'Date Dropdown', isButtonSplit: true, isDownSplitAnimation: true, iconSrc: 'expand_more.svg', placeholder: '19.08.2019', isDarkPlaceholder: true, isBigLabel: true })
+            div(class="ui-kit__inputs-column  ui-kit__inputs-column--small")
+              +input({ id: 'filterDateDropdown', isFakeInput: true, labelName: 'Filter date dropdown', isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: '19 авг - 23 авг', isBigLabel: true })
+            div(class="ui-kit__inputs-column  ui-kit__inputs-column--small")
+              +input({ isButtonSplit: true, labelName: 'Subscription text field',  isBigLabel: true, iconSrc: 'arrow_forward.svg', type: 'email', placeholder: 'Email', isRightSplitAnimation: true })
+          .ui-kit__column
+            .ui-kit__column-row
+              +checkbox({
+                title: "Checkbox Buttons",
+                items: [
+                  { id: "smoke", title: "Можно курить" },
+                  { id: "pets", title: "Можно с питомцами", isChecked: true },
+                  { id: "guest", title: "Можно пригласить гостей (до 10 человек)", isChecked: true }
+                ]
+              })
+            .ui-kit__column-row
+              +radiobtn({
+                title: "Radio Buttons",
+                items: [
+                  { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
+                  { groupName: "gender", id: "famale", title: "Женщина" }
+                ]
+              })
+            .ui-kit__column-row
+              +toggle({
+                title: "Toggle",
+                items: [
+                  { id: "giveSpec", title: "Получать спецпредложения", isChecked: true },
+                  { id: "notGiveSpec", title: "Получать спецпредложения" }
+                ]
+              })
+            .ui-kit__column-row
+              +likebtn({
+                title: "like button",
+                items: [
+                  { count: 2 },
+                  { count: 12, isLike: true }
+                ]
+              })
+            .ui-kit__column-row
+              +ratebtn({
+                title: "rate button",
+                items: [
+                  { idGroup: "rating1", currentRating: 4 },
+                  { idGroup: "rating2", currentRating: 5 }
+                ]
+              })
+          .ui-kit__column
+            div(class="ui-kit__column-row  ui-kit__column-row--large")
+              +rangeSlider({ title: "Range Slider", min: '5 000', max: '10 000' })
+            div(class="ui-kit__column-row  ui-kit__column-row--small")
+              +title({ title: "Buttons" })
+              +button({ title: "Click me" })
+              +button({ title: "Click me", isDisable: true })
+            div(class="ui-kit__column-row  ui-kit__column-row--small")
+              +button({ title: "Click me", isEmptyStyle: true })
+              +button({ title: "Click me", isEmptyStyle: true, isDisable: true })
+            div(class="ui-kit__column-row  ui-kit__column-row--small")
+              a(href="#" class="ui-kit__link  ui-kit__link--hover") click me
+              a(href="#" class="ui-kit__link") click me
+            div(class="ui-kit__column-row  ui-kit__column-row--lwidth")
+              +button({ title: 'Перейти к оплате', isHaveIcon: true, buttonType: 'submit' })
+            .ui-kit__column-row
+              +pagination({ title: 'Pagination' })
+        .ui-kit__box
+          .ui-kit__column
+            +title({ title: "Dropdown" })

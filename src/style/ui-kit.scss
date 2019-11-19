@@ -1,7 +1,15 @@
 .ui-kit__wrap {
-  display: flex;
   padding-top: 62px;
   padding-left: 1px;
+}
+
+.ui-kit__box {
+  display: flex;
+  margin-bottom: 100px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .ui-kit__inputs {
@@ -20,6 +28,10 @@
   position: relative;
   width: 260px;
   margin-left: 126px;
+
+  &:first-child {
+    margin-left: 0;
+  }
 
   &:nth-child(3) {
     width: 263px;
