@@ -20,7 +20,7 @@
   position: relative;
   width: 260px;
   margin-left: 126px;
-  
+
   &:nth-child(3) {
     width: 263px;
     margin-left: 132px;
@@ -74,6 +74,30 @@
 
   .input-group__button-split {
     width: 55px;
+  }
+}
+
+.ui-kit__link {
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: top;
+  color: transparentize($contentColor, 0.5);
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--hover,
+  &:hover {
+    color: $accentColor;
   }
 }
 
