@@ -1,2 +1,7 @@
 mixin title(options)
-  p.title= options.title
+  if (options.descrText)
+    .title-wrap
+      p.title= options.title
+      p.title__descr= options.descrText
+  else
+    p.title= options.title

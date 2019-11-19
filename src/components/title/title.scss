@@ -8,3 +8,19 @@
   font-weight: bold;
   text-transform: uppercase;
 }
+
+.title-wrap {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.title__descr {
+  margin: 0;
+  padding-bottom: 4px;
+  color: transparentize($contentColor, 0.55);
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
