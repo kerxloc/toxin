@@ -26,7 +26,10 @@ const dropDownOptions = {
   countGroupView: {
     bedrooms: { counter: 2, views: ["спальня", "спальни", "спален"] },
     bed: { counter: 2, views: ["кровать", "кровати", "кроватей"] },
-    bath: { counter: 1, views: ["ванная комната", "ванные комнаты", "ванных комнат"] }
+    bath: {
+      counter: 1,
+      views: ["ванная комната", "ванные комнаты", "ванных комнат"]
+    }
   },
   placeholder: "Удобства номера"
 };

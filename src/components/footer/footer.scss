@@ -8,7 +8,7 @@
     width: 100%;
     height: 1px;
     background: transparentize($contentColor, 0.9);
-    content: '';
+    content: "";
   }
 }
 
@@ -63,7 +63,6 @@
 .page-footer__col--large:first-child {
   margin-right: 3.5%;
 }
-
 
 @media (width: 1440px) {
   .page-footer__col {
@@ -209,4 +208,3 @@
     padding-left: 20px;
   }
 }
-
