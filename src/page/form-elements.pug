@@ -9,6 +9,7 @@ include ../components/range-slider/range-slider
 include ../components/button/button
 include ../components/title/title
 include ../components/pagination/pagination
+include ../components/features/features
 
 block content
   .container
@@ -86,7 +87,7 @@ block content
               +button({ title: 'Перейти к оплате', isHaveIcon: true, buttonType: 'submit' })
             .ui-kit__column-row
               +pagination({ title: 'Pagination' })
-        .ui-kit__box
+        div(class="ui-kit__box  ui-kit__box--nm")
           div(id="drop-down-container" class="ui-kit__column")
             +input({ id: "number-guests-input1", isFakeInput: true, labelName: "Dropdown", isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: "2 спальни, 2 кровати...", isBigLabel: true, descrText: "Default" })
             +input({ id: "number-guests-input2", isFakeInput: true, labelName: "Dropdown", isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: "2 спальни, 2 кровати...", isBigLabel: true, descrText: "Expanded" })
@@ -111,3 +112,19 @@ block content
                   { id: "shampu2", title: "Шампунь" },
                 ]
               })
+        div(class="ui-kit__box")
+          .ui-kit__column
+            +features({
+              items: [
+                {
+                  title: "Комфорт",
+                  descr: "Шумопоглощающие стены",
+                  srcIcon: "../components/features/emoticon.png"
+                },
+                {
+                  title: "Удобство",
+                  descr: "Окно в каждой из спален",
+                  srcIcon: "../components/features/city.png"
+                }
+              ]
+            })
