@@ -38,3 +38,26 @@ const dropDownOptions = {
 
 const dropDown = new DropDown(dropDownOptions);
 dropDown.init();
+
+const dropDownGuestContainer = document.querySelector("#drop-down-container2");
+const inputDropDownGuest = document.querySelector("#number-guests-input3");
+
+const dropDownGuestOptions = {
+  container: dropDownGuestContainer,
+  input: inputDropDownGuest,
+  countElements: [
+    { name: "Взрослые", countGroupName: "guest" },
+    { name: "Дети", countGroupName: "guest" },
+    { name: "Младенцы", countGroupName: "child" }
+  ],
+  countGroupView: {
+    guest: { counter: 0, views: ["гость", "гостя", "гостей"] },
+    child: { counter: 0, views: ["младенец", "младенца", "младенцев"] }
+  },
+  placeholder: "Сколько гостей",
+  isPinShow: true
+};
+
+const dropDownGuest = new DropDown(dropDownGuestOptions);
+dropDownGuest.init();
+
