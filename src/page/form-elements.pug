@@ -127,7 +127,14 @@ block content
           div(id="drop-down-container3" class="ui-kit__column  ui-kit__column--wl  ui-kit__column--lms")
             +input({ id: "number-guests-input4", isFakeInput: true, labelName: "Dropdown", isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: "Сколько гостей", isBigLabel: true })
             div(class="ui-kit__column-row  ui-kit__column-row--bunny-hop")
-              +bullet({ title: "Bullet list" })
+              +bullet({
+                title: "Bullet list",
+                items: [
+                  { label: "Нельзя с питомцами" },
+                  { label: "Без вечеринок и мероприятий" },
+                  { label: "Время прибытия — после 13:00, а выезд до 12:00" }
+                ]
+              })
         div(class="ui-kit__box")
           .ui-kit__column
             +features({
