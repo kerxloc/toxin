@@ -7,6 +7,10 @@
   display: flex;
   margin-bottom: 100px;
 
+  &--nm {
+    margin-bottom: 0px;
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -148,3 +152,4 @@
 @import "../components/range-slider/range-slider";
 @import "../components/title/title";
 @import "../components/pagination/pagination";
+@import "../components/features/features";
