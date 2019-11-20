@@ -1,8 +1,25 @@
 mixin checkbox(options = {})
-  .checkbox
+  -
+    var checkboxClass = "checkbox"
+    var titleClass = "checkbox__title"
+
+    if (options.isExpandable) {
+      titleClass += "  checkbox__title--expandable"
+    }
+
+    if (options.isExpandableOpen) {
+      titleClass += "  checkbox__title--expandable-open"
+    }
+
+  div(class=checkboxClass)
     if options.title
-     p.checkbox__title= options.title
-    each item in options.items
-      p.checkbox__item
-        input(id=item.id type="checkbox" checked=item.isChecked)
-        label(for=item.id)= item.title
+      if options.isExpandable
+        p(class=titleClass)
+          button(class="checkbox__expandable" type="button")= options.title
+      else 
+        p(class=titleClass)= options.title
+    if options.items
+      each item in options.items
+        p.checkbox__item
+          input(id=item.id type="checkbox" checked=item.isChecked)
+          label(for=item.id)= item.title

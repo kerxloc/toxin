@@ -9,6 +9,42 @@
   text-transform: uppercase;
 }
 
+.checkbox__title--expandable {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 4px;
+    right: 15px;
+    width: 12px;
+    height: 8px;
+    content: "";
+    background: url("../components/checkbox/expand-more.png") no-repeat;
+    cursor: pointer;
+  }
+}
+
+.checkbox__title--expandable-open {
+  &::after {
+    transform: rotate(180deg);
+  }
+}
+
+.checkbox__expandable {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 12px;
+  line-height: 15px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
 .checkbox__item {
   width: 240px;
   margin: 0;
