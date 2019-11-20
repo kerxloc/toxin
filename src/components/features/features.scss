@@ -1,0 +1,42 @@
+.features {
+  margin: 0;
+  padding: 0;
+  padding-top: 1px;
+  list-style: none;
+}
+
+.features__item {
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid transparentize($contentColor, 0.9);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.features__pict {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 9px;
+  width: 48px;
+  height: 48px;
+}
+
+.features__content {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.features__title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.features__descr {
+  margin: 0;
+}
