@@ -1,6 +1,7 @@
 .ui-kit__wrap {
   padding-top: 62px;
   padding-left: 1px;
+  padding-bottom: 62px;
 }
 
 .ui-kit__box {
@@ -60,6 +61,10 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  .comment {
+    margin-left: 4px;
   }
 }
 
@@ -181,3 +186,4 @@
 @import "../components/pagination/pagination";
 @import "../components/features/features";
 @import "../components/bullet-list/bullet-list";
+@import "../components/comment/comment";
