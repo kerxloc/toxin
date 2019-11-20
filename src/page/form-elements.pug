@@ -114,6 +114,15 @@ block content
               })
           div(id="drop-down-container2" class="ui-kit__column  ui-kit__column--mls  ui-kit__column--wl")
             +input({ id: "number-guests-input3", isFakeInput: true, labelName: "Dropdown", isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: "Сколько гостей", isBigLabel: true })
+            div(class="ui-kit__column-row  ui-kit__column-row--bunny-hop")
+              +checkbox({
+                title: "Rich Checkbox Buttons",
+                isRich: true,
+                items: [
+                  { id: "wild", title: "Широкий коридор", descr: "Ширина коридоров в номере не менее 91 см." },
+                  { id: "help", title: "Помощник для инвалидов", descr: "На 1 этаже вас встретит специалист  и проводит до номера." },
+                ]
+              })
         div(class="ui-kit__box")
           .ui-kit__column
             +features({
