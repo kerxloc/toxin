@@ -10,6 +10,7 @@ include ../components/button/button
 include ../components/title/title
 include ../components/pagination/pagination
 include ../components/features/features
+include ../components/bullet-list/bullet-list
 
 block content
   .container
@@ -125,6 +126,8 @@ block content
               })
           div(id="drop-down-container3" class="ui-kit__column  ui-kit__column--wl  ui-kit__column--lms")
             +input({ id: "number-guests-input4", isFakeInput: true, labelName: "Dropdown", isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: "Сколько гостей", isBigLabel: true })
+            div(class="ui-kit__column-row  ui-kit__column-row--bunny-hop")
+              +bullet({ title: "Bullet list" })
         div(class="ui-kit__box")
           .ui-kit__column
             +features({
