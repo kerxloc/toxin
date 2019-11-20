@@ -73,6 +73,10 @@ class DropDown {
         "Expected countGroupView(Array) inside constructor object but not received"
       );
     }
+
+    if (options.isHideControl) {
+      this.isHideControl = options.isHideControl;
+    }
   }
 
   hasHaveStartValue = countElements => {
@@ -302,10 +306,16 @@ class DropDown {
     });
 
     countList.appendChild(countListFragment);
-    dropDownControl.appendChild(clearBtn);
-    dropDownControl.appendChild(acceptBtn);
+    if (!this.isHideControl) {
+      dropDownControl.appendChild(clearBtn);
+      dropDownControl.appendChild(acceptBtn);
+    }
+
     dropDownParentWrap.appendChild(countList);
-    dropDownParentWrap.appendChild(dropDownControl);
+
+    if (!this.isHideControl) {
+      dropDownParentWrap.appendChild(dropDownControl);
+    }
     this.dropDownParent.appendChild(dropDownParentWrap);
     this.container.appendChild(this.dropDownParent);
   };
