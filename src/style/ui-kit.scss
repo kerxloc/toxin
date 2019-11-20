@@ -33,6 +33,14 @@
   width: 265px;
   margin-left: 126px;
 
+  &--mls {
+    margin-left: 181px;
+  }
+
+  &--wl {
+    width: 320px;
+  }
+
   &:first-child {
     margin-left: 0;
   }
@@ -141,6 +149,12 @@
 .ui-kit__box #drop-down-container {
   .drop-down {
     top: 345px;
+  }
+}
+
+.ui-kit__box #drop-down-container2 {
+  .drop-down {
+    top: 261px;
   }
 }
 
