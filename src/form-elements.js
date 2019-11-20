@@ -31,7 +31,8 @@ const dropDownOptions = {
       views: ["ванная комната", "ванные комнаты", "ванных комнат"]
     }
   },
-  placeholder: "Удобства номера"
+  placeholder: "Удобства номера",
+  isHideControl: true
 };
 
 const dropDown = new DropDown(dropDownOptions);
