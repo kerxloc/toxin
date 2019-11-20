@@ -90,3 +90,24 @@ block content
           div(id="drop-down-container" class="ui-kit__column")
             +input({ id: "number-guests-input1", isFakeInput: true, labelName: "Dropdown", isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: "2 спальни, 2 кровати...", isBigLabel: true, descrText: "Default" })
             +input({ id: "number-guests-input2", isFakeInput: true, labelName: "Dropdown", isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: "2 спальни, 2 кровати...", isBigLabel: true, descrText: "Expanded" })
+            div(class="ui-kit__column-row  ui-kit__column-row--mt-large")
+              +checkbox({
+                title: "Expandable checkbox list",
+                isExpandable: true
+              })
+            .ui-kit__column-row
+              +checkbox({
+                title: "Expandable checkbox list",
+                isExpandable: true,
+                isExpandableOpen: true,
+                items: [
+                  { id: "breakfast", title: "Завтрак" },
+                  { id: "pen", title: "Письменный стол", isChecked: true },
+                  { id: "break-sit", title: "Стул для кормления", isChecked: true },
+                  { id: "bed", title: "Кроватка", isChecked: true },
+                  { id: "tv", title: "Телевизор" },
+                  { id: "shampu", title: "Шампунь" },
+                  { id: "tv2", title: "Телевизор" },
+                  { id: "shampu2", title: "Шампунь" },
+                ]
+              })
