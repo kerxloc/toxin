@@ -1,10 +1,36 @@
 .bullet__title {
   margin: 0;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   font-size: 12px;
   line-height: 15px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.bullet__list {
+  padding: 0;
+  list-style: none;
+}
+
+.bullet__item {
+  position: relative;
+  padding-left: 21px;
+  margin-bottom: 10px;
+  font-family: Montserrat;
+  color: transparentize($contentColor, 0.25);
+  font-size: 14px;
+  line-height: 24px;
+
+  &::before {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    content: '';
+    background: transparentize($contentColor, 0.75);
+    border-radius: 50%;
+  }
 }
