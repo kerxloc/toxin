@@ -61,3 +61,24 @@ const dropDownGuestOptions = {
 const dropDownGuest = new DropDown(dropDownGuestOptions);
 dropDownGuest.init();
 
+const dropDownQuestContainer = document.querySelector("#drop-down-container3");
+const inputDropDownQuest = document.querySelector("#number-guests-input4");
+
+const dropDownQuestOptions = {
+  container: dropDownQuestContainer,
+  input: inputDropDownQuest,
+  countElements: [
+    { name: "Взрослые", countGroupName: "guest", startValue: 2 },
+    { name: "Дети", countGroupName: "guest", startValue: 1 },
+    { name: "Младенцы", countGroupName: "child" }
+  ],
+  countGroupView: {
+    guest: { counter: 3, views: ["гость", "гостя", "гостей"] },
+    child: { counter: 0, views: ["младенец", "младенца", "младенцев"] }
+  },
+  placeholder: "Сколько гостей",
+  isPinShow: true
+};
+
+const dropDownQuest = new DropDown(dropDownQuestOptions);
+dropDownQuest.init();
