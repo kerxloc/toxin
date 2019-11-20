@@ -32,7 +32,8 @@ const dropDownOptions = {
     }
   },
   placeholder: "Удобства номера",
-  isHideControl: true
+  isHideControl: true,
+  isPinShow: true
 };
 
 const dropDown = new DropDown(dropDownOptions);
