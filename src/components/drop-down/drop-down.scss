@@ -24,12 +24,11 @@
 }
 
 .drop-down__wrap {
-  padding: 10px;
+  padding: 7px 10px;
 }
 
 .drop-down__count-list {
   margin: 0;
-  margin-bottom: 20px;
   padding: 0;
   list-style: none;
 }
@@ -39,6 +38,10 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 7px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .drop-down__counter-menu {
@@ -110,6 +113,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .drop-down__button {
