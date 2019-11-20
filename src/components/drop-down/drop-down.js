@@ -228,6 +228,12 @@ class DropDown {
       wordOfNum = wordOfNum.slice(0, 20) + "...";
     }
 
+    const splitWordOfNum = wordOfNum.split(",");
+
+    if (splitWordOfNum[0].trim() === splitWordOfNum[1].trim()) {
+      wordOfNum = splitWordOfNum[0];
+    }
+
     this.input.textContent = wordOfNum;
   };
 
