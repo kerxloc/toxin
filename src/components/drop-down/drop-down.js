@@ -198,6 +198,11 @@ class DropDown {
         wordOfNum += `${currentCounter} ${currentWord}`;
       }
     });
+
+    if (wordOfNum.length >= 20 && Object.keys(this.countGroupView).length > 2) {
+      wordOfNum = wordOfNum.slice(0, 20) + "...";
+    }
+
     this.input.textContent = wordOfNum;
   };
 
@@ -218,6 +223,11 @@ class DropDown {
         wordOfNum += `${currentCounter} ${currentWord}`;
       }
     });
+
+    if (wordOfNum.length >= 20 && countElements.length > 2) {
+      wordOfNum = wordOfNum.slice(0, 20) + "...";
+    }
+
     this.input.textContent = wordOfNum;
   };
 
