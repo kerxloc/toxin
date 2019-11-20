@@ -41,13 +41,17 @@
     width: 320px;
   }
 
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:nth-child(3) {
+  &--xls {
     width: 263px;
     margin-left: 127px;
+  }
+
+  &--lms {
+    margin-left: 72px;
+  }
+
+  &:first-child {
+    margin-left: 0;
   }
 
   .input-group {
