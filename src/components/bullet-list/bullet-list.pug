@@ -2,3 +2,6 @@ mixin bullet(options = {})
   .bullet
     if options.title
      p.bullet__title= options.title
+     ul.bullet__list
+      each item in options.items
+        li.bullet__item= item.label
