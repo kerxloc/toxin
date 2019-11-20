@@ -11,6 +11,7 @@ include ../components/title/title
 include ../components/pagination/pagination
 include ../components/features/features
 include ../components/bullet-list/bullet-list
+include ../components/comment/comment
 
 block content
   .container
@@ -151,3 +152,12 @@ block content
                 }
               ]
             })
+          div(class="ui-kit__column  ui-kit__column--mls")
+            +comment({
+              authorName: "Мурад Сарафанов",
+              datePost: "5 дней назад",
+              like: 12,
+              avatarSrc: "../components/comment/murad.png",
+              text:
+                "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+            })  
