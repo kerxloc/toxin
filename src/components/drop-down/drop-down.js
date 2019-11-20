@@ -50,7 +50,12 @@ class DropDown {
       } else {
         this.input.textContent = placeholder;
       }
-      this.input.addEventListener("click", this.show);
+
+      if (!options.isPinShow) {
+        this.input.addEventListener("click", this.show);
+      } else {
+        this.show();
+      }
     } else {
       console.error(
         "Expected input(node) inside constructor object but not received"
@@ -76,6 +81,10 @@ class DropDown {
 
     if (options.isHideControl) {
       this.isHideControl = options.isHideControl;
+    }
+
+    if (options.isPinShow) {
+      this.isPinShow = options.isPinShow;
     }
   }
 
@@ -113,6 +122,10 @@ class DropDown {
   };
 
   hide = () => {
+    if (this.isPinShow) {
+      return;
+    }
+
     const isHaveClass = this.dropDownParent.classList.contains(
       "drop-down--show"
     );
