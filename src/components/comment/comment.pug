@@ -1,0 +1,12 @@
+include ../likebtn/likebtn
+
+mixin comment(options = {})
+  .comment
+    .comment__wrap
+      .comment__pict
+        img(src=options.avatarSrc alt=options.authorName)
+      +likebtn({ items: [ { count: 12, isLike: true } ] })
+    .comment__wrap
+      p.comment__title= options.authorName 
+      p.comment__date= options.datePost
+      p.comment__text= options.text 
