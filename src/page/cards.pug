@@ -1,5 +1,9 @@
 extends ../layout/ui-kit.pug
+include ../components/date-wishes/date-wishes
+block variables
+  - var title = "Карточки"
+  - var pageClass = "cards-page"
 
 block content
   .container
-    h1 Привет из карточек
+    +dateWishes()
