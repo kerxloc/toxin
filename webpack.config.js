@@ -78,6 +78,10 @@ module.exports = {
       filename: "form-elements.html",
       template: "./src/page/form-elements.pug",
       chunks: ["form-elements"]
+    }),
+    new HtmlWebpackPlugin({
+      filename: "cards.html",
+      template: "./src/page/cards.pug"
     })
   ]
 };
