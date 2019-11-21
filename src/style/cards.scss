@@ -1,12 +1,21 @@
 .cards-page {
-  background: #F4F4F6;
+  background: #f4f4f6;
 }
 
 .cards-page__wrap {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 70px 0;
+}
+
+.card-page__stub-card {
+  width: 320px;
+  height: 369px;
+  background: $mainColor;
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 }
 
 @import "../components/total-card/total-card";
