@@ -3,6 +3,11 @@
   background: $mainColor;
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+
+  .button {
+    width: 100%;
+    padding: 15px 20px;
+  }
 }
 
 .total-card__wrap {
@@ -63,6 +68,7 @@
 
 .total-card__calc {
   margin-top: 18px;
+  margin-bottom: 31px;
 }
 
 .total-card__calc-item {
@@ -111,4 +117,19 @@
 .total-card__calc-text--lhs {
   width: 214px;
   line-height: 18px;
+}
+
+.total-card__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.total-card__total-text,
+.total-card__total-price {
+  margin: 0;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: bold;
 }
