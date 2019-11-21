@@ -12,10 +12,14 @@
 
 .card-page__stub-card {
   width: 320px;
-  height: 369px;
   background: $mainColor;
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-page__stub-card .date-picker {
+  position: static;
+  margin: 0;
 }
 
 @import "../components/total-card/total-card";
