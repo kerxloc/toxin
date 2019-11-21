@@ -1,6 +1,7 @@
 extends ../layout/ui-kit.pug
 include ../components/date-wishes/date-wishes
 include ../components/total-card/total-card
+include ../components/date-picker/date-picker
 block variables
   - var title = "Карточки"
   - var pageClass = "cards-page"
@@ -14,3 +15,4 @@ block content
         +totalCard()
       .cards-page__item
         .card-page__stub-card
+          +datePicker()
