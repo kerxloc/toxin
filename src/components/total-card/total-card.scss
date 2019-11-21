@@ -120,10 +120,20 @@
 }
 
 .total-card__total {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 20px;
+
+  &::after {
+    position: absolute;
+    top: 17px;
+    left: 63px;
+    width: 182px;
+    content: "";
+    border: 1px dashed transparentize($contentColor, 0.75);
+  }
 }
 
 .total-card__total-text,
