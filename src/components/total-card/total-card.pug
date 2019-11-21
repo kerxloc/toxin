@@ -44,11 +44,11 @@ mixin totalCard()
         .total-card__calc-item
           p.total-card__calc-text 9 990₽ х 4 суток
           p.total-card__calc-cost 39 960₽
-        .total-card__calc-item
+        div(class="total-card__calc-item  total-card__calc-item--mbx")
           p(class="total-card__calc-text  total-card__calc-text--extend") Сбор за услуги: скидка 2 179₽
           p.total-card__calc-cost 0₽
         .total-card__calc-item
-          p(class="total-card__calc-text  total-card__calc-text--extend") Сбор за дополнительные услуги
+          p(class="total-card__calc-text  total-card__calc-text--lhs  total-card__calc-text--extend") Сбор за дополнительные услуги
           p.total-card__calc-cost 300₽
       .total-card__total
         p.total-card__total-text Итого
