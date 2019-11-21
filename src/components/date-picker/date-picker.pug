@@ -1,0 +1,61 @@
+mixin datePicker()
+  section(class="date-picker  date-picker--show")
+    .date-picker__wrap
+      .date-picker__control
+        button(class="date-picker__slider-btn  date-picker__slider-btn--prev" type="button")
+        h2(class="date-picker__title" id="date-picker-main-title") Август 2019
+        button(class="date-picker__slider-btn date-picker__slider-btn--next" type="button")
+      table.date-picker__calendar
+        thead
+          tr
+            th.date-picker__th Пн
+            th.date-picker__th Вт
+            th.date-picker__th Ср
+            th.date-picker__th Чт
+            th.date-picker__th Пт
+            th.date-picker__th Сб
+            th.date-picker__th Вс
+        tbody
+          tr
+            td(class="date-picker__day  date-picker__day--not-current") 29
+            td(class="date-picker__day  date-picker__day--not-current") 30
+            td(class="date-picker__day  date-picker__day--not-current") 31
+            td(class="date-picker__day") 1
+            td(class="date-picker__day") 2
+            td(class="date-picker__day") 3
+            td(class="date-picker__day") 4
+          tr
+            td(class="date-picker__day") 5
+            td(class="date-picker__day") 6
+            td(class="date-picker__day") 7
+            td(class="date-picker__day  date-picker__day--current") 8
+            td(class="date-picker__day") 9
+            td(class="date-picker__day") 10
+            td(class="date-picker__day") 11
+          tr
+            td(class="date-picker__day") 12
+            td(class="date-picker__day") 13
+            td(class="date-picker__day") 14
+            td(class="date-picker__day") 15
+            td(class="date-picker__day") 16
+            td(class="date-picker__day") 17
+            td(class="date-picker__day") 18
+          tr
+            td(class="date-picker__day  date-picker__day--select-start  date-picker__day--select") 19
+            td(class="date-picker__day  date-picker__day--select-space") 20
+            td(class="date-picker__day  date-picker__day--select-space") 21
+            td(class="date-picker__day  date-picker__day--select-space") 22
+            td(class="date-picker__day  date-picker__day--select-end  date-picker__day--select") 23
+            td(class="date-picker__day") 24
+            td(class="date-picker__day") 25
+          tr
+            td(class="date-picker__day") 26
+            td(class="date-picker__day") 27
+            td(class="date-picker__day") 28
+            td(class="date-picker__day") 29
+            td(class="date-picker__day") 30
+            td(class="date-picker__day") 31
+            td(class="date-picker__day  date-picker__day--not-current") 1
+      .date-picker__control
+        button(class="date-picker__button" type="button") Очистить
+        button(class="date-picker__button date-picker__button--accent" type="button") Применить
