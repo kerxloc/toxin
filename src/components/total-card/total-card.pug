@@ -5,13 +5,14 @@ mixin totalCard()
   section.total-card
     .total-card__wrap
       .total-card__head
-        h2.total-card__title № 888 #[b люкс]
+        h2.total-card__title № #[span 888] #[b люкс]
         p.total-card__per-day #[b 9 990₽] в сутки
       .total-card__date-inputs
         +input({
           id: "arrival-total-input",
           splitId: "arrival-total-split-btn",
           labelName: "Прибытие",
+          isBigLabel: true,
           isButtonSplit: true,
           isDownSplitAnimation: true,
           iconSrc: "expand-more.svg",
@@ -22,6 +23,7 @@ mixin totalCard()
           id: "departure-total-input",
           splitId: "departure-total-split-btn",
           labelName: "Выезд",
+          isBigLabel: true,
           isButtonSplit: true,
           isDownSplitAnimation: true,
           iconSrc: "expand-more.svg",
