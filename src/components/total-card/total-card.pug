@@ -1,0 +1,53 @@
+include ../input/input
+include ../button/button
+
+mixin totalCard()
+  section.total-card
+    .total-card__wrap
+      .total-card__head
+        h2.total-card__title № 888 #[b люкс]
+        p.total-card__per-day #[b 9 990₽] в сутки
+      .total-card__date-inputs
+        +input({
+          id: "arrival-total-input",
+          splitId: "arrival-total-split-btn",
+          labelName: "Прибытие",
+          isButtonSplit: true,
+          isDownSplitAnimation: true,
+          iconSrc: "expand-more.svg",
+          placeholder: "19.08.2019",
+          isDarkPlaceholder: true
+        })
+        +input({
+          id: "departure-total-input",
+          splitId: "departure-total-split-btn",
+          labelName: "Выезд",
+          isButtonSplit: true,
+          isDownSplitAnimation: true,
+          iconSrc: "expand-more.svg",
+          placeholder: "23.08.2019",
+          isDarkPlaceholder: true
+        })
+      +input({
+        id: "number-total-guests-input",
+        isFakeInput: true,
+        labelName: "Гости",
+        isButtonSplit: true,
+        isDownSplitAnimation: true,
+        isHaveIcon: true,
+        placeholder: "3 гостя"
+      })
+      .total-card__calc
+        .total-card__calc-item
+          p.total-card__calc-text 9 990₽ х 4 суток
+          p.total-card__calc-cost 39 960₽
+        .total-card__calc-item
+          p(class="total-card__calc-text  total-card__calc-text--extend") Сбор за услуги: скидка 2 179₽
+          p.total-card__calc-cost 0₽
+        .total-card__calc-item
+          p(class="total-card__calc-text  total-card__calc-text--extend") Сбор за дополнительные услуги
+          p.total-card__calc-cost 300₽
+      .total-card__total
+        p.total-card__total-text Итого
+        p.total-card__total-price 38 081₽
+      +button({ title: "Забронировать", isHaveIcon: true, buttonType: "button" })
