@@ -60,3 +60,55 @@
     }
   }
 }
+
+.total-card__calc {
+  margin-top: 18px;
+}
+
+.total-card__calc-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  p {
+    margin: 0;
+  }
+
+  &--mbx {
+    margin-bottom: 12px;
+  }
+}
+
+.total-card__calc-text--extend {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: -27px;
+    width: 20px;
+    height: 20px;
+    color: transparentize($contentColor, 0.75);
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 19px;
+    text-align: center;
+    content: "i";
+    border: 1px solid transparentize($contentColor, 0.75);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.total-card__calc-text,
+.total-card__calc-cost {
+  font-family: Montserrat;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.total-card__calc-text--lhs {
+  width: 214px;
+  line-height: 18px;
+}
