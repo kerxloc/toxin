@@ -3,6 +3,9 @@
 }
 
 .cards-page__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   padding: 70px 0;
 }
 
