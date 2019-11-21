@@ -1,9 +1,14 @@
 extends ../layout/ui-kit.pug
 include ../components/date-wishes/date-wishes
+include ../components/total-card/total-card
 block variables
   - var title = "Карточки"
   - var pageClass = "cards-page"
 
 block content
   .container
-    +dateWishes()
+    .cards-page__wrap
+      .cards-page__item
+        +dateWishes()
+      .cards-page__item
+        +totalCard()
