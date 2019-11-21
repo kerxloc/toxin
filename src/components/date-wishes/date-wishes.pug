@@ -1,15 +1,16 @@
 include ../input/input
 include ../button/button
 
-section.date-wishes
-  .date-wishes__wrap
-    form(action="")
-      fieldset
-        legend.date-wishes__title Найдём номера под ваши пожелания
-        .date-wishes__group
-          +input({ id: 'arrival-input', splitId: 'arrival-split-btn', labelName: 'Прибытие', isButtonSplit: true, isDownSplitAnimation: true, iconSrc: 'expand-more.svg', placeholder: 'ДД.ММ.ГГГГ', isDarkPlaceholder: true })
-          +input({ id: 'departure-input', splitId: 'departure-split-btn', labelName: 'Выезд', isButtonSplit: true, isDownSplitAnimation: true, iconSrc: 'expand-more.svg', placeholder: 'ДД.ММ.ГГГГ', isDarkPlaceholder: true })
-          div(id="date-picker-container" class="date-picker-container")
-        +input({ id: 'number-guests-input', isFakeInput: true, labelName: 'Гости', isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: 'Сколько гостей' })
-        div(id="drop-down-container" class="drop-down-container")
-        +button({ title: 'Подобрать номер', isHaveIcon: true, buttonType: 'submit' })
+mixin dateWishes()
+  section.date-wishes
+    .date-wishes__wrap
+      form(action="")
+        fieldset
+          legend.date-wishes__title Найдём номера под ваши пожелания
+          .date-wishes__group
+            +input({ id: 'arrival-input', splitId: 'arrival-split-btn', labelName: 'Прибытие', isButtonSplit: true, isDownSplitAnimation: true, iconSrc: 'expand-more.svg', placeholder: 'ДД.ММ.ГГГГ', isDarkPlaceholder: true })
+            +input({ id: 'departure-input', splitId: 'departure-split-btn', labelName: 'Выезд', isButtonSplit: true, isDownSplitAnimation: true, iconSrc: 'expand-more.svg', placeholder: 'ДД.ММ.ГГГГ', isDarkPlaceholder: true })
+            div(id="date-picker-container" class="date-picker-container")
+          +input({ id: 'number-guests-input', isFakeInput: true, labelName: 'Гости', isButtonSplit: true, isDownSplitAnimation: true, isHaveIcon: true, placeholder: 'Сколько гостей' })
+          div(id="drop-down-container" class="drop-down-container")
+          +button({ title: 'Подобрать номер', isHaveIcon: true, buttonType: 'submit' })
