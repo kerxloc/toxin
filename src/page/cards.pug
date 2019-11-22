@@ -10,12 +10,16 @@ block variables
 block content
   .container
     .cards-page__wrap
-      .cards-page__item
-        +dateWishes()
-      .cards-page__item
-        +totalCard()
-      .cards-page__item
-        .card-page__stub-card
-          +datePicker()
-      .cards-page__item
-        +registerCard()
+      .cards-page__row
+        .cards-page__item
+          +dateWishes()
+        .cards-page__item
+          +registerCard()
+      .cards-page__row
+        .cards-page__item
+          +totalCard()
+      .cards-page__row
+        .cards-page__item
+          .card-page__stub-card
+            +datePicker()
+      
