@@ -4,40 +4,44 @@ include ../radiobtn/radiobtn
 include ../toggle/toggle
 
 mixin registerCard()
-  section.register-card
+  .register-card
     .register-card__wrap
-      h2.register-card__title Регистрация аккаунта
-      +input({ id: "name", placeholder: "Имя" })
-      +input({ id: "surname", placeholder: "Фамилия" })
-      +radiobtn({
-          items: [
-            { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
-            { groupName: "gender", id: "famale", title: "Женщина" }
-          ]
-        })
-      +input({
-        id: "dateInput",
-        type: "text",
-        placeholder: "ДД.ММ.ГГГГ",
-        labelName: "Дата рождения",
-        isBigLabel: true
-      })
-      .register-card__user-data
-        +input({
-          id: "loginInput",
-          type: "text",
-          placeholder: "Email",
-          labelName: "Данные для входа в сервис",
-          isBigLabel: true
-        })
-        +input({
-          id: "passInput",
-          type: "password",
-          placeholder: "Пароль",
-        })
-        +toggle({
-          items: [
-            { id: "notGiveSpec", title: "Получать спецпредложения" }
-          ]
-        })
-      +button({ title: "Перейти к оплате", isHaveIcon: true, buttonType: "button" })
+      form(method="get")
+        h2.register-card__title Регистрация аккаунта
+        fieldset
+          +input({ id: "name", placeholder: "Имя" })
+          +input({ id: "surname", placeholder: "Фамилия" })
+          +radiobtn({
+              items: [
+                { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
+                { groupName: "gender", id: "famale", title: "Женщина" }
+              ]
+            })
+        fieldset
+          legend Дата рождения
+          +input({
+            id: "dateInput",
+            type: "text",
+            placeholder: "ДД.ММ.ГГГГ"
+          })
+        fieldset
+          legend Данные для входа в сервис
+          +input({
+            id: "loginInput",
+            type: "text",
+            placeholder: "Email"
+          })
+          +input({
+            id: "passInput",
+            type: "password",
+            placeholder: "Пароль",
+          })
+          +toggle({
+            items: [
+              { id: "notGiveSpec", title: "Получать спецпредложения" }
+            ]
+          })
+        +button({ title: "Перейти к оплате", isHaveIcon: true, buttonType: "submit" })
+      .register-card__account-enter
+        p Уже есть аккаунт на Toxin
+        +button({ path: "#", title: "Войти",  isEmptyStyle: true })
