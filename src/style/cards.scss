@@ -4,6 +4,7 @@
 
 .cards-page__wrap {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 70px 0;
 }
