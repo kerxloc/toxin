@@ -1,0 +1,54 @@
+.auth-card {
+  width: 380px;
+  background: $mainColor;
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+
+  fieldset {
+    width: 320px;
+    margin-bottom: 20px;
+    padding: 0;
+    border: 0;
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .button--icon {
+    width: 100%;
+    padding: 15px 20px;
+    padding-top: 14px;
+    font-weight: normal;
+  }
+}
+
+.auth-card__wrap {
+  padding: 30px;
+  padding-top: 40px;
+}
+
+.auth-card__title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+
+.auth-card__account-enter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+  font-family: Montserrat;
+
+  .button {
+    padding: 13px 24px;
+  }
+}
