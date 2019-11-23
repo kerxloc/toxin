@@ -3,6 +3,7 @@ include ../components/date-wishes/date-wishes
 include ../components/total-card/total-card
 include ../components/date-picker/date-picker
 include ../components/register-card/register-card
+include ../components/auth-card/auth-card
 block variables
   - var title = "Карточки"
   - var pageClass = "cards-page"
@@ -22,4 +23,6 @@ block content
         .cards-page__item
           .card-page__stub-card
             +datePicker()
+        .cards-page__item
+          +authCard()  
       
