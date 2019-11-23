@@ -4,6 +4,7 @@ include ../components/total-card/total-card
 include ../components/date-picker/date-picker
 include ../components/register-card/register-card
 include ../components/auth-card/auth-card
+include ../components/hotel-card/hotel-card
 block variables
   - var title = "Карточки"
   - var pageClass = "cards-page"
@@ -25,5 +26,16 @@ block content
         .cards-page__item
           .card-page__stub-card
             +datePicker()
-
+        .cards-page__item
+          +hotelCard({
+            numberHotel: 888,
+            isLux: true,
+            reviewCount: 145,
+            dayCost: "9 900",
+            starCount: 5,
+            idRateBtn: "luxHotelRate",
+            images: [
+              { src: "../components/hotel-card/one-hotel.png", alt: "Красивый отель" }
+            ]
+          })
       
