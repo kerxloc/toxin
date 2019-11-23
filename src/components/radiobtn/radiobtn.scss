@@ -71,3 +71,7 @@
 .radiobtn__item input[type="radio"]:checked + label::before {
   border-color: $accentColor;
 }
+
+.radiobtn__item input[type="radio"]:checked + label {
+  color: transparentize($contentColor, 0.25)
+}
