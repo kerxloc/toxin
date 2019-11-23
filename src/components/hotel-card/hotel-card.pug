@@ -1,0 +1,27 @@
+include ../ratebtn/ratebtn
+
+mixin hotelCard(options = {})
+  section.hotel-card
+    .hotel-card__wrap
+      .hotel-card__slider
+        .hotel-card__slider-pict
+          each item in options.images 
+            img(src=item.src, alt=item.alt)
+        .hotel-card__slider-pict-buttons
+          button(class="slider-btn-active" type="button")
+          button(type="button")
+          button(type="button")
+          button(type="button")
+        .hotel-card__slider-control
+          button(type="button") Назад
+          button(type="button") Вперед
+      .hotel-card__info
+        .hotel-card__info-item
+          if (options.isLux)
+            h2.hotel-card__title № #[span= options.numberHotel] #[b люкс]
+          else 
+            h2.hotel-card__title № #[span= options.numberHotel]
+          p.hotel-card__text #[b= options.dayCost]₽ в сутки
+        .hotel-card__info-item
+          +ratebtn({ items: [{ idGroup: options.idRateBtn, currentRating: options.starCount }] })
+          p.hotel-card__text #[b= options.reviewCount] Отзывов
