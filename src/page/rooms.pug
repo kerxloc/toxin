@@ -1,4 +1,7 @@
 extends ../layout/main.pug
+include ../components/input/input
+include ../components/range-slider/range-slider
+include ../components/checkbox/checkbox
 
 block variables
   - var title = "Toxin - подбери свой отель!"
@@ -6,4 +9,76 @@ block variables
   - var pageClass = "rooms-page"
   
 block content
-  h1 Страница с комнатами
+  .container
+    .filter
+      .filter__wrap
+        .filter__item
+          +input({
+            id: "number-guests-input",
+            isFakeInput: true,
+            labelName: "Даты пребывания в отеле",
+            isButtonSplit: true,
+            isDownSplitAnimation: true,
+            isHaveIcon: true,
+            placeholder: "19 авг - 23 авг",
+            isBigLabel: true
+          })
+        .filter__item
+          +input({
+            id: "number-guest",
+            isFakeInput: true,
+            labelName: "Гости",
+            isButtonSplit: true,
+            isDownSplitAnimation: true,
+            isHaveIcon: true,
+            placeholder: "3 гостя, 1 младенец",
+            isBigLabel: true
+          })
+        .filter__item
+          +rangeSlider({ title: "Диапазон цены", min: '5 000', max: '10 000' })
+          p.filter__explan Стоимость за сутки пребывания в номере
+        .filter__item
+          +checkbox({
+                title: "Checkbox Buttons",
+                items: [
+                  { id: "smoke", title: "Можно курить" },
+                  { id: "pets", title: "Можно с питомцами", isChecked: true },
+                  { id: "guest", title: "Можно пригласить гостей (до 10 человек)", isChecked: true }
+                ]
+              })
+        .filter__item
+          +checkbox({
+                title: "Доступность",
+                isRich: true,
+                items: [
+                  { id: "wild", title: "Широкий коридор", descr: "Ширина коридоров в номере не менее 91 см." },
+                  { id: "help", title: "Помощник для инвалидов", descr: "На 1 этаже вас встретит специалист  и проводит до номера." },
+                ]
+              })
+        .filter__item
+          +input({
+            id: "number-bed",
+            isFakeInput: true,
+            labelName: "Удобства номера",
+            isButtonSplit: true,
+            isDownSplitAnimation: true,
+            isHaveIcon: true,
+            placeholder: "2 спальни, 2 кровати...",
+            isBigLabel: true
+          })
+        .filter__item
+          +checkbox({
+            title: "Дополнительные удобства",
+            isExpandable: true,
+            isExpandableOpen: true,
+            items: [
+              { id: "breakfast", title: "Завтрак" },
+              { id: "pen", title: "Письменный стол", isChecked: true },
+              { id: "break-sit", title: "Стул для кормления", isChecked: true },
+              { id: "bed", title: "Кроватка", isChecked: true },
+              { id: "tv", title: "Телевизор" },
+              { id: "shampu", title: "Шампунь" },
+              { id: "tv2", title: "Телевизор" },
+              { id: "shampu2", title: "Шампунь" },
+            ]
+          })
