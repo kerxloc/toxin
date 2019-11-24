@@ -49,6 +49,10 @@
   top: 69px;
   left: 0;
 
+  &--hide {
+    display: none;
+  }
+
   button {
     position: absolute;
     top: 0;
