@@ -2,6 +2,10 @@
   position: relative;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 
+  &--border-top {
+    border-top: 1px solid transparentize($contentColor, 0.75);
+  }
+
   &::after {
     position: absolute;
     bottom: 78px;

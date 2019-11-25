@@ -5,8 +5,10 @@ include ../input/input
 include ../copyright/copyright
 include ../social-buttons/social-buttons
 
-mixin footer()
-  footer.page-footer
+mixin footer(options = {})
+  - var footerClass = options.isBorderTop ? "page-footer  page-footer--border-top" : "page-footer"
+
+  footer(class=footerClass)
     .container
       .page-footer__wrap
         .page-footer__content
