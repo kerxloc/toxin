@@ -1,12 +1,29 @@
 .rooms-page__wrap {
   display: flex;
+  padding: 30px 0;
+}
+
+.filter {
+  margin-right: 60px;
+}
+
+.filter__item {
+  margin-bottom: 30px;
+
+  &--mbs {
+    margin-bottom: 20px;
+  }
+}
+
+.hotels__title {
+  margin: 0;
 }
 
 .hotels__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 93%;
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
