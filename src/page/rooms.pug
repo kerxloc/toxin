@@ -3,6 +3,7 @@ include ../components/input/input
 include ../components/range-slider/range-slider
 include ../components/checkbox/checkbox
 include ../components/hotel-card/hotel-card
+include ../components/pagination/pagination
 
 block variables
   - var title = "Toxin - подбери свой отель!"
@@ -225,3 +226,4 @@ block content
           each item in hotels
             li.hotels__item
               +hotelCard(item)
+        +pagination()
