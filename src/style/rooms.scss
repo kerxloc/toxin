@@ -7,12 +7,24 @@
   margin-right: 60px;
 }
 
+.filter__wrap {
+  width: 266px;
+}
+
 .filter__item {
   margin-bottom: 30px;
 
   &--mbs {
     margin-bottom: 20px;
   }
+}
+
+.filter__explan {
+  margin: 0;
+  margin-top: 26px;
+  color: transparentize($contentColor, 0.5);
+  font-size: 12px;
+  line-height: 14px;
 }
 
 .hotels__title {
