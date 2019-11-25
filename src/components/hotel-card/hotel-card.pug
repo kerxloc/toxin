@@ -14,8 +14,8 @@ mixin hotelCard(options = {})
           button(type="button")
           button(type="button")
         div(class=sliderBtnClass)
-          button(type="button") Назад
-          button(type="button") Вперед
+          .hotel-card__slider-btn Назад
+          div(class="hotel-card__slider-btn  hotel-card__slider-btn--next") Вперед
       .hotel-card__info
         .hotel-card__info-item
           if (options.isLux)
