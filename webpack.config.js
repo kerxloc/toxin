@@ -11,6 +11,7 @@ module.exports = {
   },
   entry: {
     index: "./src/index.js",
+    rooms: "./src/rooms.js",
     "form-elements": "./src/form-elements.js"
   },
   output: {
@@ -72,7 +73,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "rooms.html",
-      template: "./src/page/rooms.pug"
+      template: "./src/page/rooms.pug",
+      chunks: ["rooms"]
     }),
     new HtmlWebpackPlugin({
       filename: "form-elements.html",
