@@ -3,6 +3,7 @@ mixin checkbox(options = {})
     var checkboxClass = "checkbox"
     var titleClass = "checkbox__title"
     var labelClass = "checbox__lbl"
+    var listId = options.idExpandableList ? options.idExpandableList : "checkbox-expandable-list"
 
     if (options.isExpandable) {
       titleClass += "  checkbox__title--expandable"
@@ -21,11 +22,11 @@ mixin checkbox(options = {})
     if options.title
       if options.isExpandable
         p(class=titleClass)
-          button(id="checkbox-expandable-btn" class="checkbox__expandable" type="button")= options.title
+          button(id=options.idExpandableBtn class="checkbox__expandable" type="button")= options.title
       else 
         p(class=titleClass)= options.title
     if options.items
-      .checkbox__item-list
+      div(id=listId class="checkbox__item-list")
         each item in options.items
           div.checkbox__item
             input(id=item.id type="checkbox" checked=item.isChecked)
