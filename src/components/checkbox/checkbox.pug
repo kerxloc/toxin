@@ -21,7 +21,7 @@ mixin checkbox(options = {})
     if options.title
       if options.isExpandable
         p(class=titleClass)
-          button(class="checkbox__expandable" type="button")= options.title
+          button(id="checkbox-expandable-btn" class="checkbox__expandable" type="button")= options.title
       else 
         p(class=titleClass)= options.title
     if options.items
