@@ -12,20 +12,25 @@
 .checkbox__title--expandable {
   position: relative;
 
-  &::after {
-    position: absolute;
-    top: 4px;
-    right: 15px;
-    width: 12px;
-    height: 8px;
-    content: "";
-    background: url("../components/checkbox/expand-more.png") no-repeat;
-    cursor: pointer;
+  button {
+    width: 100%;
+    text-align: left;
+
+    &::after {
+      position: absolute;
+      top: 4px;
+      right: 15px;
+      width: 12px;
+      height: 8px;
+      content: "";
+      background: url("../components/checkbox/expand-more.png") no-repeat;
+      cursor: pointer;
+    }
   }
 }
 
 .checkbox__title--expandable-open {
-  &::after {
+  & button::after {
     transform: rotate(180deg);
   }
 }
