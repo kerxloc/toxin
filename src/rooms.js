@@ -1,5 +1,6 @@
 import "./style/main.scss";
 import DropDown from "./components/drop-down/drop-down";
+import ExpandableCheckbox from "./components/checkbox/checkbox";
 import "./components/main-menu/main-menu";
 
 const dropDownContainer = document.querySelector("#drop-down-container");
@@ -26,3 +27,12 @@ const dropDownOptions = {
 
 const dropDown = new DropDown(dropDownOptions);
 dropDown.init();
+
+const expandableBtn = document.querySelector("#checkbox-expandable-btn");
+const expandableList = document.querySelector("#checkbox-expandable-list");
+
+const expandableCheckbox = new ExpandableCheckbox({
+  expandableBtn,
+  expandableList
+});
+expandableCheckbox.init();
