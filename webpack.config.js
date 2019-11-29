@@ -77,6 +77,10 @@ module.exports = {
       chunks: ["rooms"]
     }),
     new HtmlWebpackPlugin({
+      filename: "room-details.html",
+      template: "./src/page/room-details.pug"
+    }),
+    new HtmlWebpackPlugin({
       filename: "form-elements.html",
       template: "./src/page/form-elements.pug",
       chunks: ["form-elements"]
