@@ -25,9 +25,10 @@ mixin checkbox(options = {})
       else 
         p(class=titleClass)= options.title
     if options.items
-      each item in options.items
-        div.checkbox__item
-          input(id=item.id type="checkbox" checked=item.isChecked)
-          label(for=item.id class=labelClass)= item.title
-            if options.isRich
-              p.checkbox__descr= item.descr
+      .checkbox__item-list
+        each item in options.items
+          div.checkbox__item
+            input(id=item.id type="checkbox" checked=item.isChecked)
+            label(for=item.id class=labelClass)= item.title
+              if options.isRich
+                p.checkbox__descr= item.descr
