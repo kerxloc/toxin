@@ -133,3 +133,7 @@
   line-height: 18px;
   color: transparentize($contentColor, 0.25);
 }
+
+.checkbox__item-list--hide {
+  display: none;
+}
