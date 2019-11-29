@@ -1,5 +1,6 @@
 import "./style/main.scss";
 import DropDown from "./components/drop-down/drop-down";
+import "./components/main-menu/main-menu";
 
 const dropDownContainer = document.querySelector("#drop-down-container");
 const inputDropDown = document.querySelector("#number-bed");
