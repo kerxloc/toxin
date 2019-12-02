@@ -1,0 +1,18 @@
+.room-details__picture {
+  display: flex;
+  justify-content: center;
+  font-size: 0;
+
+  img {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.room-details__picture-miniature {
+  width: 461px;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  font-size: 0;
+}
