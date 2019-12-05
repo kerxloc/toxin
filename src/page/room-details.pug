@@ -1,4 +1,5 @@
 extends ../layout/main.pug
+include ../components/features/features
 
 block variables
   - var title = "Toxin - подбери свой отель!"
@@ -12,4 +13,26 @@ block content
       img(width="461" height="243" src="../style/room-details-2.jpg", alt="Детали комнаты")
       img(width="461" height="243" src="../style/room-details-3.jpg", alt="Детали комнаты")
   .container
-    h1 Привет из рум-деталис
+    .room-details__content
+      .room-details__wrap
+        section.room-details__intellig
+          h2.room-details__title Сведения о номере
+          +features({
+            items: [
+              {
+                title: "Комфорт",
+                descr: "Шумопоглощающие стены",
+                srcIcon: "../components/features/emoticon.png"
+              },
+              {
+                title: "Удобство",
+                descr: "Окно в каждой из спален",
+                srcIcon: "../components/features/city.png"
+              },
+              {
+                title: "Уют",
+                descr: "Номер оснащён камином",
+                srcIcon: "../components/features/whatshot.png"
+              }
+            ]
+          })
