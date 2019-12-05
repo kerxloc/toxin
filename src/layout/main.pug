@@ -12,5 +12,6 @@ html(lang="ru")
     title #{title}
   body(class=pageClass)
     +header()
-    block content
+    main
+      block content
     +footer({ isBorderTop: true })
