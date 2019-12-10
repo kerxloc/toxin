@@ -12,6 +12,7 @@ module.exports = {
   entry: {
     index: "./src/index.js",
     rooms: "./src/rooms.js",
+    "room-details": "./src/room-details.js",
     "form-elements": "./src/form-elements.js"
   },
   output: {
@@ -78,7 +79,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "room-details.html",
-      template: "./src/page/room-details.pug"
+      template: "./src/page/room-details.pug",
+      chunks: ["room-details"]
     }),
     new HtmlWebpackPlugin({
       filename: "form-elements.html",
