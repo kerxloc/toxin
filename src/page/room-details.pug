@@ -1,6 +1,9 @@
 extends ../layout/main.pug
 include ../components/features/features
 include ../components/pie-chart/pie-chart
+include ../components/comment/comment
+include ../components/bullet-list/bullet-list
+include ../components/total-card/total-card
 
 block variables
   - var title = "Toxin - подбери свой отель!"
@@ -16,27 +19,61 @@ block content
   .container
     .room-details__wrap
       .room-details__content
-        section.room-details__intellig
-          h2.room-details__title Сведения о номере
-          +features({
+        .room-details__column
+          section.room-details__intellig
+            h2.room-details__title Сведения о номере
+            +features({
+              items: [
+                {
+                  title: "Комфорт",
+                  descr: "Шумопоглощающие стены",
+                  srcIcon: "../components/features/emoticon.png"
+                },
+                {
+                  title: "Удобство",
+                  descr: "Окно в каждой из спален",
+                  srcIcon: "../components/features/city.png"
+                },
+                {
+                  title: "Уют",
+                  descr: "Номер оснащён камином",
+                  srcIcon: "../components/features/whatshot.png"
+                }
+              ]
+            })
+          section.room-details__impression
+            h2.room-details__title Впечатления от номера
+            +pieChart()
+        section.room-details__reviews
+          h2.room-details__title Отзывы посетителей номера #[span.room-details__title-alt 2 отзыва]
+          +comment({
+              authorName: "Мурад Сарафанов",
+              datePost: "5 дней назад",
+              like: 12,
+              isLikeActive: true,
+              avatarSrc: "../components/comment/murad.png",
+              text:
+                "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+            })
+          +comment({
+            authorName: "Патрисия Стёклышкова",
+            datePost: "Неделю назад",
+            like: 2,
+            isLikeActive: false,
+            avatarSrc: "../components/comment/patric.png",
+            text:
+              "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
+          })
+        .room-details__column
+          +bullet({
+            title: "Правила",
             items: [
-              {
-                title: "Комфорт",
-                descr: "Шумопоглощающие стены",
-                srcIcon: "../components/features/emoticon.png"
-              },
-              {
-                title: "Удобство",
-                descr: "Окно в каждой из спален",
-                srcIcon: "../components/features/city.png"
-              },
-              {
-                title: "Уют",
-                descr: "Номер оснащён камином",
-                srcIcon: "../components/features/whatshot.png"
-              }
+              { label: "Нельзя с питомцами" },
+              { label: "Без вечеринок и мероприятий" },
+              { label: "Время прибытия — после 13:00, а выезд до 12:00" }
             ]
           })
-        section.room-details__impression
-          h2.room-details__title Впечатления от номера
-          +pieChart()
+          section.room-details__info
+            h2.room-details__title Отмена
+            p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+      +totalCard()
