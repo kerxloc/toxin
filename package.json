@@ -1,7 +1,8 @@
 {
-  "name": "test",
-  "version": "1.0.0",
-  "description": "",
+  "name": "toxin",
+  "version": "",
+  "description": "FSD education program. The 2nd task",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --hot --mode development",
