@@ -1,0 +1,10 @@
+mixin pieChart()
+  .pie-chart
+    .pie-chart__diagram
+      canvas(id="doughnut-chart" width="120" height="120")
+    p.pie-chart__vote #[b= 260] Голосов
+    ul.pie-chart__label-list
+      li(class="pie-chart__label-item  pie-chart__label-item--yellow") Великолепно
+      li(class="pie-chart__label-item  pie-chart__label-item--green") Хорошо
+      li(class="pie-chart__label-item  pie-chart__label-item--purple")  Удовлетворительно
+      li(class="pie-chart__label-item") Разочарован
