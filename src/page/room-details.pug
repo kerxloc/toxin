@@ -1,5 +1,6 @@
 extends ../layout/main.pug
 include ../components/features/features
+include ../components/pie-chart/pie-chart
 
 block variables
   - var title = "Toxin - подбери свой отель!"
@@ -38,5 +39,4 @@ block content
           })
         section.room-details__impression
           h2.room-details__title Впечатления от номера
-          .room-details__chart
-            canvas(id="doughnut-chart" width="120" height="120")
+          +pieChart()
