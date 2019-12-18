@@ -21,6 +21,10 @@
 
   img {
     max-width: 461px;
+
+    &:last-child {
+      max-height: 240px;
+    }
   }
 }
 
