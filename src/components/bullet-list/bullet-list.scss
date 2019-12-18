@@ -7,6 +7,10 @@
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
+
+  &--lp {
+    padding-left: 20px;
+  }
 }
 
 .bullet__list {
