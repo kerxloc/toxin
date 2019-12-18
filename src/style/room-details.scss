@@ -111,4 +111,48 @@
   color: transparentize($contentColor, 0.25);
 }
 
+@media (max-width: 1160px) {
+  .room-details__wrap {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 40px;
+  }
+
+  .room-details__content {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .room-details__wrap .total-card {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .room-details__column {
+    flex-direction: column;
+
+    .bullet {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .bullet__title--lp {
+      padding-left: 0;
+    }
+  }
+
+  .room-details__intellig {
+    margin-bottom: 40px;
+  }
+
+  .room-details__column {
+    width: 100%;
+  }
+
+  .room-details__info {
+    width: 100%;
+  }
+}
+
 @import "../components/pie-chart/pie-chart";
