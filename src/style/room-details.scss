@@ -1,20 +1,27 @@
 .room-details__picture {
-  display: flex;
-  justify-content: center;
-  font-size: 0;
+  display: grid;
+  grid-template-columns: 981fr 461fr;
+  justify-items: end;
+  max-width: 1440px;
+  margin: 0 auto;
 
   img {
+    width: 100%;
+    max-width: 981px;
     margin: 0;
     padding: 0;
   }
 }
 
 .room-details__picture-miniature {
-  width: 461px;
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
   font-size: 0;
+
+  img {
+    max-width: 461px;
+  }
 }
 
 .room-details__title {
@@ -46,7 +53,7 @@
 }
 
 .room-details__content {
-  width: 710px;
+  width: 61.3%;
   margin-right: 70px;
 }
 
@@ -73,7 +80,7 @@
 }
 
 .room-details__column .bullet {
-  width: 264px;
+  width: 37%;
 }
 
 .room-details__column .bullet__title {
@@ -83,6 +90,7 @@
 }
 
 .room-details__info {
+  width: 48%;
   margin-right: 9px;
 }
 
@@ -91,7 +99,7 @@
 }
 
 .room-details__info p {
-  width: 341px;
+  width: 100%;
   margin: 0;
   font-family: Montserrat;
   font-size: 14px;
