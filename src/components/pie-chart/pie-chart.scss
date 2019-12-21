@@ -75,3 +75,25 @@
     }
   }
 }
+
+@media (max-width: 425px) {
+  .pie-chart {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 350px) {
+  .pie-chart {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pie-chart__diagram {
+    margin-bottom: 20px;
+  }
+
+  .pie-chart__label-list {
+    margin-left: 0;
+  }
+}
