@@ -143,3 +143,61 @@
   line-height: 24px;
   font-weight: bold;
 }
+
+@media (max-width: 380px) {
+  .total-card {
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+  }
+
+  .total-card__wrap {
+    .total-card__date-inputs .input-group {
+      margin-right: 20px;
+
+      &:nth-child(2) {
+        margin-right: 0;
+      }
+    }
+
+    .input-group__input--button-split {
+      width: 100%;
+    }
+
+    .input-group__button-split {
+      width: 28%;
+    }
+  }
+
+  .total-card__calc-item--mbx {
+    .total-card__calc-text--extend {
+      width: 67%;
+    }
+  }
+
+  .total-card__calc-text--lhs {
+    width: 67%;
+  }
+
+  .total-card__total::after {
+    width: 58%;
+  }
+}
+
+@media (max-width: 360px) {
+  .total-card__total::after {
+    width: 55%;
+  }
+}
+
+@media (max-width: 335px) {
+  .total-card__total::after {
+    width: 53%;
+  }
+}
+
+@media (max-width: 320px) {
+  .total-card__total::after {
+    width: 48%;
+  }
+}
