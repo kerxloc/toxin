@@ -155,4 +155,11 @@
   }
 }
 
+@media (max-width: 425px) {
+  .room-details__content-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 @import "../components/pie-chart/pie-chart";
