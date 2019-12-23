@@ -55,3 +55,32 @@
 .hotels__item {
   margin-bottom: 21px;
 }
+
+@media (max-width: 425px) {
+  .rooms-page__wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 595px) {
+  .hotels__list {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .rooms-page__wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter {
+    width: 266px;
+    margin-right: 0;
+  }
+
+  .filter__wrap {
+    width: 100%;
+  }
+}
