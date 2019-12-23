@@ -90,6 +90,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "cards.html",
       template: "./src/page/cards.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "registration.html",
+      template: "./src/page/registration.pug"
     })
   ]
 };
