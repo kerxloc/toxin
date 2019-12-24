@@ -29,6 +29,9 @@ dist/
 build/
 stats.json
 
+#Pixel perfect screenshots
+pp
+
 ### SublimeText ###
 # cache files for sublime text
 *.tmlanguage.cache
