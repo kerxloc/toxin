@@ -1,0 +1,12 @@
+.auth-page {
+  main {
+    background: url("room-interior.jpg") no-repeat;
+    background-position: center -70px;
+  }
+}
+
+.auth-page__wrap {
+  display: flex;
+  justify-content: center;
+  padding: 163px 0 165px;
+}
