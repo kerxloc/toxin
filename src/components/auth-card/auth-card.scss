@@ -40,7 +40,6 @@
   line-height: 30px;
 }
 
-
 .auth-card__account-enter {
   display: flex;
   justify-content: space-between;
@@ -50,5 +49,22 @@
 
   .button {
     padding: 12px 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .auth-card {
+    width: 100%;
+    min-width: 320px;
+  }
+
+  .auth-card__wrap {
+    .input-group__input {
+      width: 100%;
+    }
+  }
+
+  .auth-card fieldset {
+    width: 100%;
   }
 }
