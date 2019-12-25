@@ -30,7 +30,7 @@
     width: 20px;
     height: 20px;
     margin-left: 4px;
-    background: url("../components/ratebtn/star.png") no-repeat;
+    background: url("../../components/ratebtn/star.png") no-repeat;
     cursor: pointer;
 
     &:last-child {
@@ -41,11 +41,11 @@
 
 .ratebtn__item label:hover,
 .ratebtn__item label:hover ~ label {
-  background: url("../components/ratebtn/star-active.png") no-repeat;
+  background: url("../../components/ratebtn/star-active.png") no-repeat;
 }
 
 .ratebtn__item input:checked ~ label {
-  background: url("../components/ratebtn/star-active.png") no-repeat;
+  background: url("../../components/ratebtn/star-active.png") no-repeat;
 }
 
 .ratebtn__item-wrap {
