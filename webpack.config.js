@@ -12,6 +12,8 @@ module.exports = {
   entry: {
     main: "./src/page/main/main.js",
     rooms: "./src/page/rooms/rooms.js",
+    registration: "./src/page/registration/registration.js",
+    auth: "./src/page/auth/auth.js",
     "room-details": "./src/page/room-details/room-details.js",
     "form-elements": "./src/page/form-elements/form-elements.js"
   },
@@ -93,11 +95,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: "registration.html",
-      template: "./src/page/registration/registration.pug"
+      template: "./src/page/registration/registration.pug",
+      chunks: ["registration"]
     }),
     new HtmlWebpackPlugin({
       filename: "auth.html",
-      template: "./src/page/auth/auth.pug"
+      template: "./src/page/auth/auth.pug",
+      chunks: ["auth"]
     })
   ]
 };
