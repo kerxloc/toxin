@@ -1,0 +1,32 @@
+@import "utils/normolize";
+@import "utils/variables.scss";
+@import "../fonts/fonts.scss";
+
+body {
+  color: $contentColor;
+  font-size: 14px;
+  font-family: $fontFamily;
+}
+
+.container {
+  position: relative;
+  width: 80.5556%;
+  min-width: 320px;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@media (max-width: 1300px) {
+  .container {
+    width: 90.5556%;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+}

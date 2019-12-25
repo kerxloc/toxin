@@ -1,6 +1,7 @@
-import "./style/main.scss";
+import "../../style/index.scss";
+import "./form-elements.scss";
 import Inputmask from "inputmask";
-import DropDown from "./components/drop-down/drop-down";
+import DropDown from "../../components/drop-down/drop-down";
 
 Inputmask({ mask: "99.99.9999", placeholder: "ДД.ММ.ГГГГ" }).mask(
   "#maskedTextField"

@@ -1,3 +1,5 @@
+@import "../../style/utils/variables.scss";
+
 .ui-kit__wrap {
   padding-top: 62px;
   padding-left: 1px;
@@ -176,14 +178,14 @@
   }
 }
 
-@import "../components/checkbox/checkbox";
-@import "../components/radiobtn/radiobtn";
-@import "../components/toggle/toggle";
-@import "../components/likebtn/likebtn";
-@import "../components/ratebtn/ratebtn";
-@import "../components/range-slider/range-slider";
-@import "../components/title/title";
-@import "../components/pagination/pagination";
-@import "../components/features/features";
-@import "../components/bullet-list/bullet-list";
-@import "../components/comment/comment";
+@import "../../components/checkbox/checkbox";
+@import "../../components/radiobtn/radiobtn";
+@import "../../components/toggle/toggle";
+@import "../../components/likebtn/likebtn";
+@import "../../components/ratebtn/ratebtn";
+@import "../../components/range-slider/range-slider";
+@import "../../components/title/title";
+@import "../../components/pagination/pagination";
+@import "../../components/features/features";
+@import "../../components/bullet-list/bullet-list";
+@import "../../components/comment/comment";

@@ -1,3 +1,5 @@
+@import "../../style/utils/variables.scss";
+
 .room-details__picture {
   display: grid;
   grid-template-columns: 981fr 461fr;
@@ -162,4 +164,4 @@
   }
 }
 
-@import "../components/pie-chart/pie-chart";
+@import "../../components/pie-chart/pie-chart";
