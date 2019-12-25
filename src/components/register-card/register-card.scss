@@ -59,7 +59,6 @@
   line-height: 30px;
 }
 
-
 .register-card__account-enter {
   display: flex;
   justify-content: space-between;
@@ -69,5 +68,22 @@
 
   .button {
     padding: 13px 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .register-card {
+    width: 100%;
+    min-width: 320px;
+  }
+
+  .register-card__wrap {
+    .input-group__input {
+      width: 100%;
+    }
+  }
+
+  .register-card fieldset {
+    width: 100%;
   }
 }
