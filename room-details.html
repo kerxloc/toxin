@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Toxin description">
-    <title>Toxin - главная!</title>
+    <meta name="description" content="Room details description">
+    <title>Toxin - детали комнаты!</title>
   </head>
-  <body class="index-page">
+  <body class="room-details">
     <header class="page-header">
       <div class="container">
         <div class="page-header__wrap">
@@ -74,49 +74,157 @@
       </div>
     </header>
     <main>
-      <div class="index-block">
-        <div class="container">
-          <div class="index-block__wrap">
-            <section class="date-wishes">
-              <div class="date-wishes__wrap">
-                <form action="">
-                  <fieldset>
-                    <legend class="date-wishes__title">Найдём номера под ваши пожелания</legend>
-                    <div class="date-wishes__group">
-                      <div class="input-group  input-group--column">
-                        <label class="input-group__label" for="arrival-input">Прибытие</label>
-                        <p class="input-group__split">
-                          <input class="input-group__input  input-group__input--button-split  input-group__input--dark-placeholder" id="arrival-input" placeholder="ДД.ММ.ГГГГ"/>
-                          <button class="input-group__button-split  input-group__button-split--down-animation" id="arrival-split-btn" type="button"><img src="2aca2b81629bfaae56f0a3532836a10e.svg" alt=""/></button>
-                        </p>
-                      </div>
-                      <div class="input-group  input-group--column">
-                        <label class="input-group__label" for="departure-input">Выезд</label>
-                        <p class="input-group__split">
-                          <input class="input-group__input  input-group__input--button-split  input-group__input--dark-placeholder" id="departure-input" placeholder="ДД.ММ.ГГГГ"/>
-                          <button class="input-group__button-split  input-group__button-split--down-animation" id="departure-split-btn" type="button"><img src="2aca2b81629bfaae56f0a3532836a10e.svg" alt=""/></button>
-                        </p>
-                      </div>
-                      <div class="date-picker-container" id="date-picker-container"></div>
+      <div class="room-details__picture"> 
+        <div class="room-details__picture-big"><img src="d4e07fd2f8d5a939fe994dc0e7581aeb.jpg" alt="Детали комнаты"></div>
+        <div class="room-details__picture-miniature"><img src="84fdd2c96515b904f3187ac7c0ea204c.jpg" alt="Детали комнаты"><img src="45eb3f2d45cc3f87104023607ebe6e2e.jpg" alt="Детали комнаты"></div>
+      </div>
+      <div class="container">
+        <div class="room-details__wrap">
+          <div class="room-details__content">
+            <div class="room-details__content-wrap">
+              <div class="room-details__column">
+                <section class="room-details__intellig">
+                  <h2 class="room-details__title">Сведения о номере</h2>
+                  <ul class="features">
+                    <li class="features__item"> 
+                      <div class="features__pict"><img src="d260330f8d992c44cad13d8df66f7701.png" alt="Комфорт"/></div>
+                      <section class="features__content">
+                        <h2 class="features__title">Комфорт</h2>
+                        <p class="features__descr">Шумопоглощающие стены</p>
+                      </section>
+                    </li>
+                    <li class="features__item"> 
+                      <div class="features__pict"><img src="738e595396bb8958b49721391d38d5c0.png" alt="Удобство"/></div>
+                      <section class="features__content">
+                        <h2 class="features__title">Удобство</h2>
+                        <p class="features__descr">Окно в каждой из спален</p>
+                      </section>
+                    </li>
+                    <li class="features__item"> 
+                      <div class="features__pict"><img src="2a4411e85015cb3ef12f848357d16fb2.png" alt="Уют"/></div>
+                      <section class="features__content">
+                        <h2 class="features__title">Уют</h2>
+                        <p class="features__descr">Номер оснащён камином</p>
+                      </section>
+                    </li>
+                  </ul>
+                </section>
+                <section class="room-details__impression">
+                  <h2 class="room-details__title">Впечатления от номера</h2>
+                  <div class="pie-chart">
+                    <div class="pie-chart__diagram">
+                      <canvas id="doughnut-chart" width="120" height="120"></canvas>
                     </div>
-                    <div class="input-group  input-group--column">
-                      <p class="input-group__label" id="for-number-guests-input">Гости</p>
-                      <div class="input-group__input  input-group__input--fake  input-group__input--icon  input-group__button-split--down-animation" id="number-guests-input">Сколько гостей</div>
-                    </div>
-                    <div class="drop-down-container" id="drop-down-container"></div>
-                    <button class="button  button--icon" type="submit">Подобрать номер</button>
-                  </fieldset>
-                </form>
+                    <p class="pie-chart__vote"><b>260</b> Голосов</p>
+                    <ul class="pie-chart__label-list">
+                      <li class="pie-chart__label-item  pie-chart__label-item--yellow">Великолепно</li>
+                      <li class="pie-chart__label-item  pie-chart__label-item--green">Хорошо</li>
+                      <li class="pie-chart__label-item  pie-chart__label-item--purple"> Удовлетворительно</li>
+                      <li class="pie-chart__label-item">Разочарован</li>
+                    </ul>
+                  </div>
+                </section>
               </div>
-            </section>
+              <section class="room-details__reviews">
+                <h2 class="room-details__title  room-details__title--low-mb">Отзывы посетителей номера <span class="room-details__title-alt">2 отзыва</span></h2>
+                <div class="comment">
+                  <div class="comment__wrap">
+                    <div class="comment__pict"><img src="b15aa83c7d8a1aae111e141f3e85e339.png" alt="Мурад Сарафанов"/></div>
+                    <div class="likebtn">
+                      <p class="likebtn__item  likebtn__item--active">
+                        <button type="button">12</button>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="comment__wrap">
+                    <p class="comment__title">Мурад Сарафанов</p>
+                    <p class="comment__date">5 дней назад</p>
+                    <p class="comment__text">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</p>
+                  </div>
+                </div>
+                <div class="comment">
+                  <div class="comment__wrap">
+                    <div class="comment__pict"><img src="d6768fda3e307360b89cb06d00b680c5.png" alt="Патрисия Стёклышкова"/></div>
+                    <div class="likebtn">
+                      <p class="likebtn__item">
+                        <button type="button">2</button>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="comment__wrap">
+                    <p class="comment__title">Патрисия Стёклышкова</p>
+                    <p class="comment__date">Неделю назад</p>
+                    <p class="comment__text">Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент</p>
+                  </div>
+                </div>
+              </section>
+              <div class="room-details__column">
+                <div class="bullet">
+                  <p class="bullet__title  bullet__title--lp">Правила</p>
+                  <ul class="bullet__list">
+                    <li class="bullet__item">Нельзя с питомцами</li>
+                    <li class="bullet__item">Без вечеринок и мероприятий</li>
+                    <li class="bullet__item">Время прибытия — после 13:00, а выезд до 12:00</li>
+                  </ul>
+                </div>
+                <section class="room-details__info">
+                  <h2 class="room-details__title">Отмена</h2>
+                  <p>Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.</p>
+                </section>
+              </div>
+            </div>
           </div>
-          <div class="index-block__slogan">
-            <p>Лучшие номера для вашей работы, отдыха и просто вдохновения</p>
-          </div>
+          <section class="total-card">
+            <div class="total-card__wrap">
+              <div class="total-card__head">
+                <h2 class="total-card__title">№ <span>888</span> <b>люкс</b></h2>
+                <p class="total-card__per-day"><b>9 990₽</b> в сутки</p>
+              </div>
+              <div class="total-card__date-inputs">
+                <div class="input-group  input-group--column">
+                  <label class="input-group__label  input-group__label--big" for="arrival-total-input">Прибытие</label>
+                  <p class="input-group__split">
+                    <input class="input-group__input  input-group__input--button-split  input-group__input--dark-placeholder" id="arrival-total-input" placeholder="19.08.2019"/>
+                    <button class="input-group__button-split  input-group__button-split--down-animation" id="arrival-total-split-btn" type="button"><img src="2aca2b81629bfaae56f0a3532836a10e.svg" alt=""/></button>
+                  </p>
+                </div>
+                <div class="input-group  input-group--column">
+                  <label class="input-group__label  input-group__label--big" for="departure-total-input">Выезд</label>
+                  <p class="input-group__split">
+                    <input class="input-group__input  input-group__input--button-split  input-group__input--dark-placeholder" id="departure-total-input" placeholder="23.08.2019"/>
+                    <button class="input-group__button-split  input-group__button-split--down-animation" id="departure-total-split-btn" type="button"><img src="2aca2b81629bfaae56f0a3532836a10e.svg" alt=""/></button>
+                  </p>
+                </div>
+              </div>
+              <div class="input-group  input-group--column">
+                <p class="input-group__label  input-group__label--big" id="for-number-total-guests-input">Гости</p>
+                <div class="input-group__input  input-group__input--fake  input-group__input--icon  input-group__button-split--down-animation" id="number-total-guests-input">3 гостя</div>
+              </div>
+              <div class="total-card__calc">
+                <div class="total-card__calc-item">
+                  <p class="total-card__calc-text">9 990₽ х 4 суток</p>
+                  <p class="total-card__calc-cost">39 960₽</p>
+                </div>
+                <div class="total-card__calc-item  total-card__calc-item--mbx">
+                  <p class="total-card__calc-text  total-card__calc-text--extend">Сбор за услуги: скидка 2 179₽</p>
+                  <p class="total-card__calc-cost">0₽</p>
+                </div>
+                <div class="total-card__calc-item">
+                  <p class="total-card__calc-text  total-card__calc-text--lhs  total-card__calc-text--extend">Сбор за дополнительные услуги</p>
+                  <p class="total-card__calc-cost">300₽</p>
+                </div>
+              </div>
+              <div class="total-card__total">
+                <p class="total-card__total-text">Итого</p>
+                <p class="total-card__total-price">38 081₽</p>
+              </div>
+              <button class="button  button--icon" type="button">Забронировать</button>
+            </div>
+          </section>
         </div>
       </div>
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer  page-footer--border-top">
       <div class="container">
         <div class="page-footer__wrap">
           <div class="page-footer__content">
@@ -235,5 +343,5 @@
         </div>
       </div>
     </footer>
-  <script type="text/javascript" src="main.bundle.js"></script></body>
+  <script type="text/javascript" src="room-details.bundle.js"></script></body>
 </html>

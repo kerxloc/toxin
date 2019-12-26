@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Toxin description">
-    <title>Toxin - главная!</title>
+    <meta name="description" content="Toxin registration">
+    <title>Toxin - регистрация!</title>
   </head>
-  <body class="index-page">
+  <body class="registration-page">
     <header class="page-header">
       <div class="container">
         <div class="page-header__wrap">
@@ -74,44 +74,57 @@
       </div>
     </header>
     <main>
-      <div class="index-block">
-        <div class="container">
-          <div class="index-block__wrap">
-            <section class="date-wishes">
-              <div class="date-wishes__wrap">
-                <form action="">
-                  <fieldset>
-                    <legend class="date-wishes__title">Найдём номера под ваши пожелания</legend>
-                    <div class="date-wishes__group">
-                      <div class="input-group  input-group--column">
-                        <label class="input-group__label" for="arrival-input">Прибытие</label>
-                        <p class="input-group__split">
-                          <input class="input-group__input  input-group__input--button-split  input-group__input--dark-placeholder" id="arrival-input" placeholder="ДД.ММ.ГГГГ"/>
-                          <button class="input-group__button-split  input-group__button-split--down-animation" id="arrival-split-btn" type="button"><img src="2aca2b81629bfaae56f0a3532836a10e.svg" alt=""/></button>
-                        </p>
-                      </div>
-                      <div class="input-group  input-group--column">
-                        <label class="input-group__label" for="departure-input">Выезд</label>
-                        <p class="input-group__split">
-                          <input class="input-group__input  input-group__input--button-split  input-group__input--dark-placeholder" id="departure-input" placeholder="ДД.ММ.ГГГГ"/>
-                          <button class="input-group__button-split  input-group__button-split--down-animation" id="departure-split-btn" type="button"><img src="2aca2b81629bfaae56f0a3532836a10e.svg" alt=""/></button>
-                        </p>
-                      </div>
-                      <div class="date-picker-container" id="date-picker-container"></div>
-                    </div>
-                    <div class="input-group  input-group--column">
-                      <p class="input-group__label" id="for-number-guests-input">Гости</p>
-                      <div class="input-group__input  input-group__input--fake  input-group__input--icon  input-group__button-split--down-animation" id="number-guests-input">Сколько гостей</div>
-                    </div>
-                    <div class="drop-down-container" id="drop-down-container"></div>
-                    <button class="button  button--icon" type="submit">Подобрать номер</button>
-                  </fieldset>
-                </form>
+      <div class="container">
+        <div class="registration-page__wrap">
+          <div class="register-card">
+            <div class="register-card__wrap">
+              <form method="get">
+                <h2 class="register-card__title">Регистрация аккаунта</h2>
+                <fieldset>
+                  <div class="input-group">
+                    <input class="input-group__input" id="name" placeholder="Имя"/>
+                  </div>
+                  <div class="input-group">
+                    <input class="input-group__input" id="surname" placeholder="Фамилия"/>
+                  </div>
+                  <div class="radiobtn">
+                    <p class="radiobtn__item">
+                      <input id="male" name="gender" type="radio" checked="checked"/>
+                      <label for="male">Мужчина</label>
+                    </p>
+                    <p class="radiobtn__item">
+                      <input id="famale" name="gender" type="radio"/>
+                      <label for="famale">Женщина</label>
+                    </p>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Дата рождения</legend>
+                  <div class="input-group">
+                    <input class="input-group__input" id="dateInput" type="text" placeholder="ДД.ММ.ГГГГ"/>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <legend>Данные для входа в сервис</legend>
+                  <div class="input-group">
+                    <input class="input-group__input" id="loginInput" type="text" placeholder="Email"/>
+                  </div>
+                  <div class="input-group">
+                    <input class="input-group__input" id="passInput" type="password" placeholder="Пароль"/>
+                  </div>
+                  <div class="toggle">
+                    <p class="toggle__item">
+                      <input id="notGiveSpec" type="checkbox"/>
+                      <label for="notGiveSpec">Получать спецпредложения</label>
+                    </p>
+                  </div>
+                </fieldset>
+                <button class="button  button--icon" type="submit">Перейти к оплате</button>
+              </form>
+              <div class="register-card__account-enter">
+                <p>Уже есть аккаунт на Toxin</p><a class="button  button--empty-style" href="#">Войти</a>
               </div>
-            </section>
-          </div>
-          <div class="index-block__slogan">
-            <p>Лучшие номера для вашей работы, отдыха и просто вдохновения</p>
+            </div>
           </div>
         </div>
       </div>
@@ -235,5 +248,5 @@
         </div>
       </div>
     </footer>
-  <script type="text/javascript" src="main.bundle.js"></script></body>
+  <script type="text/javascript" src="registration.bundle.js"></script></body>
 </html>
