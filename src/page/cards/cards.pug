@@ -1,10 +1,10 @@
-extends ../layout/ui-kit.pug
-include ../components/date-wishes/date-wishes
-include ../components/total-card/total-card
-include ../components/date-picker/date-picker
-include ../components/register-card/register-card
-include ../components/auth-card/auth-card
-include ../components/hotel-card/hotel-card
+extends ../../layout/ui-kit.pug
+include ../../components/date-wishes/date-wishes
+include ../../components/total-card/total-card
+include ../../components/date-picker/date-picker
+include ../../components/register-card/register-card
+include ../../components/auth-card/auth-card
+include ../../components/hotel-card/hotel-card
 block variables
   - var title = "Toxin - карточки"
   - var pageClass = "cards-page"
@@ -35,7 +35,7 @@ block content
             starCount: 5,
             idRateBtn: "luxHotelRate",
             images: [
-              { src: "../components/hotel-card/one-hotel.png", alt: "Красивый отель" }
+              { src: "../../components/hotel-card/one-hotel.png", alt: "Красивый отель" }
             ]
           })
           +hotelCard({
@@ -46,7 +46,7 @@ block content
             starCount: 4,
             idRateBtn: "hotelRate",
             images: [
-              { src: "../components/hotel-card/double-hotel.png", alt: "Красивый отель" }
+              { src: "../../components/hotel-card/double-hotel.png", alt: "Красивый отель" }
             ]
           })
       

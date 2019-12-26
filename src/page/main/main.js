@@ -1,7 +1,8 @@
-import "./style/main.scss";
-import DatePicker from "./components/date-picker/date-picker";
-import DropDown from "./components/drop-down/drop-down";
-import "./components/main-menu/main-menu";
+import "../../style/index.scss";
+import "./main.scss";
+import DatePicker from "../../components/date-picker/date-picker";
+import DropDown from "../../components/drop-down/drop-down";
+import "../../components/main-menu/main-menu";
 
 const datePickerDomInfo = {
   parentNodeId: "date-picker-container",

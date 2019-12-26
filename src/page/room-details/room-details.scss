@@ -1,3 +1,21 @@
+@import "../../style/utils/variables.scss";
+@import "../../components/header/header.scss";
+@import "../../components/logo/logo.scss";
+@import "../../components/button/button.scss";
+@import "../../components/main-menu/main-menu.scss";
+@import "../../components/pie-chart/pie-chart";
+@import "../../components/features/features";
+@import "../../components/comment/comment";
+@import "../../components/likebtn/likebtn";
+@import "../../components/bullet-list/bullet-list.scss";
+@import "../../components/total-card/total-card";
+@import "../../components/input/input.scss";
+@import "../../components/footer/footer.scss";
+@import "../../components/nav-menu/nav-menu.scss";
+@import "../../components/text-content/text-content.scss";
+@import "../../components/social-buttons/social-buttons.scss";
+@import "../../components/copyright/copyright.scss";
+
 .room-details__picture {
   display: grid;
   grid-template-columns: 981fr 461fr;
@@ -161,5 +179,3 @@
     padding-right: 20px;
   }
 }
-
-@import "../components/pie-chart/pie-chart";

@@ -1,0 +1,44 @@
+@import "../../style/utils/variables.scss";
+@import "../../components/date-wishes/date-wishes.scss";
+@import "../../components/date-picker/date-picker.scss";
+@import "../../components/total-card/total-card";
+@import "../../components/register-card/register-card";
+@import "../../components/auth-card/auth-card";
+@import "../../components/hotel-card/hotel-card";
+@import "../../components/input/input";
+@import "../../components/radiobtn/radiobtn";
+@import "../../components/toggle/toggle";
+@import "../../components/button/button";
+@import "../../components/ratebtn/ratebtn";
+@import "../../components/logo/logo";
+
+.cards-page {
+  background: #f4f4f6;
+}
+
+.cards-page__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 70px 0;
+}
+
+.cards-page__item {
+  margin-bottom: 40px;
+
+  .hotel-card {
+    margin-bottom: 40px;
+  }
+}
+
+.card-page__stub-card {
+  width: 320px;
+  background: $mainColor;
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-page__stub-card .date-picker {
+  position: static;
+  margin: 0;
+}

@@ -1,0 +1,55 @@
+@import "../../style/utils/variables.scss";
+@import "../../components/header/header.scss";
+@import "../../components/logo/logo.scss";
+@import "../../components/button/button.scss";
+@import "../../components/main-menu/main-menu.scss";
+@import "../../components/date-wishes/date-wishes.scss";
+@import "../../components/date-picker/date-picker.scss";
+@import "../../components/drop-down/drop-down.scss";
+@import "../../components/input/input.scss";
+@import "../../components/footer/footer.scss";
+@import "../../components/nav-menu/nav-menu.scss";
+@import "../../components/text-content/text-content.scss";
+@import "../../components/social-buttons/social-buttons.scss";
+@import "../../components/copyright/copyright.scss";
+
+.index-block {
+  box-sizing: border-box;
+  height: 830px;
+  background-image: url("./interior.jpg");
+  background-repeat: no-repeat;
+  background-position: center -69px;
+}
+
+.index-block__wrap {
+  position: relative;
+  min-height: 830px;
+  padding-top: 70px;
+}
+
+.index-block__slogan {
+  position: absolute;
+  right: 4px;
+  bottom: 92px;
+  width: 297px;
+
+  p {
+    margin: 0;
+    color: transparentize($contentColor, 0.25);
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+  }
+}
+
+@media (min-width: 1440px) {
+  .index-block {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 425px) {
+  .index-block__slogan {
+    right: 24px;
+  }
+}

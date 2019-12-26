@@ -10,10 +10,13 @@ module.exports = {
     hot: true
   },
   entry: {
-    index: "./src/index.js",
-    rooms: "./src/rooms.js",
-    "room-details": "./src/room-details.js",
-    "form-elements": "./src/form-elements.js"
+    main: "./src/page/main/main.js",
+    rooms: "./src/page/rooms/rooms.js",
+    registration: "./src/page/registration/registration.js",
+    auth: "./src/page/auth/auth.js",
+    cards: "./src/page/cards/cards.js",
+    "room-details": "./src/page/room-details/room-details.js",
+    "form-elements": "./src/page/form-elements/form-elements.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -69,35 +72,38 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "./src/page/index.pug",
-      chunks: ["index"]
+      template: "./src/page/main/main.pug",
+      chunks: ["main"]
     }),
     new HtmlWebpackPlugin({
       filename: "rooms.html",
-      template: "./src/page/rooms.pug",
+      template: "./src/page/rooms/rooms.pug",
       chunks: ["rooms"]
     }),
     new HtmlWebpackPlugin({
       filename: "room-details.html",
-      template: "./src/page/room-details.pug",
+      template: "./src/page/room-details/room-details.pug",
       chunks: ["room-details"]
     }),
     new HtmlWebpackPlugin({
       filename: "form-elements.html",
-      template: "./src/page/form-elements.pug",
+      template: "./src/page/form-elements/form-elements.pug",
       chunks: ["form-elements"]
     }),
     new HtmlWebpackPlugin({
       filename: "cards.html",
-      template: "./src/page/cards.pug"
+      template: "./src/page/cards/cards.pug",
+      chunks: ["cards"]
     }),
     new HtmlWebpackPlugin({
       filename: "registration.html",
-      template: "./src/page/registration.pug"
+      template: "./src/page/registration/registration.pug",
+      chunks: ["registration"]
     }),
     new HtmlWebpackPlugin({
       filename: "auth.html",
-      template: "./src/page/auth.pug"
+      template: "./src/page/auth/auth.pug",
+      chunks: ["auth"]
     })
   ]
 };

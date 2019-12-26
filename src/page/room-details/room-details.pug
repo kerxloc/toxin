@@ -1,9 +1,9 @@
-extends ../layout/main.pug
-include ../components/features/features
-include ../components/pie-chart/pie-chart
-include ../components/comment/comment
-include ../components/bullet-list/bullet-list
-include ../components/total-card/total-card
+extends ../../layout/main.pug
+include ../../components/features/features
+include ../../components/pie-chart/pie-chart
+include ../../components/comment/comment
+include ../../components/bullet-list/bullet-list
+include ../../components/total-card/total-card
 
 block variables
   - var title = "Toxin - детали комнаты!"
@@ -14,10 +14,10 @@ block variables
 block content
   .room-details__picture 
     .room-details__picture-big
-      img(src="../style/room-details-1.jpg", alt="Детали комнаты")
+      img(src="room-details-1.jpg", alt="Детали комнаты")
     .room-details__picture-miniature
-      img(src="../style/room-details-2.jpg", alt="Детали комнаты")
-      img(src="../style/room-details-3.jpg", alt="Детали комнаты")
+      img(src="room-details-2.jpg", alt="Детали комнаты")
+      img(src="room-details-3.jpg", alt="Детали комнаты")
   .container
     .room-details__wrap
       .room-details__content
@@ -30,17 +30,17 @@ block content
                   {
                     title: "Комфорт",
                     descr: "Шумопоглощающие стены",
-                    srcIcon: "../components/features/emoticon.png"
+                    srcIcon: "../../components/features/emoticon.png"
                   },
                   {
                     title: "Удобство",
                     descr: "Окно в каждой из спален",
-                    srcIcon: "../components/features/city.png"
+                    srcIcon: "../../components/features/city.png"
                   },
                   {
                     title: "Уют",
                     descr: "Номер оснащён камином",
-                    srcIcon: "../components/features/whatshot.png"
+                    srcIcon: "../../components/features/whatshot.png"
                   }
                 ]
               })
@@ -54,7 +54,7 @@ block content
                 datePost: "5 дней назад",
                 like: 12,
                 isLikeActive: true,
-                avatarSrc: "../components/comment/murad.png",
+                avatarSrc: "../../components/comment/murad.png",
                 text:
                   "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
               })
@@ -63,7 +63,7 @@ block content
               datePost: "Неделю назад",
               like: 2,
               isLikeActive: false,
-              avatarSrc: "../components/comment/patric.png",
+              avatarSrc: "../../components/comment/patric.png",
               text:
                 "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
             })
