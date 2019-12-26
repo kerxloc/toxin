@@ -1,0 +1,24 @@
+.color-pallete__wrap {
+  display: flex;
+  align-items: center;
+}
+
+.color-pallete__view {
+  width: 70px;
+  height: 70px;
+  margin-right: 40px;
+  border-radius: 6px;
+}
+
+.color-pallete__title {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.color-pallete__descr {
+  margin: 0;
+  font-size: 19px;
+  font-weight: normal;
+}
