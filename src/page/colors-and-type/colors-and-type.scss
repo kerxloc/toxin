@@ -1,3 +1,15 @@
 @import "../../style/utils/variables.scss";
 @import "../../components/logo/logo";
 @import "../../components/color-pallete/color-pallete.scss";
+
+.colors-and-type-page__pallete {
+  margin: 0;
+  padding: 0;
+  padding-top: 64px;
+  padding-left: 10px;
+  list-style: none;
+
+  li {
+    margin-bottom: 20px;
+  }
+}

@@ -7,34 +7,43 @@ block variables
 
 block content
   .container
-    +colorPallete({
-      title: "Dark Shade 100%",
-      descr: "#1F2041",
-      colorPallete: "#1F2041"
-    })
-    +colorPallete({
-      title: "Dark Shade 75%",
-      descr: "#1F2041",
-      colorPallete: "#1F2041",
-      colorOpacity: 0.75
-    })
-    +colorPallete({
-      title: "Dark Shade 50%",
-      descr: "#1F2041",
-      colorPallete: "#1F2041",
-      colorOpacity: 0.5
-    })
-    +colorPallete({
-      title: "Dark Shade 25%",
-      descr: "#1F2041",
-      colorPallete: "#1F2041",
-      colorOpacity: 0.25
-    })
-    +colorPallete({
-      title: "Dark Shade 5%",
-      descr: "#1F2041",
-      colorPallete: "#1F2041",
-      colorOpacity: 0.05
-    })
-    +colorPallete({ title: "Purple", descr: "#BC9CFF", colorPallete: "#BC9CFF" })
-    +colorPallete({ title: "Green", descr: "#6FCF97", colorPallete: "#6FCF97" })
+    .colors-and-type-page__wrap
+      ul.colors-and-type-page__pallete
+        li
+          +colorPallete({
+            title: "Dark Shade 100%",
+            descr: "#1F2041",
+            colorPallete: "#1F2041"
+          })
+        li
+          +colorPallete({
+            title: "Dark Shade 75%",
+            descr: "#1F2041",
+            colorPallete: "#1F2041",
+            colorOpacity: 0.75
+          })
+        li
+          +colorPallete({
+            title: "Dark Shade 50%",
+            descr: "#1F2041",
+            colorPallete: "#1F2041",
+            colorOpacity: 0.5
+          })
+        li
+          +colorPallete({
+            title: "Dark Shade 25%",
+            descr: "#1F2041",
+            colorPallete: "#1F2041",
+            colorOpacity: 0.25
+          })
+        li
+          +colorPallete({
+            title: "Dark Shade 5%",
+            descr: "#1F2041",
+            colorPallete: "#1F2041",
+            colorOpacity: 0.05
+          })
+        li  
+          +colorPallete({ title: "Purple", descr: "#BC9CFF", colorPallete: "#BC9CFF" })
+        li  
+          +colorPallete({ title: "Green", descr: "#6FCF97", colorPallete: "#6FCF97" })
