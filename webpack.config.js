@@ -15,8 +15,11 @@ module.exports = {
     registration: "./src/page/registration/registration.js",
     auth: "./src/page/auth/auth.js",
     cards: "./src/page/cards/cards.js",
+    "colors-and-type": "./src/page/colors-and-type/colors-and-type.js",
     "room-details": "./src/page/room-details/room-details.js",
-    "form-elements": "./src/page/form-elements/form-elements.js"
+    "form-elements": "./src/page/form-elements/form-elements.js",
+    "headers-and-footers":
+      "./src/page/headers-and-footers/headers-and-footers.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -104,6 +107,16 @@ module.exports = {
       filename: "auth.html",
       template: "./src/page/auth/auth.pug",
       chunks: ["auth"]
+    }),
+    new HtmlWebpackPlugin({
+      filename: "colors-and-type.html",
+      template: "./src/page/colors-and-type/colors-and-type.pug",
+      chunks: ["colors-and-type"]
+    }),
+    new HtmlWebpackPlugin({
+      filename: "headers-and-footers.html",
+      template: "./src/page/headers-and-footers/headers-and-footers.pug",
+      chunks: ["headers-and-footers"]
     })
   ]
 };
