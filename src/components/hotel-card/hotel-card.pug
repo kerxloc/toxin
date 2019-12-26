@@ -19,9 +19,11 @@ mixin hotelCard(options = {})
       .hotel-card__info
         .hotel-card__info-item
           if (options.isLux)
-            h2.hotel-card__title № #[span= options.numberHotel] #[b люкс]
+            h2.hotel-card__title 
+              a(href="/room-details.html") № #[span= options.numberHotel] #[b люкс]
           else 
-            h2.hotel-card__title № #[span= options.numberHotel]
+            h2.hotel-card__title
+              a(href="/room-details.html") № #[span= options.numberHotel]
           p.hotel-card__text #[b= options.dayCost + '₽'] в сутки
         .hotel-card__info-item
           +ratebtn({ items: [{ idGroup: options.idRateBtn, currentRating: options.starCount }] })
