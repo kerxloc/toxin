@@ -1,5 +1,40 @@
 extends ../../layout/ui-kit.pug
+include ../../components/color-pallete/color-pallete
 
 block variables
   - var title = "Toxin - типографика!"
   - var pageClass = "colors-and-type-page"
+
+block content
+  .container
+    +colorPallete({
+      title: "Dark Shade 100%",
+      descr: "#1F2041",
+      colorPallete: "#1F2041"
+    })
+    +colorPallete({
+      title: "Dark Shade 75%",
+      descr: "#1F2041",
+      colorPallete: "#1F2041",
+      colorOpacity: 0.75
+    })
+    +colorPallete({
+      title: "Dark Shade 50%",
+      descr: "#1F2041",
+      colorPallete: "#1F2041",
+      colorOpacity: 0.5
+    })
+    +colorPallete({
+      title: "Dark Shade 25%",
+      descr: "#1F2041",
+      colorPallete: "#1F2041",
+      colorOpacity: 0.25
+    })
+    +colorPallete({
+      title: "Dark Shade 5%",
+      descr: "#1F2041",
+      colorPallete: "#1F2041",
+      colorOpacity: 0.05
+    })
+    +colorPallete({ title: "Purple", descr: "#BC9CFF", colorPallete: "#BC9CFF" })
+    +colorPallete({ title: "Green", descr: "#6FCF97", colorPallete: "#6FCF97" })
