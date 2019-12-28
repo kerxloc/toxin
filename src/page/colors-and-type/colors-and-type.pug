@@ -1,5 +1,6 @@
 extends ../../layout/ui-kit.pug
 include ../../components/color-pallete/color-pallete
+include ../../components/typograph/typograph
 
 block variables
   - var title = "Toxin - типографика!"
@@ -47,3 +48,9 @@ block content
           +colorPallete({ title: "Purple", descr: "#BC9CFF", colorPallete: "#BC9CFF" })
         li  
           +colorPallete({ title: "Green", descr: "#6FCF97", colorPallete: "#6FCF97" })
+      ul.colors-and-type__typograph
+        li
+          +typograph()
+        li
+        li
+        li
