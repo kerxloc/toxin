@@ -46,5 +46,6 @@
   margin: 0;
   font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
   font-size: 14px;
+  color: transparentize($contentColor, 0.75);
   font-weight: normal;
 }
