@@ -3,13 +3,13 @@
 @import "../../components/color-pallete/color-pallete.scss";
 @import "../../components/typograph/typograph.scss";
 
-.colors-and-type-page__wrap {
+.colors-and-type__wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.colors-and-type-page__pallete {
+.colors-and-type__pallete {
   margin: 0;
   padding: 0;
   padding-top: 64px;
