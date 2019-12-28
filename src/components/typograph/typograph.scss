@@ -1,11 +1,11 @@
 .typograph__wrap {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: 37px 336px;
 }
 
 .typograph__label {
   margin: 0;
-  margin-right: 30px;
   font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
   font-size: 24px;
   color: transparentize($contentColor, 0.75);
@@ -18,10 +18,12 @@
 
   &--h3 {
     font-size: 12px;
+    text-align: right;
   }
 
   &--text {
     font-size: 14px;
+    line-height: 20px;
   }
 }
 
@@ -29,14 +31,17 @@
   margin: 0;
   font-family: "Quicksand", "Montserrat", "Arial", sans-serif;
   font-size: 24px;
+  line-height: 30px;
   font-weight: bold;
 
   &--h2 {
     font-size: 19px;
+    line-height: 24px;
   }
 
   &--h3 {
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 13px;
     text-transform: uppercase;
   }
 }
@@ -45,6 +50,7 @@
   margin: 0;
   font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
   font-size: 14px;
-  color: transparentize($contentColor, 0.75);
+  line-height: 23px;
+  color: transparentize($contentColor, 0.25);
   font-weight: normal;
 }

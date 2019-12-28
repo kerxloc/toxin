@@ -7,7 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 64px;
+  padding-top: 65px;
 }
 
 .colors-and-type__pallete {
@@ -22,11 +22,19 @@
 }
 
 .colors-and-type__typograph {
+  width: 34.7%;
   margin: 0;
   padding: 0;
+  padding-right: 51px;
   list-style: none;
 
   li {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+
+    &:last-child {
+      .typograph__text {
+        padding-right: 30px;
+      }
+    }
   }
 }
