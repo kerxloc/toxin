@@ -3,7 +3,7 @@ include ../button/button
 include ../main-menu/main-menu
 
 -
-  var menuItems = [
+  const menuItems = [
     { title: 'О нас', path: '#' }, 
     { 
       title: 'Услуги', 
@@ -24,7 +24,16 @@ include ../main-menu/main-menu
         { title: 'Международные', path: '#' }
       ]
     }
-  ]
+  ];
+
+  const menuEngItems = [
+    { title: "Home", path: "#" },
+    { title: "About us", path: "#" },
+    { title: "Services", path: "", subMenu: [{ title: "service" }] },
+    { title: "Careers", path: "#" },
+    { title: "News", path: "#" },
+    { title: "Documentation", path: "#" },
+  ];
 
 mixin header( options = {} )
   - var authClass = options.userName ? "page-header__auth  page-header__auth--is-auth" : "page-header__auth"
