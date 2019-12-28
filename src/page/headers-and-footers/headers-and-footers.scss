@@ -1,0 +1,15 @@
+@import "../../style/utils/variables.scss";
+@import "../../components/logo/logo";
+@import "../../components/header/header";
+@import "../../components/main-menu/main-menu";
+@import "../../components/button/button";
+@import "../../components/footer/footer";
+@import "../../components/nav-menu/nav-menu";
+@import "../../components/copyright/copyright";
+@import "../../components/input/input";
+@import "../../components/social-buttons/social-buttons.scss";
+@import "../../components/text-content/text-content.scss";
+
+.headers-and-footers {
+  background: #f4f4f6;
+}
