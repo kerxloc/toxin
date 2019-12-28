@@ -50,7 +50,27 @@ block content
           +colorPallete({ title: "Green", descr: "#6FCF97", colorPallete: "#6FCF97" })
       ul.colors-and-type__typograph
         li
-          +typograph()
+          +typograph({
+            title: "This one is the sub-section or widget title",
+            label: "H1",
+          })
         li
+          +typograph({
+            title: "Next one is the item title inside widgets",
+            titleModif: "h2",
+            label: "H2",
+            labelModif: "h2"
+          })
         li
+          +typograph({
+            title: "This is a label or CTA text",
+            titleModif: "h3",
+            label: "H3",
+            labelModif: "h3"
+          })
         li
+          +typograph({
+              text: "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
+              label: "Body",
+              labelModif: "text"
+            })
