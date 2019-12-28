@@ -36,21 +36,26 @@ include ../main-menu/main-menu
   ];
 
 mixin header( options = {} )
-  - var authClass = options.userName ? "page-header__auth  page-header__auth--is-auth" : "page-header__auth"
+  -
+    const authClass = options.userName ? "page-header__auth  page-header__auth--is-auth" : "page-header__auth";
+    const currentMenuItems = options.isEnglish ? menuEngItems : menuItems;
+    const authBtnTitle = options.isEnglish ? "Login" : "Войти";
+    const registerBtnTitle = options.isEnglish ? "Register" : "Зарегистрироваться";
+
   header.page-header
     .container
       .page-header__wrap
         +logo()
-        +mainMenu(menuItems)
+        +mainMenu(currentMenuItems)
         section(class=authClass)
           if options.userName
             p.page-header__user-name= options.userName
           else
-            +button({ title: 'Войти', path: '/auth.html', isEmptyStyle: true })
-            +button({ title: 'Зарегистрироваться', path: '/registration.html' })
+            +button({ title: authBtnTitle, path: "/auth.html", isEmptyStyle: true })
+            +button({ title: registerBtnTitle, path: "/registration.html" })
             ul.page-header__auth-list
               li.page-header__auth-item
-                a(href="#") Войти
+                a(href="#")= authBtnTitle
               li.page-header__auth-item
-                a(href="#") Зарегистрироваться
+                a(href="#")= registerBtnTitle
             button(id="authProfile" class="page-header__auth-profile" type="button")
