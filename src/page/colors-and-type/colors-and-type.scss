@@ -3,6 +3,12 @@
 @import "../../components/color-pallete/color-pallete.scss";
 @import "../../components/typograph/typograph.scss";
 
+.colors-and-type-page__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .colors-and-type-page__pallete {
   margin: 0;
   padding: 0;
