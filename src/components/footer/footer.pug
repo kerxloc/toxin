@@ -82,6 +82,8 @@ mixin footer(options = {})
   -
     const logoText = options.isEnglish ? engText.logo : rusText.logo;
     const navMenuItems = options.isEnglish ? navMenuEngItems : navMenuRusItems;
+    const subTitleText = options.isEnglish ?  engText.subTitle :  rusText.subTitle;
+    const subtext = options.isEnglish ?  engText.sub :  rusText.sub;
     const footerClass = options.isBorderTop
       ? "page-footer  page-footer--border-top"
       : "page-footer";
@@ -101,7 +103,7 @@ mixin footer(options = {})
             .page-footer__col
               +navMenu(navMenuItems[2])
             div(class="page-footer__col  page-footer__col--large")
-              +textContent({ title: "Подписка", text: "Получайте специальные предложения и новости сервиса" })
+              +textContent({ title: subTitleText, text: subtext })
               +input({ isButtonSplit: true, iconSrc: "arrow-forward.svg", type: "email", placeholder: "Email", isRightSplitAnimation: true })
         .page-footer__side-info
           +copyright({ year: 2018, isEnglish: options.isEnglish })
