@@ -87,27 +87,40 @@ mixin footer(options = {})
     const emailInputText = options.isEmailInputLongText
       ? "Your email address"
       : "Email";
-    const footerClass = options.isBorderTop
-      ? "page-footer  page-footer--border-top"
-      : "page-footer";
+
+    let footerClass = "page-footer";
+
+    if (options.isBorderTop) {
+      footerClass += "  page-footer--border-top";
+    }
+
+    if (options.isShort) {
+      footerClass += "  page-footer--short";
+    }
 
   footer(class=footerClass)
     .container
-      .page-footer__wrap
-        .page-footer__content
-          div(class="page-footer__col  page-footer__col--large")
-            +logo()
-            +textContent({ text: logoText })
-          .page-footer__col-group
-            .page-footer__col
-              +navMenu(navMenuItems[0])
-            .page-footer__col
-              +navMenu(navMenuItems[1])
-            .page-footer__col
-              +navMenu(navMenuItems[2])
-            div(class="page-footer__col  page-footer__col--large")
-              +textContent({ title: subTitleText, text: subtext })
-              +input({ isButtonSplit: true, iconSrc: "arrow-forward.svg", type: "email", placeholder: emailInputText, isRightSplitAnimation: true })
-        .page-footer__side-info
-          +copyright({ year: 2018, isEnglish: options.isEnglish })
+      if(options.isShort)
+        div(class="page-footer__wrap  page-footer__wrap--short")
+          +logo()
+          +textContent({ text: logoText })
           +socialButtons()
+      else
+        .page-footer__wrap
+          .page-footer__content
+            div(class="page-footer__col  page-footer__col--large")
+              +logo()
+              +textContent({ text: logoText })
+            .page-footer__col-group
+              .page-footer__col
+                +navMenu(navMenuItems[0])
+              .page-footer__col
+                +navMenu(navMenuItems[1])
+              .page-footer__col
+                +navMenu(navMenuItems[2])
+              div(class="page-footer__col  page-footer__col--large")
+                +textContent({ title: subTitleText, text: subtext })
+                +input({ isButtonSplit: true, iconSrc: "arrow-forward.svg", type: "email", placeholder: emailInputText, isRightSplitAnimation: true })
+          .page-footer__side-info
+            +copyright({ year: 2018, isEnglish: options.isEnglish })
+            +socialButtons()
