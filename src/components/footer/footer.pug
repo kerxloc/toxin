@@ -84,6 +84,9 @@ mixin footer(options = {})
     const navMenuItems = options.isEnglish ? navMenuEngItems : navMenuRusItems;
     const subTitleText = options.isEnglish ?  engText.subTitle :  rusText.subTitle;
     const subtext = options.isEnglish ?  engText.sub :  rusText.sub;
+    const emailInputText = options.isEmailInputLongText
+      ? "Your email address"
+      : "Email";
     const footerClass = options.isBorderTop
       ? "page-footer  page-footer--border-top"
       : "page-footer";
@@ -104,7 +107,7 @@ mixin footer(options = {})
               +navMenu(navMenuItems[2])
             div(class="page-footer__col  page-footer__col--large")
               +textContent({ title: subTitleText, text: subtext })
-              +input({ isButtonSplit: true, iconSrc: "arrow-forward.svg", type: "email", placeholder: "Email", isRightSplitAnimation: true })
+              +input({ isButtonSplit: true, iconSrc: "arrow-forward.svg", type: "email", placeholder: emailInputText, isRightSplitAnimation: true })
         .page-footer__side-info
           +copyright({ year: 2018, isEnglish: options.isEnglish })
           +socialButtons()
