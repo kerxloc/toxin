@@ -3,7 +3,7 @@ mixin bullet(options = {})
 
   .bullet
     if options.title
-     p(class=titleClass)= options.title
-     ul.bullet__list
-      each item in options.items
-        li.bullet__item= item.label
+      p(class=titleClass)= options.title
+      ul.bullet__list
+        each item in options.items
+          li.bullet__item= item.label

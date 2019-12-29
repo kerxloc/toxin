@@ -5,7 +5,7 @@ mixin comment(options = {})
     .comment__wrap
       .comment__pict
         img(src=options.avatarSrc alt=options.authorName)
-      +likebtn({ items: [ { count: options.like, isLike: options.isLikeActive } ] })
+      +likebtn({ items: [{ count: options.like, isLike: options.isLikeActive }] })
     .comment__wrap
       p.comment__title= options.authorName 
       p.comment__date= options.datePost

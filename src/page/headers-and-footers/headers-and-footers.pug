@@ -6,11 +6,11 @@ include ../../components/footer/footer
 html(lang="en")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
     title "Toxin - шапки и подвалы!"
   body(class="headers-and-footers")
     +logo({ isBig: true })
     +header({ isEnglish: true })
     +header({ isEnglish: true, userName: "Cosmin Negoita" })
-    +footer({ isEnglish: true })
+    +footer({ isEnglish: true, isEmailInputLongText: true })

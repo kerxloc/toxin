@@ -12,11 +12,11 @@ mixin registerCard()
           +input({ id: "name", placeholder: "Имя" })
           +input({ id: "surname", placeholder: "Фамилия" })
           +radiobtn({
-              items: [
-                { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
-                { groupName: "gender", id: "famale", title: "Женщина" }
-              ]
-            })
+            items: [
+              { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
+              { groupName: "gender", id: "famale", title: "Женщина" }
+            ]
+})
         fieldset
           legend Дата рождения
           +input({
