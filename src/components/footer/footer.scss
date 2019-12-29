@@ -3,10 +3,6 @@
   background-color: #fff;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 
-  &--border-top {
-    border-top: 1px solid transparentize($contentColor, 0.75);
-  }
-
   &::after {
     position: absolute;
     bottom: 78px;
@@ -15,6 +11,28 @@
     background: transparentize($contentColor, 0.9);
     content: "";
   }
+
+  &--short {
+    section.text-content {
+      width: 49%;
+      text-align: center;
+    }
+  }
+
+  &--short::after {
+    display: none;
+  }
+
+  &--border-top {
+    border-top: 1px solid transparentize($contentColor, 0.75);
+  }
+}
+
+.page-footer__wrap--short {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0 110px;
 }
 
 .page-footer__content {
