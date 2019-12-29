@@ -5,8 +5,82 @@ include ../input/input
 include ../copyright/copyright
 include ../social-buttons/social-buttons
 
+-
+  const rusText = {
+  logo:
+    "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+  sub: "Получайте специальные предложения и новости сервиса",
+  subTitle: "Подписка"
+  };
+
+  const engText = {
+    logo:
+      "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+    sub: "Receive our latest news and promotions in your inbox!",
+    subTitle: "Subscribe to our newsletter"
+  };
+
+  const navMenuRusItems = [
+    {
+      title: "Навигация",
+      list: [
+        { label: "О нас", path: "#" },
+        { label: "Новости", path: "#" },
+        { label: "Служба поддержки", path: "#" },
+        { label: "Услуги", path: "#" }
+      ]
+    },
+    {
+      title: "О нас",
+      list: [
+        { label: "О сервисе", path: "#" },
+        { label: "Наша команда", path: "#" },
+        { label: "Вакансии", path: "#" },
+        { label: "Инвесторы", path: "#" }
+      ]
+    },
+    {
+      title: "Служба поддержки",
+      list: [
+        { label: "Соглашения", path: "#" },
+        { label: "Сообщества", path: "#" },
+        { label: "Связь с нами", path: "#" }
+      ]
+    }
+  ];
+
+  const navMenuEngItems = [
+    {
+      title: "Navigation",
+      list: [
+        { label: "About us", path: "#" },
+        { label: "News", path: "#" },
+        { label: "Support", path: "#" },
+        { label: "Products", path: "#" }
+      ]
+    },
+    {
+      title: "About us",
+      list: [
+        { label: "Who we are", path: "#" },
+        { label: "Our team", path: "#" },
+        { label: "Careers", path: "#" },
+        { label: "Investors", path: "#" }
+      ]
+    },
+    {
+      title: "Support",
+      list: [
+        { label: "Documentation", path: "#" },
+        { label: "Community", path: "#" },
+        { label: "Get in Touch", path: "#" }
+      ]
+    }
+  ];
+
 mixin footer(options = {})
   -
+    const navMenuItems = options.isEnglish ? navMenuEngItems : navMenuRusItems;
     const footerClass = options.isBorderTop
       ? "page-footer  page-footer--border-top"
       : "page-footer";
@@ -20,37 +94,14 @@ mixin footer(options = {})
             +textContent({ text: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»" })
           .page-footer__col-group
             .page-footer__col
-              +navMenu({ 
-                title: "Навигация",
-                list: [
-                  { label: "О нас", path: "#" },
-                  { label: "Новости", path: "#" },
-                  { label: "Служба поддержки", path: "#" },
-                  { label: "Услуги", path: "#" }
-                ]
-              })
+              +navMenu(navMenuItems[0])
             .page-footer__col
-              +navMenu({ 
-                title: "О нас",
-                list: [
-                  { label: "О сервисе", path: "#" },
-                  { label: "Наша команда", path: "#" },
-                  { label: "Вакансии", path: "#" },
-                  { label: "Инвесторы", path: "#" }
-                ]
-              })
+              +navMenu(navMenuItems[1])
             .page-footer__col
-              +navMenu({ 
-                title: "Служба поддержки",
-                list: [
-                  { label: "Соглашения", path: "#" },
-                  { label: "Сообщества", path: "#" },
-                  { label: "Связь с нами", path: "#" }
-                ]
-              })
+              +navMenu(navMenuItems[2])
             div(class="page-footer__col  page-footer__col--large")
               +textContent({ title: "Подписка", text: "Получайте специальные предложения и новости сервиса" })
               +input({ isButtonSplit: true, iconSrc: "arrow-forward.svg", type: "email", placeholder: "Email", isRightSplitAnimation: true })
         .page-footer__side-info
-          +copyright({ year: 2018 })
+          +copyright({ year: 2018, isEnglish: options.isEnglish })
           +socialButtons()
