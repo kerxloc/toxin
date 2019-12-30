@@ -1,4 +1,4 @@
-mixin mainMenu(menuItems)
+mixin mainMenu(menuItems, currentPageId)
   div.main-menu
     div(id="mainMenuBurgerIcon" class="main-menu__burger-icon")
       span
@@ -8,9 +8,14 @@ mixin mainMenu(menuItems)
       ul.main-menu__list
         each item in menuItems
           -
+            const isActive = item.id === currentPageId;
             let itemClass = "main-menu__item";
             if (item.subMenu) {
               itemClass += "  main-menu__item--sub-menu";
+            }
+            if (isActive) {
+              itemClass += "  main-menu__item--active";
+              item.path = null;
             }
 
           li(class=itemClass)
