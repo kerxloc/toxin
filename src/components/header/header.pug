@@ -53,7 +53,7 @@ mixin header( options = {} )
     .container
       .page-header__wrap
         +logo()
-        +mainMenu(currentMenuItems)
+        +mainMenu(currentMenuItems, options.currentPageId)
         section(class=authClass)
           if options.userName
             p.page-header__user-name= options.userName
