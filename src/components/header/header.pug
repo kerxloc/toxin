@@ -4,35 +4,42 @@ include ../main-menu/main-menu
 
 -
   const menuItems = [
-    { title: "О нас", path: "#" },
-    {
+    { id: "aboutUsRus", title: "О нас", path: "#" },
+    { 
+      id: "productsRus",
       title: "Услуги",
       path: "#",
       subMenu: [
-        { title: "Подбор отелей", path: "#" },
-        { title: "Заказать трансфер", path: "#" },
-        { title: "Рейтинг отелей", path: "#" }
+        { id: "selectHotels", title: "Подбор отелей", path: "#" },
+        { id: "orderTransfer", title: "Заказать трансфер", path: "#" },
+        { id: "hotelsRating", title: "Рейтинг отелей", path: "#" }
       ]
     },
-    { title: "Вакансии", path: "#" },
-    { title: "Новости", path: "#" },
+    { id: "careersRus", title: "Вакансии", path: "#" },
+    { id: "newsRus", title: "Новости", path: "#" },
     {
+      id: "documentationRus",
       title: "Соглашения",
       path: "#",
       subMenu: [
-        { title: "Пользовательские", path: "#" },
-        { title: "Международные", path: "#" }
+        { id: "userDoc", title: "Пользовательские", path: "#" },
+        { id: "internationalDoc", title: "Международные", path: "#" }
       ]
     }
   ];
 
   const menuEngItems = [
-    { title: "Home", path: "#" },
-    { title: "About us", path: "#" },
-    { title: "Services", path: "", subMenu: [{ title: "service" }] },
-    { title: "Careers", path: "#" },
-    { title: "News", path: "#" },
-    { title: "Documentation", path: "#" },
+    { id: "homeEng", title: "Home", path: "#" },
+    { id: "aboutUsEng", title: "About us", path: "#" },
+    {
+      id: "servicesEng",
+      title: "Services",
+      path: "#",
+      subMenu: [{ id: "servicesSubEng", title: "service" }]
+    },
+    { id: "careersEng", title: "Careers", path: "#" },
+    { id: "newsEng", title: "News", path: "#" },
+    { id: "documentationEng", title: "Documentation", path: "#" }
   ];
 
 mixin header( options = {} )
