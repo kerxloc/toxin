@@ -82,11 +82,18 @@
     margin-right: 0;
   }
 
+  &--active {
+    a {
+      font-weight: bold;
+      color: transparentize($contentColor, 0.25);
+    }
+  }
+
   &--sub-menu {
     position: relative;
 
     &:hover {
-      > a {
+      > a[href] {
         color: darken($accentColor, 10%);
         opacity: 1;
 
@@ -159,7 +166,7 @@
     text-decoration: none;
     transition: color 0.4s ease;
 
-    &:hover {
+    &[href]:hover {
       color: darken($accentColor, 10%);
     }
   }
