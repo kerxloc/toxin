@@ -11,7 +11,12 @@ html(lang="en")
     title "Toxin - шапки и подвалы!"
   body(class="headers-and-footers")
     +logo({ isBig: true })
-    +header({ isEnglish: true })
-    +header({ isEnglish: true, userName: "Cosmin Negoita" })
-    +footer({ isEnglish: true, emailInputPlaceholder: "Your email address" })
-    +footer({ isEnglish: true, isShort: true })
+    .headers-and-footers__wrap
+      .headers-and-footers__item
+        +header({ isEnglish: true })
+      .headers-and-footers__item
+        +header({ isEnglish: true, userName: "Cosmin Negoita" })
+      .headers-and-footers__item
+        +footer({ isEnglish: true, emailInputPlaceholder: "Your email address" })
+      .headers-and-footers__item
+        +footer({ isEnglish: true, isShort: true })
