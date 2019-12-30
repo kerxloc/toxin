@@ -84,8 +84,8 @@ mixin footer(options = {})
     const navMenuItems = options.isEnglish ? navMenuEngItems : navMenuRusItems;
     const subTitleText = options.isEnglish ?  engText.subTitle :  rusText.subTitle;
     const subtext = options.isEnglish ?  engText.sub :  rusText.sub;
-    const emailInputText = options.isEmailInputLongText
-      ? "Your email address"
+    const emailInputText = options.emailInputPlaceholder
+      ? options.emailInputPlaceholder
       : "Email";
 
     let footerClass = "page-footer";
