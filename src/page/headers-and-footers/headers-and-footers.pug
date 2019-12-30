@@ -13,9 +13,9 @@ html(lang="en")
     +logo({ isBig: true })
     .headers-and-footers__wrap
       .headers-and-footers__item
-        +header({ isEnglish: true })
+        +header({ isEnglish: true, currentPageId: "homeEng" })
       .headers-and-footers__item
-        +header({ isEnglish: true, userName: "Cosmin Negoita" })
+        +header({ isEnglish: true, currentPageId: "homeEng", userName: "Cosmin Negoita" })
       .headers-and-footers__item
         +footer({ isEnglish: true, emailInputPlaceholder: "Your email address" })
       .headers-and-footers__item
