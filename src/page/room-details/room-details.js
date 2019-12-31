@@ -1,7 +1,7 @@
 import "../../style/index.scss";
 import "./room-details.scss";
 import Chart from "chart.js";
-import "../../components/main-menu/main-menu";
+import MainMenu from "../../components/main-menu/main-menu";
 
 const ctx = document.getElementById("doughnut-chart").getContext("2d");
 
@@ -41,3 +41,11 @@ new Chart(document.getElementById("doughnut-chart"), {
     }
   }
 });
+
+const mainMenuDomNode = {
+  mainMenu: document.querySelector("#mainMenu"),
+  burgerButton: document.querySelector("#mainMenuBurgerIcon"),
+  authList: document.querySelector("#authListId"),
+  profileButton: document.querySelector("#authButton")
+};
+new MainMenu(mainMenuDomNode);

@@ -2,7 +2,7 @@ import "../../style/index.scss";
 import "./main.scss";
 import DatePicker from "../../components/date-picker/date-picker";
 import DropDown from "../../components/drop-down/drop-down";
-import "../../components/main-menu/main-menu";
+import MainMenu from "../../components/main-menu/main-menu";
 
 const datePickerDomInfo = {
   parentNodeId: "date-picker-container",
@@ -35,3 +35,11 @@ const dropDownOptions = {
 
 const dropDown = new DropDown(dropDownOptions);
 dropDown.init();
+
+const mainMenuDomNode = {
+  mainMenu: document.querySelector("#mainMenu"),
+  burgerButton: document.querySelector("#mainMenuBurgerIcon"),
+  authList: document.querySelector("#authListId"),
+  profileButton: document.querySelector("#authButton")
+};
+new MainMenu(mainMenuDomNode);
