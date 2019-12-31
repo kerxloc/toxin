@@ -42,7 +42,7 @@ include ../main-menu/main-menu
     { id: "documentationEng", title: "Documentation", path: "#" }
   ];
 
-mixin header( options = {} )
+mixin header(options = {})
   -
     const authClass = options.userName ? "page-header__auth  page-header__auth--is-auth" : "page-header__auth";
     const currentMenuItems = options.isEnglish ? menuEngItems : menuItems;
