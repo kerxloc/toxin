@@ -48,6 +48,7 @@ mixin header( options = {} )
     const currentMenuItems = options.isEnglish ? menuEngItems : menuItems;
     const authBtnTitle = options.isEnglish ? "Login" : "Войти";
     const registerBtnTitle = options.isEnglish ? "Register" : "Зарегистрироваться";
+    const authBtnId = options.authBtnId ? options.authBtnId : "authButton";
 
   header.page-header
     .container
@@ -65,4 +66,4 @@ mixin header( options = {} )
                 a(href="#")= authBtnTitle
               li.page-header__auth-item
                 a(href="#")= registerBtnTitle
-            button(id="authProfile" class="page-header__auth-profile" type="button")
+            button(id=authBtnId class="page-header__auth-profile" type="button")
