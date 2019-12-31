@@ -1,6 +1,8 @@
-mixin mainMenu(menuItems, currentPageId)
+mixin mainMenu(menuItems, currentPageId, burgerBtnId)
+  - const burgerId = burgerBtnId ? burgerBtnId : "mainMenuBurgerIcon";
+
   div.main-menu
-    div(id="mainMenuBurgerIcon" class="main-menu__burger-icon")
+    div(id=burgerId class="main-menu__burger-icon")
       span
       span
       span
