@@ -13,9 +13,22 @@ html(lang="en")
     +logo({ isBig: true })
     .headers-and-footers__wrap
       .headers-and-footers__item
-        +header({ isEnglish: true, currentPageId: "homeEng" })
+        +header({
+          isEnglish: true,
+          currentPageId: "homeEng",
+          mainMenuId: "firstMainMenu",
+          burgerBtnId: "firstBurgerBtn",
+          authListId: "firstAuthList",
+          profileBtnId: "firstProfileBtn"
+        })
       div(class="headers-and-footers__item  headers-and-footers__item--diff-header")
-        +header({ isEnglish: true, currentPageId: "homeEng", userName: "Cosmin Negoita" })
+        +header({
+          isEnglish: true,
+          currentPageId: "homeEng",
+          userName: "Cosmin Negoita",
+          mainMenuId: "secondMainMenu",
+          burgerBtnId: "secondBurgerBtn"
+        })
       .headers-and-footers__item
         +footer({ isEnglish: true, emailInputPlaceholder: "Your email address" })
       .headers-and-footers__item
