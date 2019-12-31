@@ -33,6 +33,14 @@
   .page-header__auth .button:nth-child(2) {
     padding: 9px 19px;
   }
+
+  .page-footer::after {
+    bottom: 70px;
+  }
+
+  .page-footer__side-info {
+    padding-bottom: 21px;
+  }
 }
 
 .headers-and-footers__wrap {
@@ -41,6 +49,10 @@
 
 .headers-and-footers__item {
   margin-bottom: 42px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .headers-and-footers__item--diff-header {
@@ -49,7 +61,17 @@
     margin-right: 4px;
   }
 
-  .page-header__auth--is-auth  {
+  .page-header__auth--is-auth {
     padding-left: 31px;
+  }
+}
+
+@media (width: 1440px) {
+  .page-footer__col-group .page-footer__col:first-child {
+    margin-right: 118px;
+  }
+
+  .page-footer__col:nth-child(2) {
+    margin-right: 117px;
   }
 }
