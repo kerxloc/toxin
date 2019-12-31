@@ -48,22 +48,27 @@ mixin header(options = {})
     const currentMenuItems = options.isEnglish ? menuEngItems : menuItems;
     const authBtnTitle = options.isEnglish ? "Login" : "Войти";
     const registerBtnTitle = options.isEnglish ? "Register" : "Зарегистрироваться";
-    const authBtnId = options.authBtnId ? options.authBtnId : "authButton";
+    const authListId = options.authListId ? options.authListId : "authListId"
+    const profileBtnId = options.profileBtnId ? options.profileBtnId : "authButton";
 
   header.page-header
     .container
       .page-header__wrap
         +logo()
-        +mainMenu(currentMenuItems, options.currentPageId)
+        +mainMenu(currentMenuItems, {
+          currentPage: options.currentPageId,
+          mainMenu: options.mainMenuId,
+          burgerBtn: options.burgerBtnId
+        })
         section(class=authClass)
           if options.userName
             p.page-header__user-name= options.userName
           else
             +button({ title: authBtnTitle, path: "/auth.html", isEmptyStyle: true })
             +button({ title: registerBtnTitle, path: "/registration.html" })
-            ul.page-header__auth-list
+            ul(id=authListId class="page-header__auth-list")
               li.page-header__auth-item
                 a(href="/auth.html")= authBtnTitle
               li.page-header__auth-item
                 a(href="/registration.html")= registerBtnTitle
-            button(id=authBtnId class="page-header__auth-profile" type="button")
+            button(id=profileBtnId class="page-header__auth-profile" type="button")
