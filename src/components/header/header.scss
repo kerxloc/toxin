@@ -1,6 +1,5 @@
 .page-header {
   position: relative;
-  z-index: 100;
   background-color: #fff;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 }
@@ -102,6 +101,7 @@
 
   .page-header__auth-list {
     position: absolute;
+    z-index: 100;
     top: 55px;
     left: 50%;
     display: block;
