@@ -14,7 +14,7 @@ html(lang="en")
     .headers-and-footers__wrap
       .headers-and-footers__item
         +header({ isEnglish: true, currentPageId: "homeEng" })
-      .headers-and-footers__item
+      div(class="headers-and-footers__item  headers-and-footers__item--diff-header")
         +header({ isEnglish: true, currentPageId: "homeEng", userName: "Cosmin Negoita" })
       .headers-and-footers__item
         +footer({ isEnglish: true, emailInputPlaceholder: "Your email address" })
