@@ -1,7 +1,9 @@
-mixin mainMenu(menuItems, currentPageId, burgerBtnId)
-  - const burgerId = burgerBtnId ? burgerBtnId : "mainMenuBurgerIcon";
+mixin mainMenu(menuItems, id)
+  -
+    const mainMenuId = id.mainMenu ? id.mainMenu : "mainMenu";
+    const burgerId = id.burgerBtn ? id.burgerBtn : "mainMenuBurgerIcon";
 
-  div.main-menu
+  div(id=mainMenuId class="main-menu")
     div(id=burgerId class="main-menu__burger-icon")
       span
       span
@@ -10,7 +12,7 @@ mixin mainMenu(menuItems, currentPageId, burgerBtnId)
       ul.main-menu__list
         each item in menuItems
           -
-            const isActive = item.id === currentPageId;
+            const isActive = item.id === id.currentPage;
             let itemClass = "main-menu__item";
             if (item.subMenu) {
               itemClass += "  main-menu__item--sub-menu";
