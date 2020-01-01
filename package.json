@@ -3,7 +3,7 @@
   "version": "",
   "description": "FSD education program. The 2nd task",
   "private": true,
-  "main": "index.js",
+  "main": "src/page/main/main.js",
   "homepage": "https://dywork.github.io/toxin",
   "scripts": {
     "start": "webpack-dev-server --open --hot --mode development",
