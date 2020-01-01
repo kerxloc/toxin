@@ -130,12 +130,6 @@
   border-radius: 22px;
   cursor: pointer;
 
-  &:hover {
-    color: $mainColor !important;
-    font-weight: bold;
-    background: linear-gradient(180deg, $accentColor, $accentGradColor);
-  }
-
   &--error {
     font-weight: bold;
     background: tomato !important;
@@ -223,5 +217,13 @@
     &:hover {
       color: transparentize($contentColor, 0.5);
     }
+  }
+}
+
+@media (hover: hover) {
+  .date-picker__day:hover {
+    color: $mainColor !important;
+    font-weight: bold;
+    background: linear-gradient(180deg, $accentColor, $accentGradColor);
   }
 }
