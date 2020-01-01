@@ -658,9 +658,7 @@ class DatePicker {
           tableTd.classList.add("date-picker__day--current");
         }
 
-        const viewMonthAtr = viewDate.getMonth() + 1;
-        const viewDateAtr = `${viewDate.getFullYear()}-${viewMonthAtr}-${viewDate.getDate()}`;
-
+        const viewDateAtr = this.getAriaDateByDate(viewDate);
         tableTd.setAttribute("aria-date", viewDateAtr);
         tableTr.appendChild(tableTd);
       }
