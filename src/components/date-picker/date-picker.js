@@ -558,10 +558,16 @@ class DatePicker {
   };
 
   getAriaDateByDate = date => {
-    const ariaDay = date.getDate();
-    const ariaMonth = date.getMonth();
+    let ariaDay = date.getDate();
+    if (ariaDay >= 1 && ariaDay <= 9) {
+      ariaDay = `0${ariaDay}`;
+    }
+    let ariaMonth = date.getMonth() + 1;
+    if (ariaMonth >= 1 && ariaMonth <= 9) {
+      ariaMonth = `0${ariaMonth}`;
+    }
     const ariaYear = date.getFullYear();
-    const ariaDate = `${ariaYear}-${ariaMonth + 1}-${ariaDay}`;
+    const ariaDate = `${ariaYear}-${ariaMonth}-${ariaDay}`;
     return ariaDate;
   };
 
