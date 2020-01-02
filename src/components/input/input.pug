@@ -1,12 +1,13 @@
 mixin input(options = {})
   -
-    var inputClass = "input-group__input"
-    var inputGroupClass = options.labelName
+    const inputGroupClass = options.labelName
       ? "input-group  input-group--column"
       : "input-group";
-    var labelClass = options.isBigLabel
+    const labelClass = options.isBigLabel
       ? "input-group__label  input-group__label--big"
       : "input-group__label";
+    let inputClass = "input-group__input"
+    let splitButtonClass = "input-group__button-split"
 
     if (options.isButtonSplit) {
       inputClass += "  input-group__input--button-split"
@@ -24,7 +25,6 @@ mixin input(options = {})
       inputClass += "  input-group__input--hover"
     }
 
-    var splitButtonClass = "input-group__button-split"
 
     if (options.isDownSplitAnimation) {
       splitButtonClass += "  input-group__button-split--down-animation"
@@ -36,7 +36,7 @@ mixin input(options = {})
 
   if options.isFakeInput
     -
-      var inputFakeClass = 'input-group__input  input-group__input--fake'
+      let inputFakeClass = 'input-group__input  input-group__input--fake'
       if (options.isHaveIcon) inputFakeClass += '  input-group__input--icon'
       if (options.isDownSplitAnimation) inputFakeClass += '  input-group__button-split--down-animation'
     if options.labelName

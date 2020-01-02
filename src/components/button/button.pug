@@ -1,6 +1,6 @@
 mixin button(options)
   -
-    var buttonClass = "button"
+    let buttonClass = "button"
 
     if (options.isEmptyStyle) {
       buttonClass += "  button--empty-style"
@@ -18,7 +18,7 @@ mixin button(options)
       buttonClass = "button  button--empty-style  button--empty-disable";
     }
 
-    var buttonType = options.buttonType ? options.buttonType : "button"
+    const buttonType = options.buttonType ? options.buttonType : "button"
 
   if options.path
     a(class=buttonClass href=options.path)= options.title

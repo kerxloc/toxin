@@ -5,8 +5,8 @@ mixin ratebtn(options = {})
     .ratebtn__item-wrap
       each item in options.items
         .ratebtn__item
-          - for (var i = 1; i < 6; ++i) {
-            - var isChecked = i === 6 - item.currentRating;        
+          - for (let i = 1; i < 6; ++i) {
+            - const isChecked = i === 6 - item.currentRating;        
             input(type="radio" id=`star-${item.idGroup}-${i}` name=item.idGroup value=`${i}` checked=isChecked)
             label(for=`star-${item.idGroup}-${i}`)
           - }

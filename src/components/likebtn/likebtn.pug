@@ -4,7 +4,7 @@ mixin likebtn(options = {})
       p.likebtn__title= options.title
     each item in options.items
       -
-        var itemBtn = item.isLike
+        const itemBtn = item.isLike
           ? "likebtn__item  likebtn__item--active"
           : "likebtn__item";
       p(class=itemBtn)
