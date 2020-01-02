@@ -54,6 +54,10 @@
 }
 
 .input-group__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
   box-sizing: border-box;
   width: 100%;
   padding: 9px 14px;
