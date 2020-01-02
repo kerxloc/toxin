@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const autoprefixer = require("autoprefixer");
+const ASSET_PATH = process.env.ASSET_PATH || "toxin/";
 
 module.exports = {
   devtool: "inline-source-map",
@@ -23,6 +24,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: ASSET_PATH,
     filename: "[name].bundle.js"
   },
   devServer: {
@@ -32,6 +34,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
