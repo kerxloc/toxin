@@ -36,9 +36,9 @@ mixin input(options = {})
 
   if options.isFakeInput
     -
-      let inputFakeClass = 'input-group__input  input-group__input--fake'
-      if (options.isHaveIcon) inputFakeClass += '  input-group__input--icon'
-      if (options.isDownSplitAnimation) inputFakeClass += '  input-group__button-split--down-animation'
+      let inputFakeClass = "input-group__input  input-group__input--fake"
+      if (options.isHaveIcon) inputFakeClass += "  input-group__input--icon"
+      if (options.isDownSplitAnimation) inputFakeClass += "  input-group__button-split--down-animation"
     if options.labelName
       div(class=inputGroupClass)
         p(class=labelClass id=`for-${options.id}`)= options.labelName
@@ -51,7 +51,7 @@ mixin input(options = {})
         label(class=labelClass for=`${options.id}`)= options.labelName
       p.input-group__split
         input(id=`${options.id}` class=inputClass type=options.type name=options.name placeholder=options.placeholder)
-        button(id=`${options.splitId}` class=`${splitButtonClass}` type='button')
+        button(id=`${options.splitId}` class=`${splitButtonClass}` type="button")
           img(src=`../../components/input/${options.iconSrc}`, alt="")
   else
     div(class=inputGroupClass)
