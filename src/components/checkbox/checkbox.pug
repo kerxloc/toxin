@@ -1,22 +1,22 @@
 mixin checkbox(options = {})
   -
-    let labelClass = "checbox__lbl"
-    let titleClass = "checkbox__title"
-    let checkboxClass = "checkbox"
+    let labelClass = "checbox__lbl";
+    let titleClass = "checkbox__title";
+    let checkboxClass = "checkbox";
     const listId = options.idExpandableList
       ? options.idExpandableList
       : "no-expandable-id";
 
     if (options.isExpandable) {
-      titleClass += "  checkbox__title--expandable"
+      titleClass += "  checkbox__title--expandable";
     }
 
     if (options.isExpandableOpen) {
-      titleClass += "  checkbox__title--expandable-open"
+      titleClass += "  checkbox__title--expandable-open";
     }
 
     if (options.isRich) {
-      checkboxClass += "  checkbox--rich"
+      checkboxClass += "  checkbox--rich";
       labelClass += "  checbox__lbl--rich";
     }
 

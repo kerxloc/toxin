@@ -1,24 +1,24 @@
 mixin button(options)
   -
-    let buttonClass = "button"
+    let buttonClass = "button";
 
     if (options.isEmptyStyle) {
-      buttonClass += "  button--empty-style"
+      buttonClass += "  button--empty-style";
     }
 
     if (options.isHaveIcon) {
-      buttonClass += "  button--icon"
+      buttonClass += "  button--icon";
     }
 
     if (options.isDisable) {
-      buttonClass += "  button--disable"
+      buttonClass += "  button--disable";
     }
 
     if (options.isDisable && options.isEmptyStyle) {
       buttonClass = "button  button--empty-style  button--empty-disable";
     }
 
-    const buttonType = options.buttonType ? options.buttonType : "button"
+    const buttonType = options.buttonType ? options.buttonType : "button";
 
   if options.path
     a(class=buttonClass href=options.path)= options.title
