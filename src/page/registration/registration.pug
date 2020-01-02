@@ -2,10 +2,11 @@ extends ../../layout/main.pug
 include ../../components/register-card/register-card
 
 block variables
-  - var title = "Toxin - регистрация!"
-  - var description = "Toxin registration"
-  - var pageClass = "registration-page"
-  
+  -
+    const title = "Toxin - регистрация!"
+    const description = "Toxin registration"
+    const pageClass = "registration-page"
+
 block content
   .container
     .registration-page__wrap

@@ -6,13 +6,14 @@ include ../../components/hotel-card/hotel-card
 include ../../components/pagination/pagination
 
 block variables
-  - var title = "Toxin - подбери свой отель!"
-  - var description = "Toxin description"
-  - var pageClass = "rooms-page"
-  - var footerBorderTop = true
+  -
+    const title = "Toxin - подбери свой отель!"
+    const description = "Toxin description"
+    const pageClass = "rooms-page"
+    const footerBorderTop = true
 
   -
-    var hotels = [
+    const hotels = [
         {
           numberHotel: 888,
           isLux: true,
