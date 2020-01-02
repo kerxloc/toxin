@@ -47,11 +47,27 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"]
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              outputPath: "img",
+              name: "[name]-[sha1:hash:7].[ext]"
+            }
+          }
+        ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ["file-loader"]
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              outputPath: "fonts",
+              name: "[name]-[sha1:hash:7].[ext]"
+            }
+          }
+        ]
       },
       {
         test: /\.scss$/,
