@@ -1,7 +1,10 @@
 include ../ratebtn/ratebtn
 
 mixin hotelCard(options = {})
-  - var sliderBtnClass = options.isBtnSliderHide ? "hotel-card__slider-control  hotel-card__slider-control--hide" : "hotel-card__slider-control"
+  -
+    var sliderBtnClass = options.isBtnSliderHide
+      ? "hotel-card__slider-control  hotel-card__slider-control--hide"
+      : "hotel-card__slider-control";
   section.hotel-card
     .hotel-card__wrap
       .hotel-card__slider

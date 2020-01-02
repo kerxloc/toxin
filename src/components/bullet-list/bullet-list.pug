@@ -1,5 +1,8 @@
 mixin bullet(options = {})
-  - const titleClass = options.isTitleLeftPadding ? "bullet__title  bullet__title--lp" : "bullet__title"
+  -
+    const titleClass = options.isTitleLeftPadding
+      ? "bullet__title  bullet__title--lp"
+      : "bullet__title";
 
   .bullet
     if options.title

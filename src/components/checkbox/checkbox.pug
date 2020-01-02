@@ -3,7 +3,9 @@ mixin checkbox(options = {})
     var checkboxClass = "checkbox"
     var titleClass = "checkbox__title"
     var labelClass = "checbox__lbl"
-    var listId = options.idExpandableList ? options.idExpandableList : "no-expandable-id"
+    var listId = options.idExpandableList
+      ? options.idExpandableList
+      : "no-expandable-id";
 
     if (options.isExpandable) {
       titleClass += "  checkbox__title--expandable"

@@ -1,8 +1,12 @@
 mixin input(options = {})
   -
-    var inputGroupClass = options.labelName ? 'input-group  input-group--column' : 'input-group'
     var inputClass = "input-group__input"
-    var labelClass = options.isBigLabel ? 'input-group__label  input-group__label--big' : 'input-group__label'
+    var inputGroupClass = options.labelName
+      ? "input-group  input-group--column"
+      : "input-group";
+    var labelClass = options.isBigLabel
+      ? "input-group__label  input-group__label--big"
+      : "input-group__label";
 
     if (options.isButtonSplit) {
       inputClass += "  input-group__input--button-split"
@@ -31,9 +35,10 @@ mixin input(options = {})
     }
 
   if options.isFakeInput
-    - var inputFakeClass = 'input-group__input  input-group__input--fake'
-    - if (options.isHaveIcon) inputFakeClass += '  input-group__input--icon'
-    - if (options.isDownSplitAnimation) inputFakeClass += '  input-group__button-split--down-animation'
+    -
+      var inputFakeClass = 'input-group__input  input-group__input--fake'
+      if (options.isHaveIcon) inputFakeClass += '  input-group__input--icon'
+      if (options.isDownSplitAnimation) inputFakeClass += '  input-group__button-split--down-animation'
     if options.labelName
       div(class=inputGroupClass)
         p(class=labelClass id=`for-${options.id}`)= options.labelName

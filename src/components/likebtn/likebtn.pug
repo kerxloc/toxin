@@ -3,6 +3,9 @@ mixin likebtn(options = {})
     if options.title
       p.likebtn__title= options.title
     each item in options.items
-      - var itemBtn = item.isLike ? 'likebtn__item  likebtn__item--active' : 'likebtn__item'
+      -
+        var itemBtn = item.isLike
+          ? "likebtn__item  likebtn__item--active"
+          : "likebtn__item";
       p(class=itemBtn)
         button(type="button")= item.count

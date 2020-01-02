@@ -120,7 +120,13 @@ mixin footer(options = {})
                 +navMenu(navMenuItems[2])
               div(class="page-footer__col  page-footer__col--large")
                 +textContent({ title: subTitleText, text: subtext })
-                +input({ isButtonSplit: true, iconSrc: "arrow-forward.svg", type: "email", placeholder: emailInputPlaceholder, isRightSplitAnimation: true })
+                +input({
+                  isButtonSplit: true,
+                  iconSrc: "arrow-forward.svg",
+                  type: "email",
+                  placeholder: emailInputPlaceholder,
+                  isRightSplitAnimation: true
+                })
           .page-footer__side-info
             +copyright({ year: 2018, isEnglish: options.isEnglish })
             +socialButtons()

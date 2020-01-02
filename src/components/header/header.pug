@@ -44,7 +44,9 @@ include ../main-menu/main-menu
 
 mixin header(options = {})
   -
-    const authClass = options.userName ? "page-header__auth  page-header__auth--is-auth" : "page-header__auth";
+    const authClass = options.userName
+      ? "page-header__auth  page-header__auth--is-auth"
+      : "page-header__auth";
     const currentMenuItems = options.isEnglish ? menuEngItems : menuItems;
     const authBtnTitle = options.isEnglish ? "Login" : "Войти";
     const registerBtnTitle = options.isEnglish ? "Register" : "Зарегистрироваться";
