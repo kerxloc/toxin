@@ -133,6 +133,11 @@
   color: transparentize($contentColor, 0.25);
 }
 
+.room-details .date-picker {
+  top: 70%;
+  z-index: 1000;
+}
+
 @media (max-width: 1160px) {
   .room-details__wrap {
     flex-direction: column-reverse;
