@@ -29,6 +29,29 @@ const dropDownOptions = {
 const dropDown = new DropDown(dropDownOptions);
 dropDown.init();
 
+const dropDownGuestContainer = document.querySelector(
+  "#drop-down-guest-container"
+);
+const inputDropDownGuest = document.querySelector("#number-guest");
+
+const dropDownGuestOptions = {
+  container: dropDownGuestContainer,
+  input: inputDropDownGuest,
+  countElements: [
+    { name: "Взрослые", countGroupName: "guest", startValue: 3 },
+    { name: "Дети", countGroupName: "guest", startValue: 0 },
+    { name: "Младенцы", countGroupName: "child", startValue: 1 }
+  ],
+  countGroupView: {
+    guest: { counter: 3, views: ["гость", "гостя", "гостей"] },
+    child: { counter: 1, views: ["младенец", "младенца", "младенцев"] }
+  },
+  placeholder: "Cколько гостей"
+};
+
+const dropDownGuest = new DropDown(dropDownGuestOptions);
+dropDownGuest.init();
+
 const expandableBtn = document.querySelector("#checkbox-expandable-btn");
 const expandableList = document.querySelector("#checkbox-expandable-list");
 
