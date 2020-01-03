@@ -37,11 +37,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
-            plugins: [
-              "@babel/plugin-proposal-class-properties",
-              "@babel/plugin-syntax-jsx",
-              ["@babel/plugin-transform-react-jsx", { pragma: "dom" }]
-            ]
+            plugins: ["@babel/plugin-proposal-class-properties"]
           }
         }
       },
