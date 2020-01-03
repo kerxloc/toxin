@@ -2,6 +2,7 @@ import "../../style/index.scss";
 import "./room-details.scss";
 import Chart from "chart.js";
 import MainMenu from "../../components/main-menu/main-menu";
+import DropDown from "../../components/drop-down/drop-down";
 
 const ctx = document.getElementById("doughnut-chart").getContext("2d");
 
