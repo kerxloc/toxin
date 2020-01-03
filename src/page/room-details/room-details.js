@@ -50,3 +50,24 @@ const mainMenuDomNode = {
   profileButton: document.querySelector("#authButton")
 };
 new MainMenu(mainMenuDomNode);
+
+const dropDownContainer = document.querySelector("#drop-down-total-container");
+const inputDropDown = document.querySelector("#number-total-guests-input");
+
+const dropDownOptions = {
+  container: dropDownContainer,
+  input: inputDropDown,
+  countElements: [
+    { name: "Взрослые", countGroupName: "guest", startValue: 3 },
+    { name: "Дети", countGroupName: "guest", startValue: 0 },
+    { name: "Младенцы", countGroupName: "child", startValue: 0 }
+  ],
+  countGroupView: {
+    guest: { counter: 3, views: ["гость", "гостя", "гостей"] },
+    child: { counter: 0, views: ["младенец", "младенца", "младенцев"] }
+  },
+  placeholder: "Cколько гостей"
+};
+
+const dropDown = new DropDown(dropDownOptions);
+dropDown.init();
