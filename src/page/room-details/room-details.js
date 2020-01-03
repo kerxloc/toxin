@@ -52,6 +52,17 @@ const mainMenuDomNode = {
 };
 new MainMenu(mainMenuDomNode);
 
+const datePickerDomInfo = {
+  parentNodeId: "date-picker-container",
+  arrivalInputId: "arrival-total-input",
+  arrivalSplitBtnId: "arrival-total-split-btn",
+  departureInputId: "departure-total-input",
+  departureSplitBtnId: "departure-total-split-btn"
+};
+
+const datePicker = new DatePicker(datePickerDomInfo);
+datePicker.renderCalendar();
+
 const dropDownContainer = document.querySelector("#drop-down-total-container");
 const inputDropDown = document.querySelector("#number-total-guests-input");
 
