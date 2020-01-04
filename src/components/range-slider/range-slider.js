@@ -18,10 +18,9 @@ noUiSlider.create(stepsSlider, {
 });
 
 stepsSlider.noUiSlider.on("update", function(values, handle) {
-  inputs[handle].value = values[handle].replace(
-    /(\d)(?=(\d{3})+(\D|$))/g,
-    "$1 "
-  );
+  let viewPrice = values[handle].replace(/(\d)(?=(\d{3})+(\D|$))/g, "$1 ");
+  viewPrice += "₽";
+  inputs[handle].value = viewPrice;
 });
 
 // Listen to keydown events on the input field.
