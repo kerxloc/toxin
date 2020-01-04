@@ -1,28 +1,78 @@
 $accentSecondColor: #6fcf97;
 $accentSecondGradColor: #66d2ea;
 
-.range__wrap {
-  position: relative;
-}
-
-.range__head {
+.range__view {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  font-size: 0;
+  margin-bottom: 22px;
+}
 
-  span {
+.range__price {
+  input {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    margin: 0;
+    margin-right: 2px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
     color: transparentize($contentColor, 0.55);
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    vertical-align: top;
+    border: none;
+    background: transparent;
+
+    &:last-child {
+      margin-right: 0;
+      margin-left: 2px;
+    }
   }
 }
 
-.range_value {
-  box-sizing: border-box;
-  position: relative;
+.range__slider {
+  height: 6px;
+  border-radius: 3px;
+  border: 1px solid transparentize($contentColor, 0.75);
+  background-color: $mainColor;
+
+  .noUi-connect {
+    height: 6px;
+    background: linear-gradient(
+      180deg,
+      $accentSecondColor 0%,
+      $accentSecondGradColor 100%
+    );
+  }
+
+  .noUi-handle {
+    width: 14px;
+    height: 14px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    cursor: pointer;
+    transition: background 0.4s ease 0s, border 0.4s ease 0s;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+
+  .noUi-handle-upper,
+  .noUi-handle-lower {
+    right: -8px;
+  }
+}
+
+.range__cost {
   display: inline-block;
   margin: 0;
-  margin-right: 2px;
+  margin-right: 8px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -30,74 +80,30 @@ $accentSecondGradColor: #66d2ea;
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
-  vertical-align: top;
-  border: none;
-  background: transparent;
+  vertical-align: middle;
+
+  &:first-child {
+    position: relative;
+    &::after {
+      position: absolute;
+      top: 0;
+      right: -7.5px;
+      content: "-";
+      font-size: 10px;
+    }
+  }
 
   &:last-child {
     margin-right: 0;
-    margin-left: 2px;
   }
 }
 
 .range__title {
   margin: 0;
-  margin-bottom: 18px;
   font-size: 12px;
   line-height: 15px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
-}
-
-.range__bar {
-  position: absolute;
-  left: 0;
-  top: 16px;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 4px;
-  margin: auto;
-  border-radius: 3px;
-  border: 1px solid transparentize($contentColor, 0.75);
-  background-color: $mainColor;
-}
-
-.range__scale {
-  position: absolute;
-  left: 90px;
-  top: 0;
-  height: 4px;
-  background: linear-gradient(
-    180deg,
-    $accentSecondColor 0%,
-    $accentSecondGradColor 100%
-  );
-}
-
-.range__toggle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 12px;
-  height: 12px;
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  background: linear-gradient(
-    180deg,
-    $accentSecondColor 0%,
-    $accentSecondGradColor 100%
-  );
-  cursor: pointer;
-  transition: background 0.4s ease 0s, border 0.4s ease 0s;
-
-  &--min {
-    left: 75px;
-  }
-
-  &--max {
-    left: 160px;
-  }
 }
