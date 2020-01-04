@@ -2,9 +2,9 @@ import noUiSlider from "nouislider";
 import wNumb from "wnumb";
 
 var stepsSlider = document.getElementById("range-slider");
-var input0 = document.getElementById("input-with-keypress-0");
-var input1 = document.getElementById("input-with-keypress-1");
-var inputs = [input0, input1];
+const lowerViewPrice = document.querySelector("#lower-value");
+const upperViewPrice = document.querySelector("#upper-value");
+const viewNodes = [lowerViewPrice, upperViewPrice]
 
 noUiSlider.create(stepsSlider, {
   start: [5000, 10000],
@@ -20,7 +20,7 @@ noUiSlider.create(stepsSlider, {
 stepsSlider.noUiSlider.on("update", function(values, handle) {
   let viewPrice = values[handle].replace(/(\d)(?=(\d{3})+(\D|$))/g, "$1 ");
   viewPrice += "₽";
-  inputs[handle].value = viewPrice;
+  viewNodes[handle].textContent = viewPrice;
 });
 
 // Listen to keydown events on the input field.
