@@ -10,6 +10,7 @@ noUiSlider.create(stepsSlider, {
   start: [5000, 10000],
   connect: true,
   format: wNumb({ decimals: 0 }),
+  step: 100,
   range: {
     min: [600],
     max: 15000
