@@ -2,6 +2,7 @@ import "../../style/index.scss";
 import "./form-elements.scss";
 import Inputmask from "inputmask";
 import DropDown from "../../components/drop-down/drop-down";
+import "../../components/range-slider/range-slider";
 
 Inputmask({ mask: "99.99.9999", placeholder: "ДД.ММ.ГГГГ" }).mask(
   "#maskedTextField"
