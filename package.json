@@ -38,7 +38,9 @@
   "dependencies": {
     "chart.js": "^2.9.3",
     "inputmask": "^4.0.9",
-    "validator": "^12.1.0"
+    "nouislider": "^14.1.1",
+    "validator": "^12.1.0",
+    "wnumb": "^1.2.0"
   },
   "browserslist": [
     "> 1%",
