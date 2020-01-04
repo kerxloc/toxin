@@ -53,7 +53,11 @@ $accentSecondGradColor: #66d2ea;
     height: 14px;
     border: 1px solid #ffffff;
     border-radius: 50%;
-    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    background: linear-gradient(
+      180deg,
+      $accentSecondColor 0%,
+      $accentSecondGradColor 100%
+    );
     cursor: pointer;
     transition: background 0.4s ease 0s, border 0.4s ease 0s;
 
