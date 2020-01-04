@@ -1,7 +1,7 @@
 import noUiSlider from "nouislider";
 import wNumb from "wnumb";
 
-var stepsSlider = document.getElementById("range");
+var stepsSlider = document.getElementById("range-slider");
 var input0 = document.getElementById("input-with-keypress-0");
 var input1 = document.getElementById("input-with-keypress-1");
 var inputs = [input0, input1];
