@@ -58,6 +58,7 @@ $accentSecondGradColor: #66d2ea;
       $accentSecondColor 0%,
       $accentSecondGradColor 100%
     );
+    box-shadow: none;
     cursor: pointer;
     transition: background 0.4s ease 0s, border 0.4s ease 0s;
 
