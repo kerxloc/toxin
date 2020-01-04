@@ -12,8 +12,8 @@ noUiSlider.create(stepsSlider, {
   format: wNumb({ decimals: 0 }),
   step: 100,
   range: {
-    min: [600],
-    max: 15000
+    min: [500],
+    max: 15700
   }
 });
 
