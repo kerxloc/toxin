@@ -100,10 +100,6 @@ class DatePicker {
         "click",
         this.showArrivalMonthCalendar
       );
-    } else {
-      console.error(
-        "Expected arrivalSplitBtnId inside constructor object but not received"
-      );
     }
 
     if (domInfo.departureSplitBtnId) {
@@ -113,10 +109,6 @@ class DatePicker {
       this.departureSplitBtn.addEventListener(
         "click",
         this.showDepartureMonthCalendar
-      );
-    } else {
-      console.error(
-        "Expected departureSplitBtnId inside constructor object but not received"
       );
     }
 
