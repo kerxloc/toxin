@@ -18,7 +18,7 @@
   }
 }
 
-.hotel-card__slider-pict-buttons {
+.hotel-card__bullets {
   position: absolute;
   right: 15px;
   bottom: 16px;
@@ -35,14 +35,15 @@
     border: 1px solid $mainColor;
     border-radius: 50%;
     background: transparent;
+    cursor: pointer;
 
     &:last-child {
       margin-right: 0;
     }
   }
 
-  .slider-btn-active {
-    background: $mainColor;
+  .glide__bullet--active {
+    background-color: $mainColor;
   }
 }
 
