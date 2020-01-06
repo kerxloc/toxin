@@ -8,7 +8,8 @@ import "../../components/range-slider/range-slider";
 import "../../components/hotel-card/hotel-card";
 
 const datePickerDomInfo = {
-  parentNodeId: "date-picker-container"
+  parentNodeId: "date-picker-container",
+  datePickerInputId: "date-picker-input"
 };
 
 const datePicker = new DatePicker(datePickerDomInfo);
