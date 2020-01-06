@@ -1,10 +1,18 @@
 import "../../style/index.scss";
 import "./rooms.scss";
+import DatePicker from "../../components/date-picker/date-picker";
 import DropDown from "../../components/drop-down/drop-down";
 import ExpandableCheckbox from "../../components/checkbox/checkbox";
 import MainMenu from "../../components/main-menu/main-menu";
 import "../../components/range-slider/range-slider";
 import "../../components/hotel-card/hotel-card";
+
+const datePickerDomInfo = {
+  parentNodeId: "date-picker-container"
+};
+
+const datePicker = new DatePicker(datePickerDomInfo);
+datePicker.renderCalendar();
 
 const dropDownContainer = document.querySelector("#drop-down-container");
 const inputDropDown = document.querySelector("#number-bed");
