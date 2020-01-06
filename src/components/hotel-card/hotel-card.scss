@@ -12,23 +12,23 @@
       opacity: 1;
     }
   }
+
+  .glide__slide {
+    img {
+      border-radius: 4px 4px 0 0;
+    }
+  }
+
+  .glide__arrows {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+  }
 }
 
 .hotel-card__slider {
   position: relative;
   height: 152px;
-}
-
-.glide__slide {
-  img {
-    border-radius: 4px 4px 0 0;
-  }
-}
-
-.glide__arrows {
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.2s ease-in;
 }
 
 .hotel-card__bullets {
