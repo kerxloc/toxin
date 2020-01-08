@@ -65,10 +65,6 @@ class DatePicker {
           }
         }
       });
-    } else {
-      console.error(
-        "Expected arrivalInputId inside constructor object but not received"
-      );
     }
 
     if (domInfo.departureInputId) {
@@ -86,10 +82,6 @@ class DatePicker {
           this.showDepartureMonthCalendar();
         }
       });
-    } else {
-      console.error(
-        "Expected departureInputId inside constructor object but not received"
-      );
     }
 
     if (domInfo.arrivalSplitBtnId) {
