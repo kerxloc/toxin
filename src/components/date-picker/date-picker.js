@@ -84,6 +84,13 @@ class DatePicker {
       });
     }
 
+    if (domInfo.datePickerInputId) {
+      this.datePickerInput = document.querySelector(
+        `#${domInfo.datePickerInputId}`
+      );
+      this.datePickerInput.addEventListener("click", this.showCalendar);
+    }
+
     if (domInfo.arrivalSplitBtnId) {
       this.arrivalSplitBtn = document.querySelector(
         `#${domInfo.arrivalSplitBtnId}`
