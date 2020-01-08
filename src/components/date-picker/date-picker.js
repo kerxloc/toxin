@@ -526,6 +526,11 @@ class DatePicker {
     this.clearSelectCell();
     if (this.arrivalInput) this.arrivalInput.value = "";
     if (this.departureInput) this.departureInput.value = "";
+    if (this.datePickerInput) {
+      this.datePickerInput.textContent = this.inputPlaceholder
+        ? this.inputPlaceholder
+        : "";
+    }
     this.updateCurrentDate(new Date());
   };
 
