@@ -309,8 +309,12 @@ class DatePicker {
     const isEscPress = evt.keyCode === 27;
     if (isEscPress) {
       this.unshowCalendar();
-      this.arrivalInput.blur();
-      this.departureInput.blur();
+      if (this.arrivalInput) {
+        this.arrivalInput.blur();
+      }
+      if (this.departureInput) {
+        this.departureInput.blur();
+      }
     }
   };
 
@@ -493,8 +497,8 @@ class DatePicker {
   onFullClearCalendar = () => {
     this.onClearSelectRangeDate();
     this.clearSelectCell();
-    this.arrivalInput.value = "";
-    this.departureInput.value = "";
+    if (this.arrivalInput) this.arrivalInput.value = "";
+    if (this.departureInput) this.departureInput.value = "";
     this.updateCurrentDate(new Date());
   };
 
@@ -533,17 +537,17 @@ class DatePicker {
           }, 700);
         } else {
           this.onEndSelectRangeDate(td, selectDate);
-          this.departureInput.value = selectDateText;
+          if (this.departureInput) this.departureInput.value = selectDateText;
           this.paintingSelectCell();
           this.updateCurrentDate(selectDate);
         }
       } else if (isCellDoubleSelect && !this.isEndSelect) {
         this.onEndSelectRangeDate(td, selectDate);
-        this.departureInput.value = selectDateText;
+        if (this.departureInput) this.departureInput.value = selectDateText;
         this.updateCurrentDate(selectDate);
       } else {
         this.onStartSelectRangeDate(td, selectDate);
-        this.arrivalInput.value = selectDateText;
+        if (this.arrivalInput) this.arrivalInput.value = selectDateText;
         this.updateCurrentDate(selectDate);
       }
     }
