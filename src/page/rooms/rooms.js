@@ -9,7 +9,8 @@ import "../../components/hotel-card/hotel-card";
 
 const datePickerDomInfo = {
   parentNodeId: "date-picker-container",
-  datePickerInputId: "date-picker-input"
+  datePickerInputId: "date-picker-input",
+  inputPlaceholder: "Выберите дату"
 };
 
 const datePicker = new DatePicker(datePickerDomInfo);
