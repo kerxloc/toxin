@@ -126,6 +126,10 @@ class DatePicker {
       );
     }
 
+    if (domInfo.inputPlaceholder) {
+      this.inputPlaceholder = domInfo.inputPlaceholder;
+    }
+
     this.currentDate = new Date();
     this.arrivalDate = null;
     this.departureDate = null;
