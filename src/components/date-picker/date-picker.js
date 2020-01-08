@@ -308,6 +308,19 @@ class DatePicker {
     });
   };
 
+  printReductionDate = selectDate => {
+    const selectDay = getTwoDigitNumberString(selectDate.getDate());
+    const selectMonth = monthReduction[selectDate.getMonth()];
+    const printMessage = `${selectDay} ${selectMonth}`;
+    if (this.datePickerInput) {
+      if (this.isEndSelect) {
+        this.datePickerInput.textContent += ` - ${printMessage}`;
+      } else {
+        this.datePickerInput.textContent = printMessage;
+      }
+    }
+  };
+
   onClickShowCalendar = evt => {
     const calendar = this.parentNode.querySelector(".date-picker");
     const isInputClick =
@@ -551,17 +564,29 @@ class DatePicker {
           }, 700);
         } else {
           this.onEndSelectRangeDate(td, selectDate);
-          if (this.departureInput) this.departureInput.value = selectDateText;
+          if (this.departureInput) {
+            this.departureInput.value = selectDateText;
+          } else {
+            this.printReductionDate(selectDate);
+          }
           this.paintingSelectCell();
           this.updateCurrentDate(selectDate);
         }
       } else if (isCellDoubleSelect && !this.isEndSelect) {
         this.onEndSelectRangeDate(td, selectDate);
-        if (this.departureInput) this.departureInput.value = selectDateText;
+        if (this.departureInput) {
+          this.departureInput.value = selectDateText;
+        } else {
+          this.printReductionDate(selectDate);
+        }
         this.updateCurrentDate(selectDate);
       } else {
         this.onStartSelectRangeDate(td, selectDate);
-        if (this.arrivalInput) this.arrivalInput.value = selectDateText;
+        if (this.arrivalInput) {
+          this.arrivalInput.value = selectDateText;
+        } else {
+          this.printReductionDate(selectDate);
+        }
         this.updateCurrentDate(selectDate);
       }
     }
