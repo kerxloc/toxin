@@ -153,20 +153,16 @@
   }
 
   .total-card__wrap {
-    .total-card__date-inputs .input-group {
-      margin-right: 20px;
+    .total-card__date-inputs {
+      flex-direction: column;
+    }
 
-      &:nth-child(2) {
-        margin-right: 0;
-      }
+    .total-card__date-inputs .input-group {
+      margin-bottom: 15px;
     }
 
     .input-group__input--button-split {
       width: 100%;
-    }
-
-    .input-group__button-split {
-      width: 28%;
     }
   }
 

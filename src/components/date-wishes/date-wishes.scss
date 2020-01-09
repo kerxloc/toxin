@@ -74,20 +74,18 @@
   }
 
   .date-wishes__group {
-    .input-group {
-      margin-right: 20px;
+    flex-direction: column;
 
-      &:nth-child(2) {
-        margin-right: 0;
-      }
+    .date-picker-container {
+      top: 348px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
     }
 
     .input-group__input--button-split {
       width: 100%;
-    }
-
-    .input-group__button-split {
-      width: 28%;
     }
   }
 }
