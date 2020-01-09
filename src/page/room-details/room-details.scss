@@ -198,3 +198,9 @@
     padding-right: 20px;
   }
 }
+
+@media (max-width: 380px) {
+  .room-details .date-picker-container {
+    top: 350px;
+  }
+}
