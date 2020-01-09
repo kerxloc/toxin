@@ -30,6 +30,10 @@
 
   .date-picker {
     top: 203px;
+
+    .date-picker__day {
+      height: 32px;
+    }
   }
 }
 
