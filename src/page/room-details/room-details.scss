@@ -18,6 +18,16 @@
 @import "../../components/social-buttons/social-buttons.scss";
 @import "../../components/copyright/copyright.scss";
 
+.room-details {
+  .date-picker-container {
+    top: 270px;
+  }
+
+  .total-card__date-inputs {
+    position: relative;
+  }
+}
+
 .room-details__picture {
   display: grid;
   grid-template-columns: 981fr 461fr;
