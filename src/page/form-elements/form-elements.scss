@@ -28,6 +28,10 @@
   &:first-child {
     margin-bottom: 100px;
   }
+
+  &:nth-child(2) {
+    margin-bottom: 40px;
+  }
 }
 
 .form-elements__inputs {
