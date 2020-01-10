@@ -149,11 +149,11 @@ block content
             .form-elements__empty-button
               +button({ title: "Click me", isEmptyStyle: true })
               +button({ title: "Click me", isEmptyStyle: true, isDisable: true })
-          .form-elements__links
-            a(href="#" class="ui-kit__link  ui-kit__link--hover") click me
-            a(href="#" class="ui-kit__link") click me
-          .form-elements__submit-btn
-            +button({ title: "Перейти к оплате", isHaveIcon: true, buttonType: "submit" })
+            .form-elements__links
+              +button({ title: "Click me", isOnlyText: true })
+              +button({ title: "Click me", isOnlyText: true, isDisable: true })
+            .form-elements__submit-btn
+              +button({ title: "Перейти к оплате", isHaveIcon: true, buttonType: "submit" })
           +pagination({ title: "Pagination" })
       .form-elements__row
         div(id="drop-down-container" class="form-elements__drop-down-expand")
