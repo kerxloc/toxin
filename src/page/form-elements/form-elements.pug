@@ -20,9 +20,9 @@ block variables
 
 block content
   .container
-    .ui-kit__wrap
-      .ui-kit__box
-        .ui-kit__inputs
+    .form-elements__wrap
+      .form-elements__row
+        .form-elements__inputs
           +input({
             id: "textField",
             type: "text",
@@ -59,7 +59,7 @@ block content
             isBigLabel: true,
             descrText: "Default"
           })
-          .ui-kit__inputs-column
+          .form-elements__inputs-column
             +input({
               id: "arrival-input",
               splitId: "arrival-split-btn",
@@ -82,7 +82,7 @@ block content
               isDarkPlaceholder: true,
               isBigLabel: true
             })
-          div(class="ui-kit__inputs-column  ui-kit__inputs-column--small")
+          .form-elements__inputs-column
             +input({
               id: "filterDateDropdown",
               isFakeInput: true,
@@ -93,7 +93,6 @@ block content
               placeholder: "19 авг - 23 авг",
               isBigLabel: true
             })
-          div(class="ui-kit__inputs-column  ui-kit__inputs-column--small")
             +input({
               isButtonSplit: true,
               labelName: "Subscription text field",
@@ -103,66 +102,60 @@ block content
               placeholder: "Email",
               isRightSplitAnimation: true
             })
-        .ui-kit__column
-          .ui-kit__column-row
-            +checkbox({
-              title: "Checkbox Buttons",
-              items: [
-                { id: "smoke", title: "Можно курить" },
-                { id: "pets", title: "Можно с питомцами", isChecked: true },
-                { id: "guest", title: "Можно пригласить гостей (до 10 человек)", isChecked: true }
-              ]
-            })
-          .ui-kit__column-row
-            +radiobtn({
-              title: "Radio Buttons",
-              items: [
-                { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
-                { groupName: "gender", id: "famale", title: "Женщина" }
-              ]
-            })
-          .ui-kit__column-row
-            +toggle({
-              title: "Toggle",
-              items: [
-                { id: "giveSpec", title: "Получать спецпредложения", isChecked: true },
-                { id: "notGiveSpec", title: "Получать спецпредложения" }
-              ]
-            })
-          .ui-kit__column-row
-            +likebtn({
-              title: "like button",
-              items: [
-                { count: 2 },
-                { count: 12, isLike: true }
-              ]
-            })
-          .ui-kit__column-row
-            +ratebtn({
-              title: "rate button",
-              items: [
-                { idGroup: "rating1", currentRating: 4 },
-                { idGroup: "rating2", currentRating: 5 }
-              ]
-            })
-        div(class="ui-kit__column  ui-kit__column--xls")
-          div(class="ui-kit__column-row  ui-kit__column-row--large")
-            +rangeSlider({ title: "Range Slider" })
-          div(class="ui-kit__column-row  ui-kit__column-row--small")
+        .form-elements__controls
+          +checkbox({
+            title: "Checkbox Buttons",
+            items: [
+              { id: "smoke", title: "Можно курить" },
+              { id: "pets", title: "Можно с питомцами", isChecked: true },
+              { id: "guest", title: "Можно пригласить гостей (до 10 человек)", isChecked: true }
+            ]
+          })
+          +radiobtn({
+            title: "Radio Buttons",
+            items: [
+              { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
+              { groupName: "gender", id: "famale", title: "Женщина" }
+            ]
+          })
+          +toggle({
+            title: "Toggle",
+            items: [
+              { id: "giveSpec", title: "Получать спецпредложения", isChecked: true },
+              { id: "notGiveSpec", title: "Получать спецпредложения" }
+            ]
+          })
+          +likebtn({
+            title: "like button",
+            items: [
+              { count: 2 },
+              { count: 12, isLike: true }
+            ]
+          })
+          +ratebtn({
+            title: "rate button",
+            items: [
+              { idGroup: "rating1", currentRating: 4 },
+              { idGroup: "rating2", currentRating: 5 }
+            ]
+          })
+        .form-elements__user-button
+          +rangeSlider({ title: "Range Slider" })
+          .form-elements__buttons
             +title({ title: "Buttons" })
-            +button({ title: "Click me" })
-            +button({ title: "Click me", isDisable: true })
-          div(class="ui-kit__column-row  ui-kit__column-row--small")
-            +button({ title: "Click me", isEmptyStyle: true })
-            +button({ title: "Click me", isEmptyStyle: true, isDisable: true })
-          div(class="ui-kit__column-row  ui-kit__column-row--small")
+            .form-elements__full-button
+              +button({ title: "Click me" })
+              +button({ title: "Click me", isDisable: true })
+            .form-elements__empty-button
+              +button({ title: "Click me", isEmptyStyle: true })
+              +button({ title: "Click me", isEmptyStyle: true, isDisable: true })
+          .form-elements__links
             a(href="#" class="ui-kit__link  ui-kit__link--hover") click me
             a(href="#" class="ui-kit__link") click me
-          div(class="ui-kit__column-row  ui-kit__column-row--lwidth")
+          .form-elements__submit-btn
             +button({ title: "Перейти к оплате", isHaveIcon: true, buttonType: "submit" })
-          .ui-kit__column-row
-            +pagination({ title: "Pagination" })
-      div(class="ui-kit__box  ui-kit__box--nm")
+          +pagination({ title: "Pagination" })
+      div(class="form-elements__row")
         div(id="drop-down-container" class="ui-kit__column")
           +input({
             id: "number-guests-input1",
@@ -255,7 +248,7 @@ block content
                 { label: "Время прибытия — после 13:00, а выезд до 12:00" }
               ]
             })
-      div(class="ui-kit__box")
+      .form-elements__row
         .ui-kit__column
           +features({
             items: [
