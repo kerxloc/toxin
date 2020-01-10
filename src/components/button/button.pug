@@ -18,6 +18,14 @@ mixin button(options)
       buttonClass = "button  button--empty-style  button--empty-disable";
     }
 
+    if (options.isOnlyText) {
+      buttonClass += "  button--only-text";
+    }
+
+    if (options.isDisable && options.isOnlyText) {
+      buttonClass = "button  button--only-text  button--only-text-disable";
+    }
+
     const buttonType = options.buttonType ? options.buttonType : "button";
 
   if options.path

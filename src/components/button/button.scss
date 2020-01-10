@@ -77,6 +77,29 @@
       border-color: $accentColor !important;
     }
   }
+
+  &--only-text {
+    padding: 0;
+    color: $accentColor;
+    background: none;
+
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      color: darken($accentColor, 10%);
+    }
+  }
+
+  &--only-text-disable {
+    color: transparentize($contentColor, 0.5);
+    cursor: default;
+
+    &:hover {
+      color: transparentize($contentColor, 0.5);
+    }
+  }
 }
 
 .button--icon {
