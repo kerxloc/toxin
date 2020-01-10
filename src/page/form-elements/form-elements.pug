@@ -155,8 +155,8 @@ block content
           .form-elements__submit-btn
             +button({ title: "Перейти к оплате", isHaveIcon: true, buttonType: "submit" })
           +pagination({ title: "Pagination" })
-      div(class="form-elements__row")
-        div(id="drop-down-container" class="ui-kit__column")
+      .form-elements__row
+        div(id="drop-down-container" class="form-elements__drop-down-expand")
           +input({
             id: "number-guests-input1",
             isFakeInput: true,
@@ -179,12 +179,12 @@ block content
             isBigLabel: true,
             descrText: "Expanded"
           })
-          div(class="ui-kit__column-row  ui-kit__column-row--mt-large")
+          .form-elements__exp-checkbox-close
             +checkbox({
               title: "Expandable checkbox list",
               isExpandable: true
             })
-          .ui-kit__column-row
+          .form-elements__exp-checkbox-open
             +checkbox({
               title: "Expandable checkbox list",
               isExpandable: true,
@@ -200,7 +200,7 @@ block content
                 { id: "shampu2", title: "Шампунь" },
               ]
             })
-        div(id="drop-down-container2" class="ui-kit__column  ui-kit__column--mls  ui-kit__column--wl")
+        div(id="drop-down-container2" class="form-elements__drop-down-rich")
           +input({
             id: "number-guests-input3",
             isFakeInput: true,
@@ -211,7 +211,7 @@ block content
             placeholder: "Сколько гостей",
             isBigLabel: true
           })
-          div(class="ui-kit__column-row  ui-kit__column-row--bunny-hop")
+          .form-elements__bunny-hop
             +checkbox({
               title: "Rich Checkbox Buttons",
               isRich: true,
@@ -228,7 +228,7 @@ block content
                 }
               ]
             })
-        div(id="drop-down-container3" class="ui-kit__column  ui-kit__column--wl  ui-kit__column--lms")
+        div(id="drop-down-container3" class="form-elements__drop-down-bullet")
           +input({
             id: "number-guests-input4",
             isFakeInput: true,
@@ -239,7 +239,7 @@ block content
             placeholder: "Сколько гостей",
             isBigLabel: true
           })
-          div(class="ui-kit__column-row  ui-kit__column-row--bunny-hop")
+          .form-elements__bunny-hop
             +bullet({
               title: "Bullet list",
               items: [
@@ -249,7 +249,7 @@ block content
               ]
             })
       .form-elements__row
-        .ui-kit__column
+        .form-elements__features
           +features({
             items: [
               {
@@ -264,7 +264,7 @@ block content
               }
             ]
           })
-        div(class="ui-kit__column  ui-kit__column--mls")
+        .form-elements__comment
           +comment({
             authorName: "Мурад Сарафанов",
             datePost: "5 дней назад",
