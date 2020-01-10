@@ -23,4 +23,4 @@ mixin button(options)
   if options.path
     a(class=buttonClass href=options.path)= options.title
   else
-    button(class=buttonClass type=buttonType)= options.title
+    button(class=buttonClass type=buttonType disabled=options.isDisable)= options.title
