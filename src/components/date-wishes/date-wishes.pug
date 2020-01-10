@@ -4,7 +4,7 @@ include ../button/button
 mixin dateWishes()
   section.date-wishes
     .date-wishes__wrap
-      form(action="")
+      form(action="/rooms.html")
         fieldset
           legend.date-wishes__title Найдём номера под ваши пожелания
           .date-wishes__group
@@ -39,9 +39,8 @@ mixin dateWishes()
             placeholder: "Сколько гостей"
           })
           div(id="drop-down-container" class="drop-down-container")
-          +button({
-            title: "Подобрать номер",
-            path: "/rooms.html",
-            isHaveIcon: true,
-            buttonType: "submit"
-          })
+        +button({
+          title: "Подобрать номер",
+          isHaveIcon: true,
+          buttonType: "submit"
+        })
