@@ -19,8 +19,8 @@
 
     &::after {
       position: absolute;
-      top: 4px;
-      right: 15px;
+      top: 5px;
+      right: 16px;
       width: 12px;
       height: 8px;
       content: "";
@@ -33,6 +33,7 @@
 .checkbox__title--expandable-open {
   & button::after {
     transform: rotate(180deg);
+    right: 17px;
   }
 }
 
