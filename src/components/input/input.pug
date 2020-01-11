@@ -1,6 +1,7 @@
 mixin input(options = {})
   -
     const inputId = options.id ? options.id : "input-id";
+    const splitId = options.splitId ? options.splitId : "split-btn-id";
     const inputGroupClass = options.labelName
       ? "input-group  input-group--column"
       : "input-group";
@@ -59,7 +60,7 @@ mixin input(options = {})
         label(class=labelClass for=`${inputId}`)= options.labelName
       p.input-group__split
         input(id=`${inputId}` class=inputClass type=options.type name=options.name placeholder=options.placeholder)
-        button(id=`${options.splitId}` class=`${splitButtonClass}` type="button")
+        button(id=`${splitId}` class=`${splitButtonClass}` type="button")
           img(src=`../../components/input/${options.iconSrc}`, alt="")
   else
     div(class=inputGroupClass)
