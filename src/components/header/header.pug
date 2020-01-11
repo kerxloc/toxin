@@ -56,7 +56,7 @@ mixin header(options = {})
   header.page-header
     .container
       .page-header__wrap
-        +logo()
+        +logo({ id: "header-logo" })
         +mainMenu(currentMenuItems, {
           currentPage: options.currentPageId,
           mainMenu: options.mainMenuId,

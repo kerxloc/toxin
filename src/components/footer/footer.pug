@@ -102,7 +102,7 @@ mixin footer(options = {})
     .container
       if(options.isShort)
         div(class="page-footer__wrap  page-footer__wrap--short")
-          +logo()
+          +logo({ id: "footer-logo" })
           +textContent({ text: logoText })
           +socialButtons()
       else
