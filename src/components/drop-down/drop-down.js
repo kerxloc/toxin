@@ -137,6 +137,10 @@ class DropDown {
     }
   };
 
+  hideClearBtn = () => {
+    this.clearBtn.classList.add("drop-down__button--hide");
+  };
+
   onClickHide = evt => {
     const isInputClick = evt.target === this.input;
     const isCalendarClick = this.dropDownParent.contains(evt.target);
@@ -157,6 +161,7 @@ class DropDown {
     evt.preventDefault();
     this.discardCounter();
     this.discardViewCounter();
+    this.hideClearBtn();
     this.input.textContent = this.placeholder;
   };
 
@@ -278,6 +283,13 @@ class DropDown {
         countItemMinus.classList.remove("drop-down__counter-btn--disabled");
         countItemMinus.removeAttribute("disabled");
       }
+
+      const isClearBtnDisabled = this.clearBtn.classList.contains(
+        "drop-down__button--hide"
+      );
+      if (isClearBtnDisabled) {
+        this.clearBtn.classList.remove("drop-down__button--hide");
+      }
     });
 
     countItemMinus.addEventListener("click", () => {
@@ -299,6 +311,7 @@ class DropDown {
         );
         if (isCounterGroupClear) {
           this.input.textContent = this.placeholder;
+          this.hideClearBtn();
         }
       }
     });
@@ -318,6 +331,7 @@ class DropDown {
     const countList = getHtmlElement("ul", "drop-down__count-list");
     const dropDownControl = getHtmlElement("div", "drop-down__control");
     const clearBtn = getHtmlElement("button", "drop-down__button", "Очистить");
+    this.clearBtn = clearBtn;
     clearBtn.type = "button";
     clearBtn.addEventListener("click", this.onClickClear);
     const acceptBtn = getHtmlElement(
@@ -348,6 +362,12 @@ class DropDown {
     }
     this.dropDownParent.appendChild(dropDownParentWrap);
     this.container.appendChild(this.dropDownParent);
+
+    const isAllCounterZero = this.countElements.every(
+      item => item.counter === 0
+    );
+
+    if (isAllCounterZero) this.hideClearBtn();
   };
 }
 
