@@ -220,6 +220,7 @@ block content
           .filter__item
             +checkbox({
                   title: "Checkbox Buttons",
+                  listId: "checkbox-buttons",
                   items: [
                     { id: "smoke", title: "Можно курить" },
                     { id: "pets", title: "Можно с питомцами", isChecked: true },
@@ -229,6 +230,7 @@ block content
           .filter__item
             +checkbox({
                   title: "Доступность",
+                  listId: "checkbox-rich-list",
                   isRich: true,
                   items: [
                     { id: "wild", title: "Широкий коридор", descr: "Ширина коридоров в номере не менее 91 см." },
@@ -250,10 +252,10 @@ block content
           .filter__item
             +checkbox({
               title: "Дополнительные удобства",
-              idExpandableList: "checkbox-expandable-list",
               idExpandableBtn: "checkbox-expandable-btn",
               isExpandable: true,
               isExpandableOpen: true,
+              listId: "checkbox-expandable-list",
               items: [
                 { id: "breakfast", title: "Завтрак" },
                 { id: "pen", title: "Письменный стол", isChecked: true },

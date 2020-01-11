@@ -105,6 +105,7 @@ block content
         .form-elements__controls
           +checkbox({
             title: "Checkbox Buttons",
+            listId: "can-checkbox-list",
             items: [
               { id: "smoke", title: "Можно курить" },
               { id: "pets", title: "Можно с питомцами", isChecked: true },
@@ -183,13 +184,16 @@ block content
           .form-elements__exp-checkbox-close
             +checkbox({
               title: "Expandable checkbox list",
-              isExpandable: true
+              isExpandable: true,
+              idExpandableBtn: "first-expandable-btn"
             })
           .form-elements__exp-checkbox-open
             +checkbox({
               title: "Expandable checkbox list",
               isExpandable: true,
               isExpandableOpen: true,
+              idExpandableBtn: "second-expandable-btn",
+              listId: "expandable-list",
               items: [
                 { id: "breakfast", title: "Завтрак" },
                 { id: "pen", title: "Письменный стол", isChecked: true },
@@ -216,6 +220,7 @@ block content
           .form-elements__bunny-hop
             +checkbox({
               title: "Rich Checkbox Buttons",
+              listId: "1-rich-checkbox-list",
               isRich: true,
               items: [
                 {
