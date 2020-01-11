@@ -52,11 +52,12 @@ mixin header(options = {})
     const registerBtnTitle = options.isEnglish ? "Register" : "Зарегистрироваться";
     const authListId = options.authListId ? options.authListId : "authListId";
     const profileBtnId = options.profileBtnId ? options.profileBtnId : "authButton";
+    const logoId = options.logoId ? options.logoId : "header-logo";
 
   header.page-header
     .container
       .page-header__wrap
-        +logo({ id: "header-logo" })
+        +logo({ id: logoId })
         +mainMenu(currentMenuItems, {
           currentPage: options.currentPageId,
           mainMenu: options.mainMenuId,

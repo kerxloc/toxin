@@ -81,6 +81,7 @@ include ../social-buttons/social-buttons
 mixin footer(options = {})
   -
     const logoText = options.isEnglish ? engText.logo : rusText.logo;
+    const logoId = options.logoId ? options.logoId : "footer-logo";
     const navMenuItems = options.isEnglish ? navMenuEngItems : navMenuRusItems;
     const subTitleText = options.isEnglish ?  engText.subTitle :  rusText.subTitle;
     const subtext = options.isEnglish ?  engText.sub :  rusText.sub;
@@ -102,14 +103,14 @@ mixin footer(options = {})
     .container
       if(options.isShort)
         div(class="page-footer__wrap  page-footer__wrap--short")
-          +logo({ id: "footer-logo" })
+          +logo({ id: logoId })
           +textContent({ text: logoText })
           +socialButtons()
       else
         .page-footer__wrap
           .page-footer__content
             div(class="page-footer__col  page-footer__col--large")
-              +logo()
+              +logo({ id: logoId })
               +textContent({ text: logoText })
             .page-footer__col-group
               .page-footer__col
