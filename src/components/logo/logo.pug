@@ -1,4 +1,6 @@
 mixin logo(options = {})
+  - const logoId = options.id ? options.id : "logo-id-";
+
   if (options.isBig) 
     div(class="logo logo--big")
       img(width="48" height="48" src="../../components/logo/logo--big.png" alt="toxin")
