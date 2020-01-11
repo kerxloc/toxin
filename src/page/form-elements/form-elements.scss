@@ -231,3 +231,15 @@
 .form-elements #drop-down-container3 {
   position: relative;
 }
+
+@media (max-width: 1060px) {
+  .form-elements {
+    .radiobtn__item {
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
