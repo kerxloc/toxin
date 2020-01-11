@@ -53,7 +53,7 @@ const mainMenuDomNode = {
 new MainMenu(mainMenuDomNode);
 
 const datePickerDomInfo = {
-  parentNodeId: "date-picker-container",
+  parentNodeId: "date-picker-total-container",
   arrivalInputId: "arrival-total-input",
   arrivalSplitBtnId: "arrival-total-split-btn",
   departureInputId: "departure-total-input",
