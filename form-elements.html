@@ -54,10 +54,10 @@
                 <div class="input-group__input  input-group__input--fake  input-group__input--icon  input-group__button-split--down-animation" id="filterDateDropdown">19 авг - 23 авг</div>
               </div>
               <div class="input-group  input-group--column">
-                <label class="input-group__label  input-group__label--big" for="undefined">Subscription text field</label>
+                <label class="input-group__label  input-group__label--big" for="input-id">Subscription text field</label>
                 <p class="input-group__split">
-                  <input class="input-group__input  input-group__input--button-split" id="undefined" type="email" placeholder="Email"/>
-                  <button class="input-group__button-split  input-group__button-split--right-animation" id="undefined" type="button"><img src="img/arrow-forward-55d57b1.svg" alt=""/></button>
+                  <input class="input-group__input  input-group__input--button-split" id="input-id" type="email" placeholder="Email"/>
+                  <button class="input-group__button-split  input-group__button-split--right-animation" id="split-btn-id" type="button"><img src="img/arrow-forward-55d57b1.svg" alt=""/></button>
                 </p>
               </div>
             </div>
@@ -65,7 +65,7 @@
           <div class="form-elements__controls">
             <div class="checkbox">
               <p class="checkbox__title">Checkbox Buttons</p>
-              <div class="checkbox__item-list" id="no-expandable-id">
+              <div class="checkbox__item-list" id="can-checkbox-list">
                 <div class="checkbox__item">
                   <input id="smoke" type="checkbox"/>
                   <label class="checbox__lbl" for="smoke">Можно курить
@@ -207,16 +207,16 @@
             <div class="form-elements__exp-checkbox-close">
               <div class="checkbox">
                 <p class="checkbox__title  checkbox__title--expandable">
-                  <button class="checkbox__expandable" type="button">Expandable checkbox list</button>
+                  <button class="checkbox__expandable" id="first-expandable-btn" type="button">Expandable checkbox list</button>
                 </p>
               </div>
             </div>
             <div class="form-elements__exp-checkbox-open">
               <div class="checkbox">
                 <p class="checkbox__title  checkbox__title--expandable  checkbox__title--expandable-open">
-                  <button class="checkbox__expandable" type="button">Expandable checkbox list</button>
+                  <button class="checkbox__expandable" id="second-expandable-btn" type="button">Expandable checkbox list</button>
                 </p>
-                <div class="checkbox__item-list" id="no-expandable-id">
+                <div class="checkbox__item-list" id="expandable-list">
                   <div class="checkbox__item">
                     <input id="breakfast" type="checkbox"/>
                     <label class="checbox__lbl" for="breakfast">Завтрак
@@ -270,17 +270,15 @@
             <div class="form-elements__bunny-hop">
               <div class="checkbox  checkbox--rich">
                 <p class="checkbox__title">Rich Checkbox Buttons</p>
-                <div class="checkbox__item-list" id="no-expandable-id">
+                <div class="checkbox__item-list" id="1-rich-checkbox-list">
                   <div class="checkbox__item">
                     <input id="wild" type="checkbox"/>
-                    <label class="checbox__lbl  checbox__lbl--rich" for="wild">Широкий коридор
-                      <p class="checkbox__descr">Ширина коридоров в номере не менее 91 см.</p>
+                    <label class="checbox__lbl  checbox__lbl--rich" for="wild">Широкий коридор<span class="checkbox__descr">Ширина коридоров в номере не менее 91 см.</span>
                     </label>
                   </div>
                   <div class="checkbox__item">
                     <input id="help" type="checkbox"/>
-                    <label class="checbox__lbl  checbox__lbl--rich" for="help">Помощник для инвалидов
-                      <p class="checkbox__descr">На 1 этаже вас встретит специалист  и проводит до номера.</p>
+                    <label class="checbox__lbl  checbox__lbl--rich" for="help">Помощник для инвалидов<span class="checkbox__descr">На 1 этаже вас встретит специалист  и проводит до номера.</span>
                     </label>
                   </div>
                 </div>
