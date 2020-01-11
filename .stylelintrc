@@ -5,7 +5,6 @@
     "stylelint-declaration-block-no-ignored-properties",
     "stylelint-media-use-custom-media",
   ],
-  "ignoreFiles": ["./src/styles/reboot.css"],
   "defaultSeverity": "error",
   "rules": {
     "aditayvm/at-rule-no-children": true,

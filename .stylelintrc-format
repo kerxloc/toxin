@@ -10,7 +10,6 @@
     "stylelint-media-use-custom-media",
     "stylelint-order",
   ],
-  "ignoreFiles": ["./src/styles/reboot.css"],
   "defaultSeverity": "error",
   "rules": {
     "aditayvm/at-rule-no-children": true,
