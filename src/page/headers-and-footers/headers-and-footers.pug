@@ -19,7 +19,8 @@ html(lang="en")
           mainMenuId: "firstMainMenu",
           burgerBtnId: "firstBurgerBtn",
           authListId: "firstAuthList",
-          profileBtnId: "firstProfileBtn"
+          profileBtnId: "firstProfileBtn",
+          logoId: "header-logo-1-id"
         })
       div(class="headers-and-footers__item  headers-and-footers__item--diff-header")
         +header({
@@ -27,9 +28,14 @@ html(lang="en")
           currentPageId: "homeEng",
           userName: "Cosmin Negoita",
           mainMenuId: "secondMainMenu",
-          burgerBtnId: "secondBurgerBtn"
+          burgerBtnId: "secondBurgerBtn",
+          logoId: "header-logo-2-id"
         })
       .headers-and-footers__item
-        +footer({ isEnglish: true, emailInputPlaceholder: "Your email address" })
+        +footer({
+          isEnglish: true,
+          emailInputPlaceholder: "Your email address",
+          logoId: "footer-logo-1-id"
+        })
       .headers-and-footers__item
-        +footer({ isEnglish: true, isShort: true })
+        +footer({ isEnglish: true, isShort: true, logoId: "footer-logo-2-id" })
