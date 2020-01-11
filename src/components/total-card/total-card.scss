@@ -46,7 +46,7 @@
   color: transparentize($contentColor, 0.5);
 
   b {
-    font-family: Montserrat;
+    font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
     font-size: 14px;
   }
 }
@@ -96,7 +96,7 @@
     width: 20px;
     height: 20px;
     color: transparentize($contentColor, 0.75);
-    font-family: Montserrat;
+    font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
     font-size: 12px;
     font-weight: bold;
     line-height: 19px;
@@ -110,7 +110,7 @@
 
 .total-card__calc-text,
 .total-card__calc-cost {
-  font-family: Montserrat;
+  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
   font-size: 14px;
   line-height: 24px;
 }

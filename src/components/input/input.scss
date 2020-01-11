@@ -32,7 +32,7 @@
   margin: 0;
   padding-bottom: 4px;
   color: transparentize($contentColor, 0.55);
-  font-family: Montserrat;
+  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
@@ -41,7 +41,7 @@
 .input-group__label--big {
   font-size: 12px;
   line-height: 15px;
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
@@ -63,7 +63,7 @@
   padding: 9px 14px;
   color: transparentize($contentColor, 0.25);
   font-size: 14px;
-  font-family: $fontFamily;
+  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
   line-height: 24px;
   border: 1px solid transparentize($contentColor, 0.75);
   border-radius: 4px;
@@ -100,7 +100,7 @@
 
   &::placeholder {
     color: transparentize($contentColor, 0.76);
-    font-family: Montserrat;
+    font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
     font-size: 14px;
     transition: color 0.4s ease;
   }
