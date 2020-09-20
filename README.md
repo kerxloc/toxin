@@ -16,3 +16,29 @@
   - [Form Elements](https://dywork.github.io/toxin/form-elements)
   - [Cards](https://dywork.github.io/toxin/cards)
   - [Headers & Footers](https://dywork.github.io/toxin/headers-and-footers)
+  
+## Установка
+
+```
+$ git clone https://github.com/dywork/toxin.git
+$ cd toxin
+$ npm install
+$ npm run build
+```
+
+## Команды
+
+Запуск: 
+`npm start`
+
+Сборка: 
+`npm run build`
+
+Запуск линтера css:
+`npm run lint:css`
+
+Запуск prettier css:
+`npm run format:css`
+
+Деплой на github page: 
+`npm run deploy`
