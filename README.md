@@ -42,3 +42,13 @@ $ npm run build
 
 Деплой на github page: 
 `npm run deploy`
+
+## Используемые библиотеки:
+====ОФОРМИТЬ====
+
+"@glidejs/glide": "^3.4.1",
+"chart.js": "^2.9.3",
+"inputmask": "^4.0.9",
+"nouislider": "^14.6.2",
+"validator": "^12.2.0",
+"wnumb": "^1.2.0"
