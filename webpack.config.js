@@ -7,6 +7,7 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist",
+    contentBasePublicPath: "/toxin",
     hot: true
   },
   entry: {
@@ -19,7 +20,8 @@ module.exports = {
     "room-details": "./src/page/room-details/room-details.js",
     "form-elements": "./src/page/form-elements/form-elements.js",
     "headers-and-footers":
-      "./src/page/headers-and-footers/headers-and-footers.js"
+      "./src/page/headers-and-footers/headers-and-footers.js",
+    "not-found": "./src/page/not-found/not-found.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -135,6 +137,11 @@ module.exports = {
       filename: "headers-and-footers.html",
       template: "./src/page/headers-and-footers/headers-and-footers.pug",
       chunks: ["headers-and-footers"]
+    }),
+    new HtmlWebpackPlugin({
+      filename: "404.html",
+      template: "./src/page/not-found/not-found.pug",
+      chunks: ["not-found"]
     })
   ]
 };
