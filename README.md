@@ -10,7 +10,7 @@
   - [Детали отеля](https://dywork.github.io/toxin/room-details)
   - [Регистрация](https://dywork.github.io/toxin/registration)
   - [Авторизация](https://dywork.github.io/toxin/auth)
-  - [404](https://dywork.github.io/toxin/404)
+  - [404](https://dywork.github.io/toxin/404.html)
 
 2. Ui-kit:
   - [Colors & Type](https://dywork.github.io/toxin/colors-and-type)
