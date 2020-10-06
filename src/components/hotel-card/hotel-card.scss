@@ -78,7 +78,7 @@
     rgba(255, 255, 255, 0) 100%
   );
   border: none;
-  border-radius: 5px 0 0 0;
+  border-radius: 5px 0 0;
   cursor: pointer;
 
   &::after {
@@ -101,7 +101,7 @@
 }
 
 .hotel-card__info {
-  padding: 20px 20px;
+  padding: 20px;
 }
 
 .hotel-card__info-item {
@@ -125,9 +125,8 @@
   text-overflow: ellipsis;
 
   a {
-    color: transparent;
-    text-decoration: none;
     color: $contentColor;
+    text-decoration: none;
     transition: color 0.4s ease;
 
     &:hover {
