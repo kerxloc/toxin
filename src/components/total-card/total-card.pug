@@ -52,15 +52,14 @@ mixin totalCard(options = {})
         })
         div(class="drop-down-container" id="drop-down-total-container")
         .total-card__calc
-          .total-card__calc-item
+          .total-card__calc-row
             p.total-card__calc-text 9 990₽ х 4 суток
-            p.total-card__calc-cost 39 960₽
-          div(class="total-card__calc-item  total-card__calc-item--mbx")
-            p(class="total-card__calc-text  total-card__calc-text--extend") Сбор за услуги: скидка 2 179₽
-            p.total-card__calc-cost 0₽
-          .total-card__calc-item
-            p(class="total-card__calc-text  total-card__calc-text--lhs  total-card__calc-text--extend") Сбор за дополнительные услуги
-            p.total-card__calc-cost 300₽
+            p(class="total-card__calc-text  total-card__calc-text--info") Сбор за услуги: скидка 2 179₽
+            p(class="total-card__calc-text  total-card__calc-text--info") Сбор за дополнительные услуги
+          div(class="total-card__calc-row  total-card__calc-row--low  total-card__calc-row--tar")
+            p.total-card__calc-text 39 960₽
+            p.total-card__calc-text 0₽
+            p.total-card__calc-text 300₽
         .total-card__total
           p.total-card__total-text Итого
           p.total-card__total-price 38 081₽
