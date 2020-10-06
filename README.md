@@ -49,5 +49,5 @@ $ npm run build
 - [chartjs](https://github.com/chartjs/Chart.js)
 - [inputmask](https://github.com/RobinHerbots/Inputmask)
 - [noUiSlider](https://github.com/leongersen/noUiSlider)
-- [validator](github.com/chriso/validator.js)
-- [wnub](github.com/leongersen/wnumb)
+- [validator](https://github.com/chriso/validator.js)
+- [wnub](https://github.com/leongersen/wnumb)
