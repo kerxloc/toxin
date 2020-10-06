@@ -1,8 +1,8 @@
-## Toxin
+# Toxin
 
 Учебный проект. ([FSD education program. The 2nd task](https://www.fullstack-development.com/front-end-education))
 
-### Предпросмотр страниц:
+## Предпросмотр страниц:
 
 1. Пользовательские страницы:
   - [Главная](https://dywork.github.io/toxin/)
@@ -18,7 +18,7 @@
   - [Cards](https://dywork.github.io/toxin/cards)
   - [Headers & Footers](https://dywork.github.io/toxin/headers-and-footers)
   
-### Установка
+## Установка
 
 ```
 $ git clone https://github.com/dywork/toxin.git
@@ -27,7 +27,7 @@ $ npm install
 $ npm run build
 ```
 
-### Команды
+## Команды
 
 Запуск: 
 `npm start`
@@ -44,7 +44,7 @@ $ npm run build
 Деплой на github page: 
 `npm run deploy`
 
-### Используемые библиотеки:
+## Используемые библиотеки:
 ====ОФОРМИТЬ====
 
 "@glidejs/glide": "^3.4.1",
