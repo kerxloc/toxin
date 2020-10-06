@@ -45,11 +45,9 @@ $ npm run build
 `npm run deploy`
 
 ## Используемые библиотеки:
-====ОФОРМИТЬ====
-
-"@glidejs/glide": "^3.4.1",
-"chart.js": "^2.9.3",
-"inputmask": "^4.0.9",
-"nouislider": "^14.6.2",
-"validator": "^12.2.0",
-"wnumb": "^1.2.0"
+- [glidejs](https://github.com/glidejs/glide),
+- [chartjs](https://github.com/chartjs/Chart.js),
+- [inputmask](https://github.com/RobinHerbots/Inputmask),
+- [noUiSlider](https://github.com/leongersen/noUiSlider),
+- [validator](github.com/chriso/validator.js),
+- [wnub](github.com/leongersen/wnumb)
