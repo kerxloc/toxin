@@ -18,6 +18,7 @@
 
 .total-card__head {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
@@ -26,6 +27,9 @@
 .total-card__title {
   margin: 0;
   font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   b {
     font-size: 12px;
