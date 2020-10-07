@@ -126,17 +126,20 @@
 }
 
 .total-card__total {
-  position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
   margin-bottom: 20px;
+}
 
-  &::after {
+.total-card__total-separator {
+  position: relative;
+  flex-grow: 0.95;
+
+  &:after {
     position: absolute;
-    top: 17px;
-    left: 63px;
-    width: 182px;
+    top: -6px;
+    width: 100%;
     content: '';
     border: 1px dashed transparentize($contentColor, 0.75);
   }
@@ -148,6 +151,10 @@
   font-size: 19px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.total-card__total-price {
+  text-align: right;
 }
 
 @media (max-width: 380px) {
