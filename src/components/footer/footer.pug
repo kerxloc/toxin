@@ -24,27 +24,27 @@ include ../social-buttons/social-buttons
     {
       title: "Навигация",
       list: [
-        { label: "О нас", path: "#" },
-        { label: "Новости", path: "#" },
-        { label: "Служба поддержки", path: "#" },
-        { label: "Услуги", path: "#" }
+        { label: "О нас", path: "/404.html" },
+        { label: "Новости", path: "/404.html" },
+        { label: "Служба поддержки", path: "/404.html" },
+        { label: "Услуги", path: "/404.html" }
       ]
     },
     {
       title: "О нас",
       list: [
-        { label: "О сервисе", path: "#" },
-        { label: "Наша команда", path: "#" },
-        { label: "Вакансии", path: "#" },
-        { label: "Инвесторы", path: "#" }
+        { label: "О сервисе", path: "/404.html" },
+        { label: "Наша команда", path: "/404.html" },
+        { label: "Вакансии", path: "/404.html" },
+        { label: "Инвесторы", path: "/404.html" }
       ]
     },
     {
       title: "Служба поддержки",
       list: [
-        { label: "Соглашения", path: "#" },
-        { label: "Сообщества", path: "#" },
-        { label: "Связь с нами", path: "#" }
+        { label: "Соглашения", path: "/404.html" },
+        { label: "Сообщества", path: "/404.html" },
+        { label: "Связь с нами", path: "/404.html" }
       ]
     }
   ];
@@ -53,27 +53,27 @@ include ../social-buttons/social-buttons
     {
       title: "Navigation",
       list: [
-        { label: "About us", path: "#" },
-        { label: "News", path: "#" },
-        { label: "Support", path: "#" },
-        { label: "Products", path: "#" }
+        { label: "About us", path: "/404.html" },
+        { label: "News", path: "/404.html" },
+        { label: "Support", path: "/404.html" },
+        { label: "Products", path: "/404.html" }
       ]
     },
     {
       title: "About us",
       list: [
-        { label: "Who we are", path: "#" },
-        { label: "Our team", path: "#" },
-        { label: "Careers", path: "#" },
-        { label: "Investors", path: "#" }
+        { label: "Who we are", path: "/404.html" },
+        { label: "Our team", path: "/404.html" },
+        { label: "Careers", path: "/404.html" },
+        { label: "Investors", path: "/404.html" }
       ]
     },
     {
       title: "Support",
       list: [
-        { label: "Documentation", path: "#" },
-        { label: "Community", path: "#" },
-        { label: "Get in Touch", path: "#" }
+        { label: "Documentation", path: "/404.html" },
+        { label: "Community", path: "/404.html" },
+        { label: "Get in Touch", path: "/404.html" }
       ]
     }
   ];
@@ -121,14 +121,16 @@ mixin footer(options = {})
                 +navMenu(navMenuItems[2])
               div(class="page-footer__col  page-footer__col--large")
                 +textContent({ title: subTitleText, text: subtext })
-                +input({
-                  isButtonSplit: true,
-                  splitId: "footer-email-split-id",
-                  iconSrc: "arrow-forward.svg",
-                  type: "email",
-                  placeholder: emailInputPlaceholder,
-                  isRightSplitAnimation: true
-                })
+                form(action="/404.html")
+                  +input({
+                    isButtonSplit: true,
+                    splitId: "footer-email-split-id",
+                    splitButtonType: "submit",
+                    iconSrc: "arrow-forward.svg",
+                    type: "email",
+                    placeholder: emailInputPlaceholder,
+                    isRightSplitAnimation: true
+                  })
           .page-footer__side-info
             +copyright({ year: 2018, isEnglish: options.isEnglish })
             +socialButtons()
