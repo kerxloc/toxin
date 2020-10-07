@@ -4,7 +4,7 @@ include ../button/button
 mixin authCard()
   .auth-card
     .auth-card__wrap
-      form(method="get")
+      form(action="/404.html")
         h2.auth-card__title Войти
         fieldset
           +input({ id: "Email2", placeholder: "Email",  type: "email", })

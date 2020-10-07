@@ -6,7 +6,7 @@ include ../toggle/toggle
 mixin registerCard()
   .register-card
     .register-card__wrap
-      form(method="get")
+      form(action="/404.html")
         h2.register-card__title Регистрация аккаунта
         fieldset
           +input({ id: "name", placeholder: "Имя" })
