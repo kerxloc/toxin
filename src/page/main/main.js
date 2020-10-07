@@ -1,5 +1,6 @@
 import "../../style/index.scss";
 import "./main.scss";
+import "../../favicons/favicons.js";
 import DatePicker from "../../components/date-picker/date-picker";
 import DropDown from "../../components/drop-down/drop-down";
 import MainMenu from "../../components/main-menu/main-menu";
