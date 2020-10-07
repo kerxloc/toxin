@@ -3,7 +3,7 @@
   margin-bottom: 18px;
   font-size: 12px;
   line-height: 15px;
-  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
+  font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
@@ -20,7 +20,7 @@
     margin-right: 0;
   }
 
-  input[type="radio"] {
+  input[type='radio'] {
     display: none;
   }
 
@@ -30,7 +30,7 @@
     width: 20px;
     height: 20px;
     margin-left: 4px;
-    background: url("../../components/ratebtn/star.png") no-repeat;
+    background: url('../../components/ratebtn/star.png') no-repeat;
     cursor: pointer;
 
     &:last-child {
@@ -41,11 +41,11 @@
 
 .ratebtn__item label:hover,
 .ratebtn__item label:hover ~ label {
-  background: url("../../components/ratebtn/star-active.png") no-repeat;
+  background: url('../../components/ratebtn/star-active.png') no-repeat;
 }
 
 .ratebtn__item input:checked ~ label {
-  background: url("../../components/ratebtn/star-active.png") no-repeat;
+  background: url('../../components/ratebtn/star-active.png') no-repeat;
 }
 
 .ratebtn__item-wrap {

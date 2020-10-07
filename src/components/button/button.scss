@@ -5,7 +5,7 @@
   color: $mainColor;
   font-weight: normal;
   font-size: 12px;
-  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
+  font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
   line-height: 15px;
   text-transform: uppercase;
   text-decoration: none;
@@ -34,14 +34,11 @@
     display: block;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      darken($accentColor, 10%),
-      darken($accentGradColor, 10%)
-    );
+    background: linear-gradient(darken($accentColor, 10%), darken($accentGradColor, 10%));
     border-radius: inherit;
     opacity: 0;
     transition: opacity 0.4s ease;
-    content: "";
+    content: '';
   }
 
   &:hover {
@@ -112,10 +109,10 @@
     width: 44px;
     height: 44px;
     margin-top: -22px;
-    background: url("../../components/button/arrow.svg") no-repeat;
+    background: url('../../components/button/arrow.svg') no-repeat;
     background-position: center center;
     transition: background 0.2s ease;
-    content: "";
+    content: '';
   }
 
   &:active {

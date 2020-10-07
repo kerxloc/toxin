@@ -3,7 +3,7 @@
   margin-bottom: 16px;
   font-size: 12px;
   line-height: 15px;
-  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
+  font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
@@ -29,9 +29,9 @@
   padding: 3px 0;
   padding-left: 20px;
   padding-right: 12px;
-  content: "";
+  content: '';
   color: transparentize($contentColor, 0.55);
-  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
+  font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
   font-weight: normal;
   font-size: 10px;
   line-height: 12px;
@@ -42,12 +42,12 @@
 
 .likebtn__item button::after {
   position: absolute;
-  content: "";
+  content: '';
   top: 5px;
   left: 5px;
   width: 10px;
   height: 8px;
-  background: url("../../components/likebtn/like.png") no-repeat;
+  background: url('../../components/likebtn/like.png') no-repeat;
 }
 
 .likebtn__item--active button {
@@ -55,6 +55,6 @@
   border-color: $accentColor;
 
   &::after {
-    background: url("../../components/likebtn/like-active.png") no-repeat;
+    background: url('../../components/likebtn/like-active.png') no-repeat;
   }
 }

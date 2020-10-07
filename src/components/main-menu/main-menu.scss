@@ -112,7 +112,7 @@
       width: 100%;
       height: 20px;
       background: transparent;
-      content: "";
+      content: '';
     }
 
     > a {
@@ -132,7 +132,7 @@
 
         transform: rotate(45deg);
         opacity: 0.5;
-        content: "";
+        content: '';
       }
 
       &:hover {
@@ -160,7 +160,7 @@
 .main-menu__item,
 .main-menu__sub-item {
   a {
-    font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
+    font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
     color: transparentize($contentColor, 0.5);
     font-size: 14px;
     line-height: 17px;

@@ -1,4 +1,4 @@
-@import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import '../../../node_modules/@glidejs/glide/src/assets/sass/glide.core';
 
 .hotel-card {
   width: 270px;
@@ -87,9 +87,9 @@
     left: 18px;
     width: 8px;
     height: 13px;
-    content: "";
+    content: '';
     border: none;
-    background: url("../../components/hotel-card/expand-more.png") no-repeat;
+    background: url('../../components/hotel-card/expand-more.png') no-repeat;
   }
 }
 
@@ -147,13 +147,13 @@
 }
 
 .hotel-card__text {
-  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
+  font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
   margin: 0;
   font-size: 12px;
   color: transparentize($contentColor, 0.5);
 
   b {
-    font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
+    font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
     font-size: 14px;
   }
 }

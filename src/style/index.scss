@@ -1,11 +1,11 @@
-@import "utils/normolize";
-@import "utils/variables.scss";
-@import "../fonts/fonts.scss";
+@import 'utils/normolize';
+@import 'utils/variables.scss';
+@import '../fonts/fonts.scss';
 
 body {
   color: $contentColor;
   font-size: 14px;
-  font-family: "Quicksand", "Montserrat", "Arial", sans-serif;
+  font-family: 'Quicksand', 'Montserrat', 'Arial', sans-serif;
 }
 
 .container {

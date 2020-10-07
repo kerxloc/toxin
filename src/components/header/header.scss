@@ -28,7 +28,7 @@
       height: 30px;
       background: $contentColor;
       opacity: 0.1;
-      content: "";
+      content: '';
     }
   }
 }
@@ -52,7 +52,7 @@
 
 .page-header__user-name {
   margin: 0;
-  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
+  font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
   color: $contentColor;
   opacity: 0.5;
 }
@@ -89,10 +89,10 @@
     box-sizing: border-box;
     width: 24px;
     height: 24px;
-    background: url("../../components/header/user.svg") no-repeat;
+    background: url('../../components/header/user.svg') no-repeat;
     border: none;
     cursor: pointer;
-    content: "";
+    content: '';
 
     &--hide {
       display: none;

@@ -1,22 +1,22 @@
-@import "../../style/utils/variables.scss";
-@import "../../components/header/header.scss";
-@import "../../components/logo/logo.scss";
-@import "../../components/button/button.scss";
-@import "../../components/main-menu/main-menu.scss";
-@import "../../components/pie-chart/pie-chart.scss";
-@import "../../components/features/features.scss";
-@import "../../components/comment/comment.scss";
-@import "../../components/likebtn/likebtn.scss";
-@import "../../components/bullet-list/bullet-list.scss";
-@import "../../components/total-card/total-card.scss";
-@import "../../components/date-picker/date-picker.scss";
-@import "../../components/drop-down/drop-down.scss";
-@import "../../components/input/input.scss";
-@import "../../components/footer/footer.scss";
-@import "../../components/nav-menu/nav-menu.scss";
-@import "../../components/text-content/text-content.scss";
-@import "../../components/social-buttons/social-buttons.scss";
-@import "../../components/copyright/copyright.scss";
+@import '../../style/utils/variables.scss';
+@import '../../components/header/header.scss';
+@import '../../components/logo/logo.scss';
+@import '../../components/button/button.scss';
+@import '../../components/main-menu/main-menu.scss';
+@import '../../components/pie-chart/pie-chart.scss';
+@import '../../components/features/features.scss';
+@import '../../components/comment/comment.scss';
+@import '../../components/likebtn/likebtn.scss';
+@import '../../components/bullet-list/bullet-list.scss';
+@import '../../components/total-card/total-card.scss';
+@import '../../components/date-picker/date-picker.scss';
+@import '../../components/drop-down/drop-down.scss';
+@import '../../components/input/input.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/nav-menu/nav-menu.scss';
+@import '../../components/text-content/text-content.scss';
+@import '../../components/social-buttons/social-buttons.scss';
+@import '../../components/copyright/copyright.scss';
 
 .room-details {
   .date-picker-container {
@@ -75,7 +75,7 @@
 
 .room-details__title-alt {
   padding-top: 2px;
-  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
+  font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: normal;
   color: transparentize($contentColor, 0.5);
@@ -137,7 +137,7 @@
 .room-details__info p {
   width: 100%;
   margin: 0;
-  font-family: "Montserrat", "Quicksand", "Arial", sans-serif;
+  font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
   font-size: 14px;
   line-height: 24px;
   color: transparentize($contentColor, 0.25);
