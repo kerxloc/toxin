@@ -19,7 +19,9 @@ html(lang="ru")
     link(rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5")
     title #{title}
   body(class=pageClass)
-    +header()
-    main
-      block content
-    +footer({ isBorderTop: !!footerBorderTop })
+    .wrapper
+      .content
+        +header()
+        main
+          block content
+      +footer({ isBorderTop: !!footerBorderTop })
