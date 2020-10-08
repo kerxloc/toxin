@@ -17,6 +17,7 @@
 
   &--disable {
     opacity: 0.5;
+    pointer-events: none;
     cursor: default;
 
     &:hover {
@@ -66,6 +67,7 @@
 
   &--empty-disable {
     opacity: 0.5;
+    pointer-events: none;
     cursor: default;
 
     &:hover {
