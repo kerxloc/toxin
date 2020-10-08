@@ -130,19 +130,8 @@
   border-radius: 22px;
   cursor: pointer;
 
-  &--error {
-    font-weight: bold;
-    background: tomato !important;
-  }
-
-  &--current {
-    color: $mainColor !important;
-    font-weight: bold;
-    background: linear-gradient(180deg, $accentSecondСolor, $accentGradSecondСolor);
-  }
-
-  &--select {
-    color: $mainColor !important;
+  &:hover {
+    color: $mainColor;
     font-weight: bold;
     background: linear-gradient(180deg, $accentColor, $accentGradColor);
   }
@@ -155,6 +144,23 @@
   &--not-current {
     color: transparentize($contentColor, 0.75);
   }
+}
+
+.date-picker__calendar .date-picker__day--current {
+  color: $mainColor;
+  font-weight: bold;
+  background: linear-gradient(180deg, $accentSecondСolor, $accentGradSecondСolor);
+}
+
+.date-picker__calendar .date-picker__day--select {
+  color: $mainColor;
+  font-weight: bold;
+  background: linear-gradient(180deg, $accentColor, $accentGradColor);
+}
+
+.date-picker__calendar .date-picker__day--error {
+  font-weight: bold;
+  background: tomato;
 }
 
 .date-picker__day--select-start,
@@ -226,13 +232,5 @@
 @media (max-width: 320px) {
   .date-picker__day {
     height: 30px;
-  }
-}
-
-@media (hover: hover) {
-  .date-picker__day:hover {
-    color: $mainColor !important;
-    font-weight: bold;
-    background: linear-gradient(180deg, $accentColor, $accentGradColor);
   }
 }

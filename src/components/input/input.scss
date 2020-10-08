@@ -94,7 +94,7 @@
     border-color: transparentize($contentColor, 0.25);
 
     &::placeholder {
-      color: transparentize($contentColor, 0.25) !important;
+      color: transparentize($contentColor, 0.25);
     }
   }
 

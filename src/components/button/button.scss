@@ -69,12 +69,6 @@
     opacity: 0.5;
     pointer-events: none;
     cursor: default;
-
-    &:hover {
-      color: $accentColor !important;
-      background: $mainColor !important;
-      border-color: $accentColor !important;
-    }
   }
 
   &--only-text {
