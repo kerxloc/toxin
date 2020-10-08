@@ -23,13 +23,11 @@
 
 .date-picker {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: -200px;
+  left: 0;
   z-index: 100;
   box-sizing: border-box;
   width: 100%;
-  margin-top: -200px;
-  margin-left: -50%;
   background-color: $mainColor;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
@@ -225,8 +223,8 @@
 .date-picker-container {
   position: absolute;
   width: 100%;
-  left: 50%;
-  margin-left: -50%;
+  top: 0;
+  left: 0;
 }
 
 @media (max-width: 320px) {

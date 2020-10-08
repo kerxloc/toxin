@@ -1,12 +1,10 @@
 .drop-down {
   position: absolute;
-  top: 198px;
-  left: 50%;
+  top: -3px;
+  left: 0;
   z-index: 100;
   box-sizing: border-box;
   width: 100%;
-  margin-top: -200px;
-  margin-left: -50%;
   background: $mainColor;
   border: 1px solid rgba(31, 32, 65, 0.5);
   border-radius: 0 0 4px 4px;

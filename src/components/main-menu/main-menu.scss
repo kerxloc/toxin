@@ -121,11 +121,10 @@
 
       &::after {
         position: absolute;
-        top: 50%;
+        top: 15%;
         right: 6px;
         width: 7px;
         height: 7px;
-        margin-top: -6px;
         background-color: transparent;
         border-right: 2px solid $contentColor;
         border-bottom: 2px solid $contentColor;
@@ -237,7 +236,7 @@
 
     > a {
       &::after {
-        top: 48.5%;
+        top: 38%;
         right: auto;
         margin-left: 10px;
       }
