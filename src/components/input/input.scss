@@ -135,6 +135,10 @@
   cursor: pointer;
   transition: border 0.4s ease;
 
+  &:focus {
+    border: 1px solid #1f2041;
+  }
+
   img {
     transition: transform 0.1s ease;
   }

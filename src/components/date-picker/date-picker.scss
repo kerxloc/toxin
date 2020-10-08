@@ -83,6 +83,10 @@
   cursor: pointer;
   transition: transform 0.2s ease;
 
+  &:focus {
+    border: 1px solid #1f2041;
+  }
+
   &--prev {
     background-image: url('../../components/date-picker/arrow-back.svg');
 
