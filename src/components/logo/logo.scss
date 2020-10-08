@@ -9,6 +9,13 @@
   }
 }
 
+.logo__big-pict {
+  width: 48px;
+  height: 48px;
+  background: url('../../components/logo/logo.png') no-repeat;
+  background-size: cover
+}
+
 .logo__link {
   position: absolute;
   top: -2px;
