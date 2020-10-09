@@ -40,7 +40,7 @@
     "no-invalid-double-slash-comments": true,
     "property-blacklist": ["flex", "order"],
     "property-no-unknown": true,
-    "selector-max-compound-selectors": 2,
+    "selector-max-compound-selectors": 3,
     "selector-max-id": 0,
     "selector-max-type": 0,
     "selector-max-universal": 0,
