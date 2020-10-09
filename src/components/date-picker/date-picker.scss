@@ -146,6 +146,10 @@
   &--not-current {
     color: transparentize($contentColor, 0.75);
   }
+
+  @media (max-width: 320px) {
+    height: 30px;
+  }
 }
 
 .date-picker__calendar .date-picker__day--current {
@@ -229,10 +233,4 @@
   width: 100%;
   top: 0;
   left: 0;
-}
-
-@media (max-width: 320px) {
-  .date-picker__day {
-    height: 30px;
-  }
 }

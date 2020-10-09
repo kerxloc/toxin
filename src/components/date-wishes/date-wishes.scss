@@ -32,6 +32,16 @@
   .button--icon {
     z-index: 0;
   }
+
+  @media (max-width: 380px) {
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
 }
 
 .date-wishes__wrap {
@@ -47,6 +57,10 @@
   .input-group__input {
     &--button-split {
       width: 106px;
+
+      @media (max-width: 380px) {
+        width: 100%;
+      }
     }
   }
 
@@ -54,6 +68,20 @@
     position: absolute;
     top: 269px;
     left: 0;
+
+    @media (max-width: 380px) {
+      top: 348px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    flex-direction: column;
+  }
+}
+
+.date-wishes__group .input-group {
+  @media (max-width: 380px) {
+    margin-bottom: 15px;
   }
 }
 
@@ -64,34 +92,4 @@
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
-}
-
-@media (max-width: 380px) {
-  .date-wishes {
-    width: 100%;
-    min-width: 320px;
-    margin: 0 auto;
-  }
-
-  .date-wishes__group {
-    flex-direction: column;
-
-    .date-picker-container {
-      top: 348px;
-    }
-
-    .input-group {
-      margin-bottom: 15px;
-    }
-
-    .input-group__input--button-split {
-      width: 100%;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .date-wishes {
-    margin: 0 auto;
-  }
 }
