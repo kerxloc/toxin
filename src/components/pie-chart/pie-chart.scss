@@ -5,6 +5,10 @@
 .pie-chart__diagram {
   width: 120px;
   height: 120px;
+
+  @media (max-width: 350px) {
+    margin-bottom: 20px;
+  }
 }
 
 .pie-chart__vote {
@@ -27,6 +31,16 @@
   display: flex;
   align-items: flex-end;
   width: 350px;
+
+  @media (max-width: 425px) {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 350px) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 .pie-chart__label-list {
@@ -34,6 +48,10 @@
   margin-left: 30px;
   padding: 0;
   list-style: none;
+
+  @media (max-width: 350px) {
+    margin-left: 0;
+  }
 }
 
 .pie-chart__label-item {
@@ -73,27 +91,5 @@
     &::before {
       background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     }
-  }
-}
-
-@media (max-width: 425px) {
-  .pie-chart {
-    width: 100%;
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 350px) {
-  .pie-chart {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .pie-chart__diagram {
-    margin-bottom: 20px;
-  }
-
-  .pie-chart__label-list {
-    margin-left: 0;
   }
 }
