@@ -16,6 +16,20 @@
 @import '../../components/logo/logo';
 @import '../../../node_modules/nouislider/distribute/nouislider.min.css';
 
+.form-elements {
+  .radiobtn__item {
+    @media (max-width: 1060px) {
+      margin-bottom: 15px;
+    }
+
+    &:last-child {
+      @media (max-width: 1060px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 .form-elements__wrap {
   padding-top: 62px;
 }
@@ -230,16 +244,4 @@
 .form-elements #drop-down-container2,
 .form-elements #drop-down-container3 {
   position: relative;
-}
-
-@media (max-width: 1060px) {
-  .form-elements {
-    .radiobtn__item {
-      margin-bottom: 15px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
 }
