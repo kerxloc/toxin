@@ -4,6 +4,11 @@
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 
+  @media (max-width: 380px) {
+    width: 100%;
+    min-width: 320px;
+  }
+
   fieldset {
     width: 320px;
     margin-bottom: 20px;
@@ -16,6 +21,10 @@
 
     &:nth-of-type(3) {
       margin-bottom: 24px;
+    }
+
+    @media (max-width: 380px) {
+      width: 100%;
     }
   }
 
@@ -49,6 +58,12 @@
 .register-card__wrap {
   padding: 30px;
   padding-top: 40px;
+
+  .input-group__input {
+    @media (max-width: 380px) {
+      width: 100%;
+    }
+  }
 }
 
 .register-card__title {
@@ -68,22 +83,5 @@
 
   .button {
     padding: 13px 24px;
-  }
-}
-
-@media (max-width: 380px) {
-  .register-card {
-    width: 100%;
-    min-width: 320px;
-  }
-
-  .register-card__wrap {
-    .input-group__input {
-      width: 100%;
-    }
-  }
-
-  .register-card fieldset {
-    width: 100%;
   }
 }
