@@ -15,7 +15,7 @@
   border-radius: 22px;
   cursor: pointer;
 
-  &--disable {
+  &_disabled {
     opacity: 0.5;
     pointer-events: none;
     cursor: default;
@@ -48,7 +48,7 @@
     }
   }
 
-  &--empty-style {
+  &_empty {
     padding: 8px 18px;
     color: $accentColor;
     background: $mainColor;
@@ -65,13 +65,13 @@
     }
   }
 
-  &--empty-disable {
+  &_empty-disabled {
     opacity: 0.5;
     pointer-events: none;
     cursor: default;
   }
 
-  &--only-text {
+  &_only-text {
     padding: 0;
     color: $accentColor;
     background: none;
@@ -85,7 +85,7 @@
     }
   }
 
-  &--only-text-disable {
+  &_only-text-disabled {
     color: transparentize($contentColor, 0.5);
     cursor: default;
 
@@ -95,7 +95,7 @@
   }
 }
 
-.button--icon {
+.button_with-icon {
   position: relative;
 
   &::after {

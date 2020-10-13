@@ -3,27 +3,27 @@ mixin button(options)
     let buttonClass = "button";
 
     if (options.isEmptyStyle) {
-      buttonClass += "  button--empty-style";
+      buttonClass += "  button_empty";
     }
 
     if (options.isHaveIcon) {
-      buttonClass += "  button--icon";
+      buttonClass += "  button_with-icon";
     }
 
     if (options.isDisable) {
-      buttonClass += "  button--disable";
+      buttonClass += "  button_disabled";
     }
 
     if (options.isDisable && options.isEmptyStyle) {
-      buttonClass = "button  button--empty-style  button--empty-disable";
+      buttonClass = "button  button_empty  button_empty-disabled";
     }
 
     if (options.isOnlyText) {
-      buttonClass += "  button--only-text";
+      buttonClass += "  button_only-text";
     }
 
     if (options.isDisable && options.isOnlyText) {
-      buttonClass = "button  button--only-text  button--only-text-disable";
+      buttonClass = "button  button_only-text  button_only-text-disabled";
     }
 
     const buttonType = options.buttonType ? options.buttonType : "button";
