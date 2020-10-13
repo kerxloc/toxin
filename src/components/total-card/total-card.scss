@@ -74,7 +74,7 @@
   color: transparentize($contentColor, 0.5);
 
   b {
-    font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
+    font-family: Montserrat, Quicksand, Arial, sans-serif;
     font-size: 14px;
   }
 }
@@ -117,7 +117,7 @@
 .total-card__calc-text {
   margin: 0;
   margin-bottom: 15px;
-  font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
+  font-family: Montserrat, Quicksand, Arial, sans-serif;
   font-size: 14px;
   line-height: 19px;
 
@@ -137,7 +137,7 @@
     width: 18px;
     height: 18px;
     color: transparentize($contentColor, 0.75);
-    font-family: 'Montserrat', 'Quicksand', 'Arial', sans-serif;
+    font-family: Montserrat, Quicksand, Arial, sans-serif;
     font-size: 12px;
     font-weight: bold;
     line-height: 19px;
