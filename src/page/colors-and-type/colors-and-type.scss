@@ -4,18 +4,18 @@
 @import '../../components/typograph/typograph.scss';
 
 .colors-and-type__wrap {
+  padding-top: 65px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 65px;
 
   @media (max-width: 860px) {
     flex-direction: column;
   }
 
   @media (max-width: 425px) {
-    padding-left: 20px;
     padding-right: 20px;
+    padding-left: 20px;
   }
 }
 
@@ -28,10 +28,10 @@
   @media (max-width: 860px) {
     margin-bottom: 60px;
   }
+}
 
-  li {
-    margin-bottom: 20px;
-  }
+.colors-and-type__pallete-li {
+  margin-bottom: 20px;
 }
 
 .colors-and-type__typograph {
@@ -39,14 +39,14 @@
   padding: 0;
   padding-right: 51px;
   list-style: none;
+}
 
-  li {
-    margin-bottom: 50px;
+.colors-and-type__typograph-li {
+  margin-bottom: 50px;
 
-    &:last-child {
-      .typograph__text {
-        padding-right: 30px;
-      }
+  &:last-child {
+    .typograph__text {
+      padding-right: 30px;
     }
   }
 }

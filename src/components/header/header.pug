@@ -71,7 +71,7 @@ mixin header(options = {})
             +button({ title: registerBtnTitle, path: "/registration.html" })
             ul(id=authListId class="page-header__auth-list")
               li.page-header__auth-item
-                a(href="/auth.html")= authBtnTitle
+                a(class="page-header__auth-item-link" href="/auth.html")= authBtnTitle
               li.page-header__auth-item
-                a(href="/registration.html")= registerBtnTitle
+                a(class="page-header__auth-item-link" href="/registration.html")= registerBtnTitle
             button(id=profileBtnId class="page-header__auth-profile" type="button")

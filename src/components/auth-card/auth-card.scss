@@ -2,7 +2,7 @@
   width: 380px;
   background: $mainColor;
   border-radius: 4px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
 
   .input-group {
     margin-bottom: 10px;
@@ -13,9 +13,9 @@
   }
 
   .button_with-icon {
-    width: 100%;
     padding: 15px 20px;
     padding-top: 14px;
+    width: 100%;
     font-weight: normal;
   }
 
@@ -37,9 +37,9 @@
 }
 
 .auth-card__fieldset {
-  width: 320px;
   margin-bottom: 20px;
   padding: 0;
+  width: 320px;
   border: 0;
 
   @media (max-width: 380px) {
@@ -50,16 +50,16 @@
 .auth-card__title {
   margin: 0;
   margin-bottom: 20px;
-  font-weight: bold;
   font-size: 24px;
   line-height: 30px;
+  font-weight: bold;
 }
 
 .auth-card__account-enter {
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 30px;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
 
   .button {

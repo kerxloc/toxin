@@ -31,7 +31,7 @@ mixin checkbox(options = {})
       div(id=listId class="checkbox__item-list")
         each item in options.items
           div.checkbox__item
-            input(id=item.id type="checkbox" checked=item.isChecked)
-            label(for=item.id class=labelClass)= item.title
+            input(class="checkbox__input" id=item.id type="checkbox" checked=item.isChecked)
+            label(class="checkbox__label" for=item.id class=labelClass)= item.title
               if options.isRich
                 span.checkbox__descr= item.descr

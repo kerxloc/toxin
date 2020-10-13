@@ -49,7 +49,7 @@
   }
 
   .page-footer_short {
-    section.text-content {
+    .text-content {
       @media (max-width: 768px) {
         width: 70%;
       }
@@ -75,14 +75,16 @@
   &_authorized {
     .main-menu {
       @media (width: 1440px) {
-        margin-left: 336px;
         margin-right: 4px;
+        margin-left: 336px;
       }
     }
 
     .page-header__auth_authenticated {
+      padding-left: 31px;
+
       @media (max-width: 380px) {
-        padding-left: 0px;
+        padding-left: 0;
       }
     }
   }
@@ -103,11 +105,5 @@
     @media (width: 1440px) {
       margin-right: 117px;
     }
-  }
-}
-
-.headers-and-footers__item_authorized {
-  .page-header__auth_authenticated {
-    padding-left: 31px;
   }
 }

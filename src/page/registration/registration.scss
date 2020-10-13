@@ -13,15 +13,13 @@
 @import '../../components/social-buttons/social-buttons.scss';
 @import '../../components/copyright/copyright.scss';
 
-.registration-page {
-  main {
-    background: url('room-interior.jpg') no-repeat;
-    background-position: center -70px;
-  }
+.registration-page__main {
+  background: url('room-interior.jpg') no-repeat;
+  background-position: center -70px;
 }
 
 .registration-page__wrap {
+  padding: 30px 0 26px;
   display: flex;
   justify-content: center;
-  padding: 30px 0 26px;
 }

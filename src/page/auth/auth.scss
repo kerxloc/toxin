@@ -11,15 +11,13 @@
 @import '../../components/social-buttons/social-buttons.scss';
 @import '../../components/copyright/copyright.scss';
 
-.auth-page {
-  main {
-    background: url('room-interior.jpg') no-repeat;
-    background-position: center -70px;
-  }
+.auth-page__main {
+  background: url('room-interior.jpg') no-repeat;
+  background-position: center -70px;
 }
 
 .auth-page__wrap {
+  padding: 163px 0 165px;
   display: flex;
   justify-content: center;
-  padding: 163px 0 165px;
 }

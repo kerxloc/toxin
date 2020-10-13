@@ -16,15 +16,15 @@ mixin hotelCard(options = {})
           button(class="glide__arrow  glide__arrow_right  hotel-card__slider-btn  hotel-card__slider-btn_next" data-glide-dir=">" type="button") Вперед
         div(class="hotel-card__bullets  glide__bullets" data-glide-el="controls[nav]")
           each image, index in options.images
-            button(class="glide__bullet" data-glide-dir=`=${index}` type="button")
+            button(class="hotel-card__bullet glide__bullet" data-glide-dir=`=${index}` type="button")
       .hotel-card__info
         .hotel-card__info-item
           if (options.isLux)
             h2.hotel-card__title 
-              a(href="/room-details.html") № #[span= options.numberHotel] #[b люкс]
+              a(class="hotel-card__title-link" href="/room-details.html") № #[span= options.numberHotel] #[b люкс]
           else 
             h2.hotel-card__title
-              a(href="/room-details.html") № #[span= options.numberHotel]
+              a(class="hotel-card__title-link" href="/room-details.html") № #[span= options.numberHotel]
           p.hotel-card__text #[b= options.dayCost + "₽"] в сутки
         .hotel-card__info-item
           +ratebtn({ items: [{ idGroup: options.idRateBtn, currentRating: options.starCount }] })

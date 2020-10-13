@@ -13,7 +13,7 @@
   width: 48px;
   height: 48px;
   background: url('../../components/logo/logo.png') no-repeat;
-  background-size: cover
+  background-size: cover;
 }
 
 .logo__link {
@@ -33,5 +33,5 @@
 
 .logo__letter,
 .logo__label-left {
-  transition: fill 0.4s ease;
+  transition: fill .4s ease;
 }

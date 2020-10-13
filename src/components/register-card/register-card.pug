@@ -8,7 +8,7 @@ mixin registerCard()
     .register-card__wrap
       form(action="/404.html")
         h2.register-card__title Регистрация аккаунта
-        fieldset
+        fieldset.register-card__fieldset
           +input({ id: "name", placeholder: "Имя" })
           +input({ id: "surname", placeholder: "Фамилия" })
           +radiobtn({
@@ -17,15 +17,15 @@ mixin registerCard()
               { groupName: "gender", id: "famale", title: "Женщина" }
             ]
           })
-        fieldset
-          legend Дата рождения
+        fieldset.register-card__fieldset
+          legend.register-card__legend Дата рождения
           +input({
             id: "dateInput",
             type: "text",
             placeholder: "ДД.ММ.ГГГГ"
           })
-        fieldset
-          legend Данные для входа в сервис
+        fieldset.register-card__fieldset
+          legend.register-card__legend Данные для входа в сервис
           +input({
             id: "loginInput",
             type: "text",

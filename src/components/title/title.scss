@@ -1,11 +1,11 @@
 .title {
   margin: 0;
   margin-bottom: 18px;
+  font-family: Montserrat, Quicksand, Arial, sans-serif;
   font-size: 12px;
   line-height: 15px;
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-style: normal;
   font-weight: bold;
+  font-style: normal;
   text-transform: uppercase;
 }
 
@@ -17,9 +17,9 @@
 .title__descr {
   margin: 0;
   padding-bottom: 4px;
-  color: transparentize($contentColor, 0.55);
   font-family: Montserrat, Quicksand, Arial, sans-serif;
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
+  color: transparentize($contentColor, .55);
 }

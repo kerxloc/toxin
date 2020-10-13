@@ -8,9 +8,9 @@
   margin: 0;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
   font-size: 24px;
-  color: transparentize($contentColor, 0.75);
-  text-align: right;
   font-weight: normal;
+  text-align: right;
+  color: transparentize($contentColor, .75);
 
   &_h2 {
     font-size: 19px;
@@ -51,6 +51,6 @@
   font-family: Montserrat, Quicksand, Arial, sans-serif;
   font-size: 14px;
   line-height: 23px;
-  color: transparentize($contentColor, 0.25);
   font-weight: normal;
+  color: transparentize($contentColor, .25);
 }

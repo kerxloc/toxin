@@ -2,16 +2,16 @@
   margin: 0;
   margin-bottom: 20px;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-weight: bold;
   font-size: 12px;
   line-height: 15px;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
 .text-content__paragraph {
   margin: 0;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
-  color: transparentize($contentColor, 0.25);
   font-size: 14px;
   line-height: 24px;
+  color: transparentize($contentColor, .25);
 }

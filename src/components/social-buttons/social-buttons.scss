@@ -1,9 +1,9 @@
 .social-buttons__list {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
   list-style: none;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .social-buttons__link .icon-content {
-  transition: fill 0.4s ease;
+  transition: fill .4s ease;
 }
 
 .social-buttons__link:hover .icon-content {

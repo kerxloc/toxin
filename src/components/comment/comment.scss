@@ -16,11 +16,12 @@
 
 .comment__pict {
   position: relative;
+  margin-bottom: 27px;
   width: 44px;
   height: 44px;
-  margin-bottom: 27px;
-
+  /* stylelint-disable */
   img {
+    /* stylelint-enable */
     position: absolute;
     top: 1px;
     left: -23px;
@@ -30,22 +31,22 @@
 .comment__title {
   margin: 0;
   margin-bottom: 8px;
-  color: transparentize($contentColor, 0.25);
-  font-weight: bold;
   font-size: 14px;
+  font-weight: bold;
+  color: transparentize($contentColor, .25);
 }
 
 .comment__date {
   margin: 0;
   margin-bottom: 14px;
   font-size: 14px;
-  color: transparentize($contentColor, 0.25);
+  color: transparentize($contentColor, .25);
 }
 
 .comment__text {
-  width: 99%;
   margin: 0;
+  width: 99%;
   font-size: 14px;
   line-height: 24px;
-  color: transparentize($contentColor, 0.25);
+  color: transparentize($contentColor, .25);
 }

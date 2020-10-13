@@ -37,9 +37,9 @@
 }
 
 .not-found__descr {
-  max-width: 480px;
   margin: 0 auto;
   margin-bottom: 20px;
+  max-width: 480px;
   font-size: 24px;
   font-weight: bold;
 }
@@ -64,8 +64,8 @@
   font-size: 14px;
   line-height: 17px;
   text-decoration: none;
-  color: transparentize($contentColor, 0.5);
-  transition: color 0.4s ease;
+  color: transparentize($contentColor, .5);
+  transition: color .4s ease;
 
   &:hover {
     color: darken($accentColor, 10%);

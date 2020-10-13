@@ -4,5 +4,5 @@ mixin radiobtn(options = {})
       p.radiobtn__title= options.title
     each item in options.items
       p.radiobtn__item
-        input(id=item.id name=item.groupName type="radio" checked=item.isChecked)
-        label(for=item.id)= item.title
+        input(class="radiobtn__input" id=item.id name=item.groupName type="radio" checked=item.isChecked)
+        label(class="radiobtn__label" for=item.id)= item.title

@@ -1,11 +1,11 @@
 .bullet__title {
   margin: 0;
   margin-bottom: 14px;
+  font-family: Montserrat, Quicksand, Arial, sans-serif;
   font-size: 12px;
   line-height: 15px;
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-style: normal;
   font-weight: bold;
+  font-style: normal;
   text-transform: uppercase;
 
   &_lp {
@@ -20,12 +20,12 @@
 
 .bullet__item {
   position: relative;
-  padding-left: 21px;
   margin-bottom: 10px;
+  padding-left: 21px;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
-  color: transparentize($contentColor, 0.25);
   font-size: 14px;
   line-height: 24px;
+  color: transparentize($contentColor, .25);
 
   &::before {
     position: absolute;
@@ -34,7 +34,7 @@
     width: 10px;
     height: 10px;
     content: '';
-    background: transparentize($contentColor, 0.75);
+    background: transparentize($contentColor, .75);
     border-radius: 50%;
   }
 }

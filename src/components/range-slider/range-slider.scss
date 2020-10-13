@@ -2,65 +2,31 @@ $accentSecondColor: #6fcf97;
 $accentSecondGradColor: #66d2ea;
 
 .range__view {
+  margin-bottom: 22px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 22px;
-}
-
-.range__price {
-  input {
-    box-sizing: border-box;
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    margin: 0;
-    margin-right: 2px;
-    font-family: Montserrat, Quicksand, Arial, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    color: transparentize($contentColor, 0.55);
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    vertical-align: top;
-    border: none;
-    background: transparent;
-
-    &:last-child {
-      margin-right: 0;
-      margin-left: 2px;
-    }
-  }
 }
 
 .range__slider {
   height: 6px;
-  border-radius: 3px;
-  border: 1px solid transparentize($contentColor, 0.75);
   background-color: $mainColor;
+  border: 1px solid transparentize($contentColor, .75);
+  border-radius: 3px;
 
   .noUi-connect {
     height: 6px;
-    background: linear-gradient(
-      180deg,
-      $accentSecondColor 0%,
-      $accentSecondGradColor 100%
-    );
+    background: linear-gradient(180deg, $accentSecondColor 0%, $accentSecondGradColor 100%);
   }
 
   .noUi-handle {
     width: 14px;
     height: 14px;
-    border: 2px solid #ffffff;
+    background: linear-gradient(180deg, $accentSecondColor 0%, $accentSecondGradColor 100%);
+    border: 2px solid white;
     border-radius: 50%;
-    background: linear-gradient(
-      180deg,
-      $accentSecondColor 0%,
-      $accentSecondGradColor 100%
-    );
     box-shadow: none;
+    transition: background .4s ease 0s, border .4s ease 0s;
     cursor: pointer;
-    transition: background 0.4s ease 0s, border 0.4s ease 0s;
 
     &::after,
     &::before {
@@ -75,26 +41,27 @@ $accentSecondGradColor: #66d2ea;
 }
 
 .range__cost {
-  display: inline-block;
   margin: 0;
   margin-right: 8px;
+  display: inline-block;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  color: transparentize($contentColor, 0.55);
   font-size: 12px;
   line-height: 15px;
-  text-transform: uppercase;
+  font-weight: normal;
+  font-style: normal;
   vertical-align: middle;
+  text-transform: uppercase;
+  color: transparentize($contentColor, .55);
 
   &:first-child {
     position: relative;
+
     &::after {
       position: absolute;
       top: 0;
       right: -7.5px;
-      content: '-';
       font-size: 10px;
+      content: '-';
     }
   }
 
@@ -105,10 +72,10 @@ $accentSecondGradColor: #66d2ea;
 
 .range__title {
   margin: 0;
+  font-family: Montserrat, Quicksand, Arial, sans-serif;
   font-size: 12px;
   line-height: 15px;
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-style: normal;
   font-weight: bold;
+  font-style: normal;
   text-transform: uppercase;
 }

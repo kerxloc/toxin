@@ -2,29 +2,29 @@
   width: 380px;
   background: $mainColor;
   border-radius: 4px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
 
-  fieldset {
+  .date-wishes__fieldset {
     margin: 0;
     padding: 0;
     border: 0;
   }
 
   .input-group__label {
-    color: $contentColor;
-    font-weight: bold;
     font-size: 12px;
     line-height: 15px;
+    font-weight: bold;
     text-transform: uppercase;
+    color: $contentColor;
   }
 
   .button {
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
     margin-top: 31px;
     padding: 15px 20px;
     padding-top: 14px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
     font-weight: normal;
     text-align: center;
   }
@@ -34,9 +34,9 @@
   }
 
   @media (max-width: 380px) {
+    margin: 0 auto;
     width: 100%;
     min-width: 320px;
-    margin: 0 auto;
   }
 
   @media (max-width: 768px) {
@@ -50,9 +50,9 @@
 
 .date-wishes__group {
   position: relative;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
 
   .input-group__input {
     &_double-button {
@@ -88,8 +88,8 @@
 .date-wishes__title {
   margin: 0;
   margin-bottom: 20px;
-  color: $contentColor;
-  font-weight: bold;
   font-size: 24px;
   line-height: 30px;
+  font-weight: bold;
+  color: $contentColor;
 }

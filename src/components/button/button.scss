@@ -2,21 +2,41 @@
   position: relative;
   z-index: 100;
   padding: 10px 20px;
-  color: $mainColor;
-  font-weight: normal;
-  font-size: 12px;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
+  font-size: 12px;
   line-height: 15px;
-  text-transform: uppercase;
+  font-weight: normal;
   text-decoration: none;
+  text-transform: uppercase;
+  color: $mainColor;
   background: linear-gradient(180deg, $accentColor 0%, $accentGradColor 100%);
-
   border: none;
   border-radius: 22px;
   cursor: pointer;
 
+  &::before {
+    position: absolute;
+    z-index: -100;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    content: '';
+    background: linear-gradient(darken($accentColor, 10%), darken($accentGradColor, 10%));
+    border-radius: inherit;
+    transition: opacity .4s ease;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+
   &_disabled {
-    opacity: 0.5;
+    opacity: .5;
     pointer-events: none;
     cursor: default;
 
@@ -24,27 +44,6 @@
       &::before {
         display: none;
       }
-    }
-  }
-
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -100;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(darken($accentColor, 10%), darken($accentGradColor, 10%));
-    border-radius: inherit;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    content: '';
-  }
-
-  &:hover {
-    &::before {
-      opacity: 1;
     }
   }
 
@@ -60,13 +59,13 @@
 
     &:hover {
       color: darken($accentColor, 10%);
-      border-color: darken($accentColor, 10%);
       background: $mainColor;
+      border-color: darken($accentColor, 10%);
     }
   }
 
   &_empty-disabled {
-    opacity: 0.5;
+    opacity: .5;
     pointer-events: none;
     cursor: default;
   }
@@ -86,11 +85,11 @@
   }
 
   &_only-text-disabled {
-    color: transparentize($contentColor, 0.5);
+    color: transparentize($contentColor, .5);
     cursor: default;
 
     &:hover {
-      color: transparentize($contentColor, 0.5);
+      color: transparentize($contentColor, .5);
     }
   }
 }
@@ -104,10 +103,10 @@
     right: 0;
     width: 44px;
     height: 44px;
+    content: '';
     background: url('../../components/button/arrow.svg') no-repeat;
     background-position: center center;
-    transition: background 0.2s ease;
-    content: '';
+    transition: background .2s ease;
   }
 
   &:active {

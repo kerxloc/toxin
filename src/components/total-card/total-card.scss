@@ -2,17 +2,17 @@
   width: 380px;
   background: $mainColor;
   border-radius: 4px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
 
   @media (max-width: 380px) {
+    margin: 0 auto;
     width: 100%;
     min-width: 320px;
-    margin: 0 auto;
   }
 
   .button {
-    width: 100%;
     padding: 15px 20px;
+    width: 100%;
   }
 }
 
@@ -41,48 +41,50 @@
 }
 
 .total-card__head {
+  margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .total-card__title {
   margin: 0;
+  overflow: hidden;
   font-size: 13px;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
-
+  /* stylelint-disable */
   b {
     font-size: 12px;
-    color: $accentColor;
     text-transform: uppercase;
+    color: $accentColor;
   }
 
   span {
     font-size: 25px;
     font-weight: bold;
   }
+  /* stylelint-enable */
 }
 
 .total-card__per-day {
   margin: 0;
   padding-top: 5px;
   font-size: 12px;
-  color: transparentize($contentColor, 0.5);
-
+  color: transparentize($contentColor, .5);
+  /* stylelint-disable */
   b {
     font-family: Montserrat, Quicksand, Arial, sans-serif;
     font-size: 14px;
   }
+  /* stylelint-enable */
 }
 
 .total-card__date-inputs {
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
 
   .input-group__label {
     margin-bottom: 6px;
@@ -96,16 +98,16 @@
 }
 
 .total-card__calc {
-  display: flex;
-  justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .total-card__calc-row {
   width: 75%;
 
-  &_low  {
+  &_low {
     width: 25%;
   }
 
@@ -136,36 +138,36 @@
     right: 1px;
     width: 18px;
     height: 18px;
-    color: transparentize($contentColor, 0.75);
     font-family: Montserrat, Quicksand, Arial, sans-serif;
     font-size: 12px;
-    font-weight: bold;
     line-height: 19px;
+    font-weight: bold;
     text-align: center;
     content: 'i';
-    border: 1px solid transparentize($contentColor, 0.75);
+    color: transparentize($contentColor, .75);
+    border: 1px solid transparentize($contentColor, .75);
     border-radius: 50%;
     cursor: pointer;
   }
 }
 
 .total-card__total {
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 20px;
 }
 
 .total-card__total-separator {
   position: relative;
-  flex-grow: 0.95;
+  flex-grow: .95;
 
-  &:after {
+  &::after {
     position: absolute;
     top: -6px;
     width: 100%;
     content: '';
-    border: 1px dashed transparentize($contentColor, 0.75);
+    border: 1px dashed transparentize($contentColor, .75);
   }
 }
 

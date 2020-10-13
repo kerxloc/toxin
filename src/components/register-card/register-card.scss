@@ -2,17 +2,17 @@
   width: 380px;
   background: $mainColor;
   border-radius: 4px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
 
   @media (max-width: 380px) {
     width: 100%;
     min-width: 320px;
   }
 
-  fieldset {
-    width: 320px;
+  .register-card__fieldset {
     margin-bottom: 20px;
     padding: 0;
+    width: 320px;
     border: 0;
 
     &:nth-of-type(1) {
@@ -28,14 +28,14 @@
     }
   }
 
-  legend {
+  .register-card__legend {
     margin: 0;
     margin-bottom: 5px;
+    font-family: Montserrat, Quicksand, Arial, sans-serif;
     font-size: 12px;
     line-height: 15px;
-    font-family: Montserrat, Quicksand, Arial, sans-serif;
-    font-style: normal;
     font-weight: bold;
+    font-style: normal;
     text-transform: uppercase;
   }
 
@@ -48,9 +48,9 @@
   }
 
   .button_with-icon {
-    width: 100%;
     padding: 15px 20px;
     padding-top: 14px;
+    width: 100%;
     font-weight: normal;
   }
 }
@@ -69,16 +69,16 @@
 .register-card__title {
   margin: 0;
   margin-bottom: 20px;
-  font-weight: bold;
   font-size: 23px;
   line-height: 30px;
+  font-weight: bold;
 }
 
 .register-card__account-enter {
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 30px;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
 
   .button {

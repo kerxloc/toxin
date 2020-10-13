@@ -1,11 +1,11 @@
 .pagination__title {
   margin: 0;
   margin-bottom: 16px;
+  font-family: Montserrat, Quicksand, Arial, sans-serif;
   font-size: 12px;
   line-height: 15px;
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-style: normal;
   font-weight: bold;
+  font-style: normal;
   text-transform: uppercase;
 }
 
@@ -19,30 +19,30 @@
   display: inline-block;
   vertical-align: top;
 
-  a {
-    box-sizing: border-box;
+  .pagination__page-link {
+    padding: 12px 0;
     display: inline-block;
+    box-sizing: border-box;
     width: 36px;
-    padding: 12px 0px;
-    text-align: center;
-    vertical-align: middle;
-    color: transparentize($contentColor, 0.5);
     font-family: Montserrat, Quicksand, Arial, sans-serif;
-    font-weight: normal;
     font-size: 12px;
     line-height: 15px;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
     text-decoration: none;
+    color: transparentize($contentColor, .5);
   }
 }
 
 .pagination__page-item_active {
-  a {
+  .pagination__page-link {
     width: 40px;
     height: 40px;
-    color: $mainColor;
-    font-weight: bold;
     font-size: 12px;
     line-height: 15px;
+    font-weight: bold;
+    color: $mainColor;
     background: linear-gradient(180deg, $accentColor 0%, $accentGradColor 100%);
     border-radius: 50%;
   }
@@ -51,43 +51,40 @@
 .pagination__page-next {
   position: relative;
 
-  a {
-    width: 40px;
-    height: 40px;
-    color: $mainColor;
-    font-size: 0;
-    font-weight: bold;
-    background: linear-gradient(
-      180deg,
-      $accentSecondСolor 0%,
-      $accentGradSecondСolor 100%
-    );
-    border-radius: 50%;
-  }
-
   &::after {
     position: absolute;
     top: 0;
-    bottom: 0;
     right: 0;
+    bottom: 0;
     left: 0;
+    margin: auto;
     width: 18px;
     height: 17px;
-    margin: auto;
     content: '';
     background: url('../../components/pagination/arrow.png') no-repeat;
+  }
+
+  .pagination__page-link {
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    font-weight: bold;
+    color: $mainColor;
+    background: linear-gradient(180deg, $accentSecondСolor 0%, $accentGradSecondСolor 100%);
+    border-radius: 50%;
   }
 }
 
 .pagination__overview {
   padding-left: 6px;
-
+  /* stylelint-disable */
   p {
-    font-family: Montserrat, Quicksand, Arial, sans-serif;
+    /* stylelint-enable */
     margin: 0;
     margin-top: 7px;
+    font-family: Montserrat, Quicksand, Arial, sans-serif;
     font-size: 14px;
     line-height: 24px;
-    color: transparentize($contentColor, 0.25);
+    color: transparentize($contentColor, .25);
   }
 }

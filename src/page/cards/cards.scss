@@ -17,10 +17,10 @@
 }
 
 .cards-page__wrap {
+  padding: 70px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 70px 0;
 }
 
 .cards-page__item {
@@ -35,7 +35,7 @@
   width: 320px;
   background: $mainColor;
   border-radius: 4px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
 }
 
 .card-page__stub-card .date-picker {
