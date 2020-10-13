@@ -26,7 +26,7 @@
             <section class="date-wishes">
               <div class="date-wishes__wrap">
                 <form action="/rooms.html">
-                  <fieldset>
+                  <fieldset class="date-wishes__fieldset">
                     <legend class="date-wishes__title">Найдём номера под ваши пожелания</legend>
                     <div class="date-wishes__group">
                       <div class="input-group  input-group_with-label">
@@ -61,7 +61,7 @@
               <div class="register-card__wrap">
                 <form action="/404.html">
                   <h2 class="register-card__title">Регистрация аккаунта</h2>
-                  <fieldset>
+                  <fieldset class="register-card__fieldset">
                     <div class="input-group">
                       <input class="input-group__input" id="name" placeholder="Имя"/>
                     </div>
@@ -70,23 +70,23 @@
                     </div>
                     <div class="radiobtn">
                       <p class="radiobtn__item">
-                        <input id="male" name="gender" type="radio" checked="checked"/>
-                        <label for="male">Мужчина</label>
+                        <input class="radiobtn__input" id="male" name="gender" type="radio" checked="checked"/>
+                        <label class="radiobtn__label" for="male">Мужчина</label>
                       </p>
                       <p class="radiobtn__item">
-                        <input id="famale" name="gender" type="radio"/>
-                        <label for="famale">Женщина</label>
+                        <input class="radiobtn__input" id="famale" name="gender" type="radio"/>
+                        <label class="radiobtn__label" for="famale">Женщина</label>
                       </p>
                     </div>
                   </fieldset>
-                  <fieldset>
-                    <legend>Дата рождения</legend>
+                  <fieldset class="register-card__fieldset">
+                    <legend class="register-card__legend">Дата рождения</legend>
                     <div class="input-group">
                       <input class="input-group__input" id="dateInput" type="text" placeholder="ДД.ММ.ГГГГ"/>
                     </div>
                   </fieldset>
-                  <fieldset>
-                    <legend>Данные для входа в сервис</legend>
+                  <fieldset class="register-card__fieldset">
+                    <legend class="register-card__legend">Данные для входа в сервис</legend>
                     <div class="input-group">
                       <input class="input-group__input" id="loginInput" type="text" placeholder="Email"/>
                     </div>
@@ -95,8 +95,8 @@
                     </div>
                     <div class="toggle">
                       <p class="toggle__item">
-                        <input id="notGiveSpec" type="checkbox"/>
-                        <label for="notGiveSpec">Получать спецпредложения</label>
+                        <input class="toggle__input" id="notGiveSpec" type="checkbox"/>
+                        <label class="toggle__label" for="notGiveSpec">Получать спецпредложения</label>
                       </p>
                     </div>
                   </fieldset>
@@ -277,31 +277,31 @@
                     <button class="glide__arrow  glide__arrow_right  hotel-card__slider-btn  hotel-card__slider-btn_next" data-glide-dir="&gt;" type="button">Вперед</button>
                   </div>
                   <div class="hotel-card__bullets  glide__bullets" data-glide-el="controls[nav]">
-                    <button class="glide__bullet" data-glide-dir="=0" type="button"></button>
-                    <button class="glide__bullet" data-glide-dir="=1" type="button"></button>
-                    <button class="glide__bullet" data-glide-dir="=2" type="button"></button>
-                    <button class="glide__bullet" data-glide-dir="=3" type="button"></button>
+                    <button class="hotel-card__bullet glide__bullet" data-glide-dir="=0" type="button"></button>
+                    <button class="hotel-card__bullet glide__bullet" data-glide-dir="=1" type="button"></button>
+                    <button class="hotel-card__bullet glide__bullet" data-glide-dir="=2" type="button"></button>
+                    <button class="hotel-card__bullet glide__bullet" data-glide-dir="=3" type="button"></button>
                   </div>
                 </div>
                 <div class="hotel-card__info">
                   <div class="hotel-card__info-item">
-                    <h2 class="hotel-card__title"> <a href="/room-details.html">№ <span>888</span> <b>люкс</b></a></h2>
+                    <h2 class="hotel-card__title"> <a class="hotel-card__title-link" href="/toxin/room-details.html">№ <span>888</span> <b>люкс</b></a></h2>
                     <p class="hotel-card__text"><b>9 900₽</b> в сутки</p>
                   </div>
                   <div class="hotel-card__info-item">
                     <div class="ratebtn">
                       <div class="ratebtn__item-wrap">
                         <div class="ratebtn__item">
-                          <input type="radio" id="star-luxHotelRate-1" name="luxHotelRate" value="1" checked="checked"/>
-                          <label for="star-luxHotelRate-1"></label>
-                          <input type="radio" id="star-luxHotelRate-2" name="luxHotelRate" value="2"/>
-                          <label for="star-luxHotelRate-2"></label>
-                          <input type="radio" id="star-luxHotelRate-3" name="luxHotelRate" value="3"/>
-                          <label for="star-luxHotelRate-3"></label>
-                          <input type="radio" id="star-luxHotelRate-4" name="luxHotelRate" value="4"/>
-                          <label for="star-luxHotelRate-4"></label>
-                          <input type="radio" id="star-luxHotelRate-5" name="luxHotelRate" value="5"/>
-                          <label for="star-luxHotelRate-5"></label>
+                          <input class="ratebtn__input" type="radio" id="star-luxHotelRate-1" name="luxHotelRate" value="1" checked="checked"/>
+                          <label class="ratebtn__label" for="star-luxHotelRate-1"></label>
+                          <input class="ratebtn__input" type="radio" id="star-luxHotelRate-2" name="luxHotelRate" value="2"/>
+                          <label class="ratebtn__label" for="star-luxHotelRate-2"></label>
+                          <input class="ratebtn__input" type="radio" id="star-luxHotelRate-3" name="luxHotelRate" value="3"/>
+                          <label class="ratebtn__label" for="star-luxHotelRate-3"></label>
+                          <input class="ratebtn__input" type="radio" id="star-luxHotelRate-4" name="luxHotelRate" value="4"/>
+                          <label class="ratebtn__label" for="star-luxHotelRate-4"></label>
+                          <input class="ratebtn__input" type="radio" id="star-luxHotelRate-5" name="luxHotelRate" value="5"/>
+                          <label class="ratebtn__label" for="star-luxHotelRate-5"></label>
                         </div>
                       </div>
                     </div>
@@ -324,31 +324,31 @@
                     <button class="glide__arrow  glide__arrow_right  hotel-card__slider-btn  hotel-card__slider-btn_next" data-glide-dir="&gt;" type="button">Вперед</button>
                   </div>
                   <div class="hotel-card__bullets  glide__bullets" data-glide-el="controls[nav]">
-                    <button class="glide__bullet" data-glide-dir="=0" type="button"></button>
-                    <button class="glide__bullet" data-glide-dir="=1" type="button"></button>
-                    <button class="glide__bullet" data-glide-dir="=2" type="button"></button>
-                    <button class="glide__bullet" data-glide-dir="=3" type="button"></button>
+                    <button class="hotel-card__bullet glide__bullet" data-glide-dir="=0" type="button"></button>
+                    <button class="hotel-card__bullet glide__bullet" data-glide-dir="=1" type="button"></button>
+                    <button class="hotel-card__bullet glide__bullet" data-glide-dir="=2" type="button"></button>
+                    <button class="hotel-card__bullet glide__bullet" data-glide-dir="=3" type="button"></button>
                   </div>
                 </div>
                 <div class="hotel-card__info">
                   <div class="hotel-card__info-item">
-                    <h2 class="hotel-card__title"><a href="/room-details.html">№ <span>840</span></a></h2>
+                    <h2 class="hotel-card__title"><a class="hotel-card__title-link" href="/toxin/room-details.html">№ <span>840</span></a></h2>
                     <p class="hotel-card__text"><b>9 900₽</b> в сутки</p>
                   </div>
                   <div class="hotel-card__info-item">
                     <div class="ratebtn">
                       <div class="ratebtn__item-wrap">
                         <div class="ratebtn__item">
-                          <input type="radio" id="star-hotelRate-1" name="hotelRate" value="1"/>
-                          <label for="star-hotelRate-1"></label>
-                          <input type="radio" id="star-hotelRate-2" name="hotelRate" value="2" checked="checked"/>
-                          <label for="star-hotelRate-2"></label>
-                          <input type="radio" id="star-hotelRate-3" name="hotelRate" value="3"/>
-                          <label for="star-hotelRate-3"></label>
-                          <input type="radio" id="star-hotelRate-4" name="hotelRate" value="4"/>
-                          <label for="star-hotelRate-4"></label>
-                          <input type="radio" id="star-hotelRate-5" name="hotelRate" value="5"/>
-                          <label for="star-hotelRate-5"></label>
+                          <input class="ratebtn__input" type="radio" id="star-hotelRate-1" name="hotelRate" value="1"/>
+                          <label class="ratebtn__label" for="star-hotelRate-1"></label>
+                          <input class="ratebtn__input" type="radio" id="star-hotelRate-2" name="hotelRate" value="2" checked="checked"/>
+                          <label class="ratebtn__label" for="star-hotelRate-2"></label>
+                          <input class="ratebtn__input" type="radio" id="star-hotelRate-3" name="hotelRate" value="3"/>
+                          <label class="ratebtn__label" for="star-hotelRate-3"></label>
+                          <input class="ratebtn__input" type="radio" id="star-hotelRate-4" name="hotelRate" value="4"/>
+                          <label class="ratebtn__label" for="star-hotelRate-4"></label>
+                          <input class="ratebtn__input" type="radio" id="star-hotelRate-5" name="hotelRate" value="5"/>
+                          <label class="ratebtn__label" for="star-hotelRate-5"></label>
                         </div>
                       </div>
                     </div>
