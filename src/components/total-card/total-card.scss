@@ -33,7 +33,7 @@
     }
   }
 
-  .total-card__date-inputs .input-group__input--button-split {
+  .total-card__date-inputs .input-group__input_double-button {
     @media (max-width: 380px) {
       width: 100%;
     }
@@ -89,7 +89,7 @@
   }
 
   .input-group__input {
-    &--button-split {
+    &_double-button {
       width: 106px;
     }
   }
@@ -105,11 +105,11 @@
 .total-card__calc-row {
   width: 75%;
 
-  &--low {
+  &_low  {
     width: 25%;
   }
 
-  &--tar {
+  &_tar {
     text-align: right;
   }
 }
@@ -126,7 +126,7 @@
   }
 }
 
-.total-card__calc-text--info {
+.total-card__calc-text__informational {
   position: relative;
   padding-right: 20px;
 

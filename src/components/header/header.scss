@@ -22,7 +22,7 @@
   margin-left: 22px;
   padding-bottom: 1px;
 
-  &--is-auth {
+  &_authenticated {
     position: relative;
     padding-left: 20px;
 
@@ -84,7 +84,7 @@
     transition: all 0.3s ease-in-out;
   }
 
-  &--active {
+  &_active {
     @media (max-width: 1024px) {
       transform: translate(-50%, 0);
       visibility: visible;
@@ -167,7 +167,7 @@
     right: 60px;
   }
 
-  &--hide {
+  &_hiden {
     @media (max-width: 1024px) {
       display: none;
     }

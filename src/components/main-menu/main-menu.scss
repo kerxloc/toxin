@@ -24,7 +24,7 @@
     }
   }
 
-  &--active {
+  &_active {
     nav {
       @media (max-width: 1024px) {
         transform: translate(-50%, 0);
@@ -72,7 +72,7 @@
   }
 }
 
-.main-menu__burger-icon--active {
+.main-menu__burger-icon_active {
   span {
     &:first-child {
       transform: rotate(45deg) translate(7px, 3px);
@@ -133,14 +133,14 @@
     }
   }
 
-  &--active {
+  &_active {
     a {
       font-weight: bold;
       color: transparentize($contentColor, 0.25);
     }
   }
 
-  &--sub-menu {
+  &_sub-menu {
     position: relative;
 
     &:hover {

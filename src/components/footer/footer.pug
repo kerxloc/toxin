@@ -92,24 +92,24 @@ mixin footer(options = {})
     let footerClass = "page-footer";
 
     if (options.isBorderTop) {
-      footerClass += "  page-footer--border-top";
+      footerClass += "  page-footer_with-border-top";
     }
 
     if (options.isShort) {
-      footerClass += "  page-footer--short";
+      footerClass += "  page-footer_short";
     }
 
   footer(class=footerClass)
     .container
       if(options.isShort)
-        div(class="page-footer__wrap  page-footer__wrap--short")
+        div(class="page-footer__wrap  page-footer__wrap_short")
           +logo({ id: logoId })
           +textContent({ text: logoText })
           +socialButtons()
       else
         .page-footer__wrap
           .page-footer__content
-            div(class="page-footer__col  page-footer__col--large")
+            div(class="page-footer__col  page-footer__col_large")
               +logo({ id: logoId })
               +textContent({ text: logoText })
             .page-footer__col-group
@@ -119,7 +119,7 @@ mixin footer(options = {})
                 +navMenu(navMenuItems[1])
               .page-footer__col
                 +navMenu(navMenuItems[2])
-              div(class="page-footer__col  page-footer__col--large")
+              div(class="page-footer__col  page-footer__col_large")
                 +textContent({ title: subTitleText, text: subtext })
                 form(action="/404.html")
                   +input({

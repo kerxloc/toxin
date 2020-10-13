@@ -8,16 +8,16 @@ mixin checkbox(options = {})
       : "id-checkbox-list";
 
     if (options.isExpandable) {
-      titleClass += "  checkbox__title--expandable";
+      titleClass += "  checkbox__title_expandabled";
     }
 
     if (options.isExpandableOpen) {
-      titleClass += "  checkbox__title--expandable-open";
+      titleClass += "  checkbox__title_expandabled-open";
     }
 
     if (options.isRich) {
-      checkboxClass += "  checkbox--rich";
-      labelClass += "  checbox__lbl--rich";
+      checkboxClass += "  checkbox_rich";
+      labelClass += "  checbox__lbl_rich";
     }
 
   div(class=checkboxClass)

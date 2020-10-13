@@ -11,7 +11,7 @@ class ExpandableCheckbox {
     if (options.expandableList) {
       this.expandableList = options.expandableList;
       this.isHide = this.expandableList.classList.contains(
-        "checkbox__item-list--hide"
+        "checkbox__item-list_hiden"
       );
     } else {
       console.error(
@@ -22,8 +22,8 @@ class ExpandableCheckbox {
 
   onToggleHide = () => {
     const parentExpandableBtn = this.expandableBtn.parentNode;
-    parentExpandableBtn.classList.toggle("checkbox__title--expandable-open");
-    this.expandableList.classList.toggle("checkbox__item-list--hide");
+    parentExpandableBtn.classList.toggle("checkbox__title_expandabled-open");
+    this.expandableList.classList.toggle("checkbox__item-list_hiden");
   };
 
   init = () => {

@@ -15,10 +15,10 @@ mixin mainMenu(menuItems, id)
             const isActive = item.id === id.currentPage;
             let itemClass = "main-menu__item";
             if (item.subMenu) {
-              itemClass += "  main-menu__item--sub-menu";
+              itemClass += "  main-menu__item_sub-menu";
             }
             if (isActive) {
-              itemClass += "  main-menu__item--active";
+              itemClass += "  main-menu__item_active";
               item.path = null;
             }
 

@@ -5,7 +5,7 @@ mixin likebtn(options = {})
     each item in options.items
       -
         const itemBtn = item.isLike
-          ? "likebtn__item  likebtn__item--active"
+          ? "likebtn__item  likebtn__item_active"
           : "likebtn__item";
       p(class=itemBtn)
         button(type="button")= item.count

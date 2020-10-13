@@ -37,13 +37,13 @@
   opacity: 0;
   transition: all 0.2s ease-in;
 
-  &--show {
+  &_opened {
     transform: translateY(0);
     visibility: visible;
     opacity: 1;
   }
 
-  &--error-animation {
+  &_erroneous {
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
@@ -87,7 +87,7 @@
     border: 1px solid #1f2041;
   }
 
-  &--prev {
+  &_prev {
     background-image: url('../../components/date-picker/arrow-back.svg');
 
     &:active {
@@ -95,7 +95,7 @@
     }
   }
 
-  &--next {
+  &_next {
     background-image: url('../../components/date-picker/arrow-back.svg');
     transform: rotate(180deg);
 
@@ -138,12 +138,12 @@
     background: linear-gradient(180deg, $accentColor, $accentGradColor);
   }
 
-  &--select-space {
+  &_selected-space {
     border-radius: 0;
     background: transparentize($accentColor, 0.75);
   }
 
-  &--not-current {
+  &_not-current {
     color: transparentize($contentColor, 0.75);
   }
 
@@ -152,25 +152,25 @@
   }
 }
 
-.date-picker__calendar .date-picker__day--current {
+.date-picker__calendar .date-picker__day_current {
   color: $mainColor;
   font-weight: bold;
   background: linear-gradient(180deg, $accentSecondСolor, $accentGradSecondСolor);
 }
 
-.date-picker__calendar .date-picker__day--select {
+.date-picker__calendar .date-picker__day_selected {
   color: $mainColor;
   font-weight: bold;
   background: linear-gradient(180deg, $accentColor, $accentGradColor);
 }
 
-.date-picker__calendar .date-picker__day--error {
+.date-picker__calendar .date-picker__day_with-error {
   font-weight: bold;
   background: tomato;
 }
 
-.date-picker__day--select-start,
-.date-picker__day--select-end {
+.date-picker__day_selected-start,
+.date-picker__day_selected-end {
   position: relative;
 
   &::after {
@@ -187,13 +187,13 @@
   }
 }
 
-.date-picker__day--select-start {
+.date-picker__day_selected-start {
   &::after {
     right: 0;
   }
 }
 
-.date-picker__day--select-end {
+.date-picker__day_selected-end {
   &::after {
     left: 0;
   }
@@ -219,7 +219,7 @@
     transform: translateY(3px);
   }
 
-  &--accent {
+  &_accentuating {
     color: $accentColor;
 
     &:hover {

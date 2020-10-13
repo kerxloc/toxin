@@ -111,11 +111,11 @@ class DropDown {
 
   show = () => {
     const isHaveClass = this.dropDownParent.classList.contains(
-      "drop-down--show"
+      "drop-down_opened"
     );
     if (!isHaveClass) {
-      this.dropDownParent.classList.add("drop-down--show");
-      this.input.classList.add("input-group__input--active");
+      this.dropDownParent.classList.add("drop-down_opened");
+      this.input.classList.add("input-group__input_active");
       window.addEventListener("mouseup", this.onClickHide);
       window.addEventListener("keyup", this.onPressHide);
     }
@@ -127,18 +127,18 @@ class DropDown {
     }
 
     const isHaveClass = this.dropDownParent.classList.contains(
-      "drop-down--show"
+      "drop-down_opened"
     );
     if (isHaveClass) {
-      this.dropDownParent.classList.remove("drop-down--show");
-      this.input.classList.remove("input-group__input--active");
+      this.dropDownParent.classList.remove("drop-down_opened");
+      this.input.classList.remove("input-group__input_active");
       window.removeEventListener("mouseup", this.onClickHide);
       window.removeEventListener("keyup", this.onPressHide);
     }
   };
 
   hideClearBtn = () => {
-    this.clearBtn.classList.add("drop-down__button--hide");
+    this.clearBtn.classList.add("drop-down__button_hiden");
   };
 
   onClickHide = evt => {
@@ -173,7 +173,7 @@ class DropDown {
     });
 
     const minusButtons = this.dropDownParent.querySelectorAll(
-      ".drop-down__counter-btn--minus"
+      ".drop-down__counter-btn_minus"
     );
     minusButtons.forEach(item => {
       item.classList.add("drop-down__counter-btn_disabled");
@@ -252,7 +252,7 @@ class DropDown {
     );
     const counterMenu = getHtmlElement("div", "drop-down__counter-menu");
     const countItemMinus = getHtmlElement("button", "drop-down__counter-btn");
-    countItemMinus.classList.add("drop-down__counter-btn--minus");
+    countItemMinus.classList.add("drop-down__counter-btn_minus");
     if (element.startValue) {
       if (element.startValue === element.minValue) {
         countItemMinus.classList.add("drop-down__counter-btn_disabled");
@@ -267,7 +267,7 @@ class DropDown {
     countItemView.textContent = element.counter;
     countItemView.id = `view-${element.id}`;
     const countItemPlus = getHtmlElement("button", "drop-down__counter-btn");
-    countItemPlus.classList.add("drop-down__counter-btn--plus");
+    countItemPlus.classList.add("drop-down__counter-btn_plus");
     countItemPlus.type = "button";
 
     countItemPlus.addEventListener("click", () => {
@@ -285,10 +285,10 @@ class DropDown {
       }
 
       const isClearBtnDisabled = this.clearBtn.classList.contains(
-        "drop-down__button--hide"
+        "drop-down__button_hiden"
       );
       if (isClearBtnDisabled) {
-        this.clearBtn.classList.remove("drop-down__button--hide");
+        this.clearBtn.classList.remove("drop-down__button_hiden");
       }
     });
 
@@ -340,7 +340,7 @@ class DropDown {
       "Применить"
     );
     acceptBtn.type = "button";
-    acceptBtn.classList.add("drop-down__button--accent");
+    acceptBtn.classList.add("drop-down__button_accentuating");
     acceptBtn.addEventListener("click", this.hide);
     const countListFragment = document.createDocumentFragment();
 

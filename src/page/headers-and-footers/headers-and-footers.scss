@@ -48,7 +48,7 @@
     }
   }
 
-  .page-footer--short {
+  .page-footer_short {
     section.text-content {
       @media (max-width: 768px) {
         width: 70%;
@@ -72,7 +72,7 @@
     margin-bottom: 0;
   }
 
-  &--diff-header {
+  &_authorized {
     .main-menu {
       @media (width: 1440px) {
         margin-left: 336px;
@@ -80,7 +80,7 @@
       }
     }
 
-    .page-header__auth--is-auth {
+    .page-header__auth_authenticated {
       @media (max-width: 380px) {
         padding-left: 0px;
       }
@@ -106,8 +106,8 @@
   }
 }
 
-.headers-and-footers__item--diff-header {
-  .page-header__auth--is-auth {
+.headers-and-footers__item_authorized {
+  .page-header__auth_authenticated {
     padding-left: 31px;
   }
 }

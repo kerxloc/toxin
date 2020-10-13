@@ -21,18 +21,18 @@
     }
   }
 
-  &--short {
+  &_short {
     section.text-content {
       width: 49%;
       text-align: center;
     }
   }
 
-  &--short::after {
+  &_short::after {
     display: none;
   }
 
-  &--border-top {
+  &_with-border-top {
     border-top: 1px solid transparentize($contentColor, 0.75);
   }
 
@@ -76,7 +76,7 @@
     margin-top: 23px;
   }
 
-  .input-group__input--button-split {
+  .input-group__input_double-button {
     width: 216px;
   }
 }
@@ -88,7 +88,7 @@
   }
 }
 
-.page-footer__wrap--short {
+.page-footer__wrap_short {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -167,7 +167,7 @@
 }
 
 .page-footer__col {
-  &--large:first-child {
+  &_large:first-child {
     margin-right: 3.5%;
   }
 

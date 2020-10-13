@@ -68,7 +68,7 @@
   font-size: 18px;
   font-weight: bold;
 
-  &--low-mb {
+  &_low-mb {
     margin-bottom: 10px;
   }
 }
@@ -140,7 +140,7 @@
     }
   }
 
-  .bullet__title--lp {
+  .bullet__title_lp {
     @media (max-width: 800px) {
       padding-left: 0;
     }

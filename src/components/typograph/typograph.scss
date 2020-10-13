@@ -12,16 +12,16 @@
   text-align: right;
   font-weight: normal;
 
-  &--h2 {
+  &_h2 {
     font-size: 19px;
   }
 
-  &--h3 {
+  &_h3 {
     font-size: 12px;
     text-align: right;
   }
 
-  &--text {
+  &_text {
     font-size: 14px;
     line-height: 20px;
   }
@@ -34,12 +34,12 @@
   line-height: 30px;
   font-weight: bold;
 
-  &--h2 {
+  &_h2 {
     font-size: 19px;
     line-height: 24px;
   }
 
-  &--h3 {
+  &_h3 {
     font-size: 13px;
     line-height: 13px;
     text-transform: uppercase;

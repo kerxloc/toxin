@@ -3,15 +3,15 @@ mixin typograph(options = {})
     const isTitle = !!options.title;
 
     const labelClass = options.labelModif
-      ? `typograph__label  typograph__label--${options.labelModif}`
+      ? `typograph__label  typograph__label_${options.labelModif}`
       : "typograph__label";
 
     const titleClass = options.titleModif
-      ? `typograph__title  typograph__title--${options.titleModif}`
+      ? `typograph__title  typograph__title_${options.titleModif}`
       : "typograph__title";
 
     const textClass = options.textModif
-      ? `typograph__text  typograph__text--${options.textModif}`
+      ? `typograph__text  typograph__text_${options.textModif}`
       : "typograph__text";
 
   section.typograph

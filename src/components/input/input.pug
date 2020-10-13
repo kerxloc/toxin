@@ -3,50 +3,50 @@ mixin input(options = {})
     const inputId = options.id ? options.id : "input-id";
     const splitId = options.splitId ? options.splitId : "split-btn-id";
     const inputGroupClass = options.labelName
-      ? "input-group  input-group--column"
+      ? "input-group  input-group_with-label"
       : "input-group";
     const labelClass = options.isBigLabel
-      ? "input-group__label  input-group__label--big"
+      ? "input-group__label  input-group__label_big"
       : "input-group__label";
     let inputClass = "input-group__input";
     let splitButtonClass = "input-group__button-split";
     let splitButtonType = options.splitButtonType ? options.splitButtonType  : "button";
 
     if (options.isButtonSplit) {
-      inputClass += "  input-group__input--button-split";
+      inputClass += "  input-group__input_double-button";
     }
 
     if (options.isDarkPlaceholder) {
-      inputClass += "  input-group__input--dark-placeholder";
+      inputClass += "  input-group__input_dark-placeholder";
     }
 
     if (options.isHaveIcon) {
-      inputClass += "  input-group__input--icon";
+      inputClass += "  input-group__input_with-icon";
     }
 
     if (options.isHover) {
-      inputClass += "  input-group__input--hover";
+      inputClass += "  input-group__input_hovered";
     }
 
 
     if (options.isDownSplitAnimation) {
-      splitButtonClass += "  input-group__button-split--down-animation";
+      splitButtonClass += "  input-group__button-split_down-animation";
     }
 
     if (options.isRightSplitAnimation) {
-      splitButtonClass += "  input-group__button-split--right-animation";
+      splitButtonClass += "  input-group__button-split_right-animation";
     }
 
   if options.isFakeInput
     -
-      let inputFakeClass = "input-group__input  input-group__input--fake";
+      let inputFakeClass = "input-group__input  input-group__input_fake";
 
       if (options.isHaveIcon) {
-        inputFakeClass += "  input-group__input--icon";
+        inputFakeClass += "  input-group__input_with-icon";
       }
 
       if (options.isDownSplitAnimation) {
-        inputFakeClass += "  input-group__button-split--down-animation";
+        inputFakeClass += "  input-group__button-split_down-animation";
       }
 
     if options.labelName

@@ -59,7 +59,7 @@
     }
   }
 
-  .glide__bullet--active {
+  .glide__bullet_active {
     background-color: $mainColor;
   }
 }
@@ -93,7 +93,7 @@
   }
 }
 
-.hotel-card__slider-btn--next {
+.hotel-card__slider-btn_next {
   left: auto;
   right: -1px;
   border-radius: 0 0 0 5px;
@@ -158,6 +158,6 @@
   }
 }
 
-.hotel-card__text--fzlarge {
+.hotel-card__text_fzlarge {
   font-size: 14px;
 }

@@ -9,7 +9,7 @@
   text-transform: uppercase;
 }
 
-.checkbox__title--expandable {
+.checkbox__title_expandabled {
   position: relative;
 
   button {
@@ -30,7 +30,7 @@
   }
 }
 
-.checkbox__title--expandable-open {
+.checkbox__title_expandabled-open {
   & button::after {
     transform: rotate(180deg);
     right: 17px;
@@ -62,7 +62,7 @@
   }
 }
 
-.checkbox--rich .checkbox__item {
+.checkbox_rich .checkbox__item {
   width: 264px;
 }
 
@@ -130,13 +130,13 @@
   line-height: 14px;
 }
 
-.checkbox__item .checbox__lbl--rich {
+.checkbox__item .checbox__lbl_rich {
   font-size: 14px;
   font-weight: bold;
   line-height: 18px;
   color: transparentize($contentColor, 0.25);
 }
 
-.checkbox__item-list--hide {
+.checkbox__item-list_hiden {
   display: none;
 }
