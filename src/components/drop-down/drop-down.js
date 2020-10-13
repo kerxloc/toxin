@@ -176,7 +176,7 @@ class DropDown {
       ".drop-down__counter-btn--minus"
     );
     minusButtons.forEach(item => {
-      item.classList.add("drop-down__counter-btn--disabled");
+      item.classList.add("drop-down__counter-btn_disabled");
       item.setAttribute("disabled", "true");
     });
   };
@@ -255,11 +255,11 @@ class DropDown {
     countItemMinus.classList.add("drop-down__counter-btn--minus");
     if (element.startValue) {
       if (element.startValue === element.minValue) {
-        countItemMinus.classList.add("drop-down__counter-btn--disabled");
+        countItemMinus.classList.add("drop-down__counter-btn_disabled");
         countItemMinus.setAttribute("disabled", "true");
       }
     } else {
-      countItemMinus.classList.add("drop-down__counter-btn--disabled");
+      countItemMinus.classList.add("drop-down__counter-btn_disabled");
       countItemMinus.setAttribute("disabled", "true");
     }
     countItemMinus.type = "button";
@@ -277,10 +277,10 @@ class DropDown {
       countItemView.textContent = element.counter;
       this.renderViewCount();
       const isMinusDisabled = countItemMinus.classList.contains(
-        "drop-down__counter-btn--disabled"
+        "drop-down__counter-btn_disabled"
       );
       if (isMinusDisabled) {
-        countItemMinus.classList.remove("drop-down__counter-btn--disabled");
+        countItemMinus.classList.remove("drop-down__counter-btn_disabled");
         countItemMinus.removeAttribute("disabled");
       }
 
@@ -299,7 +299,7 @@ class DropDown {
       countItemView.textContent = element.counter;
       const nextDecrimentCounter = element.counter - 1;
       if (nextDecrimentCounter < element.minValue) {
-        countItemMinus.classList.add("drop-down__counter-btn--disabled");
+        countItemMinus.classList.add("drop-down__counter-btn_disabled");
         countItemMinus.setAttribute("disabled", "true");
       }
       this.renderViewCount();

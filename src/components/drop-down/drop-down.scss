@@ -103,7 +103,7 @@
     content: '-';
   }
 
-  &--disabled {
+  &_disabled {
     color: transparentize($contentColor, 0.75);
     border: 1px solid transparentize($contentColor, 0.75);
     cursor: default;
