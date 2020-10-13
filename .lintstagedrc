@@ -1,7 +1,7 @@
 {
   "*.scss": [
     "prettier --write",
-    "stylelint --fix --config ./.stylelintrc-format",
+    "stylelint --fix --config ./.stylelintrc",
     "git add"
   ]
 }

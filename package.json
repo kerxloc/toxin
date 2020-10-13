@@ -9,8 +9,8 @@
     "build": "webpack --mode production",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "lint:css": "stylelint \"src/**/*.scss\" --config ./.stylelintrc-format",
-    "format:css": "prettier --write \"src/**/*.scss\" && stylelint \"src/**/*.scss\" --fix --config ./.stylelintrc-format"
+    "lint:css": "stylelint \"src/**/*.scss\" --config ./.stylelintrc",
+    "format:css": "prettier --write \"src/**/*.scss\" && stylelint \"src/**/*.scss\" --fix --config ./.stylelintrc"
   },
   "keywords": [],
   "author": "",
