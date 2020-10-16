@@ -90,19 +90,19 @@
 }
 
 .page-footer__wrap_short {
-  padding: 100px 0 108px;
+  padding: 120px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* stylelint-disable */
   div.logo {
     /* stylelint-enable */
-    margin-bottom: 17px;
+    margin-bottom: 21px;
     margin-left: 12px;
   }
 
-  .text-content {
-    margin-bottom: 29px;
+  .copyright {
+    margin-bottom: 26px;
   }
 }
 
