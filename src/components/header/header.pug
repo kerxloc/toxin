@@ -28,28 +28,11 @@ include ../main-menu/main-menu
     }
   ];
 
-  const menuEngItems = [
-    { id: "homeEng", title: "Home", path: "/404.html" },
-    { id: "aboutUsEng", title: "About us", path: "/404.html" },
-    {
-      id: "servicesEng",
-      title: "Services",
-      path: "/404.html",
-      subMenu: [{ id: "servicesSubEng", title: "service", path: "/404.html"}]
-    },
-    { id: "careersEng", title: "Careers", path: "/404.html" },
-    { id: "newsEng", title: "News", path: "/404.html" },
-    { id: "documentationEng", title: "Documentation", path: "/404.html" }
-  ];
-
 mixin header(options = {})
   -
     const authClass = options.userName
       ? "page-header__auth  page-header__auth_authenticated"
       : "page-header__auth";
-    const currentMenuItems = options.isEnglish ? menuEngItems : menuItems;
-    const authBtnTitle = options.isEnglish ? "Login" : "Войти";
-    const registerBtnTitle = options.isEnglish ? "Register" : "Зарегистрироваться";
     const authListId = options.authListId ? options.authListId : "authListId";
     const profileBtnId = options.profileBtnId ? options.profileBtnId : "authButton";
     const logoId = options.logoId ? options.logoId : "header-logo";
@@ -58,7 +41,7 @@ mixin header(options = {})
     .container
       .page-header__wrap
         +logo({ id: logoId })
-        +mainMenu(currentMenuItems, {
+        +mainMenu(menuItems, {
           currentPage: options.currentPageId,
           mainMenu: options.mainMenuId,
           burgerBtn: options.burgerBtnId
@@ -67,11 +50,11 @@ mixin header(options = {})
           if options.userName
             p.page-header__user-name= options.userName
           else
-            +button({ title: authBtnTitle, path: "/auth.html", isEmptyStyle: true })
-            +button({ title: registerBtnTitle, path: "/registration.html" })
+            +button({ title: "Войти", path: "/auth.html", isEmptyStyle: true })
+            +button({ title: "Зарегистрироваться", path: "/registration.html" })
             ul(id=authListId class="page-header__auth-list")
               li.page-header__auth-item
-                a(class="page-header__auth-item-link" href="/auth.html")= authBtnTitle
+                a(class="page-header__auth-item-link" href="/auth.html")= "Войти"
               li.page-header__auth-item
-                a(class="page-header__auth-item-link" href="/registration.html")= registerBtnTitle
+                a(class="page-header__auth-item-link" href="/registration.html")= "Зарегистрироваться"
             button(id=profileBtnId class="page-header__auth-profile" type="button")

@@ -6,21 +6,7 @@ include ../copyright/copyright
 include ../social-buttons/social-buttons
 
 -
-  const rusText = {
-  logo:
-    "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
-  sub: "Получайте специальные предложения и новости сервиса",
-  subTitle: "Подписка"
-  };
-
-  const engText = {
-    logo:
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
-    sub: "Receive our latest news and promotions in your inbox!",
-    subTitle: "Subscribe to our newsletter"
-  };
-
-  const navMenuRusItems = [
+  const navMenuItems = [
     {
       title: "Навигация",
       list: [
@@ -49,42 +35,9 @@ include ../social-buttons/social-buttons
     }
   ];
 
-  const navMenuEngItems = [
-    {
-      title: "Navigation",
-      list: [
-        { label: "About us", path: "/404.html" },
-        { label: "News", path: "/404.html" },
-        { label: "Support", path: "/404.html" },
-        { label: "Products", path: "/404.html" }
-      ]
-    },
-    {
-      title: "About us",
-      list: [
-        { label: "Who we are", path: "/404.html" },
-        { label: "Our team", path: "/404.html" },
-        { label: "Careers", path: "/404.html" },
-        { label: "Investors", path: "/404.html" }
-      ]
-    },
-    {
-      title: "Support",
-      list: [
-        { label: "Documentation", path: "/404.html" },
-        { label: "Community", path: "/404.html" },
-        { label: "Get in Touch", path: "/404.html" }
-      ]
-    }
-  ];
-
 mixin footer(options = {})
   -
-    const logoText = options.isEnglish ? engText.logo : rusText.logo;
     const logoId = options.logoId ? options.logoId : "footer-logo";
-    const navMenuItems = options.isEnglish ? navMenuEngItems : navMenuRusItems;
-    const subTitleText = options.isEnglish ?  engText.subTitle :  rusText.subTitle;
-    const subtext = options.isEnglish ?  engText.sub :  rusText.sub;
     const emailInputPlaceholder = options.emailInputPlaceholder
       ? options.emailInputPlaceholder
       : "Email";
@@ -104,14 +57,14 @@ mixin footer(options = {})
       if(options.isShort)
         div(class="page-footer__wrap  page-footer__wrap_short")
           +logo({ id: logoId })
-          +textContent({ text: logoText })
+          +copyright({ year: 2018 })
           +socialButtons()
       else
         .page-footer__wrap
           .page-footer__content
             div(class="page-footer__col  page-footer__col_large")
               +logo({ id: logoId })
-              +textContent({ text: logoText })
+              +textContent({ text: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»" })
             .page-footer__col-group
               .page-footer__col
                 +navMenu(navMenuItems[0])
@@ -120,7 +73,7 @@ mixin footer(options = {})
               .page-footer__col
                 +navMenu(navMenuItems[2])
               div(class="page-footer__col  page-footer__col_large")
-                +textContent({ title: subTitleText, text: subtext })
+                +textContent({ title: "Подписка", text: "Получайте специальные предложения и новости сервиса" })
                 form(action="/404.html")
                   +input({
                     isButtonSplit: true,
@@ -132,5 +85,5 @@ mixin footer(options = {})
                     isRightSplitAnimation: true
                   })
           .page-footer__side-info
-            +copyright({ year: 2018, isEnglish: options.isEnglish })
+            +copyright({ year: 2018 })
             +socialButtons()

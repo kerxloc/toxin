@@ -3,7 +3,7 @@ include ../../components/header/header
 include ../../components/footer/footer
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -23,7 +23,6 @@ html(lang="en")
     .headers-and-footers__wrap
       .headers-and-footers__item
         +header({
-          isEnglish: true,
           currentPageId: "homeEng",
           mainMenuId: "firstMainMenu",
           burgerBtnId: "firstBurgerBtn",
@@ -33,18 +32,16 @@ html(lang="en")
         })
       div(class="headers-and-footers__item  headers-and-footers__item_authorized")
         +header({
-          isEnglish: true,
           currentPageId: "homeEng",
-          userName: "Cosmin Negoita",
+          userName: "Юлий Цезарь",
           mainMenuId: "secondMainMenu",
           burgerBtnId: "secondBurgerBtn",
           logoId: "header-logo-2-id"
         })
       .headers-and-footers__item
         +footer({
-          isEnglish: true,
-          emailInputPlaceholder: "Your email address",
+          emailInputPlaceholder: "Email",
           logoId: "footer-logo-1-id"
         })
       .headers-and-footers__item
-        +footer({ isEnglish: true, isShort: true, logoId: "footer-logo-2-id" })
+        +footer({ isShort: true, logoId: "footer-logo-2-id" })
