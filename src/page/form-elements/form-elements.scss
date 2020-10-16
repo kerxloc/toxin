@@ -31,7 +31,7 @@
 }
 
 .form-elements__wrap {
-  padding-top: 62px;
+  padding-top: 65px;
 }
 
 .form-elements__row {
@@ -115,16 +115,13 @@
   }
 }
 
-.form-elements__full-button {
+.form-elements__buttons-wrap {
   margin-bottom: 30px;
+  display: flex;
 }
 
-.form-elements__empty-button {
-  margin-bottom: 31px;
-}
-
-.form-elements__links {
-  margin-bottom: 30px;
+.form-elements__button-wrap {
+  margin-right: 20px;
 }
 
 .form-elements__submit-btn {

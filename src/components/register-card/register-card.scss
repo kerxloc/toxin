@@ -70,7 +70,11 @@
 .register-card__account-enter {
   margin-top: 30px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
+  /* stylelint-disable */
+  p {
+    /* stylelint-enable */
+    margin-right: auto;
+  }
 }
