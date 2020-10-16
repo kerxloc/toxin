@@ -12,12 +12,6 @@
     }
   }
 
-  .button_with-icon {
-    padding: 14px 20px 15px;
-    width: 100%;
-    font-weight: normal;
-  }
-
   @media (max-width: 380px) {
     width: 100%;
     min-width: 320px;
@@ -60,8 +54,4 @@
   justify-content: space-between;
   align-items: flex-start;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
-
-  .button {
-    padding: 12px 18px;
-  }
 }

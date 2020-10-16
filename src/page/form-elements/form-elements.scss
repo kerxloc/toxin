@@ -115,56 +115,20 @@
   }
 }
 
-.form-elements__buttons {
-  .button {
-    padding: 14px 20px;
-    font-weight: bold;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &_empty {
-      padding: 12px 17px;
-    }
-  }
-}
-
 .form-elements__full-button {
   margin-bottom: 30px;
-
-  .button {
-    margin-right: 13px;
-  }
 }
 
 .form-elements__empty-button {
   margin-bottom: 31px;
-
-  .button {
-    margin-right: 17px;
-  }
 }
 
 .form-elements__links {
   margin-bottom: 30px;
-
-  .button {
-    margin-right: 18px;
-    padding: 0;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
 }
 
 .form-elements__submit-btn {
   margin-bottom: 41px;
-
-  .button {
-    width: 100%;
-  }
 }
 
 .form-elements__drop-down-expand {
