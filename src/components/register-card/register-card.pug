@@ -44,4 +44,5 @@ mixin registerCard()
         +button({ title: "Перейти к оплате", isHaveIcon: true, buttonType: "submit" })
       .register-card__account-enter
         p Уже есть аккаунт на Toxin
-        +button({ path: "/auth.html", title: "Войти",  isEmptyStyle: true })
+        .register-card__auth-btn-wrap
+          +button({ path: "/auth.html", title: "Войти",  isEmptyStyle: true, isLarger: true })

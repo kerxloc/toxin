@@ -147,15 +147,21 @@ block content
           +rangeSlider({ title: "Range Slider" })
           .form-elements__buttons
             +title({ title: "Buttons" })
-            .form-elements__full-button
-              +button({ title: "Click me" })
-              +button({ title: "Click me", isDisable: true })
-            .form-elements__empty-button
-              +button({ title: "Click me", isEmptyStyle: true })
-              +button({ title: "Click me", isEmptyStyle: true, isDisable: true })
-            .form-elements__links
-              +button({ title: "Click me", isOnlyText: true })
-              +button({ title: "Click me", isOnlyText: true, isDisable: true })
+            .form-elements__buttons-wrap
+              .form-elements__button-wrap
+                +button({ title: "Click me", isAverage: true })
+              .form-elements__button-wrap  
+                +button({ title: "Click me", isAverage: true, isDisable: true })
+            .form-elements__buttons-wrap
+              .form-elements__button-wrap
+                +button({ title: "Click me", isLowLarger: true, isEmptyStyle: true })
+              .form-elements__button-wrap
+                +button({ title: "Click me", isLowLarger: true, isEmptyStyle: true, isDisable: true })
+            .form-elements__buttons-wrap
+              .form-elements__button-wrap
+                +button({ title: "Click me", isOnlyText: true })
+              .form-elements__button-wrap
+                +button({ title: "Click me", isOnlyText: true, isDisable: true })
             .form-elements__submit-btn
               +button({ title: "Перейти к оплате", isHaveIcon: true, buttonType: "submit" })
           +pagination({ title: "Pagination" })

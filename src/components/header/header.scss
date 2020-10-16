@@ -126,17 +126,15 @@
   }
 }
 
-.page-header__auth .button {
+.page-header__auth-btn-wrap {
   margin-right: 20px;
 
-  &:nth-child(2) {
-    margin-right: 0;
-    padding-left: 18px;
-    letter-spacing: .3px;
+  @media (max-width: 1024px) {
+    display: none;
   }
 }
 
-.page-header__auth > .button {
+.page-header__registr-btn-wrap {
   @media (max-width: 1024px) {
     display: none;
   }
