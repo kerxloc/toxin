@@ -2,6 +2,7 @@
   position: relative;
   z-index: 100;
   padding: 10px 20px;
+  width: 100%;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
   font-size: 12px;
   line-height: 15px;
@@ -92,26 +93,48 @@
       color: transparentize($contentColor, .5);
     }
   }
-}
 
-.button_with-icon {
-  position: relative;
+  &_with-icon {
+    position: relative;
+    padding: 14px 20px 15px;
+    font-weight: normal;
 
-  &::after {
-    position: absolute;
-    top: 0%;
-    right: 0;
-    width: 44px;
-    height: 44px;
-    content: '';
-    background: url('../../components/button/arrow.svg') no-repeat;
-    background-position: center center;
-    transition: background .2s ease;
+    &::after {
+      position: absolute;
+      top: 0%;
+      right: 0;
+      width: 44px;
+      height: 44px;
+      content: '';
+      background: url('../../components/button/arrow.svg') no-repeat;
+      background-position: center center;
+      transition: background .2s ease;
+    }
+
+    &:active {
+      &::after {
+        background-position: 20px center;
+      }
+    }
   }
 
-  &:active {
-    &::after {
-      background-position: 20px center;
-    }
+  &_larger {
+    padding: 13px 24px;
+  }
+
+  &_average {
+    padding: 14px 20px;
+  }
+
+  &_low-larger {
+    padding: 12px 18px;
+  }
+
+  &_zero-z-index {
+    z-index: 0;
+  }
+
+  &_more-letter-spacing {
+    letter-spacing: .3px;
   }
 }

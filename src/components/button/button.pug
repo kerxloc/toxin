@@ -14,8 +14,28 @@ mixin button(options)
       buttonClass += "  button_disabled";
     }
 
+    if (options.isLarger) {
+      buttonClass += "  button_larger";
+    }
+
+    if (options.isLowLarger) {
+      buttonClass += "  button_low-larger";
+    }
+
+    if (options.isAverage) {
+      buttonClass += "  button_average";
+    }
+
+    if (options.isMoreLetterSpacing) {
+      buttonClass += "  button_more-letter-spacing";
+    }
+
+    if (options. isZeroZIndex) {
+      buttonClass += "  button_zero-z-index";
+    }
+
     if (options.isDisable && options.isEmptyStyle) {
-      buttonClass = "button  button_empty  button_empty-disabled";
+      buttonClass += "  button_empty  button_empty-disabled";
     }
 
     if (options.isOnlyText) {
@@ -23,7 +43,7 @@ mixin button(options)
     }
 
     if (options.isDisable && options.isOnlyText) {
-      buttonClass = "button  button_only-text  button_only-text-disabled";
+      buttonClass += "  button_only-text  button_only-text-disabled";
     }
 
     const buttonType = options.buttonType ? options.buttonType : "button";
