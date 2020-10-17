@@ -11,6 +11,7 @@ const datePickerDomInfo = {
   parentNodeId: 'date-picker-container',
   datePickerInputId: 'date-picker-input',
   inputPlaceholder: 'Выберите дату',
+  isCellLower: true
 };
 
 const datePicker = new DatePicker(datePickerDomInfo);

@@ -112,6 +112,10 @@ class DatePicker {
       this.inputPlaceholder = domInfo.inputPlaceholder;
     }
 
+    if (domInfo.isCellLower) {
+      this.isCellLower = domInfo.isCellLower;
+    }
+
     this.currentDate = new Date();
     this.arrivalDate = null;
     this.departureDate = null;
@@ -636,6 +640,10 @@ class DatePicker {
         const viewDate = new Date(currentYear, viewMonth, ++numberDay);
         const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
         const isNowDate = this.compaireDate(viewDate, nowDate) === 0;
+
+        if(this.isCellLower) {
+          tableTd.classList.add('date-picker__day_lower');
+        }
 
         if (!this.hasCurrentMonth(viewDate) && !isNowDate) {
           tableTd.classList.add('date-picker__day_not-current');

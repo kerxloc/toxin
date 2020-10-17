@@ -152,6 +152,10 @@
     color: transparentize($contentColor, .75);
   }
 
+  &_lower {
+    height: 32px;
+  }
+
   @media (max-width: 320px) {
     height: 30px;
   }
