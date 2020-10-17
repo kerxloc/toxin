@@ -33,31 +33,33 @@ block content
           .card-page__stub-card
             +datePicker()
         .cards-page__item
-          +hotelCard({
-            numberHotel: 888,
-            isLux: true,
-            reviewCount: 145,
-            dayCost: "9 900",
-            starCount: 5,
-            idRateBtn: "luxHotelRate",
-            images: [
-              { src: "../../components/hotel-card/one-hotel.png", alt: "Красивый отель" },
-              { src: "../../components/hotel-card/one-hotel.png", alt: "Красивый отель" },
-              { src: "../../components/hotel-card/one-hotel.png", alt: "Красивый отель" },
-              { src: "../../components/hotel-card/one-hotel.png", alt: "Красивый отель" }
-            ]
-          })
-          +hotelCard({
-            numberHotel: 840,
-            isBtnSliderHide: true,
-            reviewCount: 65,
-            dayCost: "9 900",
-            starCount: 4,
-            idRateBtn: "hotelRate",
-            images: [
-              { src: "../../components/hotel-card/double-hotel.png", alt: "Красивый отель" },
-              { src: "../../components/hotel-card/double-hotel.png", alt: "Красивый отель" },
-              { src: "../../components/hotel-card/double-hotel.png", alt: "Красивый отель" },
-              { src: "../../components/hotel-card/double-hotel.png", alt: "Красивый отель" }
-            ]
-          })
+          .cards-page__item-hotel-wrap
+            +hotelCard({
+              numberHotel: 888,
+              isLux: true,
+              reviewCount: 145,
+              dayCost: "9 900",
+              starCount: 5,
+              idRateBtn: "luxHotelRate",
+              images: [
+                { src: "../../components/hotel-card/one-hotel.png", alt: "Красивый отель" },
+                { src: "../../components/hotel-card/one-hotel.png", alt: "Красивый отель" },
+                { src: "../../components/hotel-card/one-hotel.png", alt: "Красивый отель" },
+                { src: "../../components/hotel-card/one-hotel.png", alt: "Красивый отель" }
+              ]
+            })
+          .cards-page__item-hotel-wrap
+            +hotelCard({
+              numberHotel: 840,
+              isBtnSliderHide: true,
+              reviewCount: 65,
+              dayCost: "9 900",
+              starCount: 4,
+              idRateBtn: "hotelRate",
+              images: [
+                { src: "../../components/hotel-card/double-hotel.png", alt: "Красивый отель" },
+                { src: "../../components/hotel-card/double-hotel.png", alt: "Красивый отель" },
+                { src: "../../components/hotel-card/double-hotel.png", alt: "Красивый отель" },
+                { src: "../../components/hotel-card/double-hotel.png", alt: "Красивый отель" }
+              ]
+            })
