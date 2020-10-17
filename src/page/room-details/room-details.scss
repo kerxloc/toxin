@@ -19,10 +19,6 @@
 @import '../../components/copyright/copyright.scss';
 
 .room-details {
-  .date-picker-container {
-    top: 270px;
-  }
-
   .total-card__date-inputs {
     position: relative;
   }
@@ -200,10 +196,10 @@
   }
 }
 
-.room-details .date-picker {
-  z-index: 1000;
+.room-details__date-picker-container {
+  top: 270px;
 
   @media (max-width: 380px) {
-    top: -120px;
+    top: 350px;
   }
 }

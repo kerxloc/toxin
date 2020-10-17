@@ -23,18 +23,6 @@
   .pagination {
     text-align: center;
   }
-
-  .date-picker-container {
-    position: relative;
-  }
-
-  .date-picker {
-    top: 4px;
-
-    .date-picker__day {
-      height: 32px;
-    }
-  }
 }
 
 .rooms-page__wrap {
@@ -50,6 +38,11 @@
     padding-right: 20px;
     padding-left: 20px;
   }
+}
+
+.rooms-page__date-picker-container {
+  position: relative;
+  top: 205px;
 }
 
 .filter {
