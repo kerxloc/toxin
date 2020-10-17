@@ -49,6 +49,11 @@
     backface-visibility: hidden;
     perspective: 1000px;
   }
+
+  &_static {
+    position: static;
+    margin: 0;
+  }
 }
 
 .date-picker__wrap {
