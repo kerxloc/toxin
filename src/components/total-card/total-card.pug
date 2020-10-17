@@ -9,6 +9,11 @@ mixin totalCard(options = {})
     const departureInputPlaceholder = options.departureInputPlaceholder
       ? options.departureInputPlaceholder
       : "ДД.ММ.ГГГГ";
+    let datePickerContainerCLass = "date-picker-container";
+
+    if (options.datePickerContainerCLass) {
+      datePickerContainerCLass += `  ${options.datePickerContainerCLass}`;
+    }
 
   section.total-card
     .total-card__wrap
@@ -39,7 +44,7 @@ mixin totalCard(options = {})
             placeholder: departureInputPlaceholder,
             isDarkPlaceholder: true
           })
-          div(id="date-picker-total-container" class="date-picker-container")
+          div(id="date-picker-total-container" class=datePickerContainerCLass)
         +input({
           id: "number-total-guests-input",
           isFakeInput: true,
