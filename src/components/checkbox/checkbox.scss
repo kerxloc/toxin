@@ -55,10 +55,26 @@
 .checkbox__item {
   margin: 0;
   margin-bottom: 12px;
-  width: 240px;
+  width: 100%;
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  &_incomplete {
+    width: 99%;
+  }
+
+  &_little-lower {
+    width: 84%;
+  }
+
+  &_lower {
+    width: 82%;
+  }
+
+  &_tight {
+    width: 72%;
   }
 
   .checkbox__input[type='checkbox'] {
@@ -116,10 +132,6 @@
       transform: rotate(45deg);
     }
   }
-}
-
-.checkbox_rich .checkbox__item {
-  width: 264px;
 }
 
 .checkbox__descr {

@@ -30,7 +30,26 @@ mixin checkbox(options = {})
     if options.items
       div(id=listId class="checkbox__item-list")
         each item in options.items
-          div.checkbox__item
+          -
+            let checkboxItemClass = "checkbox__item";
+
+            if (item.isIncomplete) {
+              checkboxItemClass += "  checkbox__item_incomplete";
+            }
+
+            if (item.isLittleLower) {
+              checkboxItemClass += "  checkbox__item_little-lower";
+            }
+
+            if (item.isLower) {
+              checkboxItemClass += "  checkbox__item_lower";
+            }
+
+            if (item.isTight) {
+              checkboxItemClass += "  checkbox__item_tight";
+            }
+
+          div(class=checkboxItemClass)
             input(class="checkbox__input" id=item.id type="checkbox" checked=item.isChecked)
             label(class="checkbox__label" for=item.id class=labelClass)= item.title
               if options.isRich
