@@ -7,7 +7,7 @@
 
 .nav-menu__title {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
   font-size: 12px;
   line-height: 15px;
@@ -15,16 +15,22 @@
   text-transform: uppercase;
 
   @media (max-width: 768px) {
+    margin-bottom: 10px;
     padding-bottom: 10px;
+    font-size: 14px;
     border-bottom: 2px solid $contentColor;
   }
 }
 
 .nav-menu__item {
-  margin-bottom: 20px;
+  margin-bottom: 21px;
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
   }
 
   .nav-menu__link {
