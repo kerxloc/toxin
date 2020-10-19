@@ -7,17 +7,17 @@
   box-shadow: 0 10px 20px rgba(31, 32, 65, .05);
 
   &:hover {
-    .glide__arrows {
+    .hotel-card__arrows {
       visibility: visible;
       opacity: 1;
     }
   }
 
-  .glide__slides {
+  .hotel-card__slides {
     margin: 0;
   }
 
-  .glide__slide {
+  .hotel-card__slide {
     /* stylelint-disable */
     img {
       /* stylelint-enable */
@@ -25,7 +25,7 @@
     }
   }
 
-  .glide__arrows {
+  .hotel-card__arrows {
     visibility: hidden;
     opacity: 0;
     transition: all .2s ease-in;
@@ -61,7 +61,7 @@
     }
   }
 
-  .glide__bullet_active {
+  .hotel-card__bullet-active {
     background-color: $mainColor;
   }
 }
