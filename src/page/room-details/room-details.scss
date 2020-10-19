@@ -18,12 +18,6 @@
 @import '../../components/social-buttons/social-buttons.scss';
 @import '../../components/copyright/copyright.scss';
 
-.room-details {
-  .total-card__date-inputs {
-    position: relative;
-  }
-}
-
 .room-details__picture {
   margin: 0 auto;
   display: grid;
@@ -91,11 +85,11 @@
     flex-direction: column-reverse;
     align-items: center;
   }
+}
 
-  .total-card {
-    @media (max-width: 1160px) {
-      margin-bottom: 40px;
-    }
+.room-details__total-card-wrap {
+  @media (max-width: 1160px) {
+    margin-bottom: 40px;
   }
 }
 
@@ -129,21 +123,6 @@
     width: 100%;
     flex-direction: column;
   }
-
-  .bullet {
-    width: 37%;
-
-    @media (max-width: 800px) {
-      margin-bottom: 20px;
-      width: 100%;
-    }
-  }
-
-  .bullet__title_lp {
-    @media (max-width: 800px) {
-      padding-left: 0;
-    }
-  }
 }
 
 .room-details__intellig {
@@ -162,12 +141,6 @@
   &:last-child {
     margin-bottom: 0;
   }
-}
-
-.room-details__column .bullet__title {
-  margin-bottom: 20px;
-  font-size: 18px;
-  text-transform: capitalize;
 }
 
 .room-details__info {
