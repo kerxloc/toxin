@@ -114,36 +114,41 @@ block content
               isRightSplitAnimation: true
             })
         .form-elements__controls
-          +checkbox({
-            title: "Checkbox Buttons",
-            listId: "can-checkbox-list",
-            items: [
-              { id: "smoke", title: "Можно курить" },
-              { id: "pets", title: "Можно с питомцами", isChecked: true },
-              { id: "guest", title: "Можно пригласить гостей (до 10 человек)", isChecked: true }
-            ]
-          })
-          +radiobtn({
-            title: "Radio Buttons",
-            items: [
-              { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
-              { groupName: "gender", id: "famale", title: "Женщина" }
-            ]
-          })
-          +toggle({
-            title: "Toggle",
-            items: [
-              { id: "giveSpec", title: "Получать спецпредложения", isChecked: true },
-              { id: "notGiveSpec", title: "Получать спецпредложения" }
-            ]
-          })
-          +likebtn({
-            title: "like button",
-            items: [
-              { count: 2 },
-              { count: 12, isLike: true }
-            ]
-          })
+          .form-elements__checkbox-wrap
+            +checkbox({
+              title: "Checkbox Buttons",
+              listId: "can-checkbox-list",
+              items: [
+                { id: "smoke", title: "Можно курить" },
+                { id: "pets", title: "Можно с питомцами", isChecked: true },
+                { id: "guest", title: "Можно пригласить гостей (до 10 человек)", isChecked: true }
+              ]
+            })
+          .form-elements__radiobtn-wrap  
+            +radiobtn({
+              title: "Radio Buttons",
+              items: [
+                { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
+                { groupName: "gender", id: "famale", title: "Женщина" }
+              ],
+              isColumnAtTablet: true
+            })
+          .form-elements__toggle-wrap  
+            +toggle({
+              title: "Toggle",
+              items: [
+                { id: "giveSpec", title: "Получать спецпредложения", isChecked: true },
+                { id: "notGiveSpec", title: "Получать спецпредложения" }
+              ]
+            })
+          .form-elements__likebtn-wrap  
+            +likebtn({
+              title: "like button",
+              items: [
+                { count: 2 },
+                { count: 12, isLike: true }
+              ]
+            })
           +ratebtn({
             title: "rate button",
             items: [
@@ -152,7 +157,8 @@ block content
             ]
           })
         .form-elements__user-button
-          +rangeSlider({ title: "Range Slider" })
+          .form-elements__range-slider-wrap
+            +rangeSlider({ title: "Range Slider" })
           .form-elements__buttons
             +title({ title: "Buttons" })
             .form-elements__buttons-wrap
@@ -244,12 +250,14 @@ block content
                 {
                   id: "wild",
                   title: "Широкий коридор",
-                  descr: "Ширина коридоров в номере не менее 91 см."
+                  descr: "Ширина коридоров в номере не менее 91 см.",
+                  isTight: true
                 },
                 {
                   id: "help",
                   title: "Помощник для инвалидов",
-                  descr: "На 1 этаже вас встретит специалист  и проводит до номера."
+                  descr: "На 1 этаже вас встретит специалист  и проводит до номера.",
+                  isLower: true
                 }
               ]
             })

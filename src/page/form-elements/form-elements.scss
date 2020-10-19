@@ -16,20 +16,6 @@
 @import '../../components/logo/logo';
 @import '../../../node_modules/nouislider/distribute/nouislider.min.css';
 
-.form-elements {
-  .radiobtn__item {
-    @media (max-width: 1060px) {
-      margin-bottom: 15px;
-    }
-
-    &:last-child {
-      @media (max-width: 1060px) {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-
 .form-elements__wrap {
   padding-top: 65px;
 }
@@ -80,31 +66,31 @@
 
 .form-elements__controls {
   width: 22.9%;
+}
 
-  .checkbox {
-    margin-bottom: 40.88px;
-  }
+.form-elements__checkbox-wrap {
+  margin-bottom: 40.88px;
+}
 
-  .radiobtn {
-    margin-bottom: 42px;
-  }
+.form-elements__radiobtn-wrap {
+  margin-bottom: 42px;
+}
 
-  .toggle {
-    margin-bottom: 46px;
-  }
+.form-elements__toggle-wrap {
+  margin-bottom: 46px;
+}
 
-  .likebtn {
-    margin-bottom: 40px;
-  }
+.form-elements__likebtn-wrap {
+  margin-bottom: 40px;
 }
 
 .form-elements__user-button {
   width: 27.7%;
+}
 
-  .range {
-    margin-bottom: 42px;
-    width: 82.8%;
-  }
+.form-elements__range-slider-wrap {
+  margin-bottom: 42px;
+  width: 82.8%;
 }
 
 .form-elements__buttons-wrap {
@@ -123,11 +109,6 @@
 .form-elements__drop-down-expand {
   margin-right: 108px;
   width: 23%;
-
-  .drop-down__wrap {
-    padding-top: 5px;
-    padding-bottom: 9px;
-  }
 }
 
 .form-elements__drop-down-input-wrap {
@@ -136,28 +117,10 @@
 
 .form-elements__drop-down-rich {
   width: 27.6%;
-
-  .drop-down__wrap {
-    padding-top: 5px;
-    padding-bottom: 13px;
-  }
-
-  .drop-down__control {
-    margin-top: 21px;
-  }
 }
 
 .form-elements__drop-down-bullet {
   width: 27.7%;
-
-  .drop-down__wrap {
-    padding-top: 5px;
-    padding-bottom: 13px;
-  }
-
-  .drop-down__control {
-    margin-top: 21px;
-  }
 }
 
 .form-elements__exp-checkbox-close {
@@ -167,14 +130,6 @@
 
 .form-elements__bunny-hop {
   margin-top: 255px;
-
-  .checkbox__item:first-child {
-    width: 72%;
-  }
-
-  .bullet__item:nth-child(3) {
-    padding-right: 67px;
-  }
 }
 
 .form-elements__features {
@@ -183,8 +138,4 @@
 
 .form-elements__comment {
   width: 61.3%;
-}
-
-.drop-down-container {
-  position: relative;
 }
