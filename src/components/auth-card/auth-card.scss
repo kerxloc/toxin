@@ -4,14 +4,6 @@
   border-radius: 4px;
   box-shadow: 0 0 25px rgba(0, 0, 0, .2);
 
-  .input-group {
-    margin-bottom: 10px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
   @media (max-width: 380px) {
     width: 100%;
     min-width: 320px;
@@ -23,10 +15,8 @@
   padding-top: 40px;
 }
 
-.auth-card__wrap .input-group__input {
-  @media (max-width: 380px) {
-    width: 100%;
-  }
+.auth-card__input-wrap {
+  margin-bottom: 10px;
 }
 
 .auth-card__fieldset {

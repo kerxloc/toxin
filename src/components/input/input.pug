@@ -28,6 +28,9 @@ mixin input(options = {})
       inputClass += "  input-group__input_hovered";
     }
 
+    if (options.isWiderLabel) {
+      splitButtonClass += "  input-group__button-split_wider-label";
+    }
 
     if (options.isDownSplitAnimation) {
       splitButtonClass += "  input-group__button-split_down-animation";

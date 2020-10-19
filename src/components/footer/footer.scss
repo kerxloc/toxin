@@ -72,14 +72,6 @@
   .logo {
     margin-bottom: 18px;
   }
-
-  .input-group {
-    margin-top: 23px;
-  }
-
-  .input-group__input_double-button {
-    width: 216px;
-  }
 }
 
 .page-footer__wrap {
@@ -194,16 +186,6 @@
       width: 100%;
     }
   }
-
-  .input-group__input {
-    @media (max-width: 1100px) {
-      width: 83.07%;
-    }
-
-    @media (max-width: 768px) {
-      width: 100%;
-    }
-  }
 }
 
 .page-footer__content > .page-footer__col {
@@ -223,6 +205,10 @@
       width: 100%;
     }
   }
+}
+
+.page-footer__text-content-wrap {
+  margin-bottom: 23px;
 }
 
 .page-footer__side-info {

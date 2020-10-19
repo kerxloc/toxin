@@ -22,28 +22,32 @@ mixin totalCard(options = {})
           h2.total-card__title № #[span 888] #[b люкс]
           p.total-card__per-day #[b 9 990₽] в сутки
         .total-card__date-inputs
-          +input({
-            id: "arrival-total-input",
-            splitId: "arrival-total-split-btn",
-            labelName: "Прибытие",
-            isBigLabel: true,
-            isButtonSplit: true,
-            isDownSplitAnimation: true,
-            iconSrc: "expand-more.svg",
-            placeholder: arrivalInputPlaceholder,
-            isDarkPlaceholder: true
-          })
-          +input({
-            id: "departure-total-input",
-            splitId: "departure-total-split-btn",
-            labelName: "Выезд",
-            isBigLabel: true,
-            isButtonSplit: true,
-            isDownSplitAnimation: true,
-            iconSrc: "expand-more.svg",
-            placeholder: departureInputPlaceholder,
-            isDarkPlaceholder: true
-          })
+          .total-card__date-input-wrap
+            +input({
+              id: "arrival-total-input",
+              splitId: "arrival-total-split-btn",
+              labelName: "Прибытие",
+              isBigLabel: true,
+              isWiderLabel: true,
+              isButtonSplit: true,
+              isDownSplitAnimation: true,
+              iconSrc: "expand-more.svg",
+              placeholder: arrivalInputPlaceholder,
+              isDarkPlaceholder: true
+            })
+          .total-card__date-input-wrap  
+            +input({
+              id: "departure-total-input",
+              splitId: "departure-total-split-btn",
+              labelName: "Выезд",
+              isBigLabel: true,
+              isWiderLabel: true,
+              isButtonSplit: true,
+              isDownSplitAnimation: true,
+              iconSrc: "expand-more.svg",
+              placeholder: departureInputPlaceholder,
+              isDarkPlaceholder: true
+            })
           div(id="date-picker-total-container" class=datePickerContainerCLass)
         +input({
           id: "number-total-guests-input",

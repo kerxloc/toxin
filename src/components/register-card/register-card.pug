@@ -9,8 +9,10 @@ mixin registerCard()
       form(action="/404.html")
         h2.register-card__title Регистрация аккаунта
         fieldset.register-card__fieldset
-          +input({ id: "name", placeholder: "Имя" })
-          +input({ id: "surname", placeholder: "Фамилия" })
+          .register-card__input-wrap
+            +input({ id: "name", placeholder: "Имя" })
+          .register-card__input-wrap  
+            +input({ id: "surname", placeholder: "Фамилия" })
           +radiobtn({
             items: [
               { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
@@ -26,16 +28,18 @@ mixin registerCard()
           })
         fieldset.register-card__fieldset
           legend.register-card__legend Данные для входа в сервис
-          +input({
-            id: "loginInput",
-            type: "text",
-            placeholder: "Email"
-          })
-          +input({
-            id: "passInput",
-            type: "password",
-            placeholder: "Пароль",
-          })
+          .register-card__input-wrap
+            +input({
+              id: "loginInput",
+              type: "text",
+              placeholder: "Email"
+            })
+          .register-card__input-wrap  
+            +input({
+              id: "passInput",
+              type: "password",
+              placeholder: "Пароль",
+            })
           +toggle({
             items: [
               { id: "notGiveSpec", title: "Получать спецпредложения" }

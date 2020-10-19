@@ -21,17 +21,14 @@
       flex-direction: column;
     }
   }
+}
 
-  .total-card__date-inputs .input-group {
-    @media (max-width: 380px) {
-      margin-bottom: 15px;
-    }
-  }
+.total-card__date-input-wrap {
+  width: 150px;
 
-  .total-card__date-inputs .input-group__input_double-button {
-    @media (max-width: 380px) {
-      width: 100%;
-    }
+  @media (max-width: 380px) {
+    margin-bottom: 15px;
+    width: 100%;
   }
 }
 
@@ -80,16 +77,6 @@
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
-
-  .input-group__label {
-    margin-bottom: 6px;
-  }
-
-  .input-group__input {
-    &_double-button {
-      width: 106px;
-    }
-  }
 }
 
 .total-card__calc {

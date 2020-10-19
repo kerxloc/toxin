@@ -73,7 +73,8 @@ mixin footer(options = {})
               .page-footer__col
                 +navMenu(navMenuItems[2])
               div(class="page-footer__col  page-footer__col_large")
-                +textContent({ title: "Подписка", text: "Получайте специальные предложения и новости сервиса" })
+                .page-footer__text-content-wrap
+                  +textContent({ title: "Подписка", text: "Получайте специальные предложения и новости сервиса" })
                 form(action="/404.html")
                   +input({
                     isButtonSplit: true,

@@ -11,14 +11,6 @@
     border: 0;
   }
 
-  .input-group__label {
-    font-size: 12px;
-    line-height: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: $contentColor;
-  }
-
   @media (max-width: 380px) {
     margin: 0 auto;
     width: 100%;
@@ -44,16 +36,6 @@
     flex-direction: column;
   }
 
-  .input-group__input {
-    &_double-button {
-      width: 106px;
-
-      @media (max-width: 380px) {
-        width: 100%;
-      }
-    }
-  }
-
   .date-wishes__date-picker-container {
     top: 269px;
 
@@ -63,10 +45,17 @@
   }
 }
 
-.date-wishes__group .input-group {
+.date-wishes__input-wrap {
+  width: 150px;
+
   @media (max-width: 380px) {
     margin-bottom: 15px;
+    width: 100%;
   }
+}
+
+.date-wishes__input-wrap:nth-child(2) {
+  margin-bottom: 0;
 }
 
 .date-wishes__title {

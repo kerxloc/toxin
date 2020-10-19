@@ -26,54 +26,60 @@ block content
     .form-elements__wrap
       .form-elements__row
         .form-elements__inputs
-          +input({
-            id: "textField",
-            type: "text",
-            placeholder: "Email",
-            labelName: "Text field",
-            isBigLabel: true,
-            descrText: "Default"
-          })
-          +input({
-            id: "textFieldHover",
-            type: "text",
-            placeholder: "This is pretty awesome",
-            labelName: "Text field",
-            isBigLabel: true,
-            descrText: "Hover / Focus",
-            isHover: true
-          })
-          +input({
-            id: "number-guests-input",
-            isFakeInput: true,
-            labelName: "Dropdown",
-            isButtonSplit: true,
-            isDownSplitAnimation: true,
-            isHaveIcon: true,
-            placeholder: "Сколько гостей",
-            isBigLabel: true,
-            descrText: "Default"
-          })
-          +input({
-            id: "maskedTextField",
-            type: "text",
-            placeholder: "ДД.ММ.ГГГГ",
-            labelName: "Masked text field",
-            isBigLabel: true,
-            descrText: "Default"
-          })
-          .form-elements__inputs-column
+          .form-elements__input-wrap
             +input({
-              id: "arrival-input",
-              splitId: "arrival-split-btn",
-              labelName: "Date Dropdown",
+              id: "textField",
+              type: "text",
+              placeholder: "Email",
+              labelName: "Text field",
+              isBigLabel: true,
+              descrText: "Default"
+            })
+          .form-elements__input-wrap  
+            +input({
+              id: "textFieldHover",
+              type: "text",
+              placeholder: "This is pretty awesome",
+              labelName: "Text field",
+              isBigLabel: true,
+              descrText: "Hover / Focus",
+              isHover: true
+            })
+          .form-elements__input-wrap  
+            +input({
+              id: "number-guests-input",
+              isFakeInput: true,
+              labelName: "Dropdown",
               isButtonSplit: true,
               isDownSplitAnimation: true,
-              iconSrc: "expand-more.svg",
-              placeholder: "ДД.ММ.ГГГГ",
-              isDarkPlaceholder: true,
-              isBigLabel: true
+              isHaveIcon: true,
+              placeholder: "Сколько гостей",
+              isBigLabel: true,
+              descrText: "Default"
             })
+          .form-elements__input-wrap
+            +input({
+              id: "maskedTextField",
+              type: "text",
+              placeholder: "ДД.ММ.ГГГГ",
+              labelName: "Masked text field",
+              isBigLabel: true,
+              descrText: "Default"
+            })
+          .form-elements__inputs-column
+            .form-elements__input-column-wrap
+              +input({
+                id: "arrival-input",
+                splitId: "arrival-split-btn",
+                labelName: "Date Dropdown",
+                isButtonSplit: true,
+                isDownSplitAnimation: true,
+                iconSrc: "expand-more.svg",
+                placeholder: "ДД.ММ.ГГГГ",
+                isDarkPlaceholder: true,
+                isBigLabel: true,
+                isWiderLabel: true
+              })
             +input({
               id: "departure-input",
               splitId: "departure-split-btn",
@@ -83,19 +89,21 @@ block content
               iconSrc: "expand-more.svg",
               placeholder: "19.08.2019",
               isDarkPlaceholder: true,
-              isBigLabel: true
+              isBigLabel: true,
+              isWiderLabel: true
             })
           .form-elements__inputs-small
-            +input({
-              id: "filterDateDropdown",
-              isFakeInput: true,
-              labelName: "Filter date dropdown",
-              isButtonSplit: true,
-              isDownSplitAnimation: true,
-              isHaveIcon: true,
-              placeholder: "19 авг - 23 авг",
-              isBigLabel: true
-            })
+            .from-elements__input-small-wrap
+              +input({
+                id: "filterDateDropdown",
+                isFakeInput: true,
+                labelName: "Filter date dropdown",
+                isButtonSplit: true,
+                isDownSplitAnimation: true,
+                isHaveIcon: true,
+                placeholder: "19 авг - 23 авг",
+                isBigLabel: true,
+              })
             +input({
               isButtonSplit: true,
               labelName: "Subscription text field",
@@ -167,17 +175,18 @@ block content
           +pagination({ title: "Pagination" })
       .form-elements__row
         .form-elements__drop-down-expand
-          +input({
-            id: "number-guests-input1",
-            isFakeInput: true,
-            labelName: "Dropdown",
-            isButtonSplit: true,
-            isDownSplitAnimation: true,
-            isHaveIcon: true,
-            placeholder: "2 спальни, 2 кровати...",
-            isBigLabel: true,
-            descrText: "Default"
-          })
+          .form-elements__drop-down-input-wrap
+            +input({
+              id: "number-guests-input1",
+              isFakeInput: true,
+              labelName: "Dropdown",
+              isButtonSplit: true,
+              isDownSplitAnimation: true,
+              isHaveIcon: true,
+              placeholder: "2 спальни, 2 кровати...",
+              isBigLabel: true,
+              descrText: "Default"
+            })
           +input({
             id: "number-guests-input2",
             isFakeInput: true,

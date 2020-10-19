@@ -38,25 +38,15 @@
     font-style: normal;
     text-transform: uppercase;
   }
+}
 
-  .input-group {
-    margin-bottom: 10px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+.register-card__input-wrap {
+  margin-bottom: 10px;
 }
 
 .register-card__wrap {
   padding: 30px;
   padding-top: 40px;
-
-  .input-group__input {
-    @media (max-width: 380px) {
-      width: 100%;
-    }
-  }
 }
 
 .register-card__title {

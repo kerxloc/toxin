@@ -50,40 +50,32 @@
 
 .form-elements__inputs {
   width: 27.6%;
+}
 
-  .input-group {
-    margin-bottom: 20px;
+.form-elements__input-wrap {
+  margin-bottom: 20px;
 
-    &:nth-child(3) {
-      margin-bottom: 23px;
-    }
+  &:nth-child(3) {
+    margin-bottom: 23px;
   }
 }
 
 .form-elements__inputs-column {
   margin-top: 40px;
-  margin-bottom: 21px;
+  margin-bottom: 41px;
   display: flex;
+}
 
-  .input-group:first-child {
-    margin-right: 20px;
-  }
-
-  .input-group__button-split {
-    width: 60px;
-  }
+.form-elements__input-column-wrap {
+  margin-right: 20px;
 }
 
 .form-elements__inputs-small {
   width: 266px;
+}
 
-  .input-group {
-    margin-bottom: 41px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+.from-elements__input-small-wrap {
+  margin-bottom: 41px;
 }
 
 .form-elements__controls {
@@ -132,22 +124,14 @@
   margin-right: 108px;
   width: 23%;
 
-  .input-group {
-    margin-bottom: 20px;
-
-    &:nth-child(2) {
-      margin-bottom: 0;
-    }
-  }
-
-  .input-group__input_with-icon {
-    background-position: 94% center;
-  }
-
   .drop-down__wrap {
     padding-top: 5px;
     padding-bottom: 9px;
   }
+}
+
+.form-elements__drop-down-input-wrap {
+  margin-bottom: 20px;
 }
 
 .form-elements__drop-down-rich {
