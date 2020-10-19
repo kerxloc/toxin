@@ -1,6 +1,11 @@
 mixin textContent(options)
+  -
+    const titleClass = options.isBorderOnTabler
+      ? "text-content__title  text-content__title_bordered-on-tablet"
+      : "text-content__title";
+
   section.text-content
     .text-content__wrap
       if options.title
-        h2.text-content__title= options.title
+        h2(class=titleClass)= options.title
       p.text-content__paragraph= options.text
