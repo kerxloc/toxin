@@ -19,12 +19,6 @@
 @import '../../components/copyright/copyright.scss';
 @import '../../../node_modules/nouislider/distribute/nouislider.min.css';
 
-.rooms-page {
-  .pagination {
-    text-align: center;
-  }
-}
-
 .rooms-page__wrap {
   padding: 30px 0 71px;
   display: flex;
@@ -103,4 +97,8 @@
 
 .hotels__item {
   margin-bottom: 21px;
+}
+
+.rooms-page__pagination {
+  text-align: center;
 }
