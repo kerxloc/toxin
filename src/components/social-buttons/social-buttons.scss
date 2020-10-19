@@ -15,10 +15,10 @@
   }
 }
 
-.social-buttons__link .icon-content {
+.social-buttons__link .social-buttons__icon {
   transition: fill .4s ease;
 }
 
-.social-buttons__link:hover .icon-content {
+.social-buttons__link:hover .social-buttons__icon {
   fill: darken($accentColor, 10%);
 }
