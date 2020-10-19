@@ -20,15 +20,6 @@
     }
   }
 
-  &_short {
-    /* stylelint-disable */
-    section.text-content {
-      /* stylelint-enable */
-      width: 49%;
-      text-align: center;
-    }
-  }
-
   &_short::after {
     display: none;
   }
@@ -39,42 +30,6 @@
 
   &_tight-bottom::after {
     bottom: 70px;
-  }
-
-  .text-content {
-    width: 260px;
-  }
-
-  .text-content__title {
-    margin-bottom: 19px;
-
-    @media (max-width: 768px) {
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      font-size: 14px;
-      border-bottom: 2px solid $contentColor;
-    }
-  }
-
-  .nav-menu__title {
-    margin-bottom: 22px;
-
-    @media (max-width: 768px) {
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
-  }
-
-  .nav-menu__item {
-    margin-bottom: 21px;
-
-    @media (max-width: 768px) {
-      margin-bottom: 10px;
-    }
-  }
-
-  .logo {
-    margin-bottom: 18px;
   }
 }
 
@@ -90,15 +45,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* stylelint-disable */
-  div.logo {
-    /* stylelint-enable */
-    margin-bottom: 21px;
-    margin-left: 12px;
+}
+
+.page-footer__copyright-wrap {
+  @media (max-width: 555px) {
+    margin-bottom: 20px;
+    text-align: center;
   }
 
-  .copyright {
+  &_short {
     margin-bottom: 26px;
+  }
+}
+
+.page-footer__logo-wrap {
+  margin-bottom: 18px;
+
+  &_short {
+    margin-bottom: 21px;
+    margin-left: 12px;
   }
 }
 
@@ -180,16 +145,6 @@
   &_large:first-child {
     margin-right: 3.5%;
   }
-
-  .text-content {
-    @media (max-width: 1100px) {
-      width: 85%;
-    }
-
-    @media (max-width: 768px) {
-      width: 100%;
-    }
-  }
 }
 
 .page-footer__content > .page-footer__col {
@@ -203,16 +158,19 @@
     margin-bottom: 40px;
     width: 100%;
   }
-
-  .text-content {
-    @media (max-width: 1100px) {
-      width: 100%;
-    }
-  }
 }
 
 .page-footer__text-content-wrap {
   margin-bottom: 23px;
+  width: 260px;
+
+  @media (max-width: 1100px) {
+    width: 85%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .page-footer__side-info {
@@ -228,12 +186,5 @@
 
   &_tight-bottom {
     padding-bottom: 21px;
-  }
-
-  .copyright {
-    @media (max-width: 555px) {
-      margin-bottom: 20px;
-      text-align: center;
-    }
   }
 }

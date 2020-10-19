@@ -65,15 +65,19 @@ mixin footer(options = {})
     .container
       if(options.isShort)
         div(class="page-footer__wrap  page-footer__wrap_short")
-          +logo({ id: logoId })
-          +copyright({ year: 2018 })
+          div(class="page-footer__logo-wrap  page-footer__logo-wrap_short")
+            +logo({ id: logoId })
+          div(class="page-footer__copyright-wrap  page-footer__copyright-wrap_short")  
+            +copyright({ year: 2018 })
           +socialButtons()
       else
         .page-footer__wrap
           .page-footer__content
             div(class="page-footer__col  page-footer__col_large")
-              +logo({ id: logoId })
-              +textContent({ text: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»" })
+              .page-footer__logo-wrap
+                +logo({ id: logoId })
+              .page-footer__text-content-wrap
+                +textContent({ text: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»" })
             .page-footer__col-group
               .page-footer__col
                 +navMenu(navMenuItems[0])
@@ -83,7 +87,11 @@ mixin footer(options = {})
                 +navMenu(navMenuItems[2])
               div(class="page-footer__col  page-footer__col_large")
                 .page-footer__text-content-wrap
-                  +textContent({ title: "Подписка", text: "Получайте специальные предложения и новости сервиса" })
+                  +textContent({
+                    title: "Подписка",
+                    text: "Получайте специальные предложения и новости сервиса",
+                    isBorderOnTabler: true,
+                  })
                 form(action="/404.html")
                   +input({
                     isButtonSplit: true,
@@ -95,5 +103,6 @@ mixin footer(options = {})
                     isRightSplitAnimation: true
                   })
           div(class=sideInfoClass)
-            +copyright({ year: 2018 })
+            .page-footer__copyright-wrap
+              +copyright({ year: 2018 })
             +socialButtons()
