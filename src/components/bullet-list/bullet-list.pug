@@ -1,12 +1,27 @@
 mixin bullet(options = {})
   -
-    const titleClass = options.isTitleLeftPadding
+    let titleClass = options.isTitleLeftPadding
       ? "bullet__title  bullet__title_lp"
       : "bullet__title";
+
+    if (options.isBigTitle) {
+      titleClass += "  bullet__title_big-title";
+    }  
 
   .bullet
     if options.title
       p(class=titleClass)= options.title
       ul.bullet__list
         each item in options.items
-          li.bullet__item= item.label
+          -
+            let itemClass = "bullet__item";
+
+            if (item.isTight) {
+              itemClass += "  bullet__item_tight";
+            }
+
+            if (item.isPetty) {
+              itemClass += "  bullet__item_petty";
+            }
+
+          li(class=itemClass)= item.label

@@ -11,6 +11,12 @@
   &_lp {
     padding-left: 20px;
   }
+
+  &_big-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
 }
 
 .bullet__list {
@@ -36,5 +42,13 @@
     content: '';
     background: transparentize($contentColor, .75);
     border-radius: 50%;
+  }
+
+  &_tight {
+    width: 72%;
+  }
+
+  &_petty {
+    width: 65%;
   }
 }
