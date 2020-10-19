@@ -1,5 +1,7 @@
 mixin radiobtn(options = {})
-  .radiobtn
+  - let radioBtnClass = options.isColumnAtTablet ? "radiobtn  radiobtn_column-at-tablet" : "radiobtn";
+
+  div(class=radioBtnClass)
     if options.title
       p.radiobtn__title= options.title
     each item in options.items

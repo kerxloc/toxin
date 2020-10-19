@@ -1,3 +1,17 @@
+.radiobtn_column-at-tablet {
+  .radiobtn__item {
+    @media (max-width: 1060px) {
+      margin-bottom: 15px;
+    }
+
+    &:last-child {
+      @media (max-width: 1060px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 .radiobtn__title {
   margin: 0;
   margin-bottom: 18px;
