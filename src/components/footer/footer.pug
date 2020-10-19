@@ -52,6 +52,15 @@ mixin footer(options = {})
       footerClass += "  page-footer_short";
     }
 
+    if (options.isTightBottom) {
+      footerClass += "  page-footer_tight-bottom";
+    }
+
+    let sideInfoClass = options.isTightBottom
+      ? "page-footer__side-info  page-footer__side-info_tight-bottom"
+      : "page-footer__side-info";
+
+
   footer(class=footerClass)
     .container
       if(options.isShort)
@@ -85,6 +94,6 @@ mixin footer(options = {})
                     placeholder: emailInputPlaceholder,
                     isRightSplitAnimation: true
                   })
-          .page-footer__side-info
+          div(class=sideInfoClass)
             +copyright({ year: 2018 })
             +socialButtons()
