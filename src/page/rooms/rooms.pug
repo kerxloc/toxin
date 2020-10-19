@@ -220,24 +220,39 @@ block content
             p.filter__explan Стоимость за сутки пребывания в номере
           .filter__item
             +checkbox({
-                  title: "Checkbox Buttons",
-                  listId: "checkbox-buttons",
-                  items: [
-                    { id: "smoke", title: "Можно курить" },
-                    { id: "pets", title: "Можно с питомцами", isChecked: true },
-                    { id: "guest", title: "Можно пригласить гостей (до 10 человек)", isChecked: true }
-                  ]
-                })
+              title: "Checkbox Buttons",
+              listId: "checkbox-buttons",
+              items: [
+                { id: "smoke", title: "Можно курить" },
+                { id: "pets", title: "Можно с питомцами", isChecked: true },
+                {
+                  id: "guest",
+                  title: "Можно пригласить гостей (до 10 человек)",
+                  isChecked: true,
+                  isLittleLower: true,
+                },
+              ],
+            })
           .filter__item
             +checkbox({
-                  title: "Доступность",
-                  listId: "checkbox-rich-list",
-                  isRich: true,
-                  items: [
-                    { id: "wild", title: "Широкий коридор", descr: "Ширина коридоров в номере не менее 91 см." },
-                    { id: "help", title: "Помощник для инвалидов", descr: "На 1 этаже вас встретит специалист  и проводит до номера." },
-                  ]
-                })
+              title: "Доступность",
+              listId: "checkbox-rich-list",
+              isRich: true,
+              items: [
+                {
+                  id: "wild",
+                  title: "Широкий коридор",
+                  descr: "Ширина коридоров в номере не менее 91 см.",
+                  isLower: true,
+                },
+                {
+                  id: "help",
+                  title: "Помощник для инвалидов",
+                  descr: "На 1 этаже вас встретит специалист  и проводит до номера.",
+                  isIncomplete: true,
+                },
+              ],
+            })
           .filter__item
             +input({
               id: "number-bed",
