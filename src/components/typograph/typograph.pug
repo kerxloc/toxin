@@ -10,9 +10,13 @@ mixin typograph(options = {})
       ? `typograph__title  typograph__title_${options.titleModif}`
       : "typograph__title";
 
-    const textClass = options.textModif
+    let textClass = options.textModif
       ? `typograph__text  typograph__text_${options.textModif}`
       : "typograph__text";
+    
+    if (options.isTinyText) {
+      textClass += "  typograph__text_tiny";
+    }
 
   section.typograph
     .typograph__wrap

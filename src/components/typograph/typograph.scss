@@ -53,4 +53,8 @@
   line-height: 23px;
   font-weight: normal;
   color: transparentize($contentColor, .25);
+
+  &_tiny {
+    padding-right: 30px;
+  }
 }
