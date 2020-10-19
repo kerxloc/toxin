@@ -13,12 +13,8 @@ $accentSecondGradColor: #66d2ea;
   border: 1px solid transparentize($contentColor, .75);
   border-radius: 3px;
 
-  .noUi-connect {
-    height: 6px;
-    background: linear-gradient(180deg, $accentSecondColor 0%, $accentSecondGradColor 100%);
-  }
-
-  .noUi-handle {
+  .range__handle {
+    right: -8px;
     width: 14px;
     height: 14px;
     background: linear-gradient(180deg, $accentSecondColor 0%, $accentSecondGradColor 100%);
@@ -33,11 +29,11 @@ $accentSecondGradColor: #66d2ea;
       display: none;
     }
   }
+}
 
-  .noUi-handle-upper,
-  .noUi-handle-lower {
-    right: -8px;
-  }
+.range__connect {
+  height: 6px;
+  background: linear-gradient(180deg, $accentSecondColor 0%, $accentSecondGradColor 100%);
 }
 
 .range__cost {
