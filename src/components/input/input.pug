@@ -28,6 +28,10 @@ mixin input(options = {})
       inputClass += "  input-group__input_hovered";
     }
 
+    if (options.classForJs) {
+      inputClass += `  ${options.classForJs}`;
+    }
+
     if (options.isWiderLabel) {
       splitButtonClass += "  input-group__button-split_wider-label";
     }
@@ -50,6 +54,10 @@ mixin input(options = {})
 
       if (options.isDownSplitAnimation) {
         inputFakeClass += "  input-group__button-split_down-animation";
+      }
+
+      if (options.classForJs) {
+        inputFakeClass += `  ${options.classForJs}`;
       }
 
     if options.labelName
