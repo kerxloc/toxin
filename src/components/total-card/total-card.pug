@@ -51,6 +51,7 @@ mixin totalCard(options = {})
           div(id="date-picker-total-container" class=datePickerContainerCLass)
         +input({
           id: "number-total-guests-input",
+          classForJs: "js-input-drop-down-total",
           isFakeInput: true,
           labelName: "Гости",
           isBigLabel: true,
@@ -59,7 +60,7 @@ mixin totalCard(options = {})
           isHaveIcon: true,
           placeholder: "3 гостя"
         })
-        div(class="drop-down-container" id="drop-down-total-container")
+        div(class="drop-down-container  js-drop-down-total-container")
         .total-card__calc
           .total-card__calc-row
             p.total-card__calc-text 9 990₽ х 4 суток

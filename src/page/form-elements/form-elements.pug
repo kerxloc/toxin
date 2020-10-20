@@ -183,7 +183,7 @@ block content
         .form-elements__drop-down-expand
           .form-elements__drop-down-input-wrap
             +input({
-              id: "number-guests-input1",
+              id: "number-guest-input",
               isFakeInput: true,
               labelName: "Dropdown",
               isButtonSplit: true,
@@ -194,7 +194,8 @@ block content
               descrText: "Default"
             })
           +input({
-            id: "number-guests-input2",
+            id: "input-drop-down",
+            classForJs: "js-input-drop-down",
             isFakeInput: true,
             labelName: "Dropdown",
             isButtonSplit: true,
@@ -204,7 +205,7 @@ block content
             isBigLabel: true,
             descrText: "Expanded"
           })
-          div(id="drop-down-container" class="drop-down-container")
+          div(class="drop-down-container  js-drop-down-container")
           .form-elements__exp-checkbox-close
             +checkbox({
               title: "Expandable checkbox list",
@@ -229,7 +230,8 @@ block content
             })
         .form-elements__drop-down-rich
           +input({
-            id: "number-guests-input3",
+            id: "input-clear",
+            classForJs: "js-input-drop-down-clear",
             isFakeInput: true,
             labelName: "Dropdown",
             isButtonSplit: true,
@@ -238,7 +240,7 @@ block content
             placeholder: "Сколько гостей",
             isBigLabel: true
           })
-          div(id="drop-down-container2" class="drop-down-container")
+          div(class="drop-down-container  js-drop-down-container-clear")
           .form-elements__bunny-hop
             +checkbox({
               title: "Rich Checkbox Buttons",
@@ -261,7 +263,8 @@ block content
             })
         .form-elements__drop-down-bullet
           +input({
-            id: "number-guests-input4",
+            id: "input-filled",
+            classForJs: "js-input-drop-down-filled",
             isFakeInput: true,
             labelName: "Dropdown",
             isButtonSplit: true,
@@ -270,7 +273,7 @@ block content
             placeholder: "Сколько гостей",
             isBigLabel: true
           })
-          div(id="drop-down-container3" class="drop-down-container")
+          div(class="drop-down-container  js-drop-down-container-filled")
           .form-elements__bunny-hop
             +bullet({
               title: "Bullet list",

@@ -37,6 +37,7 @@ mixin dateWishes()
             div(id="date-picker-container" class="date-picker-container  date-wishes__date-picker-container")
           +input({
             id: "number-guests-input",
+            classForJs: "js-input-drop-down",
             isFakeInput: true,
             labelName: "Гости",
             isBigLabel: true,
@@ -45,7 +46,7 @@ mixin dateWishes()
             isHaveIcon: true,
             placeholder: "Сколько гостей"
           })
-          div(id="drop-down-container" class="drop-down-container")
+          div(class="drop-down-container  js-drop-down-container")
         +button({
           title: "Подобрать номер",
           isHaveIcon: true,

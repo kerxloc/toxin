@@ -63,8 +63,8 @@ const datePickerDomInfo = {
 const datePicker = new DatePicker(datePickerDomInfo);
 datePicker.renderCalendar();
 
-const dropDownContainer = document.querySelector('#drop-down-total-container');
-const inputDropDown = document.querySelector('#number-total-guests-input');
+const dropDownContainer = document.querySelector('.js-drop-down-total-container');
+const inputDropDown = document.querySelector('.js-input-drop-down-total');
 
 const dropDownOptions = {
   container: dropDownContainer,

@@ -205,7 +205,7 @@ block content
             div(id="date-picker-container" class="date-picker-container  rooms-page__date-picker-container")
           .filter__item
             +input({
-              id: "number-guest",
+              classForJs: "js-input-drop-down-guest",
               isFakeInput: true,
               labelName: "Гости",
               isButtonSplit: true,
@@ -214,7 +214,7 @@ block content
               placeholder: "3 гостя, 1 младенец",
               isBigLabel: true
             })
-            div(class="drop-down-container" id="drop-down-guest-container")
+            div(class="drop-down-container  js-drop-down-container-guest")
           .filter__item
             +rangeSlider({ title: "Диапазон цены" })
             p.filter__explan Стоимость за сутки пребывания в номере
@@ -255,7 +255,7 @@ block content
             })
           .filter__item
             +input({
-              id: "number-bed",
+              classForJs: "js-input-drop-down",
               isFakeInput: true,
               labelName: "Удобства номера",
               isButtonSplit: true,
@@ -264,7 +264,7 @@ block content
               placeholder: "2 спальни, 2 кровати...",
               isBigLabel: true
             })
-            div(class="drop-down-container" id="drop-down-container")
+            div(class="drop-down-container  js-drop-down-container")
           .filter__item
             +checkbox({
               title: "Дополнительные удобства",
