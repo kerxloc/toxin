@@ -6,7 +6,7 @@ mixin hotelCard(options = {})
       ? "hotel-card__slider-control  hotel-card__slider-control_hiden"
       : "hotel-card__slider-control";
   section.hotel-card
-    div(class="hotel-card__wrap  glide")
+    div(class="hotel-card__wrap  glide  js-hotel-card-glide")
       div(class="hotel-card__slider  glide__track" data-glide-el="track")
         ul(class="hotel-card__slides  glide__slides")
           each image in options.images
