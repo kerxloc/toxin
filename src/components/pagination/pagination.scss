@@ -51,19 +51,6 @@
 .pagination__page-next {
   position: relative;
 
-  &::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 18px;
-    height: 17px;
-    content: '';
-    background: url('../../components/pagination/arrow.png') no-repeat;
-  }
-
   .pagination__page-link {
     width: 40px;
     height: 40px;
@@ -72,6 +59,19 @@
     color: $mainColor;
     background: linear-gradient(180deg, $accentSecondСolor 0%, $accentGradSecondСolor 100%);
     border-radius: 50%;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 18px;
+      height: 17px;
+      content: '';
+      background: url('../../components/pagination/arrow.png') no-repeat;
+    }
   }
 }
 
