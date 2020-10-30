@@ -1,6 +1,6 @@
 .button {
   position: relative;
-  z-index: 100;
+  z-index: 0;
   padding: 10px 20px;
   width: 100%;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
@@ -128,10 +128,6 @@
 
   &_low-larger {
     padding: 12px 18px;
-  }
-
-  &_zero-z-index {
-    z-index: 0;
   }
 
   &_more-letter-spacing {
