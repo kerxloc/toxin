@@ -20,7 +20,7 @@ mixin input(options = {})
       inputClass += "  input-group__input_dark-placeholder";
     }
 
-    if (options.isHaveIcon) {
+    if (options.withIcon) {
       inputClass += "  input-group__input_with-icon";
     }
 
@@ -48,7 +48,7 @@ mixin input(options = {})
     -
       let inputFakeClass = "input-group__input  input-group__input_fake";
 
-      if (options.isHaveIcon) {
+      if (options.withIcon) {
         inputFakeClass += "  input-group__input_with-icon";
       }
 

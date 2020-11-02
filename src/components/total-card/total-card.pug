@@ -57,7 +57,7 @@ mixin totalCard(options = {})
           isBigLabel: true,
           isButtonSplit: true,
           isDownSplitAnimation: true,
-          isHaveIcon: true,
+          withIcon: true,
           placeholder: "3 гостя"
         })
         div(class="drop-down-container  js-drop-down-total-container")
@@ -74,4 +74,4 @@ mixin totalCard(options = {})
           p.total-card__total-text Итого
           .total-card__total-separator
           p.total-card__total-price 38 081₽
-        +button({ title: "Забронировать", isHaveIcon: true, buttonType: "submit" })
+        +button({ title: "Забронировать", withIcon: true, buttonType: "submit" })
