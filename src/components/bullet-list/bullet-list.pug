@@ -23,13 +23,16 @@ mixin bullet(options = {})
         each item in items
           -
             let itemClass = "bullet__item";
+            const { isTight, isPetty, label } = item;
 
-            if (item.isTight) {
+            if (isTight) {
               itemClass += " bullet__item_tight";
             }
 
-            if (item.isPetty) {
+            if (isPetty) {
               itemClass += " bullet__item_petty";
             }
 
-          li(class=itemClass)= item.label
+            const itemLabel = label
+
+          li(class=itemClass)= itemLabel
