@@ -52,7 +52,7 @@ block content
               labelName: "Dropdown",
               isButtonSplit: true,
               isDownSplitAnimation: true,
-              isHaveIcon: true,
+              withIcon: true,
               placeholder: "Сколько гостей",
               isBigLabel: true,
               descrText: "Default"
@@ -100,7 +100,7 @@ block content
                 labelName: "Filter date dropdown",
                 isButtonSplit: true,
                 isDownSplitAnimation: true,
-                isHaveIcon: true,
+                withIcon: true,
                 placeholder: "19 авг - 23 авг",
                 isBigLabel: true,
               })
@@ -163,21 +163,21 @@ block content
             +title({ title: "Buttons" })
             .form-elements__buttons-wrap
               .form-elements__button-wrap
-                +button({ title: "Click me", isAverage: true })
+                +button({ title: "Click me", size: "higher" })
               .form-elements__button-wrap  
-                +button({ title: "Click me", isAverage: true, isDisable: true })
+                +button({ title: "Click me", size: "higher", isDisabled: true })
             .form-elements__buttons-wrap
               .form-elements__button-wrap
-                +button({ title: "Click me", isLowLarger: true, isEmptyStyle: true })
+                +button({ title: "Click me", size: "medium", variant: "outlined" })
               .form-elements__button-wrap
-                +button({ title: "Click me", isLowLarger: true, isEmptyStyle: true, isDisable: true })
+                +button({ title: "Click me", size: "medium", variant: "outlined", isDisabled: true })
             .form-elements__buttons-wrap
               .form-elements__button-wrap
-                +button({ title: "Click me", isOnlyText: true })
+                +button({ title: "Click me", variant: "text" })
               .form-elements__button-wrap
-                +button({ title: "Click me", isOnlyText: true, isDisable: true })
+                +button({ title: "Click me", variant: "text", isDisabled: true })
             .form-elements__submit-btn
-              +button({ title: "Перейти к оплате", isHaveIcon: true, buttonType: "submit" })
+              +button({ title: "Перейти к оплате", withIcon: true, buttonType: "submit" })
           +pagination({ title: "Pagination" })
       .form-elements__row
         .form-elements__drop-down-expand
@@ -188,7 +188,7 @@ block content
               labelName: "Dropdown",
               isButtonSplit: true,
               isDownSplitAnimation: true,
-              isHaveIcon: true,
+              withIcon: true,
               placeholder: "2 спальни, 2 кровати...",
               isBigLabel: true,
               descrText: "Default"
@@ -200,7 +200,7 @@ block content
             labelName: "Dropdown",
             isButtonSplit: true,
             isDownSplitAnimation: true,
-            isHaveIcon: true,
+            withIcon: true,
             placeholder: "2 спальни, 2 кровати...",
             isBigLabel: true,
             descrText: "Expanded"
@@ -236,7 +236,7 @@ block content
             labelName: "Dropdown",
             isButtonSplit: true,
             isDownSplitAnimation: true,
-            isHaveIcon: true,
+            withIcon: true,
             placeholder: "Сколько гостей",
             isBigLabel: true
           })
@@ -269,7 +269,7 @@ block content
             labelName: "Dropdown",
             isButtonSplit: true,
             isDownSplitAnimation: true,
-            isHaveIcon: true,
+            withIcon: true,
             placeholder: "Сколько гостей",
             isBigLabel: true
           })

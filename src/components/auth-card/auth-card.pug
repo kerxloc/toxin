@@ -10,8 +10,8 @@ mixin authCard()
           .auth-card__input-wrap
             +input({ id: "Email2", placeholder: "Email",  type: "email", })
           +input({ id: "pass2", placeholder: "Пароль",  type: "password", })
-        +button({ title: "Войти", isHaveIcon: true, buttonType: "submit" })
+        +button({ title: "Войти", withIcon: true, buttonType: "submit" })
       .auth-card__account-enter
         p Нет аккаунта на Toxin?
         .auth-card__registr-btn-wrap
-          +button({ path: "/registration.html", title: "Создать",  isEmptyStyle: true, isLowLarger: true })
+          +button({ path: "/registration.html", title: "Создать",  variant: "outlined", size: "medium" })

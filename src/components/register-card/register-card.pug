@@ -45,8 +45,8 @@ mixin registerCard()
               { id: "notGiveSpec", title: "Получать спецпредложения" }
             ]
           })
-        +button({ title: "Перейти к оплате", isHaveIcon: true, buttonType: "submit" })
+        +button({ title: "Перейти к оплате", withIcon: true, buttonType: "submit" })
       .register-card__account-enter
         p Уже есть аккаунт на Toxin
         .register-card__auth-btn-wrap
-          +button({ path: "/auth.html", title: "Войти",  isEmptyStyle: true, isLarger: true })
+          +button({ path: "/auth.html", title: "Войти", variant: "outlined", size: "large" })

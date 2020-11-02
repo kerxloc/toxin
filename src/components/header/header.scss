@@ -135,6 +135,8 @@
 }
 
 .page-header__registr-btn-wrap {
+  letter-spacing: .3px;
+
   @media (max-width: 1024px) {
     display: none;
   }

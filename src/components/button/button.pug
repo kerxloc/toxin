@@ -1,45 +1,38 @@
 mixin button(options)
   -
     let buttonClass = "button";
+    const { variant } = options;
 
-    if (options.isEmptyStyle) {
-      buttonClass += "  button_empty";
+    if (variant === "outlined") {
+      buttonClass += " button_variant_outlined";
     }
 
-    if (options.isHaveIcon) {
-      buttonClass += "  button_with-icon";
+    if (variant === "text") {
+      buttonClass += " button_variant_text";
     }
 
-    if (options.isDisable) {
-      buttonClass += "  button_disabled";
+    const { size } = options;
+
+    if (size === "large") {
+      buttonClass += " button_size_large";
     }
 
-    if (options.isLarger) {
-      buttonClass += "  button_larger";
+    if (size === "medium") {
+      buttonClass += " button_size_medium";
     }
 
-    if (options.isLowLarger) {
-      buttonClass += "  button_low-larger";
+    if (size === "higher") {
+      buttonClass += " button_size_higher";
     }
 
-    if (options.isAverage) {
-      buttonClass += "  button_average";
+    const { isDisabled, withIcon } = options;
+
+    if (isDisabled) {
+       buttonClass += " button_disabled";
     }
 
-    if (options.isMoreLetterSpacing) {
-      buttonClass += "  button_more-letter-spacing";
-    }
-
-    if (options.isDisable && options.isEmptyStyle) {
-      buttonClass += "  button_empty  button_empty-disabled";
-    }
-
-    if (options.isOnlyText) {
-      buttonClass += "  button_only-text";
-    }
-
-    if (options.isDisable && options.isOnlyText) {
-      buttonClass += "  button_only-text  button_only-text-disabled";
+    if (withIcon) {
+      buttonClass += " button_with-icon";
     }
 
     const buttonType = options.buttonType ? options.buttonType : "button";
@@ -47,4 +40,4 @@ mixin button(options)
   if options.path
     a(class=buttonClass href=options.path)= options.title
   else
-    button(class=buttonClass type=buttonType disabled=options.isDisable)= options.title
+    button(class=buttonClass type=buttonType disabled=options.isDisabled)= options.title

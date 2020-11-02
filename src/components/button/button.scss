@@ -50,7 +50,7 @@
     }
   }
 
-  &_empty {
+  &_variant_outlined {
     padding: 8px 18px;
     color: $accentColor;
     background: $mainColor;
@@ -67,13 +67,7 @@
     }
   }
 
-  &_empty-disabled {
-    opacity: .5;
-    pointer-events: none;
-    cursor: default;
-  }
-
-  &_only-text {
+  &_variant_text {
     padding: 0;
     color: $accentColor;
     background: none;
@@ -84,15 +78,6 @@
 
     &:hover {
       color: darken($accentColor, 10%);
-    }
-  }
-
-  &_only-text-disabled {
-    color: transparentize($contentColor, .5);
-    cursor: default;
-
-    &:hover {
-      color: transparentize($contentColor, .5);
     }
   }
 
@@ -120,19 +105,15 @@
     }
   }
 
-  &_larger {
+  &_size_large {
     padding: 13px 24px;
   }
 
-  &_average {
-    padding: 14px 20px;
-  }
-
-  &_low-larger {
+  &_size_medium {
     padding: 12px 18px;
   }
 
-  &_more-letter-spacing {
-    letter-spacing: .3px;
+  &_size_higher {
+    padding: 14px 20px;
   }
 }
