@@ -1,27 +1,35 @@
 mixin bullet(options = {})
   -
-    let titleClass = options.isTitleLeftPadding
-      ? "bullet__title  bullet__title_lp"
-      : "bullet__title";
+    let titleClass = "bullet__title";
 
-    if (options.isBigTitle) {
-      titleClass += "  bullet__title_big-title";
-    }  
+    const { titleSize } = options;
+
+    if (titleSize === "large") {
+      titleClass += " bullet__title_size_large";
+    }
+
+    const { titleGap } = options;
+
+    if (titleGap === "leftGap") {
+      titleClass += " bullet__title_gap_left";
+    }
+
+    const { title, items } = options;
 
   .bullet
-    if options.title
-      p(class=titleClass)= options.title
+    if title
+      p(class=titleClass)= title
       ul.bullet__list
-        each item in options.items
+        each item in items
           -
             let itemClass = "bullet__item";
 
             if (item.isTight) {
-              itemClass += "  bullet__item_tight";
+              itemClass += " bullet__item_tight";
             }
 
             if (item.isPetty) {
-              itemClass += "  bullet__item_petty";
+              itemClass += " bullet__item_petty";
             }
 
           li(class=itemClass)= item.label
