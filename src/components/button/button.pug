@@ -2,27 +2,17 @@ mixin button(options)
   -
     let buttonClass = "button";
     const { variant } = options;
+    const variantModifiers = ["outlined", "text"];
 
-    if (variant === "outlined") {
-      buttonClass += " button_variant_outlined";
-    }
-
-    if (variant === "text") {
-      buttonClass += " button_variant_text";
+    if (variantModifiers.includes(variant)) {
+      buttonClass += ` button_variant_${variant}`;
     }
 
     const { size } = options;
+    const sizeModifiers = ["large", "medium", "higher"];
 
-    if (size === "large") {
-      buttonClass += " button_size_large";
-    }
-
-    if (size === "medium") {
-      buttonClass += " button_size_medium";
-    }
-
-    if (size === "higher") {
-      buttonClass += " button_size_higher";
+    if (sizeModifiers.includes(size)) {
+      buttonClass += ` button_size_${size}`;
     }
 
     const { isDisabled, withIcon } = options;
