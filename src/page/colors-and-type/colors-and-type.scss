@@ -1,13 +1,17 @@
 @import '../../style/utils/variables.scss';
 @import '../../components/logo/logo';
 @import '../../components/color-pallete/color-pallete.scss';
-@import '../../components/typograph/typograph.scss';
+@import '../../components/typography/typography.scss';
 
 .colors-and-type__wrap {
   padding-top: 67px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media (width: 1440px) {
+    justify-content: start;
+  }
 
   @media (max-width: 860px) {
     flex-direction: column;
@@ -25,6 +29,10 @@
   padding-left: 10px;
   list-style: none;
 
+  @media (width: 1440px) {
+    margin-right: 428px;
+  }
+
   @media (max-width: 860px) {
     margin-bottom: 60px;
   }
@@ -34,13 +42,41 @@
   margin-bottom: 20px;
 }
 
-.colors-and-type__typograph {
-  margin: 0;
-  padding: 0;
-  padding-right: 51px;
-  list-style: none;
+.colors-and-type__typography-item {
+  margin-bottom: 50px;
+  display: flex;
 }
 
-.colors-and-type__typograph-li {
-  margin-bottom: 50px;
+.colors-and-type__label-wrap {
+  margin-right: 30px;
+  width: 37px;
+  text-align: right;
+}
+
+.colors-and-type__typography-item-wrap {
+  max-width: 336px;
+}
+
+.colors-and-type__label {
+  margin: 0;
+  font-family: Montserrat, Quicksand, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: transparentize($contentColor, .75);
+
+  &_upper {
+    text-transform: uppercase;
+  }
+
+  &_size_large {
+    font-size: 24px;
+  }
+
+  &_size_medium {
+    font-size: 19px;
+  }
+
+  &_size_low {
+    font-size: 13px;
+  }
 }
