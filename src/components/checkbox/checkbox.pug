@@ -8,16 +8,16 @@ mixin checkbox(options = {})
       : "id-checkbox-list";
 
     if (options.isExpandable) {
-      titleClass += "  checkbox__title_expandabled";
+      titleClass += " checkbox__title_expandabled";
     }
 
     if (options.isExpandableOpen) {
-      titleClass += "  checkbox__title_expandabled-open";
+      titleClass += " checkbox__title_expandabled-open";
     }
 
     if (options.isRich) {
-      checkboxClass += "  checkbox_rich";
-      labelClass += "  checbox__lbl_rich";
+      checkboxClass += " checkbox_rich";
+      labelClass += " checbox__lbl_rich";
     }
 
   div(class=checkboxClass)
@@ -34,19 +34,19 @@ mixin checkbox(options = {})
             let checkboxItemClass = "checkbox__item";
 
             if (item.isIncomplete) {
-              checkboxItemClass += "  checkbox__item_incomplete";
+              checkboxItemClass += " checkbox__item_incomplete";
             }
 
             if (item.isLittleLower) {
-              checkboxItemClass += "  checkbox__item_little-lower";
+              checkboxItemClass += " checkbox__item_little-lower";
             }
 
             if (item.isLower) {
-              checkboxItemClass += "  checkbox__item_lower";
+              checkboxItemClass += " checkbox__item_lower";
             }
 
             if (item.isTight) {
-              checkboxItemClass += "  checkbox__item_tight";
+              checkboxItemClass += " checkbox__item_tight";
             }
 
           div(class=checkboxItemClass)
