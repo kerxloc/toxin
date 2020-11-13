@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const getFiles = (dir, fileType) => {
   return dir.map(folder => {
@@ -97,7 +98,7 @@ module.exports = {
           {
             loader: 'resolve-url-loader',
             options: {
-              root: `${PATHS.src}/styles`,
+              root: `${PATHS.src}/style`,
             },
           },
           {
@@ -130,6 +131,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new LiveReloadPlugin({ appendScriptTag: true }),
     new MiniCssExtractPlugin({
       filename: `[name].min.css`,
