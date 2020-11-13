@@ -1,0 +1,37 @@
+extends ../../layout/ui-kit.pug
+include ../../components/typography/typography
+
+block variables
+  -
+    const title = "Toxin - типографика!";
+    const description = "Toxin description";
+    const keywords = "Toxin keywords";
+    const pageClass = "colors-and-type";
+
+block content
+  .container
+    .colors-and-type__wrap
+      ul.colors-and-type__pallete
+      .colors-and-type__typography
+        .colors-and-type__typography-item
+          +typography({
+            text: "This one is the sub-section or widget title",
+            variant: "h1",
+          })
+        .colors-and-type__typography-item
+          +typography({
+            text: "Next one is the item title inside widgets",
+            variant: "h2",
+          })
+        .colors-and-type__typography-item
+          +typography({
+            text: "This is a label or cta text",
+            variant: "h3",
+            hasUpper: true
+          })
+        .colors-and-type__typography-item
+          +typography({
+            text:
+              "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
+            variant: "body",
+          })
