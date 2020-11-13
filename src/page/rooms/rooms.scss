@@ -72,12 +72,8 @@
   color: transparentize($contentColor, .5);
 }
 
-.hotels__title {
-  margin: 0;
+.hotels__title-wrap {
   margin-bottom: 21px;
-  font-size: 23px;
-  line-height: 30px;
-  font-weight: bold;
 }
 
 .hotels__list {

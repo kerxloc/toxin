@@ -4,6 +4,7 @@ include ../../components/range-slider/range-slider
 include ../../components/checkbox/checkbox
 include ../../components/hotel-card/hotel-card
 include ../../components/pagination/pagination
+include ../../components/typography/typography
 
 block variables
   -
@@ -283,7 +284,8 @@ block content
             })
       section.hotels
         .hotels__wrap
-          h2.hotels__title Номера, которые мы для вас подобрали
+          .hotels__title-wrap
+            +typography({ variant: "h1", text: "Номера, которые мы для вас подобрали" })
           ul.hotels__list
             each item in hotels
               li.hotels__item
