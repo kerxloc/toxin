@@ -4,6 +4,7 @@ include ../../components/pie-chart/pie-chart
 include ../../components/comment/comment
 include ../../components/bullet-list/bullet-list
 include ../../components/total-card/total-card
+include ../../components/typography/typography
 
 block variables
   -
@@ -26,7 +27,8 @@ block content
         .room-details__content-wrap
           .room-details__column
             section.room-details__intellig
-              h2.room-details__title Сведения о номере
+              .room-details__title-wrap
+                +typography({ variant: "h2", text: "Сведения о номере" })
               +features({
                 items: [
                   {
@@ -47,10 +49,13 @@ block content
                 ]
               })
             section.room-details__impression
-              h2.room-details__title Впечатления от номера
+              .room-details__title-wrap
+                +typography({ variant: "h2", text: "Впечатления от номера" })
               +pieChart()
           section.room-details__reviews
-            h2(class="room-details__title  room-details__title_low-mb") Отзывы посетителей номера #[span.room-details__title-alt 2 отзыва]
+            div(class="room-details__title-wrap room-details__title-wrap_low-margin")
+              +typography({ variant: "h2", text: "Отзывы посетителей номера" })
+              span.room-details__title-alt 2 отзыва
             .room-details__review-wrap
               +comment({
                   authorName: "Мурад Сарафанов",

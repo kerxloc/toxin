@@ -66,6 +66,20 @@
   }
 }
 
+.room-details__title-wrap {
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+
+  &_low-margin {
+    margin-bottom: 7px;
+  }
+
+  &_left-gap {
+    padding-left: 20px;
+  }
+}
+
 .room-details__title-alt {
   padding-top: 2px;
   font-family: Montserrat, Quicksand, Arial, sans-serif;
