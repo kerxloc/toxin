@@ -1,9 +1,9 @@
 include ../logo/logo
-include ../text-content/text-content
 include ../nav-menu/nav-menu
 include ../input/input
 include ../copyright/copyright
 include ../social-buttons/social-buttons
+include ../typography/typography
 
 -
   const navMenuItems = [
@@ -75,7 +75,7 @@ mixin footer(options = {})
               .page-footer__logo-wrap
                 +logo({ id: logoId })
               .page-footer__text-content-wrap
-                +textContent({ text: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»" })
+                +typography({ variant: "body", text: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»" })
             .page-footer__col-group
               .page-footer__col
                 +navMenu(navMenuItems[0])
@@ -83,13 +83,11 @@ mixin footer(options = {})
                 +navMenu(navMenuItems[1])
               .page-footer__col
                 +navMenu(navMenuItems[2])
-              div(class="page-footer__col  page-footer__col_large")
+              section(class="page-footer__col  page-footer__col_large")
+                .page-footer__title-wrap
+                  +typography({ variant: "h3", text: "Подписка", hasUpper: true })
                 .page-footer__text-content-wrap
-                  +textContent({
-                    title: "Подписка",
-                    text: "Получайте специальные предложения и новости сервиса",
-                    isBorderOnTabler: true,
-                  })
+                  +typography({ variant: "body", text: "Получайте специальные предложения и новости сервиса" })
                 form(action="/404.html")
                   +input({
                     isButtonSplit: true,
