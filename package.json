@@ -2,18 +2,16 @@
   "name": "toxin",
   "version": "1.0.0",
   "description": "FSD education program. The 2nd task",
-  "private": true,
   "main": "src/page/main/main.js",
   "scripts": {
-    "start": "webpack-dev-server --open --hot --mode development",
-    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --hot --config ./webpack.dev.conf.js",
+    "build": "webpack --config ./webpack.build.conf.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "lint:css": "stylelint \"src/**/*.scss\" --config ./.stylelintrc",
     "format:css": "prettier --write \"src/**/*.scss\" && stylelint \"src/**/*.scss\" --fix --config ./.stylelintrc"
   },
-  "keywords": [],
-  "author": "",
+  "author": "https://github.com/dywork",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.11.6",
