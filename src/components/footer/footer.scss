@@ -162,6 +162,12 @@
 
 .page-footer__title-wrap {
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $contentColor;
+  }
 }
 
 .page-footer__text-content-wrap {
