@@ -1,0 +1,311 @@
+extends ../../layout/ui-kit.pug
+include ../../components/input/input
+include ../../components/checkbox/checkbox
+include ../../components/radiobtn/radiobtn
+include ../../components/toggle/toggle
+include ../../components/likebtn/likebtn
+include ../../components/ratebtn/ratebtn
+include ../../components/range-slider/range-slider
+include ../../components/button/button
+include ../../components/title/title
+include ../../components/pagination/pagination
+include ../../components/features/features
+include ../../components/bullet-list/bullet-list
+include ../../components/comment/comment
+
+block variables
+  -
+    const title = "Toxin - элементы форм";
+    const description = "Toxin description";
+    const keywords = "Toxin keywords";
+    const pageClass = "form-elements";
+
+
+block content
+  .container
+    .form-elements__wrap
+      .form-elements__row
+        .form-elements__inputs
+          .form-elements__input-wrap
+            +input({
+              id: "textField",
+              type: "text",
+              placeholder: "Email",
+              labelName: "Text field",
+              isBigLabel: true,
+              descrText: "Default"
+            })
+          .form-elements__input-wrap  
+            +input({
+              id: "textFieldHover",
+              type: "text",
+              placeholder: "This is pretty awesome",
+              labelName: "Text field",
+              isBigLabel: true,
+              descrText: "Hover / Focus",
+              isHover: true
+            })
+          .form-elements__input-wrap  
+            +input({
+              id: "number-guests-input",
+              isFakeInput: true,
+              labelName: "Dropdown",
+              isButtonSplit: true,
+              isDownSplitAnimation: true,
+              withIcon: true,
+              placeholder: "Сколько гостей",
+              isBigLabel: true,
+              descrText: "Default"
+            })
+          .form-elements__input-wrap
+            +input({
+              id: "maskedTextField",
+              type: "text",
+              placeholder: "ДД.ММ.ГГГГ",
+              labelName: "Masked text field",
+              isBigLabel: true,
+              descrText: "Default"
+            })
+          .form-elements__inputs-column
+            .form-elements__input-column-wrap
+              +input({
+                id: "arrival-input",
+                splitId: "arrival-split-btn",
+                labelName: "Date Dropdown",
+                isButtonSplit: true,
+                isDownSplitAnimation: true,
+                iconSrc: "expand-more.svg",
+                placeholder: "ДД.ММ.ГГГГ",
+                isDarkPlaceholder: true,
+                isBigLabel: true,
+                isWiderLabel: true
+              })
+            +input({
+              id: "departure-input",
+              splitId: "departure-split-btn",
+              labelName: "Date Dropdown",
+              isButtonSplit: true,
+              isDownSplitAnimation: true,
+              iconSrc: "expand-more.svg",
+              placeholder: "19.08.2019",
+              isDarkPlaceholder: true,
+              isBigLabel: true,
+              isWiderLabel: true
+            })
+          .form-elements__inputs-small
+            .from-elements__input-small-wrap
+              +input({
+                id: "filterDateDropdown",
+                isFakeInput: true,
+                labelName: "Filter date dropdown",
+                isButtonSplit: true,
+                isDownSplitAnimation: true,
+                withIcon: true,
+                placeholder: "19 авг - 23 авг",
+                isBigLabel: true,
+              })
+            +input({
+              isButtonSplit: true,
+              labelName: "Subscription text field",
+              isBigLabel: true,
+              iconSrc: "arrow-forward.svg",
+              type: "email",
+              placeholder: "Email",
+              isRightSplitAnimation: true
+            })
+        .form-elements__controls
+          .form-elements__checkbox-wrap
+            +checkbox({
+              title: "Checkbox Buttons",
+              listId: "can-checkbox-list",
+              items: [
+                { id: "smoke", title: "Можно курить" },
+                { id: "pets", title: "Можно с питомцами", isChecked: true },
+                { id: "guest", title: "Можно пригласить гостей (до 10 человек)", isChecked: true }
+              ]
+            })
+          .form-elements__radiobtn-wrap  
+            +radiobtn({
+              title: "Radio Buttons",
+              items: [
+                { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
+                { groupName: "gender", id: "famale", title: "Женщина" }
+              ],
+              isColumnAtTablet: true
+            })
+          .form-elements__toggle-wrap  
+            +toggle({
+              title: "Toggle",
+              items: [
+                { id: "giveSpec", title: "Получать спецпредложения", isChecked: true },
+                { id: "notGiveSpec", title: "Получать спецпредложения" }
+              ]
+            })
+          .form-elements__likebtn-wrap  
+            +likebtn({
+              title: "like button",
+              items: [
+                { count: 2 },
+                { count: 12, isLike: true }
+              ]
+            })
+          +ratebtn({
+            title: "rate button",
+            items: [
+              { idGroup: "rating1", currentRating: 4 },
+              { idGroup: "rating2", currentRating: 5 }
+            ]
+          })
+        .form-elements__user-button
+          .form-elements__range-slider-wrap
+            +rangeSlider({ title: "Range Slider" })
+          .form-elements__buttons
+            +title({ title: "Buttons" })
+            .form-elements__buttons-wrap
+              .form-elements__button-wrap
+                +button({ title: "Click me", size: "higher" })
+              .form-elements__button-wrap  
+                +button({ title: "Click me", size: "higher", isDisabled: true })
+            .form-elements__buttons-wrap
+              .form-elements__button-wrap
+                +button({ title: "Click me", size: "medium", variant: "outlined" })
+              .form-elements__button-wrap
+                +button({ title: "Click me", size: "medium", variant: "outlined", isDisabled: true })
+            .form-elements__buttons-wrap
+              .form-elements__button-wrap
+                +button({ title: "Click me", variant: "text" })
+              .form-elements__button-wrap
+                +button({ title: "Click me", variant: "text", isDisabled: true })
+            .form-elements__submit-btn
+              +button({ title: "Перейти к оплате", withIcon: true, buttonType: "submit" })
+          +pagination({ title: "Pagination" })
+      .form-elements__row
+        .form-elements__drop-down-expand
+          .form-elements__drop-down-input-wrap
+            +input({
+              id: "number-guest-input",
+              isFakeInput: true,
+              labelName: "Dropdown",
+              isButtonSplit: true,
+              isDownSplitAnimation: true,
+              withIcon: true,
+              placeholder: "2 спальни, 2 кровати...",
+              isBigLabel: true,
+              descrText: "Default"
+            })
+          +input({
+            id: "input-drop-down",
+            classForJs: "js-input-drop-down",
+            isFakeInput: true,
+            labelName: "Dropdown",
+            isButtonSplit: true,
+            isDownSplitAnimation: true,
+            withIcon: true,
+            placeholder: "2 спальни, 2 кровати...",
+            isBigLabel: true,
+            descrText: "Expanded"
+          })
+          div(class="drop-down-container  js-drop-down-container")
+          .form-elements__exp-checkbox-close
+            +checkbox({
+              title: "Expandable checkbox list",
+              isExpandable: true,
+              idExpandableBtn: "first-expandable-btn"
+            })
+          .form-elements__exp-checkbox-open
+            +checkbox({
+              title: "Expandable checkbox list",
+              isExpandable: true,
+              isExpandableOpen: true,
+              idExpandableBtn: "second-expandable-btn",
+              listId: "expandable-list",
+              items: [
+                { id: "breakfast", title: "Завтрак" },
+                { id: "pen", title: "Письменный стол", isChecked: true },
+                { id: "break-sit", title: "Стул для кормления", isChecked: true },
+                { id: "bed", title: "Кроватка", isChecked: true },
+                { id: "tv", title: "Телевизор" },
+                { id: "shampu", title: "Шампунь" },
+              ]
+            })
+        .form-elements__drop-down-rich
+          +input({
+            id: "input-clear",
+            classForJs: "js-input-drop-down-clear",
+            isFakeInput: true,
+            labelName: "Dropdown",
+            isButtonSplit: true,
+            isDownSplitAnimation: true,
+            withIcon: true,
+            placeholder: "Сколько гостей",
+            isBigLabel: true
+          })
+          div(class="drop-down-container  js-drop-down-container-clear")
+          .form-elements__bunny-hop
+            +checkbox({
+              title: "Rich Checkbox Buttons",
+              listId: "1-rich-checkbox-list",
+              isRich: true,
+              items: [
+                {
+                  id: "wild",
+                  title: "Широкий коридор",
+                  descr: "Ширина коридоров в номере не менее 91 см.",
+                  isTight: true
+                },
+                {
+                  id: "help",
+                  title: "Помощник для инвалидов",
+                  descr: "На 1 этаже вас встретит специалист  и проводит до номера.",
+                  isLower: true
+                }
+              ]
+            })
+        .form-elements__drop-down-bullet
+          +input({
+            id: "input-filled",
+            classForJs: "js-input-drop-down-filled",
+            isFakeInput: true,
+            labelName: "Dropdown",
+            isButtonSplit: true,
+            isDownSplitAnimation: true,
+            withIcon: true,
+            placeholder: "Сколько гостей",
+            isBigLabel: true
+          })
+          div(class="drop-down-container  js-drop-down-container-filled")
+          .form-elements__bunny-hop
+            +bullet({
+              title: "Bullet list",
+              items: [
+                { label: "Нельзя с питомцами" },
+                { label: "Без вечеринок и мероприятий" },
+                { label: "Время прибытия — после 13:00, а выезд до 12:00", isTight: true }
+              ]
+            })
+      .form-elements__row
+        .form-elements__features
+          +features({
+            items: [
+              {
+                title: "Комфорт",
+                descr: "Шумопоглощающие стены",
+                srcIcon: "../../components/features/emoticon.png"
+              },
+              {
+                title: "Удобство",
+                descr: "Окно в каждой из спален",
+                srcIcon: "../../components/features/city.png"
+              }
+            ]
+          })
+        .form-elements__comment
+          +comment({
+            authorName: "Мурад Сарафанов",
+            datePost: "5 дней назад",
+            like: 12,
+            isLikeActive: true,
+            avatarSrc: "../../components/comment/murad.png",
+            text:
+              "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+          })  

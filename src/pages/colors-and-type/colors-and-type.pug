@@ -1,0 +1,88 @@
+extends ../../layout/ui-kit.pug
+include ../../components/color-pallete/color-pallete
+include ../../components/typography/typography
+
+block variables
+  -
+    const title = "Toxin - типографика!";
+    const description = "Toxin description";
+    const keywords = "Toxin keywords";
+    const pageClass = "colors-and-type";
+
+block content
+  .container
+    .colors-and-type__wrap
+      ul.colors-and-type__pallete
+        li.colors-and-type__pallete-li
+          +colorPallete({
+            title: "Dark Shade 100%",
+            descr: "#1F2041",
+            colorPallete: "#1F2041"
+          })
+        li.colors-and-type__pallete-li
+          +colorPallete({
+            title: "Dark Shade 75%",
+            descr: "#1F2041",
+            colorPallete: "#1F2041",
+            colorOpacity: 0.75
+          })
+        li.colors-and-type__pallete-li
+          +colorPallete({
+            title: "Dark Shade 50%",
+            descr: "#1F2041",
+            colorPallete: "#1F2041",
+            colorOpacity: 0.5
+          })
+        li.colors-and-type__pallete-li
+          +colorPallete({
+            title: "Dark Shade 25%",
+            descr: "#1F2041",
+            colorPallete: "#1F2041",
+            colorOpacity: 0.25
+          })
+        li.colors-and-type__pallete-li
+          +colorPallete({
+            title: "Dark Shade 5%",
+            descr: "#1F2041",
+            colorPallete: "#1F2041",
+            colorOpacity: 0.05
+          })
+        li.colors-and-type__pallete-li  
+          +colorPallete({ title: "Purple", descr: "#BC9CFF", colorPallete: "#BC9CFF" })
+        li.colors-and-type__pallete-li  
+          +colorPallete({ title: "Green", descr: "#6FCF97", colorPallete: "#6FCF97" })
+      div.colors-and-type__typography-wrap
+        div.colors-and-type__typography-item
+          .colors-and-type__label-wrap
+            p(class="colors-and-type__label colors-and-type__label_upper colors-and-type__label_size_large") h1
+          .colors-and-type__typography-item-wrap
+            +typography({
+              text: 'This one is the sub-section or widget title',
+              variant: 'h1',
+            })
+        div.colors-and-type__typography-item
+          .colors-and-type__label-wrap
+            p(class="colors-and-type__label colors-and-type__label_upper colors-and-type__label_size_medium") h2
+          .colors-and-type__typography-item-wrap
+            +typography({
+              text: 'Next one is the item title inside widgets',
+              variant: 'h2',
+            })
+        div.colors-and-type__typography-item
+          .colors-and-type__label-wrap
+            p(class="colors-and-type__label colors-and-type__label_upper colors-and-type__label_size_low") h3
+          .colors-and-type__typography-item-wrap
+            +typography({
+              text: 'This is a label or cta text',
+              variant: 'h3',
+              hasUpper: true,
+            })
+        div.colors-and-type__typography-item
+          .colors-and-type__label-wrap
+            p.colors-and-type__label Body
+          .colors-and-type__typography-item-wrap
+            +typography({
+              text:
+                'This is the body text which is used for most of the design, like paragraphs, lists, etc.',
+              variant: 'body',
+            })
