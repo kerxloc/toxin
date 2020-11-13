@@ -1,6 +1,6 @@
 {
   "name": "toxin",
-  "version": "",
+  "version": "1.0.0",
   "description": "FSD education program. The 2nd task",
   "private": true,
   "main": "src/page/main/main.js",
