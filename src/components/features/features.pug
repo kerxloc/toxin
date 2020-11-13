@@ -1,9 +1,0 @@
-mixin features(options = {})
-  ul.features
-    each item in options.items
-      li.features__item 
-        .features__pict
-          img(src=item.srcIcon, alt=item.title)
-        section.features__content
-          h2.features__title= item.title
-          p.features__descr= item.descr
