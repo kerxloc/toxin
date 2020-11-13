@@ -1,0 +1,47 @@
+@import 'utils/normolize';
+@import 'utils/variables.scss';
+@import '../fonts/fonts.scss';
+
+/* stylelint-disable */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Quicksand, Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  color: $contentColor;
+}
+/* stylelint-enable */
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 80.5556%;
+  min-width: 320px;
+  max-width: 1920px;
+
+  @media (max-width: 1300px) {
+    width: 90.5556%;
+  }
+
+  @media (max-width: 425px) {
+    margin: 0;
+    padding: 0;
+    width: auto;
+  }
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+@import '../components/typography/typography.scss';
