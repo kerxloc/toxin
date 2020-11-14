@@ -2,7 +2,6 @@ const {merge} = require('webpack-merge');
 const fs = require('fs');
 const path = require('path');
 const baseWebpackConfig = require('./webpack.base.conf');
-const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
 
 const getFiles = (dir, fileType) => {
   return dir.map(folder => {
