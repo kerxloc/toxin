@@ -57,24 +57,36 @@ block content
           })            
       .colors-and-type__typography
         .colors-and-type__typography-item
-          +typography({
-            text: "This one is the sub-section or widget title",
-            variant: "h1",
-          })
+          .colors-and-type__typography-label-wrap
+            p(class="colors-and-type__typography-label colors-and-type__typography-label_upper colors-and-type__typography-label_size_large") h1
+          .colors-and-type__typography-wrap
+            +typography({
+              text: "This one is the sub-section or widget title",
+              variant: "h1",
+            })
         .colors-and-type__typography-item
-          +typography({
-            text: "Next one is the item title inside widgets",
-            variant: "h2",
-          })
+          .colors-and-type__typography-label-wrap
+            p(class="colors-and-type__typography-label colors-and-type__typography-label_upper colors-and-type__typography-label_size_medium") h2
+          .colors-and-type__typography-wrap
+            +typography({
+              text: "Next one is the item title inside widgets",
+              variant: "h2",
+            })
         .colors-and-type__typography-item
-          +typography({
-            text: "This is a label or cta text",
-            variant: "h3",
-            hasUpper: true
-          })
+          .colors-and-type__typography-label-wrap
+            p(class="colors-and-type__typography-label colors-and-type__typography-label_upper colors-and-type__typography-label_size_low") h3
+          .colors-and-type__typography-wrap
+            +typography({
+              text: "This is a label or cta text",
+              variant: "h3",
+              hasUpper: true
+            })
         .colors-and-type__typography-item
-          +typography({
-            text:
-              "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
-            variant: "body",
-          })
+          .colors-and-type__typography-label-wrap
+            p.colors-and-type__typography-label Body
+          .colors-and-type__typography-wrap
+            +typography({
+              text:
+                "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
+              variant: "body",
+            })
