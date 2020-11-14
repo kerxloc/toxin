@@ -1,2 +1,2 @@
-import '../../style/index.scss';
+import '../../style/main.scss';
 import '../../favicons/favicons.js';
