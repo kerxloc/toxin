@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -86,7 +85,6 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {sourceMap: true},
@@ -111,7 +109,6 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {sourceMap: true},
@@ -133,9 +130,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new LiveReloadPlugin({ appendScriptTag: true }),
-    new MiniCssExtractPlugin({
-      filename: `[name].min.css`,
-    }),
     new CopyWebpackPlugin({
       patterns: [
         {from: `${PATHS.src}/fonts`, to: `fonts`},
