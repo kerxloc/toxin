@@ -1,4 +1,5 @@
 extends ../../layout/ui-kit.pug
+include ../../components/color-pallete/color-pallete
 include ../../components/typography/typography
 
 block variables
@@ -12,6 +13,48 @@ block content
   .container
     .colors-and-type__wrap
       ul.colors-and-type__pallete
+        li.colors-and-type__pallete-item
+          +colorPallete({
+            title: "Dark Shade 100%",
+            descr: "#1F2041",
+            variant: "dark-shade-100"
+          })
+        li.colors-and-type__pallete-item
+          +colorPallete({
+            title: "Dark Shade 75%",
+            descr: "#1F2041",
+            variant: "dark-shade-75"
+          })
+        li.colors-and-type__pallete-item
+          +colorPallete({
+            title: "Dark Shade 50%",
+            descr: "#1F2041",
+            variant: "dark-shade-50"
+          })
+        li.colors-and-type__pallete-item
+          +colorPallete({
+            title: "Dark Shade 25%",
+            descr: "#1F2041",
+            variant: "dark-shade-25"
+          })
+        li.colors-and-type__pallete-item
+          +colorPallete({
+            title: "Dark Shade 5%",
+            descr: "#1F2041",
+            variant: "dark-shade-5"
+          })
+        li.colors-and-type__pallete-item
+          +colorPallete({
+            title: "Purple",
+            descr: "#BC9CFF",
+            variant: "purple"
+          })
+        li.colors-and-type__pallete-item
+          +colorPallete({
+            title: "Green",
+            descr: "#6FCF97",
+            variant: "green"
+          })            
       .colors-and-type__typography
         .colors-and-type__typography-item
           +typography({
