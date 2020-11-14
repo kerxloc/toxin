@@ -147,6 +147,7 @@ module.exports = {
         new HtmlWebpackPlugin({
           template: `${PAGES_DIR}/${PAGE_FOLDERS[index]}/${page}`,
           filename: `./${page.replace(/\.pug/, '.html')}`,
+          chunks: [`${page.replace(/\.pug/, '')}`],
         })
     ),
   ],
