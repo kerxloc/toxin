@@ -1,0 +1,11 @@
+mixin radiobtn({ items })
+  .radiobtn
+    .radiobtn__wrap
+      ul.radiobtn__list
+        each item in items
+          - const { label, groupName, isChecked } = item;
+
+          li.radiobtn__item
+            label(class="radiobtn__label")
+              input(class="radiobtn__input" name=groupName type="radio" checked=isChecked)
+              span.radiobtn__label-span= label
