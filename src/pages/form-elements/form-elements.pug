@@ -90,12 +90,14 @@ block content
           .form-elements__control
             div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
               +typography({ text: "Like Button", variant: "h3", hasUpper: true })
-            .form-elements__like-btn
-              +likebtn({ count: 2 })
-            +likebtn({ count: 12, isActived: true })
+            .form-elements__like-wrap
+              .form-elements__like-btn
+                +likebtn({ count: 2 })
+              +likebtn({ count: 12, isActived: true })
           .form-elements__control
             div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
               +typography({ text: "Rate button", variant: "h3", hasUpper: true })
-            .form-elemets__rate-btn
-              +ratebtn({ currentRating: 5, ratingLength: 5 })
-            +ratebtn({ currentRating: 4, ratingLength: 5 })  
+            .form-elements__rate-btn-wrap
+              .form-elements__rate-btn
+                +ratebtn({ currentRating: 5, ratingLength: 5 })
+              +ratebtn({ currentRating: 4, ratingLength: 5 })  
