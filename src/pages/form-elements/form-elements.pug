@@ -5,6 +5,7 @@ include ../../components/drop-down/drop-down
 include ../../components/checkbox/checkbox
 include ../../components/radiobtn/radiobtn
 include ../../components/toggle/toggle
+include ../../components/likebtn/likebtn
 
 block variables
   -
@@ -85,3 +86,9 @@ block content
             .form-elements__toggle
               +toggle({ text: "Получать спецпредложения", isChecked: true })
             +toggle({ text: "Получать спецпредложения" })
+          .form-elements__control
+            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+              +typography({ text: "Like Button", variant: "h3", hasUpper: true })
+            .form-elements__like-btn
+              +likebtn({ count: 2 })
+            +likebtn({ count: 12, isActived: true })
