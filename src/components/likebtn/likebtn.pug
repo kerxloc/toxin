@@ -1,0 +1,10 @@
+mixin likebtn({ count, isActived })
+  -
+    let likeBtnClass = "likebtn__button";
+    
+    if (isActived) {
+      likeBtnClass += " likebtn__button_actived";
+    }
+  .likebtn
+    .likebtn__wrap
+      button(class=likeBtnClass type="button")= count
