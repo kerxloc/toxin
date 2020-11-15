@@ -3,6 +3,7 @@ include ../../components/input/input
 include ../../components/typography/typography
 include ../../components/drop-down/drop-down
 include ../../components/checkbox/checkbox
+include ../../components/radiobtn/radiobtn
 
 block variables
   -
@@ -59,12 +60,21 @@ block content
             +input({ type: "text", name: "date", placeholder: "Email", withButton: true })
         .form-elements__controls
           .form-elements__control
-            .form-elements__title-wrap
-                +typography({ text: "Checkbox Buttons", variant: "h3", hasUpper: true })
+            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+              +typography({ text: "Checkbox Buttons", variant: "h3", hasUpper: true })
             +checkbox({
               items: [
                 { label: "Можно курить" },
                 { label: "Можно с питомцами", isChecked: true },
                 { label: "Можно пригласить гостей (до 10 человек)", isChecked: true }
               ]
-            })    
+            })
+          .form-elements__control
+            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+              +typography({ text: "Radio Buttons", variant: "h3", hasUpper: true })
+            +radiobtn({
+              items: [
+                { groupName: "gender", label: "Мужчина", isChecked: true },
+                { groupName: "gender", label: "Женщина" }
+              ]
+            })
