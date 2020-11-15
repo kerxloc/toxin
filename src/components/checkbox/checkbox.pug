@@ -1,0 +1,11 @@
+mixin checkbox({ items })
+  .checkbox
+    .checkbox__wrap
+      ul.checkbox__list
+        each item in items
+          - const { label, isChecked } = item;
+
+          li.checkbox__item
+            label(class="checkbox__label")
+              input(class="checkbox__input"  type="checkbox" checked=isChecked)
+              span(class="checkbox__label-span")= label

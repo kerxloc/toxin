@@ -1,0 +1,70 @@
+.checkbox__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checkbox__item {
+  margin: 0;
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.checkbox__input[type='checkbox'] {
+  display: none;
+}
+
+.checkbox__label-span {
+  position: relative;
+  padding-left: 30px;
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: normal;
+  color: transparentize($contentColor, .55);
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    content: '';
+    background-color: transparent;
+    border: 1px solid rgba(31, 32, 65, .25);
+    border-radius: 4px;
+    transition: border .3s ease 0s;
+  }
+
+  &::after {
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    visibility: hidden;
+    width: 4px;
+    height: 6px;
+    opacity: 0;
+    content: '';
+    background-color: transparent;
+    border-right: 2px solid $accentColor;
+    border-bottom: 2px solid $accentColor;
+    transition: opacity .3s ease 0s, visibility .3s ease 0s;
+    transform: rotate(45deg);
+  }
+}
+
+.checkbox__input[type='checkbox']:checked {
+  & + .checkbox__label-span::after {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  & + .checkbox__label-span::before {
+    border-color: $accentColor;
+  }
+}
