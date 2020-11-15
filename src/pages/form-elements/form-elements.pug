@@ -2,6 +2,7 @@ extends ../../layout/ui-kit.pug
 include ../../components/input/input
 include ../../components/typography/typography
 include ../../components/drop-down/drop-down
+include ../../components/checkbox/checkbox
 
 block variables
   -
@@ -56,3 +57,14 @@ block content
             .form-elements__title-wrap
               +typography({ text: "Subscription text field", variant: "h3", hasUpper: true })
             +input({ type: "text", name: "date", placeholder: "Email", withButton: true })
+        .form-elements__controls
+          .form-elements__control
+            .form-elements__title-wrap
+                +typography({ text: "Checkbox Buttons", variant: "h3", hasUpper: true })
+            +checkbox({
+              items: [
+                { label: "Можно курить" },
+                { label: "Можно с питомцами", isChecked: true },
+                { label: "Можно пригласить гостей (до 10 человек)", isChecked: true }
+              ]
+            })    
