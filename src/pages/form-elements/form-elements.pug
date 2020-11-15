@@ -4,6 +4,7 @@ include ../../components/typography/typography
 include ../../components/drop-down/drop-down
 include ../../components/checkbox/checkbox
 include ../../components/radiobtn/radiobtn
+include ../../components/toggle/toggle
 
 block variables
   -
@@ -78,3 +79,9 @@ block content
                 { groupName: "gender", label: "Женщина" }
               ]
             })
+          .form-elements__control
+            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+              +typography({ text: "Toggle", variant: "h3", hasUpper: true })
+            .form-elements__toggle
+              +toggle({ text: "Получать спецпредложения", isChecked: true })
+            +toggle({ text: "Получать спецпредложения" })
