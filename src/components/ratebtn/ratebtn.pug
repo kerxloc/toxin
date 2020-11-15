@@ -1,0 +1,14 @@
+mixin ratebtn({ currentRating, ratingLength })
+  .ratebtn
+    .ratebtn__wrap
+      - for (let i = 0; i < ratingLength; ++i) {
+        -
+          const isActived = i < currentRating;
+          let starClass = "ratebtn__star";
+
+          if (isActived) {
+            starClass += " ratebtn__star_actived"
+          }
+        
+        div(class=starClass)
+      - }

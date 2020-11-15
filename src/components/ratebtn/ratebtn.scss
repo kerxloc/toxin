@@ -1,0 +1,21 @@
+.ratebtn__wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ratebtn__star {
+  margin-right: 4px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url('../../components/ratebtn/star.png') no-repeat;
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &_actived {
+    background: url('../../components/ratebtn/star-active.png') no-repeat;
+  }
+}
