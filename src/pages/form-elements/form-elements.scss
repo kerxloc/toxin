@@ -47,6 +47,10 @@
   margin-bottom: 5px;
   display: flex;
   justify-content: space-between;
+
+  &_button-gap {
+    margin-bottom: 16px;
+  }
 }
 
 .form-elements__title-alt {
