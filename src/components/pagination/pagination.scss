@@ -1,0 +1,90 @@
+.pagination__title {
+  margin: 0;
+  margin-bottom: 16px;
+  font-family: Montserrat, Quicksand, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.pagination__pages {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination__page-item {
+  display: inline-block;
+  vertical-align: top;
+
+  .pagination__page-link {
+    padding: 12px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 36px;
+    font-family: Montserrat, Quicksand, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    color: transparentize($contentColor, .5);
+  }
+}
+
+.pagination__page-item_active {
+  .pagination__page-link {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    color: $mainColor;
+    background: linear-gradient(180deg, $accentColor 0%, $accentGradColor 100%);
+    border-radius: 50%;
+  }
+}
+
+.pagination__page-next {
+  position: relative;
+
+  .pagination__page-link {
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    font-weight: bold;
+    color: $mainColor;
+    background: linear-gradient(180deg, $accentSecondСolor 0%, $accentGradSecondСolor 100%);
+    border-radius: 50%;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 18px;
+      height: 17px;
+      content: '';
+      background: url('../../components/pagination/arrow.png') no-repeat;
+    }
+  }
+}
+
+.pagination__overview {
+  padding-left: 6px;
+  /* stylelint-disable */
+  p {
+    /* stylelint-enable */
+    margin: 0;
+    margin-top: 7px;
+    font-family: Montserrat, Quicksand, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: transparentize($contentColor, .25);
+  }
+}
