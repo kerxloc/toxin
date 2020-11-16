@@ -7,6 +7,7 @@ include ../../components/radiobtn/radiobtn
 include ../../components/toggle/toggle
 include ../../components/likebtn/likebtn
 include ../../components/ratebtn/ratebtn
+include ../../components/range-slider/range-slider
 
 block variables
   -
@@ -101,3 +102,9 @@ block content
               .form-elements__rate-btn
                 +ratebtn({ currentRating: 5, ratingLength: 5 })
               +ratebtn({ currentRating: 4, ratingLength: 5 })  
+        .form-elements__buttons
+          .form-elements__range-slider-wrap
+            +rangeSlider({ title: "Range Slider" })
+          .form-elements__button
+            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+              +typography({ text: "Buttons", variant: "h3", hasUpper: true })
