@@ -8,6 +8,7 @@ include ../../components/toggle/toggle
 include ../../components/likebtn/likebtn
 include ../../components/ratebtn/ratebtn
 include ../../components/range-slider/range-slider
+include ../../components/button/button
 
 block variables
   -
@@ -108,3 +109,20 @@ block content
           .form-elements__button
             div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
               +typography({ text: "Buttons", variant: "h3", hasUpper: true })
+            .form-elements__buttons-wrap
+              .form-elements__button-wrap
+                +button({ title: "Click me", size: "higher" })
+              .form-elements__button-wrap  
+                +button({ title: "Click me", size: "higher", isDisabled: true })
+            .form-elements__buttons-wrap
+              .form-elements__button-wrap
+                +button({ title: "Click me", size: "medium", variant: "outlined" })
+              .form-elements__button-wrap
+                +button({ title: "Click me", size: "medium", variant: "outlined", isDisabled: true })
+            .form-elements__buttons-wrap
+              .form-elements__button-wrap
+                +button({ title: "Click me", variant: "text" })
+              .form-elements__button-wrap
+                +button({ title: "Click me", variant: "text", isDisabled: true })
+            .form-elements__submit-btn
+              +button({ title: "Перейти к оплате", withIcon: true, buttonType: "submit" })

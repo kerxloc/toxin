@@ -9,6 +9,7 @@
 @import '../../components/likebtn/likebtn.scss';
 @import '../../components/ratebtn/ratebtn.scss';
 @import '../../components/range-slider/range-slider.scss';
+@import '../../components/button/button.scss';
 
 .form-elements__wrap {
   padding-top: 65px;
@@ -111,4 +112,17 @@
 .form-elements__range-slider-wrap {
   margin-bottom: 42px;
   width: 82.8%;
+}
+
+.form-elements__buttons-wrap {
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.form-elements__button-wrap {
+  margin-right: 20px;
+}
+
+.form-elements__submit-btn {
+  margin-bottom: 41px;
 }
