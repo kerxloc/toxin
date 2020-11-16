@@ -9,6 +9,7 @@ include ../../components/likebtn/likebtn
 include ../../components/ratebtn/ratebtn
 include ../../components/range-slider/range-slider
 include ../../components/button/button
+include ../../components/pagination/pagination
 
 block variables
   -
@@ -126,3 +127,7 @@ block content
                 +button({ title: "Click me", variant: "text", isDisabled: true })
             .form-elements__submit-btn
               +button({ title: "Перейти к оплате", withIcon: true, buttonType: "submit" })
+          .form-elements__button
+            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+              +typography({ text: "Pagination", variant: "h3", hasUpper: true })
+            +pagination()  
