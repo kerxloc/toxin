@@ -1,7 +1,9 @@
+include ../typography/typography
+
 mixin rangeSlider({ title })
   .range-slider
     .range-slider__view
-      h2.range-slider__title= title
+      +typography({ text: title, variant: "h3", hasUpper: true })
       .range-slider__price
         p(class="range-slider__cost js-range-slider-lower-value")
         p(class="range-slider__cost js-range-slider-upper-value")
