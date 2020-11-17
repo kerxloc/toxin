@@ -1,6 +1,12 @@
-mixin dropDown({ text })
-  .drop-down
-    .drop-down__wrap
-      .drop-down__body= text
-      button(class="drop-down__button", type="button")
-  
+mixin dropDown({ text, classForJs })
+  -
+    let dropDownBodyClass = "drop-down-input__body";
+
+    if (classForJs) {
+      dropDownBodyClass += ` ${classForJs}`
+    }
+
+  .drop-down-input
+    .drop-down-input__wrap
+      div(class=dropDownBodyClass)= text
+      button(class="drop-down-input__button", type="button")
