@@ -1,6 +1,6 @@
 mixin input(options = {})
   -
-    const { type, name, placeholder, value, isFocused, withButton } = options;
+    const { type, name, placeholder, value, isFocused, withButton, classForJs } = options;
     let inputClass = "input-group__input";
 
     if (isFocused) {
@@ -9,6 +9,10 @@ mixin input(options = {})
     
     if (withButton) {
       inputClass += " input-group__input_with-button";
+    }
+
+    if (classForJs) {
+      inputClass += ` ${classForJs}`;
     }
 
   .input-group
