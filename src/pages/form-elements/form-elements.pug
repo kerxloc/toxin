@@ -12,6 +12,7 @@ include ../../components/button/button
 include ../../components/pagination/pagination
 include ../../components/expandable-checkbox/expandable-checkbox
 include ../../components/bullet-list/bullet-list
+include ../../components/features/features
 
 block variables
   -
@@ -202,4 +203,25 @@ block content
                 { text: "Время прибытия — после 13:00, а выезд до 12:00" }
               ]
             })
+      .form-elements__row
+        .form-elements__row-wrap
+          .form-elements__features
+            +features({
+              items: [
+                {
+                  title: "Комфорт",
+                  descr: "Шумопоглощающие стены",
+                  icon: "emoticon"
+                },
+                {
+                  title: "Удобство",
+                  descr: "Окно в каждой из спален",
+                  icon: "city"
+                }
+              ]
+            })
+        .form-elements__row-wrap
+          .form-elements__comment
+
+
         
