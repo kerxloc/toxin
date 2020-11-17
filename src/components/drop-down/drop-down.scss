@@ -200,6 +200,14 @@
   &:active {
     background-position: 95% 65%;
   }
+
+  &_actived {
+    border-color: transparentize($contentColor, .25);
+
+    + .drop-down-input__button {
+      border-color: transparentize($contentColor, .25);
+    }
+  }
 }
 
 .drop-down-input__button {
