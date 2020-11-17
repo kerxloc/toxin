@@ -10,6 +10,7 @@ include ../../components/ratebtn/ratebtn
 include ../../components/range-slider/range-slider
 include ../../components/button/button
 include ../../components/pagination/pagination
+include ../../components/expandable-checkbox/expandable-checkbox
 
 block variables
   -
@@ -21,7 +22,7 @@ block variables
 block content
   .container
     .form-elements__wrap
-      .form-elements__row 
+      .form-elements__row
         .form-elements__inputs
           .form-elements__input
             .form-elements__title-wrap
@@ -131,3 +132,41 @@ block content
             div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
               +typography({ text: "Pagination", variant: "h3", hasUpper: true })
             +pagination()  
+      .form-elements__row
+        .form-elements__row-wrap
+          .form-elements__input
+            .form-elements__title-wrap
+              +typography({ text: "Dropdown", variant: "h3", hasUpper: true })
+              p.form-elements__title-alt Default
+            +dropDown({ text: "2 спальни, 2 кровати..." })
+          div(class="form-elements__input form-elements__input_bottom-gap")
+            .form-elements__title-wrap
+              +typography({ text: "Dropdown", variant: "h3", hasUpper: true })
+              p.form-elements__title-alt Expanded
+            +dropDown({ text: "2 спальни, 2 кровати...", classForJs: "js-input-drop-down" })
+            div(class="drop-down-container  js-drop-down-container")
+          .form-elements__checkbox-list
+            +expandableCheckbox({
+              summary: 'Expandable checkbox list',
+              items: [
+                { label: 'Завтрак' },
+                { label: 'Письменный стол', isChecked: true },
+                { label: 'Стул для кормления', isChecked: true },
+                { label: 'Кроватка', isChecked: true },
+                { label: 'Телевизор' },
+                { label: 'Шампунь' },
+              ],
+            })
+          .form-elements__checkbox-list
+            +expandableCheckbox({
+              summary: 'Expandable checkbox list',
+              isOpened: true,
+              items: [
+                { label: 'Завтрак' },
+                { label: 'Письменный стол', isChecked: true },
+                { label: 'Стул для кормления', isChecked: true },
+                { label: 'Кроватка', isChecked: true },
+                { label: 'Телевизор' },
+                { label: 'Шампунь' },
+              ],
+            })
