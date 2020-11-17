@@ -29,3 +29,47 @@ const dropDownOptions = {
 
 const dropDown = new DropDown(dropDownOptions);
 dropDown.init();
+
+const dropDownGuestContainer = document.querySelector('.js-drop-down-container-clear');
+const inputDropDownGuest = document.querySelector('.js-input-drop-down-clear');
+
+const dropDownGuestOptions = {
+  container: dropDownGuestContainer,
+  input: inputDropDownGuest,
+  countElements: [
+    {name: 'Взрослые', countGroupName: 'guest'},
+    {name: 'Дети', countGroupName: 'guest'},
+    {name: 'Младенцы', countGroupName: 'child'},
+  ],
+  countGroupView: {
+    guest: {counter: 0, views: ['гость', 'гостя', 'гостей']},
+    child: {counter: 0, views: ['младенец', 'младенца', 'младенцев']},
+  },
+  placeholder: 'Сколько гостей',
+  isPinShow: true,
+};
+
+const dropDownGuest = new DropDown(dropDownGuestOptions);
+dropDownGuest.init();
+
+const dropDownQuestContainer = document.querySelector('.js-drop-down-container-filled');
+const inputDropDownQuest = document.querySelector('.js-input-drop-down-filled');
+
+const dropDownQuestOptions = {
+  container: dropDownQuestContainer,
+  input: inputDropDownQuest,
+  countElements: [
+    {name: 'Взрослые', countGroupName: 'guest', startValue: 2},
+    {name: 'Дети', countGroupName: 'guest', startValue: 1},
+    {name: 'Младенцы', countGroupName: 'child'},
+  ],
+  countGroupView: {
+    guest: {counter: 3, views: ['гость', 'гостя', 'гостей']},
+    child: {counter: 0, views: ['младенец', 'младенца', 'младенцев']},
+  },
+  placeholder: 'Сколько гостей',
+  isPinShow: true,
+};
+
+const dropDownQuest = new DropDown(dropDownQuestOptions);
+dropDownQuest.init();
