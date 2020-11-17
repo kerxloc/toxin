@@ -170,3 +170,16 @@ block content
                 { label: 'Шампунь' },
               ],
             })
+        .form-elements__row-wrap
+          .form-elements__input
+            .form-elements__title-wrap
+              +typography({ text: "Dropdown", variant: "h3", hasUpper: true })
+            +dropDown({ text: "Сколько гостей", classForJs: "js-input-drop-down-clear" })
+            div(class="drop-down-container  js-drop-down-container-clear")
+        .form-elements__row-wrap
+          .form-elements__input
+            .form-elements__title-wrap
+              +typography({ text: "Dropdown", variant: "h3", hasUpper: true })
+            +dropDown({ text: "Сколько гостей", classForJs: "js-input-drop-down-filled" })
+            div(class="drop-down-container  js-drop-down-container-filled")
+        
