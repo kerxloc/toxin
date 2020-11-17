@@ -101,7 +101,7 @@ class DropDown {
     const isHaveClass = this.dropDownParent.classList.contains('drop-down_opened');
     if (!isHaveClass) {
       this.dropDownParent.classList.add('drop-down_opened');
-      this.input.classList.add('input-group__input_active');
+      this.input.classList.add('drop-down-input__body_actived');
       window.addEventListener('mouseup', this.onClickHide);
       window.addEventListener('keyup', this.onPressHide);
     }
@@ -115,7 +115,7 @@ class DropDown {
     const isHaveClass = this.dropDownParent.classList.contains('drop-down_opened');
     if (isHaveClass) {
       this.dropDownParent.classList.remove('drop-down_opened');
-      this.input.classList.remove('input-group__input_active');
+      this.input.classList.remove('drop-down-input__body_actived');
       window.removeEventListener('mouseup', this.onClickHide);
       window.removeEventListener('keyup', this.onPressHide);
     }
