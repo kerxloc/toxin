@@ -1,0 +1,7 @@
+mixin bullet({ items })
+  .bullet
+    .bullet__wrap
+      ul.bullet__list
+        each item in items
+          - const { text } = item;
+          li.bullet__item= text

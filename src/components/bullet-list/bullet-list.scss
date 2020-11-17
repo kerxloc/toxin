@@ -1,0 +1,26 @@
+.bullet__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bullet__item {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 21px;
+  font-family: Montserrat, Quicksand, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: transparentize($contentColor, .25);
+
+  &::before {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    content: '';
+    background: transparentize($contentColor, .75);
+    border-radius: 50%;
+  }
+}
