@@ -47,7 +47,7 @@ block content
           .form-elements__input
             .form-elements__title-wrap
               +typography({ text: "Masked text field", variant: "h3", hasUpper: true })
-            +input({ type: "text", name: "date", placeholder: "ДД.ММ.ГГГГ" })
+            +input({ type: "text", name: "date", classForJs: "js-masked-input", placeholder: "ДД.ММ.ГГГГ" })
           .form-elements__date-inputs
             .form-elements__date-input
               .form-elements__title-wrap
