@@ -5,8 +5,6 @@ import DropDown from '../../components/drop-down/drop-down';
 import Inputmask from 'inputmask';
 
 Inputmask({mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ'}).mask('.js-masked-input');
-Inputmask({mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ'}).mask('.js-arrival-input');
-Inputmask({mask: '99.99.9999', placeholder: '19.08.2019'}).mask('.js-departure-input');
 
 const dropDownContainer = document.querySelector('.js-drop-down-container');
 const inputDropDown = document.querySelector('.js-input-drop-down');
