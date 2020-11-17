@@ -3,9 +3,15 @@ mixin checkbox({ items })
     .checkbox__wrap
       ul.checkbox__list
         each item in items
-          - const { label, isChecked } = item;
+          -
+            const { label, title, isChecked } = item;
+            const labelSpanClass = title
+              ? 'checkbox__label-span checkbox__label-span_with-title'
+              : 'checkbox__label-span';
 
           li.checkbox__item
             label(class="checkbox__label")
+              if title
+                p.checkbox__title= title
               input(class="checkbox__input"  type="checkbox" checked=isChecked)
-              span(class="checkbox__label-span")= label
+              span(class=labelSpanClass)= label
