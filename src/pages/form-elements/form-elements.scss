@@ -12,6 +12,7 @@
 @import '../../components/button/button.scss';
 @import '../../components/pagination/pagination.scss';
 @import '../../components/expandable-checkbox/expandable-checkbox.scss';
+@import '../../components/bullet-list/bullet-list.scss';
 
 .form-elements__wrap {
   padding-top: 65px;
@@ -29,7 +30,7 @@
   display: flex;
   justify-content: space-between;
 
-  &_button-gap {
+  &_bottom-gap {
     margin-bottom: 16px;
   }
 }
@@ -61,6 +62,10 @@
 
   &_bottom-gap {
     margin-bottom: 174px;
+  }
+
+  &_bottom-large-gap {
+    margin-bottom: 220px;
   }
 }
 

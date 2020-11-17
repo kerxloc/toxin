@@ -11,6 +11,7 @@ include ../../components/range-slider/range-slider
 include ../../components/button/button
 include ../../components/pagination/pagination
 include ../../components/expandable-checkbox/expandable-checkbox
+include ../../components/bullet-list/bullet-list
 
 block variables
   -
@@ -67,7 +68,7 @@ block content
             +input({ type: "text", name: "date", placeholder: "Email", withButton: true })
         .form-elements__controls
           .form-elements__control
-            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+            div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Checkbox Buttons", variant: "h3", hasUpper: true })
             +checkbox({
               items: [
@@ -77,7 +78,7 @@ block content
               ]
             })
           .form-elements__control
-            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+            div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Radio Buttons", variant: "h3", hasUpper: true })
             +radiobtn({
               items: [
@@ -86,20 +87,20 @@ block content
               ]
             })
           .form-elements__control
-            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+            div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Toggle", variant: "h3", hasUpper: true })
             .form-elements__toggle
               +toggle({ text: "Получать спецпредложения", isChecked: true })
             +toggle({ text: "Получать спецпредложения" })
           .form-elements__control
-            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+            div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Like Button", variant: "h3", hasUpper: true })
             .form-elements__like-wrap
               .form-elements__like-btn
                 +likebtn({ count: 2 })
               +likebtn({ count: 12, isActived: true })
           .form-elements__control
-            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+            div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Rate button", variant: "h3", hasUpper: true })
             .form-elements__rate-btn-wrap
               .form-elements__rate-btn
@@ -109,7 +110,7 @@ block content
           .form-elements__range-slider-wrap
             +rangeSlider({ title: "Range Slider" })
           .form-elements__button
-            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+            div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Buttons", variant: "h3", hasUpper: true })
             .form-elements__buttons-wrap
               .form-elements__button-wrap
@@ -129,7 +130,7 @@ block content
             .form-elements__submit-btn
               +button({ title: "Перейти к оплате", withIcon: true, buttonType: "submit" })
           .form-elements__button
-            div(class="form-elements__title-wrap form-elements__title-wrap_button-gap")
+            div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Pagination", variant: "h3", hasUpper: true })
             +pagination()  
       .form-elements__row
@@ -171,15 +172,34 @@ block content
               ],
             })
         .form-elements__row-wrap
-          .form-elements__input
+          div(class="form-elements__input form-elements__input_bottom-large-gap")
             .form-elements__title-wrap
               +typography({ text: "Dropdown", variant: "h3", hasUpper: true })
             +dropDown({ text: "Сколько гостей", classForJs: "js-input-drop-down-clear" })
             div(class="drop-down-container  js-drop-down-container-clear")
+          .form-elements__list
+            div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
+              +typography({ text: "Rich Checkbox Buttons", variant: "h3", hasUpper: true })
+            +checkbox({
+              items: [
+                { title: "Широкий коридор", label: "Ширина коридоров в номере не менее 91 см." },
+                { title: "Помощник для инвалидов", label: "На 1 этаже вас встретит специалист  и проводит до номера."}
+              ]
+            })
         .form-elements__row-wrap
-          .form-elements__input
+          div(class="form-elements__input form-elements__input_bottom-large-gap")
             .form-elements__title-wrap
               +typography({ text: "Dropdown", variant: "h3", hasUpper: true })
             +dropDown({ text: "Сколько гостей", classForJs: "js-input-drop-down-filled" })
             div(class="drop-down-container  js-drop-down-container-filled")
+          .form-elements__list
+            div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
+              +typography({ text: "Bullet list", variant: "h3", hasUpper: true })
+            +bullet({
+              items: [
+                { text: "Нельзя с питомцами" },
+                { text: "Без вечеринок и мероприятий" },
+                { text: "Время прибытия — после 13:00, а выезд до 12:00" }
+              ]
+            })
         
