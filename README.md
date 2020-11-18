@@ -1,6 +1,6 @@
 # Toxin
 
-Сайт подбора отелей. Учебный проект. ([FSD education program. The 2nd task](https://www.fullstack-development.com/front-end-education))
+Сайт подбора отелей.
 
 ## Предпросмотр страниц:
 
