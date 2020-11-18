@@ -1,6 +1,15 @@
 mixin input(options = {})
   -
-    const { type, name, placeholder, value, isFocused, withButton, classForJs } = options;
+    const {
+      type,
+      name,
+      placeholder,
+      value,
+      isFocused,
+      withButton,
+      classForJs,
+    } = options;
+
     let inputClass = "input-group__input";
 
     if (isFocused) {
