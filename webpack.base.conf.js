@@ -134,6 +134,8 @@ module.exports = {
       patterns: [
         {from: `${PATHS.src}/fonts`, to: `fonts`},
         {from: `${PATHS.src}/favicons`, to: 'favicons'},
+        { from: `${PATHS.src}/components/comment/murad.jpg`, to: `img` },
+        { from: `${PATHS.src}/components/comment/patric.jpg`, to: `img` },
       ],
     }),
     ...PAGES.map(
