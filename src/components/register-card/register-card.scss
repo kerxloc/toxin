@@ -1,0 +1,70 @@
+.register-card {
+  width: 380px;
+  background: $mainColor;
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+
+  @media (max-width: 380px) {
+    width: 100%;
+    min-width: 320px;
+  }
+
+  .register-card__fieldset {
+    margin-bottom: 20px;
+    padding: 0;
+    width: 320px;
+    border: 0;
+
+    &:nth-of-type(1) {
+      margin-bottom: 27px;
+    }
+
+    &:nth-of-type(3) {
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 380px) {
+      width: 100%;
+    }
+  }
+
+  .register-card__legend {
+    margin: 0;
+    margin-bottom: 5px;
+    font-family: Montserrat, Quicksand, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+}
+
+.register-card__input-wrap {
+  margin-bottom: 10px;
+}
+
+.register-card__wrap {
+  padding: 30px;
+  padding-top: 40px;
+}
+
+.register-card__title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 23px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.register-card__account-enter {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  font-family: Montserrat, Quicksand, Arial, sans-serif;
+  /* stylelint-disable */
+  p {
+    /* stylelint-enable */
+    margin-right: auto;
+  }
+}
