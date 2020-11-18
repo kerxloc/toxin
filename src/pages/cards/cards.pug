@@ -1,5 +1,10 @@
 extends ../../layout/ui-kit.pug
 include ../../components/date-wishes/date-wishes
+include ../../components/register-card/register-card
+include ../../components/total-card/total-card
+include ../../components/auth-card/auth-card
+include ../../components/date-picker/date-picker
+include ../../components/hotel-card/hotel-card
 
 block variables
   -
@@ -14,3 +19,43 @@ block content
       .cards-page__row
         .cards-page__item
           +dateWishes()
+        .cards-page__item
+          +registerCard()
+      .cards-page__row
+        .cards-page__item
+          +totalCard()
+        .cards-page__item
+          +authCard()
+      .cards-page__row
+        .cards-page__item
+          .card-page__stub-card
+            +datePicker()
+        .cards-page__item
+          .cards-page__item-hotel-wrap
+            +hotelCard({
+              numberHotel: 888,
+              isLuxed: true,
+              reviewCount: 145,
+              dayCost: "9 900",
+              starCount: 5,
+              images: [
+                { src: "img/hotels/hotel-1.jpg", alt: "Красивый отель" },
+                { src: "img/hotels/hotel-1.jpg", alt: "Красивый отель" },
+                { src: "img/hotels/hotel-1.jpg", alt: "Красивый отель" },
+                { src: "img/hotels/hotel-1.jpg", alt: "Красивый отель" }
+              ]
+            })
+          .cards-page__item-hotel-wrap
+            +hotelCard({
+              numberHotel: 840,
+              isBtnSliderHide: true,
+              reviewCount: 65,
+              dayCost: "9 900",
+              starCount: 4,
+              images: [
+                { src: "img/hotels/hotel-2.jpg", alt: "Красивый отель" },
+                { src: "img/hotels/hotel-2.jpg", alt: "Красивый отель" },
+                { src: "img/hotels/hotel-2.jpg", alt: "Красивый отель" },
+                { src: "img/hotels/hotel-2.jpg", alt: "Красивый отель" }
+              ]
+            })
