@@ -3,7 +3,7 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 const getFiles = (dir, fileType) => {
   return dir.map(folder => {
@@ -129,13 +129,12 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new LiveReloadPlugin({ appendScriptTag: true }),
+    new LiveReloadPlugin({appendScriptTag: true}),
     new CopyWebpackPlugin({
       patterns: [
         {from: `${PATHS.src}/fonts`, to: `fonts`},
         {from: `${PATHS.src}/favicons`, to: 'favicons'},
-        { from: `${PATHS.src}/components/comment/murad.jpg`, to: `img` },
-        { from: `${PATHS.src}/components/comment/patric.jpg`, to: `img` },
+        {from: `${PATHS.src}/img`, to: `img`},
       ],
     }),
     ...PAGES.map(
