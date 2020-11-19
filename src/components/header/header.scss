@@ -6,7 +6,7 @@
 
 .page-header__wrap {
   position: relative;
-  padding: 16px 0 15px;
+  padding: 13px 0;
   display: flex;
   flex-wrap: wrap;
 
@@ -135,8 +135,6 @@
 }
 
 .page-header__registr-btn-wrap {
-  letter-spacing: .3px;
-
   @media (max-width: 1024px) {
     display: none;
   }
