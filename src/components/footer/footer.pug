@@ -1,0 +1,87 @@
+include ../logo/logo
+include ../nav-menu/nav-menu
+include ../input/input
+include ../copyright/copyright
+include ../social-buttons/social-buttons
+include ../typography/typography
+
+mixin footer(options = {})
+  -
+    const navMenuItems = [
+      {
+        title: "Навигация",
+        list: [
+          { label: "О нас", path: "404.html" },
+          { label: "Новости", path: "404.html" },
+          { label: "Служба поддержки", path: "404.html" },
+          { label: "Услуги", path: "404.html" }
+        ]
+      },
+      {
+        title: "О нас",
+        list: [
+          { label: "О сервисе", path: "404.html" },
+          { label: "Наша команда", path: "404.html" },
+          { label: "Вакансии", path: "404.html" },
+          { label: "Инвесторы", path: "404.html" }
+        ]
+      },
+      {
+        title: "Служба поддержки",
+        list: [
+          { label: "Соглашения", path: "404.html" },
+          { label: "Сообщества", path: "404.html" },
+          { label: "Связь с нами", path: "404.html" }
+        ]
+      }
+    ];
+
+    const { isShort } = options;
+
+    let footerClass = "page-footer";
+
+    if (isShort) {
+      footerClass += "  page-footer_short";
+    }
+
+  footer(class=footerClass)
+    .container
+      if(isShort)
+        div(class="page-footer__wrap  page-footer__wrap_short")
+          div(class="page-footer__logo-wrap  page-footer__logo-wrap_short")
+            +logo({ id: logoId })
+          div(class="page-footer__copyright-wrap  page-footer__copyright-wrap_short")  
+            +copyright()
+          +socialButtons()
+      else
+        .page-footer__wrap
+          .page-footer__content
+            div(class="page-footer__col  page-footer__col_large")
+              .page-footer__logo-wrap
+                +logo({ id: logoId })
+              .page-footer__text-content-wrap
+                +typography({ variant: "body", text: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»" })
+            .page-footer__col-group
+              .page-footer__col
+                .page-footer__title-nav-wrap
+                  +typography({ variant: "h3", text: "Навигация", hasUpper: true })
+                +navMenu(navMenuItems[0])
+              .page-footer__col
+                .page-footer__title-nav-wrap
+                  +typography({ variant: "h3", text: "О нас", hasUpper: true })
+                +navMenu(navMenuItems[1])
+              .page-footer__col
+                .page-footer__title-nav-wrap
+                  +typography({ variant: "h3", text: "Служба поддержки", hasUpper: true })
+                +navMenu(navMenuItems[2])
+              section(class="page-footer__col  page-footer__col_large")
+                .page-footer__title-wrap
+                  +typography({ variant: "h3", text: "Подписка", hasUpper: true })
+                .page-footer__text-content-wrap
+                  +typography({ variant: "body", text: "Получайте специальные предложения и новости сервиса" })
+                form(action="404.html")
+                  +input({ type: "text", name: "date", placeholder: "Email", withButton: true })
+          div(class="page-footer__side-info")
+            .page-footer__copyright-wrap
+              +copyright()
+            +socialButtons()
