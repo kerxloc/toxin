@@ -1,9 +1,17 @@
-mixin features(options = {})
+mixin features({ items })
   ul.features
-    each item in options.items
-      li.features__item 
-        .features__pict
-          img(src=item.srcIcon, alt=item.title)
-        section.features__content
-          h2.features__title= item.title
-          p.features__descr= item.descr
+  each item in items
+    -
+      const { title, descr, icon } = item;
+      let pictClass = "features__pict";
+      iconModifiers = ["emoticon", "city", "whats"];
+
+      if (iconModifiers.includes(icon)) {
+        pictClass += ` features__pict_${icon}`;
+      }
+
+    li.features__item 
+      div(class=pictClass)
+      section.features__content
+        h2.features__title= title
+        p.features__descr= descr

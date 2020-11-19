@@ -4,14 +4,14 @@ include ../button/button
 mixin authCard()
   .auth-card
     .auth-card__wrap
-      form(action="/404.html")
+      form(action="404.html")
         h2.auth-card__title Войти
         fieldset.auth-card__fieldset
           .auth-card__input-wrap
-            +input({ id: "Email2", placeholder: "Email",  type: "email", })
-          +input({ id: "pass2", placeholder: "Пароль",  type: "password", })
+            +input({ name: "email", placeholder: "Email",  type: "email", })
+          +input({ name: "pass", placeholder: "Пароль",  type: "password", })
         +button({ title: "Войти", withIcon: true, buttonType: "submit" })
       .auth-card__account-enter
         p Нет аккаунта на Toxin?
         .auth-card__registr-btn-wrap
-          +button({ path: "/registration.html", title: "Создать",  variant: "outlined", size: "medium" })
+          +button({ path: "registration.html", title: "Создать",  variant: "outlined", size: "medium" })

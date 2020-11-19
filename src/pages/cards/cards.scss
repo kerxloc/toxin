@@ -1,0 +1,41 @@
+@import '../../style/utils/variables.scss';
+@import '../../components/ui-kit-logo/ui-kit-logo.scss';
+@import '../../components/typography/typography.scss';
+@import '../../components/button/button.scss';
+@import '../../components/input/input.scss';
+@import '../../components/drop-down/drop-down.scss';
+@import '../../components/toggle/toggle.scss';
+@import '../../components/radiobtn/radiobtn.scss';
+@import '../../components/date-wishes/date-wishes.scss';
+@import '../../components/register-card/register-card.scss';
+@import '../../components/total-card/total-card.scss';
+@import '../../components/auth-card/auth-card.scss';
+@import '../../components/date-picker/date-picker.scss';
+@import '../../components/hotel-card/hotel-card.scss';
+@import '../../components/ratebtn/ratebtn.scss';
+
+.cards-page {
+  background: #f4f4f6;
+}
+
+.cards-page__wrap {
+  padding: 70px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cards-page__item {
+  margin-bottom: 40px;
+}
+
+.cards-page__item-hotel-wrap {
+  margin-bottom: 40px;
+}
+
+.card-page__stub-card {
+  width: 320px;
+  background: $mainColor;
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+}

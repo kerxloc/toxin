@@ -1,9 +1,8 @@
-.input-group {
-  margin: 0;
+.input-group__wrap {
   display: flex;
+  width: 100%;
 
-  &:hover,
-  &:focus {
+  &:hover {
     .input-group__input {
       border-color: transparentize($contentColor, .25);
 
@@ -12,46 +11,10 @@
       }
     }
 
-    .input-group__button-split {
+    .input-group__button {
       border-color: transparentize($contentColor, .25);
     }
   }
-
-  &_with-label {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-}
-
-.input-group__label {
-  margin: 0;
-  margin-bottom: 5px;
-}
-
-.input-group__descr {
-  margin: 0;
-  padding-bottom: 4px;
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: transparentize($contentColor, .55);
-}
-
-.input-group__label_big {
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-size: 12px;
-  line-height: 15px;
-  font-weight: bold;
-  font-style: normal;
-  text-transform: uppercase;
-}
-
-.input-group__split {
-  margin: 0;
-  display: flex;
-  width: 100%;
 }
 
 .input-group__input {
@@ -74,32 +37,22 @@
   &:focus {
     border-color: transparentize($contentColor, .25);
 
-    + .input-group__button-split {
+    &::placeholder {
+      color: transparentize($contentColor, .25);
+    }
+
+    + .input-group__button {
       border-color: transparentize($contentColor, .25);
     }
   }
 
-  &_with-icon {
-    background: url('../../components/input/expand-more.svg') no-repeat;
-    background-position: 95% center;
-  }
-
-  &_double-button {
-    position: relative;
+  &_with-button {
     padding-right: 0;
     border-right: none;
     border-radius: 4px 0 0 4px;
   }
 
-  &_fake {
-    cursor: pointer;
-  }
-
-  &_active {
-    border-color: transparentize($contentColor, .5);
-  }
-
-  &_hovered {
+  &_focused {
     border-color: transparentize($contentColor, .25);
 
     &::placeholder {
@@ -108,64 +61,28 @@
   }
 
   &::placeholder {
-    font-family: Montserrat, Quicksand, Arial, sans-serif;
-    font-size: 14px;
-    color: transparentize($contentColor, .76);
+    color: transparentize($contentColor, .75);
     transition: color .4s ease;
   }
 }
 
-.input-group__input_dark-placeholder {
-  &::placeholder {
-    color: transparentize($contentColor, .25);
-  }
-}
-
-.input-group__button-split {
+.input-group__button {
   padding: 0;
   box-sizing: border-box;
   width: 44px;
+  height: 44px;
   background-color: transparent;
+  background-image: url('./arrow.png');
   background-repeat: no-repeat;
   background-position: center center;
-  border: 1px solid transparentize($contentColor, .75);
+  border: 1px solid rgba(31, 32, 65, .25);
   border-left: none;
   border-radius: 0 4px 4px 0;
   outline: none;
-  transition: border .4s ease;
+  transition: border .4s ease, background .1s ease;
   cursor: pointer;
 
-  &:focus {
-    border: 1px solid #1f2041;
-  }
-
-  &_down-animation {
-    &:active {
-      /* stylelint-disable */
-      img {
-        /* stylelint-enable */
-        transform: translateY(2px);
-      }
-    }
-  }
-
-  &_right-animation {
-    &:active {
-      /* stylelint-disable */
-      img {
-        /* stylelint-enable */
-        transform: translateX(5px);
-      }
-    }
-  }
-
-  &_wider-label {
-    width: 60px;
-  }
-
-  /* stylelint-disable */
-  img {
-    /* stylelint-enable */
-    transition: transform .1s ease;
+  &:active {
+    background-position: 78% center;
   }
 }

@@ -60,6 +60,10 @@
   /* stylelint-enable */
 }
 
+.total-card__title-wrap {
+  margin-bottom: 5px;
+}
+
 .total-card__per-day {
   margin: 0;
   padding-top: 5px;
@@ -164,4 +168,9 @@
 
 .total-card__total-price {
   text-align: right;
+}
+
+.total-card__date-inputs .total-card__date-picker-container {
+  position: absolute;
+  top: 269px;
 }

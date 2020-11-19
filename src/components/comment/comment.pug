@@ -1,12 +1,23 @@
 include ../likebtn/likebtn
 
 mixin comment(options = {})
+  -
+    const {
+      avatarSrc,
+      authorName,
+      likeCount,
+      likeIsActived,
+      datePost,
+      text,
+    } = options;
+
   .comment
     .comment__wrap
-      .comment__pict
-        img(src=options.avatarSrc alt=options.authorName)
-      +likebtn({ items: [{ count: options.like, isLike: options.isLikeActive }] })
-    .comment__wrap
-      p.comment__title= options.authorName 
-      p.comment__date= options.datePost
-      p.comment__text= options.text 
+      .comment__column
+        .comment__avatar
+          img(class="comment__avatar-img" src=avatarSrc alt=authorName)
+        +likebtn({ count: likeCount, isActived: likeIsActived })
+      .comment__column
+        p.comment__title= authorName 
+        p.comment__date= datePost
+        p.comment__text= text 

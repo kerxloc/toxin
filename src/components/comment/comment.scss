@@ -1,30 +1,24 @@
-.comment {
+.comment__wrap {
   display: flex;
 }
 
-.comment__wrap {
-  margin-right: 10px;
-
-  &:nth-child(2) {
-    padding-top: 15px;
-  }
-
-  &:last-child {
-    margin-right: 0;
+.comment__column {
+  &:first-child {
+    margin-right: 10px;
   }
 }
 
-.comment__pict {
-  position: relative;
-  margin-bottom: 27px;
-  width: 44px;
-  height: 44px;
-  /* stylelint-disable */
-  img {
-    /* stylelint-enable */
-    position: absolute;
-    top: 1px;
-    left: -23px;
+.comment__avatar {
+  margin-bottom: 12px;
+  overflow: hidden;
+  width: 48px;
+  height: 48px;
+  background-color: $accentColor;
+  border: 2px solid white;
+  border-radius: 50%;
+
+  &-img {
+    object-fit: cover;
   }
 }
 

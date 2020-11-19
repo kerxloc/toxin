@@ -1,83 +1,31 @@
 mixin input(options = {})
   -
-    const inputId = options.id ? options.id : "input-id";
-    const splitId = options.splitId ? options.splitId : "split-btn-id";
-    const inputGroupClass = options.labelName
-      ? "input-group  input-group_with-label"
-      : "input-group";
-    const labelClass = options.isBigLabel
-      ? "input-group__label  input-group__label_big"
-      : "input-group__label";
+    const {
+      type,
+      name,
+      placeholder,
+      value,
+      isFocused,
+      withButton,
+      classForJs,
+    } = options;
+
     let inputClass = "input-group__input";
-    let splitButtonClass = "input-group__button-split";
-    let splitButtonType = options.splitButtonType ? options.splitButtonType  : "button";
 
-    if (options.isButtonSplit) {
-      inputClass += "  input-group__input_double-button";
+    if (isFocused) {
+      inputClass += " input-group__input_focused";
+    }
+    
+    if (withButton) {
+      inputClass += " input-group__input_with-button";
     }
 
-    if (options.isDarkPlaceholder) {
-      inputClass += "  input-group__input_dark-placeholder";
+    if (classForJs) {
+      inputClass += ` ${classForJs}`;
     }
 
-    if (options.withIcon) {
-      inputClass += "  input-group__input_with-icon";
-    }
-
-    if (options.isHover) {
-      inputClass += "  input-group__input_hovered";
-    }
-
-    if (options.classForJs) {
-      inputClass += `  ${options.classForJs}`;
-    }
-
-    if (options.isWiderLabel) {
-      splitButtonClass += "  input-group__button-split_wider-label";
-    }
-
-    if (options.isDownSplitAnimation) {
-      splitButtonClass += "  input-group__button-split_down-animation";
-    }
-
-    if (options.isRightSplitAnimation) {
-      splitButtonClass += "  input-group__button-split_right-animation";
-    }
-
-  if options.isFakeInput
-    -
-      let inputFakeClass = "input-group__input  input-group__input_fake";
-
-      if (options.withIcon) {
-        inputFakeClass += "  input-group__input_with-icon";
-      }
-
-      if (options.isDownSplitAnimation) {
-        inputFakeClass += "  input-group__button-split_down-animation";
-      }
-
-      if (options.classForJs) {
-        inputFakeClass += `  ${options.classForJs}`;
-      }
-
-    if options.labelName
-      div(class=inputGroupClass)
-        p(class=labelClass id=`for-${inputId}`)= options.labelName
-        if options.descrText
-          p.input-group__descr= options.descrText
-        div(id=`${inputId}` class=`${inputFakeClass}` type=options.type name=options.name)= options.placeholder
-  else if options.isButtonSplit
-    div(class=inputGroupClass)
-      if options.labelName
-        label(class=labelClass for=`${inputId}`)= options.labelName
-      p.input-group__split
-        input(id=`${inputId}` class=inputClass type=options.type name=options.name placeholder=options.placeholder)
-        button(id=`${splitId}` class=`${splitButtonClass}` type=splitButtonType)
-          img(src=`../../components/input/${options.iconSrc}`, alt="")
-  else
-    div(class=inputGroupClass)
-      if options.labelName
-        label(class=labelClass for=`${inputId}`)= options.labelName
-      if options.descrText
-        p.input-group__descr= options.descrText
-      input(id=`${inputId}` class=inputClass type=options.type name=options.name placeholder=options.placeholder)
+  .input-group
+    .input-group__wrap
+      input(class=inputClass type=type name=name placeholder=placeholder value=value)
+      if withButton
+        button(class="input-group__button" type="submit")

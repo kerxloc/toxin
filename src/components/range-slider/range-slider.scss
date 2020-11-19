@@ -1,19 +1,21 @@
+@import '../../../node_modules/nouislider/distribute/nouislider.min.css';
+
 $accentSecondColor: #6fcf97;
 $accentSecondGradColor: #66d2ea;
 
-.range__view {
+.range-slider__view {
   margin-bottom: 22px;
   display: flex;
   justify-content: space-between;
 }
 
-.range__slider {
+.range-slider__slider {
   height: 6px;
   background-color: $mainColor;
   border: 1px solid transparentize($contentColor, .75);
   border-radius: 3px;
 
-  .range__handle {
+  .range-slider__handle {
     right: -8px;
     width: 14px;
     height: 14px;
@@ -31,12 +33,12 @@ $accentSecondGradColor: #66d2ea;
   }
 }
 
-.range__connect {
+.range-slider__connect {
   height: 6px;
   background: linear-gradient(180deg, $accentSecondColor 0%, $accentSecondGradColor 100%);
 }
 
-.range__cost {
+.range-slider__cost {
   margin: 0;
   margin-right: 8px;
   display: inline-block;
@@ -64,14 +66,4 @@ $accentSecondGradColor: #66d2ea;
   &:last-child {
     margin-right: 0;
   }
-}
-
-.range__title {
-  margin: 0;
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-size: 12px;
-  line-height: 15px;
-  font-weight: bold;
-  font-style: normal;
-  text-transform: uppercase;
 }

@@ -1,12 +1,14 @@
-mixin ratebtn(options = {})
+mixin ratebtn({ currentRating, ratingLength })
   .ratebtn
-    if options.title
-      p.ratebtn__title= options.title
-    .ratebtn__item-wrap
-      each item in options.items
-        .ratebtn__item
-          - for (let i = 1; i < 6; ++i) {
-            - const isChecked = i === 6 - item.currentRating;        
-            input(class="ratebtn__input" type="radio" id=`star-${item.idGroup}-${i}` name=item.idGroup value=`${i}` checked=isChecked)
-            label(class="ratebtn__label" for=`star-${item.idGroup}-${i}`)
-          - }
+    .ratebtn__wrap
+      - for (let i = 0; i < ratingLength; ++i) {
+        -
+          const isActived = i < currentRating;
+          let starClass = "ratebtn__star";
+
+          if (isActived) {
+            starClass += " ratebtn__star_actived"
+          }
+        
+        div(class=starClass)
+      - }

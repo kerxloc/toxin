@@ -1,38 +1,7 @@
-mixin bullet(options = {})
-  -
-    let titleClass = "bullet__title";
-
-    const { titleSize } = options;
-
-    if (titleSize === "large") {
-      titleClass += " bullet__title_size_large";
-    }
-
-    const { titleGap } = options;
-
-    if (titleGap === "leftGap") {
-      titleClass += " bullet__title_gap_left";
-    }
-
-    const { title, items } = options;
-
+mixin bullet({ items })
   .bullet
-    if title
-      p(class=titleClass)= title
+    .bullet__wrap
       ul.bullet__list
         each item in items
-          -
-            let itemClass = "bullet__item";
-            const { isTight, isPetty, label } = item;
-
-            if (isTight) {
-              itemClass += " bullet__item_tight";
-            }
-
-            if (isPetty) {
-              itemClass += " bullet__item_petty";
-            }
-
-            const itemLabel = label
-
-          li(class=itemClass)= itemLabel
+          - const { text } = item;
+          li.bullet__item= text

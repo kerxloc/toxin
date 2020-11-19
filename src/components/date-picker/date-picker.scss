@@ -93,7 +93,7 @@
   }
 
   &_prev {
-    background-image: url('../../components/date-picker/arrow-back.svg');
+    background-image: url('./arrow-back.svg');
 
     &:active {
       transform: translateX(-5px);
@@ -101,7 +101,7 @@
   }
 
   &_next {
-    background-image: url('../../components/date-picker/arrow-back.svg');
+    background-image: url('./arrow-back.svg');
     transform: rotate(180deg);
 
     &:active {

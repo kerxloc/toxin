@@ -1,8 +1,10 @@
-mixin rangeSlider(options = {})
-  .range
-    .range__view
-      h2.range__title= options.title
-      .range__price
-        p(id="lower-value" class="range__cost")
-        p(id="upper-value" class="range__cost")
-    div(id="range-slider" class="range__slider")
+include ../typography/typography
+
+mixin rangeSlider({ title })
+  .range-slider
+    .range-slider__view
+      +typography({ text: title, variant: "h3", hasUpper: true })
+      .range-slider__price
+        p(class="range-slider__cost js-range-slider-lower-value")
+        p(class="range-slider__cost js-range-slider-upper-value")
+    div(class="range-slider__slider js-range-slider")

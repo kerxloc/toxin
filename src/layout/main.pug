@@ -21,7 +21,12 @@ html(lang="ru")
   body(class=pageClass)
     .wrapper
       .content
-        +header()
+        +header({
+          mainMenuClass: "js-main-menu",
+          burgerBtnClass: "js-main-menu-burger-btn",
+          authListClass: "js-auth-list",
+          profileBtnClass: "js-profile-btn",
+        })
         main(class=mainClass)
           block content
-      +footer({ isBorderTop: !!footerBorderTop })
+      +footer()

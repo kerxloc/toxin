@@ -1,25 +1,5 @@
-.bullet__title {
-  margin: 0;
-  margin-bottom: 14px;
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-size: 12px;
-  line-height: 15px;
-  font-weight: bold;
-  font-style: normal;
-  text-transform: uppercase;
-
-  &_gap_left {
-    padding-left: 20px;
-  }
-
-  &_size_large {
-    margin-bottom: 20px;
-    font-size: 18px;
-    text-transform: capitalize;
-  }
-}
-
 .bullet__list {
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -42,13 +22,5 @@
     content: '';
     background: transparentize($contentColor, .75);
     border-radius: 50%;
-  }
-
-  &_tight {
-    width: 72%;
-  }
-
-  &_petty {
-    width: 65%;
   }
 }

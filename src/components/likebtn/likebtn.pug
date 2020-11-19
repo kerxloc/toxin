@@ -1,11 +1,11 @@
-mixin likebtn(options = {})
+mixin likebtn({ count, isActived })
+  -
+    let likeBtnClass = "likebtn__button";
+
+    if (isActived) {
+      likeBtnClass += " likebtn__button_actived";
+    }
+
   .likebtn
-    if options.title
-      p.likebtn__title= options.title
-    each item in options.items
-      -
-        const itemBtn = item.isLike
-          ? "likebtn__item  likebtn__item_active"
-          : "likebtn__item";
-      p(class=itemBtn)
-        button(class="likebtn__btn" type="button")= item.count
+    .likebtn__wrap
+      button(class=likeBtnClass type="button")= count

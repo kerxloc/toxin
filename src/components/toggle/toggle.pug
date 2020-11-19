@@ -1,8 +1,6 @@
-mixin toggle(options = {})
+mixin toggle({ text, isChecked })
   .toggle
-    if options.title
-      p.toggle__title= options.title
-    each item in options.items
-      p.toggle__item
-        input(class="toggle__input" id=item.id type="checkbox" checked=item.isChecked)
-        label(class="toggle__label" for=item.id)= item.title
+    .toggle__wrap
+      label.toggle__label
+        input(class="toggle__input" type="checkbox" checked=isChecked)
+        span.toggle__label-span= text

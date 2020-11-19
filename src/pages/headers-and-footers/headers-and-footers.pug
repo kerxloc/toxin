@@ -1,0 +1,30 @@
+extends ../../layout/ui-kit.pug
+include ../../components/header/header
+include ../../components/footer/footer
+
+block variables
+  -
+    const title = "Toxin - шапки и подвалы!";
+    const description = "Toxin description";
+    const keywords = "Toxin keywords";
+    const pageClass = "headers-and-footers";
+
+block content
+  .headers-and-footers__wrap
+    .headers-and-footers__item
+      +header({
+        mainMenuClass: "js-main-menu",
+        burgerBtnClass: "js-main-menu-burger-btn",
+        authListClass: "js-auth-list",
+        profileBtnClass: "js-profile-btn",
+      })
+    div(class="headers-and-footers__item  headers-and-footers__item_authorized")
+      +header({
+        userName: "Юлий Цезарь",
+        mainMenuClass: "js-second-main-menu",
+        burgerBtnClass: "js-second-main-menu-burger-btn",
+      })
+    .headers-and-footers__item
+      +footer()
+    div(class="headers-and-footers__item  headers-and-footers__item_short")
+      +footer({ isShort: true })

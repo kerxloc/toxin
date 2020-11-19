@@ -15,7 +15,7 @@ mixin button(options)
       buttonClass += ` button_size_${size}`;
     }
 
-    const { isDisabled, withIcon } = options;
+    const { isDisabled, withIcon, buttonType, title, path } = options;
 
     if (isDisabled) {
        buttonClass += " button_disabled";
@@ -25,9 +25,9 @@ mixin button(options)
       buttonClass += " button_with-icon";
     }
 
-    const buttonType = options.buttonType ? options.buttonType : "button";
+    const typeButton = buttonType ? buttonType : "button";
 
-  if options.path
-    a(class=buttonClass href=options.path)= options.title
+  if path
+    a(class=buttonClass href=path)= title
   else
-    button(class=buttonClass type=buttonType disabled=options.isDisabled)= options.title
+    button(class=buttonClass type=typeButton disabled=isDisabled)= title

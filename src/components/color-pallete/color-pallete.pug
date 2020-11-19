@@ -1,13 +1,23 @@
-mixin colorPallete(options = {})
+mixin colorPallete({ variant, title, descr })
   -
-    let colorViewStyle = `background-color: ${options.colorPallete}`;
-    if (options.colorOpacity) {
-      colorViewStyle += `; opacity: ${options.colorOpacity}`;
+    let colorPalleteViewClass = "color-pallete__view";
+    const variants = [
+      "dark-shade-100",
+      "dark-shade-75",
+      "dark-shade-50",
+      "dark-shade-25",
+      "dark-shade-5",
+      "purple",
+      "green",
+    ];
+
+    if (variants.includes(variant)) {
+      colorPalleteViewClass += ` color-pallete__view_${variant}`;
     }
 
   section.color-pallete
     .color-pallete__wrap
-      div(class="color-pallete__view" style=colorViewStyle)
+      div(class=colorPalleteViewClass)
       .color-pallete__content
-        h2.color-pallete__title= options.title
-        p.color-pallete__descr= options.descr
+        h2.color-pallete__title= title
+        p.color-pallete__descr= descr

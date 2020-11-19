@@ -1,12 +1,12 @@
 import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
 
-var stepsSlider = document.getElementById('range-slider');
-const lowerViewPrice = document.querySelector('#lower-value');
-const upperViewPrice = document.querySelector('#upper-value');
+const stepSlider = document.querySelector('.js-range-slider');
+const lowerViewPrice = document.querySelector('.js-range-slider-lower-value');
+const upperViewPrice = document.querySelector('.js-range-slider-upper-value');
 const viewNodes = [lowerViewPrice, upperViewPrice];
 
-noUiSlider.create(stepsSlider, {
+noUiSlider.create(stepSlider, {
   start: [5000, 10000],
   connect: true,
   format: wNumb({decimals: 0}),
@@ -19,14 +19,14 @@ noUiSlider.create(stepsSlider, {
     target: "target",
     base: "base",
     origin: "origin",
-    handle: "handle range__handle",
+    handle: "handle range-slider__handle",
     handleLower: "handle-lower",
     handleUpper: "handle-upper",
     touchArea: "touch-area",
     horizontal: "horizontal",
     vertical: "vertical",
     background: "background",
-    connect: "connect  range__connect",
+    connect: "connect  range-slider__connect",
     connects: "connects",
     ltr: "ltr",
     rtl: "rtl",
@@ -55,7 +55,7 @@ noUiSlider.create(stepsSlider, {
   },
 });
 
-stepsSlider.noUiSlider.on('update', function(values, handle) {
+stepSlider.noUiSlider.on('update', function(values, handle) {
   let viewPrice = values[handle].replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
   viewPrice += '₽';
   viewNodes[handle].textContent = viewPrice;

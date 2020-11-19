@@ -1,4 +1,3 @@
-import Inputmask from 'inputmask';
 import isNumeric from 'validator/lib/isNumeric';
 
 const monthRusTranslate = {
@@ -55,22 +54,21 @@ function getTwoDigitNumberString(number) {
 
 class DatePicker {
   constructor(domInfo = {}) {
-    if (domInfo.parentNodeId) {
-      this.parentNode = document.querySelector(`#${domInfo.parentNodeId}`);
+    if (domInfo.parentNode) {
+      this.parentNode = domInfo.parentNode;
     } else {
       console.error('Expected parentNodeId inside constructor object but not received');
     }
 
-    if (domInfo.arrivalInputId) {
-      this.arrivalInput = document.querySelector(`#${domInfo.arrivalInputId}`);
-      Inputmask({mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ'}).mask(`#${domInfo.arrivalInputId}`);
-      this.arrivalInput.addEventListener('focus', this.onFocusArrivalInput);
+    if (domInfo.arrivalInput) {
+      this.arrivalInput = domInfo.arrivalInput;
+      this.arrivalInput.addEventListener('click', this.onFocusArrivalInput);
       this.arrivalInput.addEventListener('keydown', evt => {
         const isPressEnter = evt.keyCode === 13;
         if (isPressEnter) {
           evt.preventDefault();
           this.showArrivalMonthCalendar();
-          const arrivalInputDate = this.arrivalInput.value;
+          const arrivalInputDate = this.arrivalInput.textContent;
           if (this.hasDataFull(arrivalInputDate)) {
             this.departureInput.focus();
           }
@@ -78,12 +76,9 @@ class DatePicker {
       });
     }
 
-    if (domInfo.departureInputId) {
-      this.departureInput = document.querySelector(`#${domInfo.departureInputId}`);
-      Inputmask({mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ'}).mask(
-        `#${domInfo.departureInputId}`
-      );
-      this.departureInput.addEventListener('focus', this.onFocusDepartureInput);
+    if (domInfo.departureInput) {
+      this.departureInput = domInfo.departureInput;
+      this.departureInput.addEventListener('click', this.onFocusDepartureInput);
       this.departureInput.addEventListener('keydown', evt => {
         const isPressEnter = evt.keyCode === 13;
         if (isPressEnter) {
@@ -93,18 +88,18 @@ class DatePicker {
       });
     }
 
-    if (domInfo.datePickerInputId) {
-      this.datePickerInput = document.querySelector(`#${domInfo.datePickerInputId}`);
+    if (domInfo.datePickerInput) {
+      this.datePickerInput = domInfo.datePickerInput;
       this.datePickerInput.addEventListener('click', this.showCalendar);
     }
 
-    if (domInfo.arrivalSplitBtnId) {
-      this.arrivalSplitBtn = document.querySelector(`#${domInfo.arrivalSplitBtnId}`);
+    if (domInfo.arrivalSplitBtn) {
+      this.arrivalSplitBtn = domInfo.arrivalSplitBtn;
       this.arrivalSplitBtn.addEventListener('click', this.showArrivalMonthCalendar);
     }
 
-    if (domInfo.departureSplitBtnId) {
-      this.departureSplitBtn = document.querySelector(`#${domInfo.departureSplitBtnId}`);
+    if (domInfo.departureSplitBtn) {
+      this.departureSplitBtn = domInfo.departureSplitBtn;
       this.departureSplitBtn.addEventListener('click', this.showDepartureMonthCalendar);
     }
 
@@ -192,7 +187,7 @@ class DatePicker {
   };
 
   showArrivalMonthCalendar = () => {
-    const inputDate = this.arrivalInput.value;
+    const inputDate = this.arrivalInput.textContent;
     const arrivalInputDate = this.getConverteDateByUserInput(inputDate);
     const dateMoreThisDate = this.compaireDate(arrivalInputDate, new Date()) >= 0;
     this.showCalendar();
@@ -325,7 +320,7 @@ class DatePicker {
   };
 
   onFocusArrivalInput = () => {
-    const inputDate = this.arrivalInput.value;
+    const inputDate = this.arrivalInput.textContent;
     const isInputDateFull = this.hasDataFull(inputDate);
     if (isInputDateFull) {
       const arrivalInputDate = this.getConverteDateByUserInput(inputDate);
@@ -339,7 +334,7 @@ class DatePicker {
   };
 
   onFocusDepartureInput = () => {
-    const inputDate = this.departureInput.value;
+    const inputDate = this.departureInput.textContent;
     const isInputDateFull = this.hasDataFull(inputDate);
     if (isInputDateFull) {
       this.showDepartureMonthCalendar();
@@ -349,7 +344,7 @@ class DatePicker {
   };
 
   onInputDateArrival = () => {
-    const pickDate = this.arrivalInput.value;
+    const pickDate = this.arrivalInput.textContent;
     const isDataFull = this.hasDataFull(pickDate);
     if (isDataFull) {
       const convertePickDate = this.getConverteDateByUserInput(pickDate);
@@ -368,7 +363,7 @@ class DatePicker {
             pickCell.classList.remove('date-picker__day_with-error');
           }, 700);
         }
-        this.arrivalInput.value = '';
+        this.arrivalInput.textContent = '';
         this.clearSelectCell();
       } else {
         if (pickCell) {
@@ -392,7 +387,7 @@ class DatePicker {
             } else if (isArrivalDateMore) {
               this.clearSelectCell();
               this.onClearSelectRangeDate();
-              this.departureInput.value = '';
+              this.departureInput.textContent = '';
             } else if (this.isEndSelect || this.isStartSelect) {
               this.clearSelectCell();
               this.onClearSelectRangeDate();
@@ -401,7 +396,7 @@ class DatePicker {
         } else if (isArrivalDateMore) {
           this.clearSelectCell();
           this.onClearSelectRangeDate();
-          this.departureInput.value = '';
+          this.departureInput.textContent = '';
         }
 
         this.onStartSelectRangeDate(pickCell, convertePickDate);
@@ -410,9 +405,9 @@ class DatePicker {
   };
 
   onInputDateDeparture = () => {
-    const inputArrivalDate = this.arrivalInput.value;
+    const inputArrivalDate = this.arrivalInput.textContent;
     const isArrivalDateFull = this.hasDataFull(inputArrivalDate);
-    const pickDate = this.departureInput.value;
+    const pickDate = this.departureInput.textContent;
     const isPickDateFull = this.hasDataFull(pickDate);
     if (!isArrivalDateFull && isPickDateFull) {
       this.showErrorAnimation();
@@ -434,7 +429,7 @@ class DatePicker {
             setTimeout(() => {
               pickCell.classList.remove('date-picker__day_with-error');
             }, 700);
-            this.departureInput.value = '';
+            this.departureInput.textContent = '';
           } else {
             const isDepartureCell = this.departureCell === pickCell;
             if (!isDepartureCell) {
@@ -450,7 +445,7 @@ class DatePicker {
           const isDateSelectLess = this.compaireDate(convertePickDate, this.arrivalDate) < 0;
           if (isDateSelectLess) {
             this.showErrorAnimation();
-            this.departureInput.value = '';
+            this.departureInput.textContent = '';
           } else {
             this.clearSelectCell();
             this.onEndSelectRangeDate(pickCell, convertePickDate);
@@ -495,10 +490,10 @@ class DatePicker {
   onFullClearCalendar = () => {
     this.onClearSelectRangeDate();
     this.clearSelectCell();
-    if (this.arrivalInput) this.arrivalInput.value = '';
-    if (this.departureInput) this.departureInput.value = '';
+    if (this.arrivalInput) this.arrivalInput.textContent = 'ДД.ММ.ГГГГ';
+    if (this.departureInput) this.departureInput.textContent = 'ДД.ММ.ГГГГ';
     if (this.datePickerInput) {
-      this.datePickerInput.textContent = this.inputPlaceholder ? this.inputPlaceholder : '';
+      this.datePickerInput.textContent = this.inputPlaceholder ? this.inputPlaceholder : 'ДД.ММ.ГГГГ';
     }
     this.updateCurrentDate(new Date());
   };
@@ -537,7 +532,7 @@ class DatePicker {
         } else {
           this.onEndSelectRangeDate(td, selectDate);
           if (this.departureInput) {
-            this.departureInput.value = selectDateText;
+            this.departureInput.textContent = selectDateText;
           } else {
             this.printReductionDate(selectDate);
           }
@@ -547,7 +542,7 @@ class DatePicker {
       } else if (isCellDoubleSelect && !this.isEndSelect) {
         this.onEndSelectRangeDate(td, selectDate);
         if (this.departureInput) {
-          this.departureInput.value = selectDateText;
+          this.departureInput.textContent = selectDateText;
         } else {
           this.printReductionDate(selectDate);
         }
@@ -555,7 +550,7 @@ class DatePicker {
       } else {
         this.onStartSelectRangeDate(td, selectDate);
         if (this.arrivalInput) {
-          this.arrivalInput.value = selectDateText;
+          this.arrivalInput.textContent = selectDateText;
         } else {
           this.printReductionDate(selectDate);
         }

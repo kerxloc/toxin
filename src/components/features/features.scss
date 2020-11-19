@@ -13,9 +13,6 @@
 
   &:last-child {
     margin-bottom: 0;
-  }
-
-  &:nth-child(3) {
     padding-bottom: 0;
     border-bottom: none;
   }
@@ -28,6 +25,18 @@
   height: 48px;
   justify-content: center;
   align-items: center;
+
+  &_emoticon {
+    background: url('./emoticon.png') no-repeat;
+  }
+
+  &_city {
+    background: url('./city.png') no-repeat;
+  }
+
+  &_whats {
+    background: url('./whatshot.png') no-repeat;
+  }
 }
 
 .features__content {

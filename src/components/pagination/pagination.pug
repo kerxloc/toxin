@@ -1,21 +1,18 @@
-mixin pagination(options = {})
+mixin pagination()
   .pagination
     .pagination__wrap
-      if options.title
-        p.pagination__title= options.title
       ul.pagination__pages
         li(class="pagination__page-item  pagination__page-item_active")
-          a(class="pagination__page-link" href="/404.html") 1
+          a(class="pagination__page-link" href="404.html") 1
         li.pagination__page-item
-          a(class="pagination__page-link" href="/404.html") 2
+          a(class="pagination__page-link" href="404.html") 2
         li.pagination__page-item
-          a(class="pagination__page-link" href="/404.html") 3
+          a(class="pagination__page-link" href="404.html") 3
         li.pagination__page-item
-          a(class="pagination__page-link" href="/404.html") ...
+          a(class="pagination__page-link" href="404.html") ...
         li.pagination__page-item
-          a(class="pagination__page-link" href="/404.html") 15
+          a(class="pagination__page-link" href="404.html") 15
         li(class="pagination__page-item  pagination__page-next")
-          a(class="pagination__page-link" href="/404.html") Далее
+          a(class="pagination__page-link" href="404.html") Далее
       .pagination__overview
         p 1 – 12 из 100+ вариантов аренды
-

@@ -6,47 +6,31 @@ include ../toggle/toggle
 mixin registerCard()
   .register-card
     .register-card__wrap
-      form(action="/404.html")
+      form(action="404.html")
         h2.register-card__title Регистрация аккаунта
         fieldset.register-card__fieldset
           .register-card__input-wrap
-            +input({ id: "name", placeholder: "Имя" })
+            +input({ type: "text", name: "name", placeholder: "Имя" })
           .register-card__input-wrap  
-            +input({ id: "surname", placeholder: "Фамилия" })
+            +input({ type: "text", name: "surname", placeholder: "Фамилия" })
           +radiobtn({
             items: [
-              { groupName: "gender", id: "male", title: "Мужчина", isChecked: true },
-              { groupName: "gender", id: "famale", title: "Женщина" }
+              { groupName: "gender", label: "Мужчина", isChecked: true },
+              { groupName: "gender", label: "Женщина" }
             ]
           })
         fieldset.register-card__fieldset
           legend.register-card__legend Дата рождения
-          +input({
-            id: "dateInput",
-            type: "text",
-            placeholder: "ДД.ММ.ГГГГ"
-          })
+          +input({ type: "text", name: "date-of-birth", placeholder: "ДД.ММ.ГГГГ" })
         fieldset.register-card__fieldset
           legend.register-card__legend Данные для входа в сервис
           .register-card__input-wrap
-            +input({
-              id: "loginInput",
-              type: "text",
-              placeholder: "Email"
-            })
+            +input({ type: "email", name: "email", placeholder: "Email" })
           .register-card__input-wrap  
-            +input({
-              id: "passInput",
-              type: "password",
-              placeholder: "Пароль",
-            })
-          +toggle({
-            items: [
-              { id: "notGiveSpec", title: "Получать спецпредложения" }
-            ]
-          })
+            +input({ type: "password", name: "pass", placeholder: "Пароль" })
+          +toggle({ text: "Получать спецпредложения" })
         +button({ title: "Перейти к оплате", withIcon: true, buttonType: "submit" })
       .register-card__account-enter
         p Уже есть аккаунт на Toxin
         .register-card__auth-btn-wrap
-          +button({ path: "/auth.html", title: "Войти", variant: "outlined", size: "large" })
+          +button({ path: "auth.html", title: "Войти", variant: "outlined", size: "large" })

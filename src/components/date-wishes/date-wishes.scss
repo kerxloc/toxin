@@ -37,6 +37,7 @@
   }
 
   .date-wishes__date-picker-container {
+    position: absolute;
     top: 269px;
 
     @media (max-width: 380px) {
@@ -65,4 +66,8 @@
   line-height: 30px;
   font-weight: bold;
   color: $contentColor;
+}
+
+.date-wishes__title-wrap {
+  margin-bottom: 5px;
 }

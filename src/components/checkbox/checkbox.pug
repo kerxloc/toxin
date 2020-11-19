@@ -1,56 +1,17 @@
-mixin checkbox(options = {})
-  -
-    let labelClass = "checbox__lbl";
-    let titleClass = "checkbox__title";
-    let checkboxClass = "checkbox";
-    const listId = options.listId
-      ? options.listId
-      : "id-checkbox-list";
-
-    if (options.isExpandable) {
-      titleClass += " checkbox__title_expandabled";
-    }
-
-    if (options.isExpandableOpen) {
-      titleClass += " checkbox__title_expandabled-open";
-    }
-
-    if (options.isRich) {
-      checkboxClass += " checkbox_rich";
-      labelClass += " checbox__lbl_rich";
-    }
-
-  div(class=checkboxClass)
-    if options.title
-      if options.isExpandable
-        p(class=titleClass)
-          button(id=options.idExpandableBtn class="checkbox__expandable" type="button")= options.title
-      else 
-        p(class=titleClass)= options.title
-    if options.items
-      div(id=listId class="checkbox__item-list")
-        each item in options.items
+mixin checkbox({ items })
+  .checkbox
+    .checkbox__wrap
+      ul.checkbox__list
+        each item in items
           -
-            let checkboxItemClass = "checkbox__item";
+            const { label, title, isChecked } = item;
+            const labelSpanClass = title
+              ? 'checkbox__label-span checkbox__label-span_with-title'
+              : 'checkbox__label-span';
 
-            if (item.isIncomplete) {
-              checkboxItemClass += " checkbox__item_incomplete";
-            }
-
-            if (item.isLittleLower) {
-              checkboxItemClass += " checkbox__item_little-lower";
-            }
-
-            if (item.isLower) {
-              checkboxItemClass += " checkbox__item_lower";
-            }
-
-            if (item.isTight) {
-              checkboxItemClass += " checkbox__item_tight";
-            }
-
-          div(class=checkboxItemClass)
-            input(class="checkbox__input" id=item.id type="checkbox" checked=item.isChecked)
-            label(class="checkbox__label" for=item.id class=labelClass)= item.title
-              if options.isRich
-                span.checkbox__descr= item.descr
+          li.checkbox__item
+            label(class="checkbox__label")
+              if title
+                p.checkbox__title= title
+              input(class="checkbox__input"  type="checkbox" checked=isChecked)
+              span(class=labelSpanClass)= label
