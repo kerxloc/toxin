@@ -76,7 +76,7 @@
     padding-bottom: 50px;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 768px) {
     padding-top: 30px;
     padding-bottom: 40px;
     flex-direction: column;
@@ -100,7 +100,7 @@
       width: 50%;
     }
 
-    @media (max-width: 768px) {
+    @media (min-width: 320px) and (max-width: 768px) {
       margin-bottom: 40px;
       width: 100%;
     }
@@ -116,7 +116,7 @@
         margin-bottom: 0;
       }
 
-      @media (max-width: 768px) {
+      @media (min-width: 320px) and (max-width: 768px) {
         margin-bottom: 30px;
       }
     }
@@ -154,7 +154,7 @@
     width: 240px;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 768px) {
     margin-bottom: 40px;
     width: 100%;
   }
@@ -163,7 +163,7 @@
 .page-footer__title-wrap {
   margin-bottom: 20px;
 
-  @media (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 768px) {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 2px solid $contentColor;
@@ -173,7 +173,7 @@
 .page-footer__title-nav-wrap {
   margin-bottom: 23px;
 
-  @media (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 768px) {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 2px solid $contentColor;
@@ -188,7 +188,7 @@
     width: 85%;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 768px) {
     width: 100%;
   }
 }
