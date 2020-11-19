@@ -1,0 +1,30 @@
+@import '../../style/utils/variables.scss';
+@import '../../components/ui-kit-logo/ui-kit-logo.scss';
+@import '../../components/header/header.scss';
+@import '../../components/main-menu/main-menu.scss';
+@import '../../components/button/button.scss';
+
+.headers-and-footers {
+  background: #f4f4f6;
+}
+
+.headers-and-footers__wrap {
+  margin-top: 63px;
+}
+
+.headers-and-footers__item {
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:nth-child(3) {
+    margin-bottom: 42px;
+  }
+
+  &_short {
+    margin: 0 auto;
+    width: 53.3%;
+  }
+}
