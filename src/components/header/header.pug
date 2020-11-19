@@ -1,0 +1,79 @@
+include ../logo/logo
+include ../button/button
+include ../main-menu/main-menu
+
+mixin header(options = {})
+  -
+    const defaultMenuItems = [
+      { title: "О нас", path: "404.html" },
+      { 
+        title: "Услуги",
+        path: "404.html",
+        subMenu: [
+          { title: "Подбор отелей", path: "404.html" },
+          { title: "Заказать трансфер", path: "404.html" },
+          { title: "Рейтинг отелей", path: "404.html" }
+        ]
+      },
+      { title: "Вакансии", path: "404.html" },
+      { title: "Новости", path: "404.html" },
+      {
+        title: "Соглашения",
+        path: "404.html",
+        subMenu: [
+          { title: "Пользовательские", path: "404.html" },
+          { title: "Международные", path: "404.html" }
+        ]
+      }
+    ];
+
+    const {
+      customMenuItems,
+      mainMenuClass,
+      burgerBtnClass,
+      userName,
+      authListClass,
+      profileBtnClass,
+    } = options;
+
+    const menuItems = customMenuItems ? customMenuItems : defaultMenuItems;
+    let authClass = "page-header__auth";
+
+    if (userName) {
+      authClass += " page-header__auth_authenticated";
+    }
+
+    let classAuthList = "page-header__auth-list";
+
+    if (authListClass) {
+      classAuthList += ` ${authListClass}`
+    }
+
+    let classAuthBtn = "page-header__auth-profile";
+
+    if (profileBtnClass) {
+      classAuthBtn += ` ${profileBtnClass}`
+    }
+
+  header.page-header
+    .container
+      .page-header__wrap
+        +logo()
+        +mainMenu(menuItems, {
+          mainMenuClass,
+          burgerBtnClass
+        })
+        section(class=authClass)
+          if userName
+            p.page-header__user-name= userName
+          else
+            .page-header__auth-btn-wrap
+              +button({ title: "Войти", path: "auth.html", variant: "outlined" })
+            .page-header__registr-btn-wrap
+              +button({ title: "Зарегистрироваться", path: "registration.html" })
+            ul(class=classAuthList)
+              li.page-header__auth-item
+                a(class="page-header__auth-item-link" href="auth.html")= "Войти"
+              li.page-header__auth-item
+                a(class="page-header__auth-item-link" href="registration.html")= "Зарегистрироваться"
+            button(class=classAuthBtn type="button")
