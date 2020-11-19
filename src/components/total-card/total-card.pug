@@ -1,3 +1,5 @@
+include ../drop-down/drop-down
+
 mixin totalCard()
   section.total-card
     .total-card__wrap
@@ -14,17 +16,17 @@ mixin totalCard()
             .total-card__title-wrap
               +typography({ text: "Выезд", variant: "h3", hasUpper: true })
             +dropDown({ text: "ДД.ММ.ГГГГ", classForJs: "js-departure-input" })
-          div(class="date-picker-container  total-card__date-picker-container")
+          div(class="date-picker-container js-date-picker-container total-card__date-picker-container")
         .total-card__title-wrap
           +typography({ text: "Гости", variant: "h3", hasUpper: true })  
         +dropDown({ text: "Сколько гостей", classForJs: "js-input-drop-down" })
-        div(class="drop-down-container  js-drop-down-container")
+        div(class="drop-down-container js-drop-down-container")
         .total-card__calc
           .total-card__calc-row
             p.total-card__calc-text 9 990₽ х 4 суток
-            p(class="total-card__calc-text  total-card__calc-text_informational") Сбор за услуги: скидка 2 179₽
-            p(class="total-card__calc-text  total-card__calc-text_informational") Сбор за дополнительные услуги
-          div(class="total-card__calc-row  total-card__calc-row_low   total-card__calc-row_tar")
+            p(class="total-card__calc-text total-card__calc-text_informational") Сбор за услуги: скидка 2 179₽
+            p(class="total-card__calc-text total-card__calc-text_informational") Сбор за дополнительные услуги
+          div(class="total-card__calc-row total-card__calc-row_low  total-card__calc-row_tar")
             p.total-card__calc-text 39 960₽
             p.total-card__calc-text 0₽
             p.total-card__calc-text 300₽
