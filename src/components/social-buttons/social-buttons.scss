@@ -1,0 +1,24 @@
+.social-buttons__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.social-buttons__item {
+  margin-right: 24px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.social-buttons__link .social-buttons__icon {
+  transition: fill .4s ease;
+}
+
+.social-buttons__link:hover .social-buttons__icon {
+  fill: darken($accentColor, 10%);
+}
