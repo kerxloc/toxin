@@ -1,7 +1,7 @@
 extends ../../layout/main.pug
 include ../../components/drop-down/drop-down
 include ../../components/range-slider/range-slider
-include ../../components/checkbox/checkbox
+include ../../components/checkbox-list/checkbox-list
 include ../../components/expandable-checkbox/expandable-checkbox
 include ../../components/hotel-card/hotel-card
 include ../../components/pagination/pagination
@@ -198,7 +198,7 @@ block content
             .filter__item
               div(class="filter__title-wrap filter__title-wrap_bottom-gap")
                 +typography({ text: "Правила дома", variant: "h3", hasUpper: true })
-              +checkbox({
+              +checkboxList({
                 items: [
                   { label: "Можно курить" },
                   { label: "Можно с питомцами", isChecked: true },
@@ -208,7 +208,7 @@ block content
             .filter__item
               div(class="filter__title-wrap filter__title-wrap_bottom-gap")
                 +typography({ text: "Доступность", variant: "h3", hasUpper: true })
-              +checkbox({
+              +checkboxList({
                 items: [
                   {
                     title: "Широкий коридор",

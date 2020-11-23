@@ -2,7 +2,7 @@ extends ../../layout/ui-kit.pug
 include ../../components/input/input
 include ../../components/typography/typography
 include ../../components/drop-down/drop-down
-include ../../components/checkbox/checkbox
+include ../../components/checkbox-list/checkbox-list
 include ../../components/radio-btn/radio-btn
 include ../../components/toggle/toggle
 include ../../components/like-btn/like-btn
@@ -72,7 +72,7 @@ block content
           .form-elements__control
             div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Checkbox Buttons", variant: "h3", hasUpper: true })
-            +checkbox({
+            +checkboxList({
               items: [
                 { label: "Можно курить" },
                 { label: "Можно с питомцами", isChecked: true },
@@ -182,7 +182,7 @@ block content
           .form-elements__list
             div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Rich Checkbox Buttons", variant: "h3", hasUpper: true })
-            +checkbox({
+            +checkboxList({
               items: [
                 { title: "Широкий коридор", label: "Ширина коридоров в номере не менее 91 см." },
                 { title: "Помощник для инвалидов", label: "На 1 этаже вас встретит специалист  и проводит до номера."}
