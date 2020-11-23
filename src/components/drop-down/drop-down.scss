@@ -201,7 +201,7 @@
     background-position: 95% 65%;
   }
 
-  &_actived {
+  &_active {
     border-color: transparentize($contentColor, .25);
 
     + .drop-down-input__button {

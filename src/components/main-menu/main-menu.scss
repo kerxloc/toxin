@@ -150,7 +150,7 @@
     }
   }
 
-  &_actived {
+  &_active {
     .main-menu__item-link {
       font-weight: bold;
       color: transparentize($contentColor, .25);

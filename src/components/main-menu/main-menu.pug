@@ -22,15 +22,15 @@ mixin mainMenu(menuItems, cssClass)
       ul.main-menu__list
         each item in menuItems
           -
-            const { title, path, subMenu, isActived } = item;
+            const { title, path, subMenu, isActive } = item;
             let itemClass = "main-menu__item";
 
             if (subMenu) {
               itemClass += "  main-menu__item_sub-menu";
             }
 
-            if (isActived) {
-              itemClass += "  main-menu__item_actived";
+            if (isActive) {
+              itemClass += "  main-menu__item_active";
               path = null;
             }
 

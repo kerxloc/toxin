@@ -3,11 +3,11 @@ mixin ratebtn({ currentRating, ratingLength })
     .ratebtn__wrap
       - for (let i = 0; i < ratingLength; ++i) {
         -
-          const isActived = i < currentRating;
+          const isActive = i < currentRating;
           let starClass = "ratebtn__star";
 
-          if (isActived) {
-            starClass += " ratebtn__star_actived"
+          if (isActive) {
+            starClass += " ratebtn__star_active"
           }
         
         div(class=starClass)
