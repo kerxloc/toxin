@@ -15,7 +15,14 @@ mixin button(options)
       buttonClass += ` button_size_${size}`;
     }
 
-    const { isDisabled, withIcon, buttonType = "button", title, path } = options;
+   const {
+      isDisabled,
+      isExternalPath,
+      withIcon,
+      buttonType = "button",
+      title,
+      path,
+    } = options;
 
     if (isDisabled) {
        buttonClass += " button_disabled";
@@ -26,6 +33,9 @@ mixin button(options)
     }
 
   if path
-    a(class=buttonClass href=path)= title
+    if isExternalPath
+      a(class=buttonClass  target="_blank" rel="noopener noreferrer" href=path)= title
+    else
+      a(class=buttonClass href=path)= title
   else
     button(class=buttonClass type=buttonType disabled=isDisabled)= title
