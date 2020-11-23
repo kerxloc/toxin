@@ -10,22 +10,22 @@ mixin input(options = {})
       classForJs,
     } = options;
 
-    let inputClass = "input-group__input";
+    let inputBaseClass = "input__base";
 
     if (isFocused) {
-      inputClass += " input-group__input_focused";
+      inputBaseClass += " input__base_focused";
     }
     
     if (withButton) {
-      inputClass += " input-group__input_with-button";
+      inputBaseClass += " input__base_with-button";
     }
 
     if (classForJs) {
-      inputClass += ` ${classForJs}`;
+      inputBaseClass += ` ${classForJs}`;
     }
 
-  .input-group
-    .input-group__wrap
-      input(class=inputClass type=type name=name placeholder=placeholder value=value)
+  .input
+    .input__wrap
+      input(class=inputBaseClass type=type name=name placeholder=placeholder value=value)
       if withButton
-        button(class="input-group__button" type="submit")
+        button(class="input__button" type="submit")
