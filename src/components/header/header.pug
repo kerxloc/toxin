@@ -28,7 +28,7 @@ mixin header(options = {})
     ];
 
     const {
-      customMenuItems,
+      customMenuItems = defaultMenuItems,
       mainMenuClass,
       burgerBtnClass,
       userName,
@@ -36,7 +36,6 @@ mixin header(options = {})
       profileBtnClass,
     } = options;
 
-    const menuItems = customMenuItems ? customMenuItems : defaultMenuItems;
     let authClass = "page-header__auth";
 
     if (userName) {
@@ -59,7 +58,7 @@ mixin header(options = {})
     .container
       .page-header__wrap
         +logo()
-        +mainMenu(menuItems, {
+        +mainMenu(customMenuItems, {
           mainMenuClass,
           burgerBtnClass
         })
