@@ -124,7 +124,7 @@ class DatePicker {
     return date.getMonth() === this.currentDate.getMonth();
   };
 
-  compaireDate = (firstDate, secondDate) => {
+  compareDate = (firstDate, secondDate) => {
     const firstDay = firstDate.getDate();
     const firstMonth = firstDate.getMonth();
     const firstYear = firstDate.getFullYear();
@@ -188,8 +188,8 @@ class DatePicker {
 
   showArrivalMonthCalendar = () => {
     const inputDate = this.arrivalInput.textContent;
-    const arrivalInputDate = this.getConverteDateByUserInput(inputDate);
-    const dateMoreThisDate = this.compaireDate(arrivalInputDate, new Date()) >= 0;
+    const arrivalInputDate = this.getConvertedDateByUserInput(inputDate);
+    const dateMoreThisDate = this.compareDate(arrivalInputDate, new Date()) >= 0;
     this.showCalendar();
     this.onInputDateArrival();
     if (this.arrivalDate && dateMoreThisDate) {
@@ -230,8 +230,8 @@ class DatePicker {
           cell.classList.add('date-picker__day_selected');
         }
 
-        const isCellDateMoreThanArrivalDate = this.compaireDate(cellDate, this.arrivalDate) > 0;
-        const isCellDateLessThanDepartureDate = this.compaireDate(cellDate, this.departureDate) < 0;
+        const isCellDateMoreThanArrivalDate = this.compareDate(cellDate, this.arrivalDate) > 0;
+        const isCellDateLessThanDepartureDate = this.compareDate(cellDate, this.departureDate) < 0;
         const isCellDateInRange = isCellDateMoreThanArrivalDate && isCellDateLessThanDepartureDate;
 
         if (isCellDateInRange) {
@@ -323,8 +323,8 @@ class DatePicker {
     const inputDate = this.arrivalInput.textContent;
     const isInputDateFull = this.hasDataFull(inputDate);
     if (isInputDateFull) {
-      const arrivalInputDate = this.getConverteDateByUserInput(inputDate);
-      const dateMoreThisDate = this.compaireDate(arrivalInputDate, new Date()) >= 0;
+      const arrivalInputDate = this.getConvertedDateByUserInput(inputDate);
+      const dateMoreThisDate = this.compareDate(arrivalInputDate, new Date()) >= 0;
       if (dateMoreThisDate) {
         this.showArrivalMonthCalendar();
       }
@@ -347,14 +347,14 @@ class DatePicker {
     const pickDate = this.arrivalInput.textContent;
     const isDataFull = this.hasDataFull(pickDate);
     if (isDataFull) {
-      const convertePickDate = this.getConverteDateByUserInput(pickDate);
-      const ariaDate = this.getAriaDateByDate(convertePickDate);
+      const convertedPickDate = this.getConvertedDateByUserInput(pickDate);
+      const ariaDate = this.getAriaDateByDate(convertedPickDate);
       const pickCell = this.getCellByAriaDate(ariaDate);
       let isArrivalDateMore = false;
       if (this.departureDate) {
-        isArrivalDateMore = this.compaireDate(convertePickDate, this.departureDate) > 0;
+        isArrivalDateMore = this.compareDate(convertedPickDate, this.departureDate) > 0;
       }
-      const pickDateLessThisDate = this.compaireDate(convertePickDate, new Date()) < 0;
+      const pickDateLessThisDate = this.compareDate(convertedPickDate, new Date()) < 0;
       if (pickDateLessThisDate) {
         this.showErrorAnimation();
         if (pickCell) {
@@ -370,19 +370,19 @@ class DatePicker {
           let isArrivalCell = false;
 
           if (this.arrivalDate) {
-            isArrivalCell = convertePickDate.toDateString() === this.arrivalDate.toDateString();
+            isArrivalCell = convertedPickDate.toDateString() === this.arrivalDate.toDateString();
           }
 
           if (!isArrivalCell) {
             let isArrDateLessDepDate = false;
 
             if (this.departureDate) {
-              isArrDateLessDepDate = this.compaireDate(convertePickDate, this.departureDate) < 0;
+              isArrDateLessDepDate = this.compareDate(convertedPickDate, this.departureDate) < 0;
             }
 
             if (isArrDateLessDepDate) {
               this.clearSelectCell();
-              this.onStartSelectRangeDate(pickCell, convertePickDate);
+              this.onStartSelectRangeDate(pickCell, convertedPickDate);
               this.paintingSelectCell();
             } else if (isArrivalDateMore) {
               this.clearSelectCell();
@@ -399,7 +399,7 @@ class DatePicker {
           this.departureInput.textContent = '';
         }
 
-        this.onStartSelectRangeDate(pickCell, convertePickDate);
+        this.onStartSelectRangeDate(pickCell, convertedPickDate);
       }
     }
   };
@@ -418,11 +418,11 @@ class DatePicker {
       }
 
       if (isPickDateFull) {
-        const convertePickDate = this.getConverteDateByUserInput(pickDate);
-        const ariaDate = this.getAriaDateByDate(convertePickDate);
+        const convertedPickDate = this.getConvertedDateByUserInput(pickDate);
+        const ariaDate = this.getAriaDateByDate(convertedPickDate);
         const pickCell = this.getCellByAriaDate(ariaDate);
         if (pickCell) {
-          const isDateSelectLess = this.compaireDate(convertePickDate, this.arrivalDate) < 0;
+          const isDateSelectLess = this.compareDate(convertedPickDate, this.arrivalDate) < 0;
           if (isDateSelectLess) {
             this.showErrorAnimation();
             pickCell.classList.add('date-picker__day_with-error');
@@ -437,18 +437,18 @@ class DatePicker {
                 this.clearSelectCell();
               }
 
-              this.onEndSelectRangeDate(pickCell, convertePickDate);
+              this.onEndSelectRangeDate(pickCell, convertedPickDate);
               this.paintingSelectCell();
             }
           }
         } else {
-          const isDateSelectLess = this.compaireDate(convertePickDate, this.arrivalDate) < 0;
+          const isDateSelectLess = this.compareDate(convertedPickDate, this.arrivalDate) < 0;
           if (isDateSelectLess) {
             this.showErrorAnimation();
             this.departureInput.textContent = '';
           } else {
             this.clearSelectCell();
-            this.onEndSelectRangeDate(pickCell, convertePickDate);
+            this.onEndSelectRangeDate(pickCell, convertedPickDate);
             this.paintingSelectCell();
           }
         }
@@ -514,7 +514,7 @@ class DatePicker {
       const selectYear = selectDate.getFullYear();
       const selectDateText = `${selectDay}.${selectMonth}.${selectYear}`;
       const isCellDoubleSelect = td === this.arrivalCell || td === this.departureCell;
-      const isDateLessThisDate = this.compaireDate(selectDate, new Date()) < 0;
+      const isDateLessThisDate = this.compareDate(selectDate, new Date()) < 0;
       if (isDateLessThisDate) {
         this.showErrorAnimation();
         td.classList.add('date-picker__day_with-error');
@@ -522,7 +522,7 @@ class DatePicker {
           td.classList.remove('date-picker__day_with-error');
         }, 700);
       } else if (this.isStartSelect && !isCellDoubleSelect) {
-        const isDateSelectLess = this.compaireDate(selectDate, this.arrivalDate) < 0;
+        const isDateSelectLess = this.compareDate(selectDate, this.arrivalDate) < 0;
         if (isDateSelectLess) {
           this.showErrorAnimation();
           td.classList.add('date-picker__day_with-error');
@@ -573,7 +573,7 @@ class DatePicker {
     return ariaDate;
   };
 
-  getConverteDateByUserInput = userDate => {
+  getConvertedDateByUserInput = userDate => {
     const splitUserDate = userDate.split('.');
     const day = splitUserDate[0];
     const month = splitUserDate[1];
@@ -586,12 +586,12 @@ class DatePicker {
     const currentMonth = this.currentDate.getMonth();
     const lastDayCurrentMonth = new Date(currentYear + 1, currentMonth + 1, 0).getDate();
     const lastWeekDayPrevMonth = new Date(currentYear, currentMonth, 0).getDay();
-    const isLastWeekDaySuterday = lastWeekDayPrevMonth === 6;
+    const isLastWeekDaySaturday = lastWeekDayPrevMonth === 6;
     const isLastWeekDayFriday = lastWeekDayPrevMonth === 5;
     const isLastWeekDaySunday = lastWeekDayPrevMonth === 0;
     let numberRow = 5;
 
-    if (isLastWeekDaySuterday && lastDayCurrentMonth >= 30) {
+    if (isLastWeekDaySaturday && lastDayCurrentMonth >= 30) {
       numberRow = 6;
     }
 
@@ -634,7 +634,7 @@ class DatePicker {
       for (let j = 0; j < numberColumn; j++) {
         const viewDate = new Date(currentYear, viewMonth, ++numberDay);
         const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
-        const isNowDate = this.compaireDate(viewDate, nowDate) === 0;
+        const isNowDate = this.compareDate(viewDate, nowDate) === 0;
 
         if(this.isCellLower) {
           tableTd.classList.add('date-picker__day_lower');

@@ -50,7 +50,7 @@ class MainMenu {
 
     this.burgerButton.classList.toggle('main-menu__burger-icon_active');
     if (this.profileButton) {
-      this.profileButton.classList.toggle('page-header__auth-profile_hiden');
+      this.profileButton.classList.toggle('page-header__auth-profile_hidden');
     }
   };
 
@@ -60,7 +60,7 @@ class MainMenu {
       this.authList.classList.add('page-header__auth-list_active');
       this.burgerButton.classList.add('main-menu__burger-icon_active');
       this.isProfileActive = true;
-      this.profileButton.classList.add('page-header__auth-profile_hiden');
+      this.profileButton.classList.add('page-header__auth-profile_hidden');
     }
   };
 

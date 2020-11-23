@@ -1,6 +1,6 @@
 @import '../../style/utils/variables.scss';
 @import '../../components/typography/typography.scss';
-@import '../../components/color-pallete/color-pallete.scss';
+@import '../../components/color-palette/color-palette.scss';
 @import '../../components/ui-kit-logo/ui-kit-logo.scss';
 
 .colors-and-type__wrap {
@@ -23,7 +23,7 @@
   }
 }
 
-.colors-and-type__pallete {
+.colors-and-type__palette {
   margin: 0;
   padding: 0;
   padding-left: 10px;
@@ -38,7 +38,7 @@
   }
 }
 
-.colors-and-type__pallete-item {
+.colors-and-type__palette-item {
   margin-bottom: 20px;
 }
 

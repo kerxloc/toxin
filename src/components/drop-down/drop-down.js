@@ -35,7 +35,7 @@ class DropDown {
     }
 
     if (options.input) {
-      const placeholder = options.placeholder ? options.placeholder : 'Выберите элимент';
+      const placeholder = options.placeholder ? options.placeholder : 'Выберите элемент';
       this.placeholder = placeholder;
       this.input = options.input;
       const isHaveStartValue = this.hasHaveStartValue(options.countElements);
@@ -122,7 +122,7 @@ class DropDown {
   };
 
   hideClearBtn = () => {
-    this.clearBtn.classList.add('drop-down__button_hiden');
+    this.clearBtn.classList.add('drop-down__button_hidden');
   };
 
   onClickHide = evt => {
@@ -254,9 +254,9 @@ class DropDown {
         countItemMinus.removeAttribute('disabled');
       }
 
-      const isClearBtnDisabled = this.clearBtn.classList.contains('drop-down__button_hiden');
+      const isClearBtnDisabled = this.clearBtn.classList.contains('drop-down__button_hidden');
       if (isClearBtnDisabled) {
-        this.clearBtn.classList.remove('drop-down__button_hiden');
+        this.clearBtn.classList.remove('drop-down__button_hidden');
       }
     });
 
@@ -265,8 +265,8 @@ class DropDown {
       element.counter--;
       groupView.counter--;
       countItemView.textContent = element.counter;
-      const nextDecrimentCounter = element.counter - 1;
-      if (nextDecrimentCounter < element.minValue) {
+      const nextDecrementCounter = element.counter - 1;
+      if (nextDecrementCounter < element.minValue) {
         countItemMinus.classList.add('drop-down__counter-btn_disabled');
         countItemMinus.setAttribute('disabled', 'true');
       }

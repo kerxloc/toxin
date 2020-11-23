@@ -134,7 +134,7 @@
   }
 }
 
-.page-header__registr-btn-wrap {
+.page-header__registration-btn-wrap {
   @media (max-width: 1024px) {
     display: none;
   }
@@ -167,7 +167,7 @@
     right: 60px;
   }
 
-  &_hiden {
+  &_hidden {
     @media (max-width: 1024px) {
       display: none;
     }
