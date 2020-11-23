@@ -11,7 +11,7 @@ include ../../components/range-slider/range-slider
 include ../../components/button/button
 include ../../components/pagination/pagination
 include ../../components/expandable-checkbox/expandable-checkbox
-include ../../components/bullet-list/bullet-list
+include ../../components/bulleted-list/bulleted-list
 include ../../components/features/features
 include ../../components/comment/comment
 
@@ -197,7 +197,7 @@ block content
           .form-elements__list
             div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Bullet list", variant: "h3", hasUpper: true })
-            +bullet({
+            +bulletedList({
               items: [
                 { text: "Нельзя с питомцами" },
                 { text: "Без вечеринок и мероприятий" },

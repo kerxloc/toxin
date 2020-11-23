@@ -2,7 +2,7 @@ extends ../../layout/main.pug
 include ../../components/features/features
 include ../../components/pie-chart/pie-chart
 include ../../components/comment/comment
-include ../../components/bullet-list/bullet-list
+include ../../components/bulleted-list/bulleted-list
 include ../../components/total-card/total-card
 include ../../components/typography/typography
 
@@ -79,7 +79,7 @@ block content
               .room-details__bullet-wrap
                 div(class="room-details__title-wrap room-details__title-wrap_left-gap")
                   +typography({ variant: "h2", text: "Правила" })
-                +bullet({
+                +bulletedList({
                   items: [
                     { text: "Нельзя с питомцами" },
                     { text: "Без вечеринок и мероприятий" },
