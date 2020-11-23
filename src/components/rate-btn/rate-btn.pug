@@ -1,13 +1,13 @@
-mixin ratebtn({ currentRating, ratingLength })
-  .ratebtn
-    .ratebtn__wrap
+mixin rateBtn({ currentRating, ratingLength })
+  .rate-btn
+    .rate-btn__wrap
       - for (let i = 0; i < ratingLength; ++i) {
         -
           const isActive = i < currentRating;
-          let starClass = "ratebtn__star";
+          let starClass = "rate-btn__star";
 
           if (isActive) {
-            starClass += " ratebtn__star_active"
+            starClass += " rate-btn__star_active"
           }
         
         div(class=starClass)

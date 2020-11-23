@@ -1,6 +1,6 @@
 include ../input/input
 include ../button/button
-include ../radiobtn/radiobtn
+include ../radio-btn/radio-btn
 include ../toggle/toggle
 
 mixin registerCard()
@@ -13,7 +13,7 @@ mixin registerCard()
             +input({ type: "text", name: "name", placeholder: "Имя" })
           .register-card__input-wrap  
             +input({ type: "text", name: "surname", placeholder: "Фамилия" })
-          +radiobtn({
+          +radioBtn({
             items: [
               { groupName: "gender", label: "Мужчина", isChecked: true },
               { groupName: "gender", label: "Женщина" }

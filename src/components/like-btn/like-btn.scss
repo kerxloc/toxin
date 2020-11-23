@@ -1,4 +1,4 @@
-.likebtn__button {
+.like-btn__button {
   position: relative;
   margin: 0;
   padding: 3px 0;
@@ -25,7 +25,7 @@
     width: 10px;
     height: 8px;
     content: '';
-    background: url('../../components/likebtn/like.png') no-repeat;
+    background: url('../../components/like-btn/like.png') no-repeat;
   }
 
   &_active {
@@ -33,7 +33,7 @@
     border-color: $accentColor;
 
     &::after {
-      background: url('../../components/likebtn/like-active.png') no-repeat;
+      background: url('../../components/like-btn/like-active.png') no-repeat;
     }
   }
 }

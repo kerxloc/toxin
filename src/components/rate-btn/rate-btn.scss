@@ -1,14 +1,14 @@
-.ratebtn__wrap {
+.rate-btn__wrap {
   display: flex;
   flex-wrap: wrap;
 }
 
-.ratebtn__star {
+.rate-btn__star {
   margin-right: 4px;
   display: block;
   width: 20px;
   height: 20px;
-  background: url('../../components/ratebtn/star.png') no-repeat;
+  background: url('../../components/rate-btn/star.png') no-repeat;
   cursor: pointer;
 
   &:last-child {
@@ -16,6 +16,6 @@
   }
 
   &_active {
-    background: url('../../components/ratebtn/star-active.png') no-repeat;
+    background: url('../../components/rate-btn/star-active.png') no-repeat;
   }
 }

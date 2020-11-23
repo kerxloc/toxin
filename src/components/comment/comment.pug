@@ -1,4 +1,4 @@
-include ../likebtn/likebtn
+include ../like-btn/like-btn
 
 mixin comment(options = {})
   -
@@ -16,7 +16,7 @@ mixin comment(options = {})
       .comment__column
         .comment__avatar
           img(class="comment__avatar-img" src=avatarSrc alt=authorName)
-        +likebtn({ count: likeCount, isActive: isLikeActive })
+        +likeBtn({ count: likeCount, isActive: isLikeActive })
       .comment__column
         p.comment__title= authorName 
         p.comment__date= datePost

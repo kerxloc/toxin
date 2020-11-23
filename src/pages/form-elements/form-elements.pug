@@ -3,10 +3,10 @@ include ../../components/input/input
 include ../../components/typography/typography
 include ../../components/drop-down/drop-down
 include ../../components/checkbox/checkbox
-include ../../components/radiobtn/radiobtn
+include ../../components/radio-btn/radio-btn
 include ../../components/toggle/toggle
-include ../../components/likebtn/likebtn
-include ../../components/ratebtn/ratebtn
+include ../../components/like-btn/like-btn
+include ../../components/rate-btn/rate-btn
 include ../../components/range-slider/range-slider
 include ../../components/button/button
 include ../../components/pagination/pagination
@@ -82,7 +82,7 @@ block content
           .form-elements__control
             div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Radio Buttons", variant: "h3", hasUpper: true })
-            +radiobtn({
+            +radioBtn({
               items: [
                 { groupName: "gender", label: "Мужчина", isChecked: true },
                 { groupName: "gender", label: "Женщина" }
@@ -99,15 +99,15 @@ block content
               +typography({ text: "Like Button", variant: "h3", hasUpper: true })
             .form-elements__like-wrap
               .form-elements__like-btn
-                +likebtn({ count: 2 })
-              +likebtn({ count: 12, isActive: true })
+                +likeBtn({ count: 2 })
+              +likeBtn({ count: 12, isActive: true })
           .form-elements__control
             div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Rate button", variant: "h3", hasUpper: true })
             .form-elements__rate-btn-wrap
               .form-elements__rate-btn
-                +ratebtn({ currentRating: 5, ratingLength: 5 })
-              +ratebtn({ currentRating: 4, ratingLength: 5 })  
+                +rateBtn({ currentRating: 5, ratingLength: 5 })
+              +rateBtn({ currentRating: 4, ratingLength: 5 })  
         .form-elements__buttons
           .form-elements__range-slider-wrap
             +rangeSlider({ title: "Range Slider" })

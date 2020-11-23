@@ -1,4 +1,4 @@
-.radiobtn__list {
+.radio-btn__list {
   margin: 0;
   padding: 0;
   display: flex;
@@ -6,7 +6,7 @@
   list-style: none;
 }
 
-.radiobtn__item {
+.radio-btn__item {
   margin-right: 20px;
   margin-bottom: 12px;
 
@@ -16,11 +16,11 @@
   }
 }
 
-.radiobtn__input[type='radio'] {
+.radio-btn__input[type='radio'] {
   display: none;
 }
 
-.radiobtn__label-span {
+.radio-btn__label-span {
   position: relative;
   padding-left: 30px;
   display: block;
@@ -59,13 +59,13 @@
   }
 }
 
-.radiobtn__input[type='radio']:checked {
-  & + .radiobtn__label-span::after {
+.radio-btn__input[type='radio']:checked {
+  & + .radio-btn__label-span::after {
     visibility: visible;
     opacity: 1;
   }
 
-  & + .radiobtn__label-span::before {
+  & + .radio-btn__label-span::before {
     border-color: $accentColor;
   }
 }

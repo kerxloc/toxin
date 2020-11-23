@@ -1,4 +1,4 @@
-include ../ratebtn/ratebtn
+include ../rate-btn/rate-btn
 mixin hotelCard(options = {})
   - const { images, numberHotel, starCount, reviewCount, dayCost, isLuxed } = options;
 
@@ -25,5 +25,5 @@ mixin hotelCard(options = {})
               a(class="hotel-card__title-link" href="room-details.html") № #[span= numberHotel]
           p.hotel-card__text #[b= dayCost + "₽"] в сутки
         .hotel-card__info-item
-          +ratebtn({ currentRating: starCount, ratingLength: 5 })
+          +rateBtn({ currentRating: starCount, ratingLength: 5 })
           p(class="hotel-card__text  hotel-card__text_fzlarge") #[b= reviewCount] Отзывов
