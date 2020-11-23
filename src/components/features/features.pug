@@ -2,7 +2,7 @@ mixin features({ items })
   ul.features
   each item in items
     -
-      const { title, descr, icon } = item;
+      const { title, description, icon } = item;
       let pictClass = "features__pict";
       iconModifiers = ["emoticon", "city", "whats"];
 
@@ -14,4 +14,4 @@ mixin features({ items })
       div(class=pictClass)
       section.features__content
         h2.features__title= title
-        p.features__descr= descr
+        p.features__description= description
