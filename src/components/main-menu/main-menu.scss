@@ -151,7 +151,9 @@
   }
 
   &_active {
-    .main-menu__item-link {
+    /* stylelint-disable */
+    a.main-menu__item-link {
+      /* stylelint-enable */
       font-weight: bold;
       color: transparentize($contentColor, .25);
     }

@@ -9,10 +9,35 @@ block variables
     const keywords = "Toxin keywords";
     const pageClass = "headers-and-footers";
 
+  -
+    const menuItems = [
+      { title: "О нас", path: "404.html", isActive: true },
+      { 
+        title: "Услуги",
+        path: "404.html",
+        subMenu: [
+          { title: "Подбор отелей", path: "404.html" },
+          { title: "Заказать трансфер", path: "404.html" },
+          { title: "Рейтинг отелей", path: "404.html" }
+        ]
+      },
+      { title: "Вакансии", path: "404.html" },
+      { title: "Новости", path: "404.html" },
+      {
+        title: "Соглашения",
+        path: "404.html",
+        subMenu: [
+          { title: "Пользовательские", path: "404.html" },
+          { title: "Международные", path: "404.html" }
+        ]
+      }
+    ];
+  
 block content
   .headers-and-footers__wrap
     .headers-and-footers__item
       +header({
+        customMenuItems: menuItems,
         mainMenuClass: "js-main-menu",
         burgerBtnClass: "js-main-menu-burger-btn",
         authListClass: "js-auth-list",
@@ -20,6 +45,7 @@ block content
       })
     div(class="headers-and-footers__item headers-and-footers__item_authorized")
       +header({
+        customMenuItems: menuItems,
         userName: "Юлий Цезарь",
         mainMenuClass: "js-second-main-menu",
         burgerBtnClass: "js-second-main-menu-burger-btn",
