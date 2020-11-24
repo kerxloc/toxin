@@ -25,7 +25,6 @@ mixin input(options = {})
     }
 
   .input
-    .input__wrap
-      input(class=inputBaseClass type=type name=name placeholder=placeholder value=value)
-      if withButton
-        button(class="input__button" type="submit")
+    input(class=inputBaseClass type=type name=name placeholder=placeholder value=value)
+    if withButton
+      button(class="input__button" type="submit")
