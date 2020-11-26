@@ -1,7 +1,7 @@
 import '../../style/main.scss';
 import './index.scss';
 import '../../favicons/favicons.js';
-import MainMenu from '../../components/main-menu/main-menu';
+import '../../components/main-menu/main-menu-init';
 import DropDown from '../../components/drop-down/drop-down';
 import DatePicker from '../../components/date-picker/date-picker';
 
@@ -15,15 +15,6 @@ const datePickerDomInfo = {
 
 const datePicker = new DatePicker(datePickerDomInfo);
 datePicker.renderCalendar();
-
-const mainMenuDomNode = {
-  mainMenu: document.querySelector('.js-main-menu'),
-  burgerButton: document.querySelector('.js-main-menu-burger-btn'),
-  authList: document.querySelector('.js-auth-list'),
-  profileButton: document.querySelector('.js-profile-btn'),
-};
-
-new MainMenu(mainMenuDomNode);
 
 const dropDownContainer = document.querySelector('.js-drop-down-container');
 const inputDropDown = document.querySelector('.js-input-drop-down');
