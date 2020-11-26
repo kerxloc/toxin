@@ -36,20 +36,9 @@ block variables
 block content
   .headers-and-footers__wrap
     .headers-and-footers__item
-      +header({
-        customMenuItems: menuItems,
-        mainMenuClass: "js-main-menu",
-        burgerBtnClass: "js-main-menu-burger-btn",
-        authListClass: "js-auth-list",
-        profileBtnClass: "js-profile-btn",
-      })
+      +header({ customMenuItems: menuItems })
     div(class="headers-and-footers__item headers-and-footers__item_authorized")
-      +header({
-        customMenuItems: menuItems,
-        userName: "Юлий Цезарь",
-        mainMenuClass: "js-second-main-menu",
-        burgerBtnClass: "js-second-main-menu-burger-btn",
-      })
+      +header({ customMenuItems: menuItems, userName: "Юлий Цезарь" })
     .headers-and-footers__item
       +footer()
     div(class="headers-and-footers__item headers-and-footers__item_short")

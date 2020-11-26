@@ -29,11 +29,7 @@ mixin header(options = {})
 
     const {
       customMenuItems = defaultMenuItems,
-      mainMenuClass,
-      burgerBtnClass,
       userName,
-      authListClass,
-      profileBtnClass,
     } = options;
 
     let authClass = "page-header__auth";
@@ -42,26 +38,11 @@ mixin header(options = {})
       authClass += " page-header__auth_authenticated";
     }
 
-    let classAuthList = "page-header__auth-list";
-
-    if (authListClass) {
-      classAuthList += ` ${authListClass}`
-    }
-
-    let classAuthBtn = "page-header__auth-profile";
-
-    if (profileBtnClass) {
-      classAuthBtn += ` ${profileBtnClass}`
-    }
-
   header.page-header
     .container
       .page-header__wrap
         +logo()
-        +mainMenu(customMenuItems, {
-          mainMenuClass,
-          burgerBtnClass
-        })
+        +mainMenu(customMenuItems)
         section(class=authClass)
           if userName
             p.page-header__user-name= userName
@@ -70,9 +51,9 @@ mixin header(options = {})
               +button({ title: "Войти", path: "auth.html", variant: "outlined" })
             .page-header__registration-btn-wrap
               +button({ title: "Зарегистрироваться", path: "registration.html" })
-            ul(class=classAuthList)
+            ul(class="page-header__auth-list js-auth-list")
               li.page-header__auth-item
                 a(class="page-header__auth-item-link" href="auth.html")= "Войти"
               li.page-header__auth-item
                 a(class="page-header__auth-item-link" href="registration.html")= "Зарегистрироваться"
-            button(class=classAuthBtn type="button")
+            button(class="page-header__auth-profile js-profile-btn" type="button")

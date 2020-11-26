@@ -1,20 +1,7 @@
-mixin mainMenu(menuItems, cssClass)
-  -
-    const { mainMenuClass, burgerBtnClass } = cssClass;
-    let menuClass = "main-menu";
+mixin mainMenu(menuItems)
 
-    if (mainMenuClass) {
-      menuClass += ` ${mainMenuClass}`;
-    }
-
-    let burgerClass = "main-menu__burger-icon";
-
-    if (burgerBtnClass) {
-      burgerClass += ` ${burgerBtnClass}`;
-    }
-
-  div(class=menuClass)
-    div(class=burgerClass)
+  div(class="main-menu js-main-menu")
+    div(class="main-menu__burger-icon js-main-menu-burger-btn")
       span
       span
       span
@@ -27,7 +14,7 @@ mixin mainMenu(menuItems, cssClass)
             let itemClass = "main-menu__item";
 
             if (subMenu) {
-              itemClass += " main-menu__item_sub-menu";
+              itemClass += " main-menu__item_sub-menu js-main-menu-item-sub-menu";
             }
 
             if (isActive) {
@@ -38,7 +25,7 @@ mixin mainMenu(menuItems, cssClass)
           li(class=itemClass)
             a(class="main-menu__item-link" href=path)= title
             if subMenu
-              ul.main-menu__sub-menu
+              ul(class="main-menu__sub-menu")
                 each subItem in subMenu
                   li.main-menu__sub-item
                     a(class="main-menu__item-link" href=subItem.path)= subItem.title
