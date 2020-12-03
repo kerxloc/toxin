@@ -3,7 +3,7 @@ import './room-details.scss';
 import '../../components/pie-chart/pie-chart';
 import '../../components/main-menu/main-menu-init';
 import DatePicker from '../../components/date-picker/date-picker';
-import DropDown from '../../components/drop-down/drop-down';
+import DropDown from '../../components/drop-down-counter/drop-down-counter';
 
 const datePickerDomInfo = {
   parentNode: document.querySelector('.js-date-picker-container'),
@@ -16,7 +16,7 @@ const datePickerDomInfo = {
 const datePicker = new DatePicker(datePickerDomInfo);
 datePicker.renderCalendar();
 
-const dropDownContainer = document.querySelector('.js-drop-down-container');
+const dropDownContainer = document.querySelector('.js-drop-down-counter-container');
 const inputDropDown = document.querySelector('.js-input-drop-down');
 
 const dropDownOptions = {

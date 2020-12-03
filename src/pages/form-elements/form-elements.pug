@@ -1,7 +1,7 @@
 extends ../../layout/ui-kit.pug
 include ../../components/input/input
 include ../../components/typography/typography
-include ../../components/drop-down/drop-down
+include ../../components/drop-down-input/drop-down-input
 include ../../components/checkbox-list/checkbox-list
 include ../../components/radio-btn/radio-btn
 include ../../components/toggle/toggle
@@ -46,7 +46,7 @@ block content
           .form-elements__input
             .form-elements__title-wrap
               +typography({ text: "Dropdown", variant: "h3", hasUpper: true })
-            +dropDown({ text: "Сколько гостей" })
+            +dropDownInput({ text: "Сколько гостей" })
           .form-elements__input
             .form-elements__title-wrap
               +typography({ text: "Masked text field", variant: "h3", hasUpper: true })
@@ -55,15 +55,15 @@ block content
             .form-elements__date-input
               .form-elements__title-wrap
                 +typography({ text: "Date Dropdown", variant: "h3", hasUpper: true })
-              +dropDown({ text: "ДД.ММ.ГГГГ" })
+              +dropDownInput({ text: "ДД.ММ.ГГГГ" })
             .form-elements__date-input
               .form-elements__title-wrap
                 +typography({ text: "Date Dropdown", variant: "h3", hasUpper: true })
-              +dropDown({ text: "19.08.2019" })
+              +dropDownInput({ text: "19.08.2019" })
           div(class="form-elements__date-input form-elements__date-input_size_medium form-elements__date-input_with-margin")
             .form-elements__title-wrap
               +typography({ text: "Filter date dropdown", variant: "h3", hasUpper: true })
-            +dropDown({ text: "19 авг - 23 авг" })
+            +dropDownInput({ text: "19 авг - 23 авг" })
           div(class="form-elements__input form-elements__input_size_medium")
             .form-elements__title-wrap
               +typography({ text: "Subscription text field", variant: "h3", hasUpper: true })
@@ -141,13 +141,13 @@ block content
             .form-elements__title-wrap
               +typography({ text: "Dropdown", variant: "h3", hasUpper: true })
               p.form-elements__title-alt Default
-            +dropDown({ text: "2 спальни, 2 кровати..." })
+            +dropDownInput({ text: "2 спальни, 2 кровати..." })
           div(class="form-elements__input form-elements__input_bottom-gap")
             .form-elements__title-wrap
               +typography({ text: "Dropdown", variant: "h3", hasUpper: true })
               p.form-elements__title-alt Expanded
-            +dropDown({ text: "2 спальни, 2 кровати...", classForJs: "js-input-drop-down" })
-            div(class="drop-down-container  js-drop-down-container")
+            +dropDownInput({ text: "2 спальни, 2 кровати...", classForJs: "js-input-drop-down" })
+            div(class="drop-down-counter-container js-drop-down-counter-container")
           .form-elements__checkbox-list
             +expandableCheckbox({
               summary: "Expandable checkbox list",
@@ -177,8 +177,8 @@ block content
           div(class="form-elements__input form-elements__input_bottom-large-gap")
             .form-elements__title-wrap
               +typography({ text: "Dropdown", variant: "h3", hasUpper: true })
-            +dropDown({ text: "Сколько гостей", classForJs: "js-input-drop-down-clear" })
-            div(class="drop-down-container  js-drop-down-container-clear")
+            +dropDownInput({ text: "Сколько гостей", classForJs: "js-input-drop-down-clear" })
+            div(class="drop-down-counter-container  js-drop-down-counter-container-clear")
           .form-elements__list
             div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Rich Checkbox Buttons", variant: "h3", hasUpper: true })
@@ -192,8 +192,8 @@ block content
           div(class="form-elements__input form-elements__input_bottom-large-gap")
             .form-elements__title-wrap
               +typography({ text: "Dropdown", variant: "h3", hasUpper: true })
-            +dropDown({ text: "Сколько гостей", classForJs: "js-input-drop-down-filled" })
-            div(class="drop-down-container  js-drop-down-container-filled")
+            +dropDownInput({ text: "Сколько гостей", classForJs: "js-input-drop-down-filled" })
+            div(class="drop-down-counter-container  js-drop-down-counter-container-filled")
           .form-elements__list
             div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Bullet list", variant: "h3", hasUpper: true })

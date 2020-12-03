@@ -1,4 +1,4 @@
-include ../drop-down/drop-down
+include ../drop-down-input/drop-down-input
 
 mixin totalCard()
   section.total-card
@@ -11,16 +11,16 @@ mixin totalCard()
           .total-card__date-input-wrap
             .total-card__title-wrap
               +typography({ text: "Прибытие", variant: "h3", hasUpper: true })
-            +dropDown({ text: "ДД.ММ.ГГГГ", classForJs: "js-arrival-input" })
+            +dropDownInput({ text: "ДД.ММ.ГГГГ", classForJs: "js-arrival-input" })
           .total-card__date-input-wrap
             .total-card__title-wrap
               +typography({ text: "Выезд", variant: "h3", hasUpper: true })
-            +dropDown({ text: "ДД.ММ.ГГГГ", classForJs: "js-departure-input" })
+            +dropDownInput({ text: "ДД.ММ.ГГГГ", classForJs: "js-departure-input" })
           div(class="date-picker-container js-date-picker-container total-card__date-picker-container")
         .total-card__title-wrap
           +typography({ text: "Гости", variant: "h3", hasUpper: true })  
-        +dropDown({ text: "Сколько гостей", classForJs: "js-input-drop-down" })
-        div(class="drop-down-container js-drop-down-container")
+        +dropDownInput({ text: "Сколько гостей", classForJs: "js-input-drop-down" })
+        div(class="drop-down-counter-container js-drop-down-counter-container")
         .total-card__calc
           .total-card__calc-row
             p.total-card__calc-text 9 990₽ х 4 суток

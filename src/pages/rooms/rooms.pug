@@ -1,5 +1,5 @@
 extends ../../layout/main.pug
-include ../../components/drop-down/drop-down
+include ../../components/drop-down-input/drop-down-input
 include ../../components/range-slider/range-slider
 include ../../components/checkbox-list/checkbox-list
 include ../../components/expandable-checkbox/expandable-checkbox
@@ -185,13 +185,13 @@ block content
             div(class="filter__item  filter__item_mbs")
               .filter__title-wrap
                 +typography({ text: "Даты пребывания в отеле", variant: "h3", hasUpper: true })
-              +dropDown({ text: "19 авг - 23 авг", classForJs: "js-drop-down-input" })
+              +dropDownInput({ text: "19 авг - 23 авг", classForJs: "js-drop-down-input" })
               div(class="date-picker-container js-date-picker-container rooms-page__date-picker-container")
             .filter__item
               .filter__title-wrap
                 +typography({ text: "Гости", variant: "h3", hasUpper: true })
-              +dropDown({ text: "3 гостя, 1 младенец", classForJs: "js-input-drop-down" })
-              div(class="drop-down-container  js-drop-down-container")
+              +dropDownInput({ text: "3 гостя, 1 младенец", classForJs: "js-input-drop-down" })
+              div(class="drop-down-counter-container js-drop-down-counter-container")
             .filter__item
               +rangeSlider({ title: "Диапазон цены" })
               p.filter__explain Стоимость за сутки пребывания в номере
@@ -223,8 +223,8 @@ block content
             .filter__item
               .filter__title-wrap
                 +typography({ text: "Удобства номера", variant: "h3", hasUpper: true })
-              +dropDown({ text: "2 спальни, 2 кровати...", classForJs: "js-input-drop-down-guest" })
-              div(class="drop-down-container  js-drop-down-container-guest")
+              +dropDownInput({ text: "2 спальни, 2 кровати...", classForJs: "js-input-drop-down-guest" })
+              div(class="drop-down-counter-container  js-drop-down-counter-container-guest")
             .filter__item
               +expandableCheckbox({
                 summary: "Дополнительные удобства",

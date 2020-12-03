@@ -1,4 +1,4 @@
-.drop-down {
+.drop-down-counter {
   position: absolute;
   z-index: 100;
   top: -3px;
@@ -21,20 +21,20 @@
   }
 }
 
-.drop-down__wrap {
+.drop-down-counter__wrap {
   padding-top: 7px;
   padding-right: 7px;
   padding-left: 14px;
   padding-bottom: 8px;
 }
 
-.drop-down__count-list {
+.drop-down-counter__count-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.drop-down__count-item {
+.drop-down-counter__count-item {
   margin-bottom: 7px;
   display: flex;
   justify-content: space-between;
@@ -45,14 +45,14 @@
   }
 }
 
-.drop-down__counter-menu {
+.drop-down-counter__counter-menu {
   display: flex;
   width: 92px;
   justify-content: space-between;
   align-items: center;
 }
 
-.drop-down__count-item-name {
+.drop-down-counter__count-item-name {
   margin: 0;
   padding: 0;
   font-size: 12px;
@@ -61,7 +61,7 @@
   text-transform: uppercase;
 }
 
-.drop-down__select-view {
+.drop-down-counter__select-view {
   margin: 0;
   width: 20px;
   font-size: 12px;
@@ -70,7 +70,7 @@
   text-align: center;
 }
 
-.drop-down__counter-btn {
+.drop-down-counter__counter-btn {
   position: relative;
   padding: 0;
   box-sizing: border-box;
@@ -110,14 +110,14 @@
   }
 }
 
-.drop-down__control {
+.drop-down-counter__control {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.drop-down__button {
+.drop-down-counter__button {
   padding: 0;
   font-size: 12px;
   line-height: 15px;
@@ -151,82 +151,6 @@
   }
 }
 
-.drop-down-container {
+.drop-down-counter-container {
   position: relative;
-}
-
-.drop-down-input__wrap {
-  display: flex;
-  width: 100%;
-
-  &:hover {
-    .drop-down-input__body {
-      color: transparentize($contentColor, .25);
-      border-color: transparentize($contentColor, .25);
-    }
-
-    .drop-down-input__button {
-      border-color: transparentize($contentColor, .25);
-    }
-  }
-
-  &:active {
-    .drop-down-input__button {
-      background-position: center 68%;
-    }
-  }
-}
-
-.drop-down-input__body {
-  padding: 9px 14px;
-  padding-right: 0;
-  box-sizing: border-box;
-  width: 100%;
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  color: transparentize($contentColor, .25);
-  border: 1px solid transparentize($contentColor, .75);
-  border-right: none;
-  border-radius: 4px 0 0 4px;
-  outline: none;
-  transition: border .4s ease, background .1s ease;
-  cursor: pointer;
-
-  &:hover {
-    border-color: transparentize($contentColor, .25);
-  }
-
-  &:active {
-    background-position: 95% 65%;
-  }
-
-  &_active {
-    border-color: transparentize($contentColor, .25);
-
-    + .drop-down-input__button {
-      border-color: transparentize($contentColor, .25);
-    }
-  }
-}
-
-.drop-down-input__button {
-  padding: 0;
-  box-sizing: border-box;
-  width: 44px;
-  height: 44px;
-  background-color: transparent;
-  background-image: url('./expand.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  border: 1px solid rgba(31, 32, 65, .25);
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-  outline: none;
-  transition: border .4s ease, background .1s ease;
-  cursor: pointer;
-
-  &:active {
-    background-position: center 68%;
-  }
 }

@@ -2,7 +2,7 @@ import '../../style/main.scss';
 import './index.scss';
 import '../../favicons/favicons.js';
 import '../../components/main-menu/main-menu-init';
-import DropDown from '../../components/drop-down/drop-down';
+import DropDown from '../../components/drop-down-counter/drop-down-counter';
 import DatePicker from '../../components/date-picker/date-picker';
 
 const datePickerDomInfo = {
@@ -16,7 +16,7 @@ const datePickerDomInfo = {
 const datePicker = new DatePicker(datePickerDomInfo);
 datePicker.renderCalendar();
 
-const dropDownContainer = document.querySelector('.js-drop-down-container');
+const dropDownContainer = document.querySelector('.js-drop-down-counter-container');
 const inputDropDown = document.querySelector('.js-input-drop-down');
 
 const dropDownOptions = {
