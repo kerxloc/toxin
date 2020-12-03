@@ -190,8 +190,8 @@ block content
             .filter__item
               .filter__title-wrap
                 +typography({ text: "Гости", variant: "h3", hasUpper: true })
-              +dropDownInput({ text: "3 гостя, 1 младенец", classForJs: "js-input-drop-down" })
-              div(class="drop-down-counter-container js-drop-down-counter-container")
+              +dropDownInput({ text: "3 гостя, 1 младенец", classForJs: "js-input-drop-down-guest" })
+              div(class="drop-down-counter-container js-drop-down-counter-container-guest")
             .filter__item
               +rangeSlider({ title: "Диапазон цены" })
               p.filter__explain Стоимость за сутки пребывания в номере
@@ -223,8 +223,8 @@ block content
             .filter__item
               .filter__title-wrap
                 +typography({ text: "Удобства номера", variant: "h3", hasUpper: true })
-              +dropDownInput({ text: "2 спальни, 2 кровати...", classForJs: "js-input-drop-down-guest" })
-              div(class="drop-down-counter-container  js-drop-down-counter-container-guest")
+              +dropDownInput({ text: "2 спальни, 2 кровати...", classForJs: "js-input-drop-down" })
+              div(class="drop-down-counter-container js-drop-down-counter-container")
             .filter__item
               +expandableCheckbox({
                 summary: "Дополнительные удобства",
