@@ -23,30 +23,30 @@
   @media (min-width: 1440px) {
     background-size: cover;
   }
-}
 
-.index-block__wrap {
-  position: relative;
-  padding-top: 70px;
-  min-height: 830px;
-}
-
-.index-block__slogan {
-  position: absolute;
-  right: 4px;
-  bottom: 92px;
-  width: 297px;
-
-  @media (max-width: 425px) {
-    right: 24px;
+  &__wrap {
+    position: relative;
+    padding-top: 70px;
+    min-height: 830px;
   }
 
-  /* stylelint-disable */
-  p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 24px;
-    text-align: right;
-    color: transparentize($contentColor, .25);
+  &__slogan {
+    position: absolute;
+    right: 4px;
+    bottom: 92px;
+    width: 297px;
+
+    @media (max-width: 425px) {
+      right: 24px;
+    }
+    /* stylelint-disable */
+    p {
+      /* stylelint-enable */
+      margin: 0;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: right;
+      color: transparentize($contentColor, .25);
+    }
   }
 }

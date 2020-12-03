@@ -12,25 +12,25 @@
 
 .headers-and-footers {
   background: #f4f4f6;
-}
 
-.headers-and-footers__wrap {
-  margin-top: 63px;
-}
-
-.headers-and-footers__item {
-  margin-bottom: 40px;
-
-  &:last-child {
-    margin-bottom: 0;
+  &__wrap {
+    margin-top: 63px;
   }
 
-  &:nth-child(3) {
-    margin-bottom: 42px;
-  }
+  &__item {
+    margin-bottom: 40px;
 
-  &_short {
-    margin: 0 auto;
-    width: 53.3%;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(3) {
+      margin-bottom: 42px;
+    }
+
+    &_short {
+      margin: 0 auto;
+      width: 53.3%;
+    }
   }
 }
