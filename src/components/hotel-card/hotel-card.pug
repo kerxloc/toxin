@@ -26,4 +26,4 @@ mixin hotelCard(options = {})
           p.hotel-card__text #[b= dayCost + "₽"] в сутки
         .hotel-card__info-item
           +rateBtn({ currentRating: starCount, ratingLength: 5 })
-          p(class="hotel-card__text  hotel-card__text_fzlarge") #[b= reviewCount] Отзывов
+          p(class="hotel-card__text  hotel-card__text_large") #[b= reviewCount] Отзывов
