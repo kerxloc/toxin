@@ -1,6 +1,6 @@
 import Chart from 'chart.js';
 
-const ctx = document.getElementById('doughnut-chart').getContext('2d');
+const ctx = document.querySelector('.js-doughnut-chart').getContext('2d');
 
 const yellowGradient = ctx.createLinearGradient(0, 0, 0, 120);
 yellowGradient.addColorStop(0, '#FFE39C');
@@ -14,27 +14,42 @@ const greenGradient = ctx.createLinearGradient(0, 60, 0, 120);
 greenGradient.addColorStop(0, '#6FCF97');
 greenGradient.addColorStop(1, '#66D2EA');
 
-new Chart(document.getElementById('doughnut-chart'), {
-  type: 'doughnut',
-  data: {
-    datasets: [
-      {
-        data: [25, 25, 50],
-        borderWidth: 3,
-        hoverBorderWidth: 0,
-        backgroundColor: [purpleGradient, greenGradient, yellowGradient],
+class PieChart {
+  static init() {
+    const elements = this.getElements();
+    elements.forEach(this.createPie);
+  }
+
+  static createPie(item) {
+    new Chart(item, {
+      type: 'doughnut',
+      data: {
+        datasets: [
+          {
+            data: [25, 25, 50],
+            borderWidth: 3,
+            hoverBorderWidth: 0,
+            backgroundColor: [purpleGradient, greenGradient, yellowGradient],
+          },
+        ],
       },
-    ],
-  },
-  options: {
-    animation: {
-      animateScale: false,
-      animateRotate: false,
-    },
-    cutoutPercentage: 85,
-    legend: false,
-    tooltips: {
-      enabled: false,
-    },
-  },
-});
+      options: {
+        animation: {
+          animateScale: false,
+          animateRotate: false,
+        },
+        cutoutPercentage: 85,
+        legend: false,
+        tooltips: {
+          enabled: false,
+        },
+      },
+    });
+  }
+
+  static getElements() {
+    return document.querySelectorAll('.js-doughnut-chart');
+  }
+}
+
+PieChart.init();
