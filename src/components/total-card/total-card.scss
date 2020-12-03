@@ -9,168 +9,169 @@
     width: 100%;
     min-width: 320px;
   }
-}
 
-.total-card__wrap {
-  position: relative;
-  padding: 30px;
-  padding-top: 40px;
+  &__wrap {
+    position: relative;
+    padding: 30px;
+    padding-top: 40px;
 
-  .total-card__date-inputs {
-    @media (max-width: 380px) {
-      flex-direction: column;
+    .total-card__date-inputs {
+      @media (max-width: 380px) {
+        flex-direction: column;
+      }
     }
   }
-}
 
-.total-card__date-input-wrap {
-  width: 150px;
+  &__date-input-wrap {
+    width: 150px;
 
-  @media (max-width: 380px) {
-    margin-bottom: 15px;
-    width: 100%;
+    @media (max-width: 380px) {
+      margin-bottom: 15px;
+      width: 100%;
+    }
   }
-}
 
-.total-card__head {
-  margin-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
+  &__head {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.total-card__title {
-  margin: 0;
-  overflow: hidden;
-  font-size: 13px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  /* stylelint-disable */
-  b {
+  &__title {
+    margin: 0;
+    overflow: hidden;
+    font-size: 13px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* stylelint-disable */
+    b {
+      /* stylelint-enable */
+      font-size: 12px;
+      text-transform: uppercase;
+      color: $accentColor;
+    }
+    /* stylelint-disable */
+    span {
+      /* stylelint-enable */
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+
+  &__title-wrap {
+    margin-bottom: 5px;
+  }
+
+  &__per-day {
+    margin: 0;
+    padding-top: 5px;
     font-size: 12px;
-    text-transform: uppercase;
-    color: $accentColor;
+    color: transparentize($contentColor, .5);
+    /* stylelint-disable */
+    b {
+      font-family: Montserrat, Quicksand, Arial, sans-serif;
+      font-size: 14px;
+    }
+    /* stylelint-enable */
   }
 
-  span {
-    font-size: 25px;
-    font-weight: bold;
+  &__date-inputs {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .total-card__date-picker-container {
+      position: absolute;
+      top: 269px;
+    }
   }
-  /* stylelint-enable */
-}
 
-.total-card__title-wrap {
-  margin-bottom: 5px;
-}
+  &__calc {
+    margin-top: 20px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+  }
 
-.total-card__per-day {
-  margin: 0;
-  padding-top: 5px;
-  font-size: 12px;
-  color: transparentize($contentColor, .5);
-  /* stylelint-disable */
-  b {
+  &__calc-row {
+    width: 75%;
+
+    &_low {
+      width: 25%;
+    }
+
+    &_tar {
+      text-align: right;
+    }
+  }
+
+  &__calc-text {
+    margin: 0;
+    margin-bottom: 15px;
     font-family: Montserrat, Quicksand, Arial, sans-serif;
     font-size: 14px;
+    line-height: 19px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &_informational {
+      position: relative;
+      padding-right: 20px;
+
+      &::after {
+        position: absolute;
+        top: -1px;
+        right: 1px;
+        width: 18px;
+        height: 18px;
+        font-family: Montserrat, Quicksand, Arial, sans-serif;
+        font-size: 12px;
+        line-height: 19px;
+        font-weight: bold;
+        text-align: center;
+        content: 'i';
+        color: transparentize($contentColor, .75);
+        border: 1px solid transparentize($contentColor, .75);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
   }
-  /* stylelint-enable */
-}
 
-.total-card__date-inputs {
-  position: relative;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.total-card__calc {
-  margin-top: 20px;
-  margin-bottom: 28px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.total-card__calc-row {
-  width: 75%;
-
-  &_low {
-    width: 25%;
+  &__total {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 
-  &_tar {
+  &__total-separator {
+    position: relative;
+    flex-grow: .95;
+
+    &::after {
+      position: absolute;
+      top: -6px;
+      width: 100%;
+      content: '';
+      border: 1px dashed transparentize($contentColor, .75);
+    }
+  }
+
+  &__total-text,
+  &__total-price {
+    margin: 0;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+  &__total-price {
     text-align: right;
   }
-}
-
-.total-card__calc-text {
-  margin: 0;
-  margin-bottom: 15px;
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 19px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.total-card__calc-text_informational {
-  position: relative;
-  padding-right: 20px;
-
-  &::after {
-    position: absolute;
-    top: -1px;
-    right: 1px;
-    width: 18px;
-    height: 18px;
-    font-family: Montserrat, Quicksand, Arial, sans-serif;
-    font-size: 12px;
-    line-height: 19px;
-    font-weight: bold;
-    text-align: center;
-    content: 'i';
-    color: transparentize($contentColor, .75);
-    border: 1px solid transparentize($contentColor, .75);
-    border-radius: 50%;
-    cursor: pointer;
-  }
-}
-
-.total-card__total {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.total-card__total-separator {
-  position: relative;
-  flex-grow: .95;
-
-  &::after {
-    position: absolute;
-    top: -6px;
-    width: 100%;
-    content: '';
-    border: 1px dashed transparentize($contentColor, .75);
-  }
-}
-
-.total-card__total-text,
-.total-card__total-price {
-  margin: 0;
-  font-size: 19px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.total-card__total-price {
-  text-align: right;
-}
-
-.total-card__date-inputs .total-card__date-picker-container {
-  position: absolute;
-  top: 269px;
 }

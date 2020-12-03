@@ -1,24 +1,30 @@
-.social-buttons__list {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-}
-
-.social-buttons__item {
-  margin-right: 24px;
-
-  &:last-child {
-    margin-right: 0;
+.social-buttons {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
   }
-}
 
-.social-buttons__link .social-buttons__icon {
-  transition: fill .4s ease;
-}
+  &__item {
+    margin-right: 24px;
 
-.social-buttons__link:hover .social-buttons__icon {
-  fill: darken($accentColor, 10%);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    &:hover {
+      .social-buttons__icon {
+        fill: darken($accentColor, 10%);
+      }
+    }
+
+    .social-buttons__icon {
+      transition: fill .4s ease;
+    }
+  }
 }

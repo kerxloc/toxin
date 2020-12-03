@@ -1,56 +1,58 @@
-.color-palette__wrap {
-  display: flex;
-  align-items: center;
-}
-
-.color-palette__view {
-  margin-right: 40px;
-  width: 70px;
-  height: 70px;
-  border-radius: 6px;
-
-  &_dark-shade-100 {
-    background-color: $contentColor;
+.color-palette {
+  &__wrap {
+    display: flex;
+    align-items: center;
   }
 
-  &_dark-shade-75 {
-    opacity: .75;
-    background-color: $contentColor;
+  &__view {
+    margin-right: 40px;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+
+    &_dark-shade-100 {
+      background-color: $contentColor;
+    }
+
+    &_dark-shade-75 {
+      opacity: .75;
+      background-color: $contentColor;
+    }
+
+    &_dark-shade-50 {
+      opacity: .5;
+      background-color: $contentColor;
+    }
+
+    &_dark-shade-25 {
+      opacity: .25;
+      background-color: $contentColor;
+    }
+
+    &_dark-shade-5 {
+      opacity: .05;
+      background-color: $contentColor;
+    }
+
+    &_purple {
+      background-color: $accentColor;
+    }
+
+    &_green {
+      background-color: $accentSecondСolor;
+    }
   }
 
-  &_dark-shade-50 {
-    opacity: .5;
-    background-color: $contentColor;
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 19px;
+    font-weight: bold;
   }
 
-  &_dark-shade-25 {
-    opacity: .25;
-    background-color: $contentColor;
+  &__description {
+    margin: 0;
+    font-size: 19px;
+    font-weight: normal;
   }
-
-  &_dark-shade-5 {
-    opacity: .05;
-    background-color: $contentColor;
-  }
-
-  &_purple {
-    background-color: $accentColor;
-  }
-
-  &_green {
-    background-color: $accentSecondСolor;
-  }
-}
-
-.color-palette__title {
-  margin: 0;
-  margin-bottom: 8px;
-  font-size: 19px;
-  font-weight: bold;
-}
-
-.color-palette__description {
-  margin: 0;
-  font-size: 19px;
-  font-weight: normal;
 }

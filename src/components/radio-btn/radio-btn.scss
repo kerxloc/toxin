@@ -1,71 +1,73 @@
-.radio-btn__list {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-}
-
-.radio-btn__item {
-  margin-right: 20px;
-  margin-bottom: 12px;
-
-  &:last-child {
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-}
-
-.radio-btn__input[type='radio'] {
-  display: none;
-}
-
-.radio-btn__label-span {
-  position: relative;
-  padding-left: 30px;
-  display: block;
-  font-size: 14px;
-  line-height: 14px;
-  font-weight: normal;
-  color: transparentize($contentColor, .55);
-  cursor: pointer;
-
-  &::before {
-    position: absolute;
-    top: -3px;
-    left: 0;
-    box-sizing: border-box;
-    width: 20px;
-    height: 20px;
-    content: '';
-    background-color: transparent;
-    border: 1px solid rgba(31, 32, 65, .25);
-    border-radius: 50%;
-    transition: border .3s ease 0s;
+.radio-btn {
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
   }
 
-  &::after {
-    position: absolute;
-    top: 1px;
-    left: 4px;
-    visibility: hidden;
-    width: 12px;
-    height: 12px;
-    opacity: 0;
-    content: '';
-    background: linear-gradient(180deg, $accentColor 0%, $accentGradColor 100%);
-    border-radius: 50%;
-    transition: opacity .3s ease 0s, visibility .3s ease 0s;
-  }
-}
+  &__item {
+    margin-right: 20px;
+    margin-bottom: 12px;
 
-.radio-btn__input[type='radio']:checked {
-  & + .radio-btn__label-span::after {
-    visibility: visible;
-    opacity: 1;
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
   }
 
-  & + .radio-btn__label-span::before {
-    border-color: $accentColor;
+  &__input[type='radio'] {
+    display: none;
+
+    &:checked {
+      & + .radio-btn__label-span::after {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      & + .radio-btn__label-span::before {
+        border-color: $accentColor;
+      }
+    }
+  }
+
+  &__label-span {
+    position: relative;
+    padding-left: 30px;
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: normal;
+    color: transparentize($contentColor, .55);
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: -3px;
+      left: 0;
+      box-sizing: border-box;
+      width: 20px;
+      height: 20px;
+      content: '';
+      background-color: transparent;
+      border: 1px solid rgba(31, 32, 65, .25);
+      border-radius: 50%;
+      transition: border .3s ease 0s;
+    }
+
+    &::after {
+      position: absolute;
+      top: 1px;
+      left: 4px;
+      visibility: hidden;
+      width: 12px;
+      height: 12px;
+      opacity: 0;
+      content: '';
+      background: linear-gradient(180deg, $accentColor 0%, $accentGradColor 100%);
+      border-radius: 50%;
+      transition: opacity .3s ease 0s, visibility .3s ease 0s;
+    }
   }
 }

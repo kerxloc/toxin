@@ -1,75 +1,77 @@
-.drop-down-input__wrap {
-  display: flex;
-  width: 100%;
+.drop-down-input {
+  &__wrap {
+    display: flex;
+    width: 100%;
 
-  &:hover {
-    .drop-down-input__body {
-      color: transparentize($contentColor, .25);
-      border-color: transparentize($contentColor, .25);
+    &:hover {
+      .drop-down-input__body {
+        color: transparentize($contentColor, .25);
+        border-color: transparentize($contentColor, .25);
+      }
+
+      .drop-down-input__button {
+        border-color: transparentize($contentColor, .25);
+      }
     }
 
-    .drop-down-input__button {
-      border-color: transparentize($contentColor, .25);
+    &:active {
+      .drop-down-input__button {
+        background-position: center 68%;
+      }
     }
   }
 
-  &:active {
-    .drop-down-input__button {
+  &__body {
+    padding: 9px 14px;
+    padding-right: 0;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: Montserrat, Quicksand, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: transparentize($contentColor, .25);
+    border: 1px solid transparentize($contentColor, .75);
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    transition: border .4s ease, background .1s ease;
+    cursor: pointer;
+
+    &:hover {
+      border-color: transparentize($contentColor, .25);
+    }
+
+    &:active {
+      background-position: 95% 65%;
+    }
+
+    &_active {
+      border-color: transparentize($contentColor, .25);
+
+      + .drop-down-input__button {
+        border-color: transparentize($contentColor, .25);
+      }
+    }
+  }
+
+  &__button {
+    padding: 0;
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    background-image: url('./expand.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid rgba(31, 32, 65, .25);
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    outline: none;
+    transition: border .4s ease, background .1s ease;
+    cursor: pointer;
+
+    &:active {
       background-position: center 68%;
     }
-  }
-}
-
-.drop-down-input__body {
-  padding: 9px 14px;
-  padding-right: 0;
-  box-sizing: border-box;
-  width: 100%;
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  color: transparentize($contentColor, .25);
-  border: 1px solid transparentize($contentColor, .75);
-  border-right: none;
-  border-radius: 4px 0 0 4px;
-  outline: none;
-  transition: border .4s ease, background .1s ease;
-  cursor: pointer;
-
-  &:hover {
-    border-color: transparentize($contentColor, .25);
-  }
-
-  &:active {
-    background-position: 95% 65%;
-  }
-
-  &_active {
-    border-color: transparentize($contentColor, .25);
-
-    + .drop-down-input__button {
-      border-color: transparentize($contentColor, .25);
-    }
-  }
-}
-
-.drop-down-input__button {
-  padding: 0;
-  box-sizing: border-box;
-  width: 44px;
-  height: 44px;
-  background-color: transparent;
-  background-image: url('./expand.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  border: 1px solid rgba(31, 32, 65, .25);
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-  outline: none;
-  transition: border .4s ease, background .1s ease;
-  cursor: pointer;
-
-  &:active {
-    background-position: center 68%;
   }
 }

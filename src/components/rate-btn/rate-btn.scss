@@ -1,21 +1,23 @@
-.rate-btn__wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.rate-btn__star {
-  margin-right: 4px;
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: url('../../components/rate-btn/star.png') no-repeat;
-  cursor: pointer;
-
-  &:last-child {
-    margin-right: 0;
+.rate-btn {
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  &_active {
-    background: url('../../components/rate-btn/star-active.png') no-repeat;
+  &__star {
+    margin-right: 4px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../../components/rate-btn/star.png') no-repeat;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_active {
+      background: url('../../components/rate-btn/star-active.png') no-repeat;
+    }
   }
 }

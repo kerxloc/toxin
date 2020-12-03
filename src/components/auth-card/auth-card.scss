@@ -8,40 +8,40 @@
     width: 100%;
     min-width: 320px;
   }
-}
 
-.auth-card__wrap {
-  padding: 30px;
-  padding-top: 40px;
-}
-
-.auth-card__input-wrap {
-  margin-bottom: 10px;
-}
-
-.auth-card__fieldset {
-  margin-bottom: 20px;
-  padding: 0;
-  width: 320px;
-  border: 0;
-
-  @media (max-width: 380px) {
-    width: 100%;
+  &__wrap {
+    padding: 30px;
+    padding-top: 40px;
   }
-}
 
-.auth-card__title {
-  margin: 0;
-  margin-bottom: 20px;
-  font-size: 24px;
-  line-height: 30px;
-  font-weight: bold;
-}
+  &__input-wrap {
+    margin-bottom: 10px;
+  }
 
-.auth-card__account-enter {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: Montserrat, Quicksand, Arial, sans-serif;
+  &__fieldset {
+    margin-bottom: 20px;
+    padding: 0;
+    width: 320px;
+    border: 0;
+
+    @media (max-width: 380px) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: bold;
+  }
+
+  &__account-enter {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Montserrat, Quicksand, Arial, sans-serif;
+  }
 }
