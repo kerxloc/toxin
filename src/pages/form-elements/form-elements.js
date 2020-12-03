@@ -1,6 +1,6 @@
 import '../../style/main.scss';
 import './form-elements.scss';
-import '../../components/range-slider/range-slider';
+import '../../components/range-slider/range-slider-init';
 import DropDown from '../../components/drop-down-counter/drop-down-counter';
 import Inputmask from 'inputmask';
 
