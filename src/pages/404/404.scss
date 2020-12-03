@@ -23,51 +23,51 @@
   @media (max-width: 425px) {
     background-position: center bottom, center top;
   }
-}
 
-.not-found__wrap {
-  padding: 120px 0;
-  text-align: center;
-}
+  &__wrap {
+    padding: 120px 0;
+    text-align: center;
+  }
 
-.not-found__title {
-  margin: 0;
-  margin-bottom: 40px;
-  font-size: 82px;
-}
+  &__title {
+    margin: 0;
+    margin-bottom: 40px;
+    font-size: 82px;
+  }
 
-.not-found__description {
-  margin: 0 auto;
-  margin-bottom: 20px;
-  max-width: 480px;
-  font-size: 24px;
-  font-weight: bold;
-}
+  &__description {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    max-width: 480px;
+    font-size: 24px;
+    font-weight: bold;
+  }
 
-.not-found__status {
-  margin: 0;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
+  &__status {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
 
-.not-found__help-links {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+  &__help-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-.not-found__help-item {
-  margin-bottom: 5px;
-}
+  &__help-item {
+    margin-bottom: 5px;
+  }
 
-.not-found__link {
-  font-size: 14px;
-  line-height: 17px;
-  text-decoration: none;
-  color: transparentize($contentColor, .5);
-  transition: color .4s ease;
+  &__link {
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    color: transparentize($contentColor, .5);
+    transition: color .4s ease;
 
-  &:hover {
-    color: darken($accentColor, 10%);
+    &:hover {
+      color: darken($accentColor, 10%);
+    }
   }
 }
