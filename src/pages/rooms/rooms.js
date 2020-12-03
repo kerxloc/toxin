@@ -1,7 +1,7 @@
 import '../../style/main.scss';
 import './rooms.scss';
 import '../../components/range-slider/range-slider';
-import '../../components/hotel-card/hotel-card';
+import '../../components/hotel-card/hotel-card-init';
 import '../../components/main-menu/main-menu-init';
 import DatePicker from '../../components/date-picker/date-picker';
 import DropDown from '../../components/drop-down-counter/drop-down-counter';
