@@ -22,19 +22,19 @@
     }
   }
 
-  &__explain {
-    margin: 0;
-    margin-top: 14px;
-    font-size: 12px;
-    line-height: 14px;
-    color: transparentize($contentColor, .5);
-  }
-
   &__title-wrap {
     margin-bottom: 5px;
 
     &_bottom-gap {
       margin-bottom: 16px;
     }
+  }
+
+  &__explain {
+    margin: 0;
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    color: transparentize($contentColor, .5);
   }
 }

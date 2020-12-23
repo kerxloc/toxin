@@ -22,15 +22,6 @@
     }
   }
 
-  &__date-input-wrap {
-    width: 150px;
-
-    @media (max-width: 380px) {
-      margin-bottom: 15px;
-      width: 100%;
-    }
-  }
-
   &__head {
     margin-bottom: 20px;
     display: flex;
@@ -60,10 +51,6 @@
     }
   }
 
-  &__title-wrap {
-    margin-bottom: 5px;
-  }
-
   &__per-day {
     margin: 0;
     padding-top: 5px;
@@ -87,6 +74,19 @@
       position: absolute;
       top: 269px;
     }
+  }
+
+  &__date-input-wrap {
+    width: 150px;
+
+    @media (max-width: 380px) {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+  }
+
+  &__title-wrap {
+    margin-bottom: 5px;
   }
 
   &__calc {

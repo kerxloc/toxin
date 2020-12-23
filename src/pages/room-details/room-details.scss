@@ -19,19 +19,6 @@
 @import '../../components/typography/typography.scss';
 
 .room-details {
-  &__wrap {
-    padding: 70px 0 57px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    @media (max-width: 1160px) {
-      padding-top: 40px;
-      flex-direction: column-reverse;
-      align-items: center;
-    }
-  }
-
   &__picture {
     display: flex;
     flex-wrap: wrap;
@@ -87,40 +74,16 @@
     border-bottom: 1px solid rgba(31, 32, 65, .25);
   }
 
-  &__title {
-    margin: 0;
-    margin-bottom: 23px;
+  &__wrap {
+    padding: 70px 0 57px;
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
-    font-weight: bold;
+    align-items: flex-start;
 
-    &_low-mb {
-      margin-bottom: 10px;
-    }
-  }
-
-  &__title-wrap {
-    margin-bottom: 18px;
-    display: flex;
-    justify-content: space-between;
-
-    &_left-gap {
-      padding-left: 20px;
-    }
-  }
-
-  &__title-alt {
-    padding-top: 2px;
-    font-family: Montserrat, Quicksand, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    color: transparentize($contentColor, .5);
-  }
-
-  &__total-card-wrap {
     @media (max-width: 1160px) {
-      margin-bottom: 40px;
+      padding-top: 40px;
+      flex-direction: column-reverse;
+      align-items: center;
     }
   }
 
@@ -158,6 +121,43 @@
 
   &__features {
     @media (max-width: 800px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title-wrap {
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+
+    &_left-gap {
+      padding-left: 20px;
+    }
+  }
+
+  &__title-alt {
+    padding-top: 2px;
+    font-family: Montserrat, Quicksand, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: transparentize($contentColor, .5);
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 23px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+
+    &_low-mb {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__total-card-wrap {
+    @media (max-width: 1160px) {
       margin-bottom: 40px;
     }
   }
