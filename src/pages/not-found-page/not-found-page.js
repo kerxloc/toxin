@@ -1,4 +1,4 @@
   
 import '../../style/main.scss';
-import './404.scss';
+import './not-found-page.scss';
 import '../../components/main-menu/main-menu-init';

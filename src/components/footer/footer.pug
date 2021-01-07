@@ -11,27 +11,27 @@ mixin footer(options = {})
       {
         title: "Навигация",
         list: [
-          { label: "О нас", path: "404.html" },
-          { label: "Новости", path: "404.html" },
-          { label: "Служба поддержки", path: "404.html" },
-          { label: "Услуги", path: "404.html" }
+          { label: "О нас", path: "not-found-page.html" },
+          { label: "Новости", path: "not-found-page.html" },
+          { label: "Служба поддержки", path: "not-found-page.html" },
+          { label: "Услуги", path: "not-found-page.html" }
         ]
       },
       {
         title: "О нас",
         list: [
-          { label: "О сервисе", path: "404.html" },
-          { label: "Наша команда", path: "404.html" },
-          { label: "Вакансии", path: "404.html" },
-          { label: "Инвесторы", path: "404.html" }
+          { label: "О сервисе", path: "not-found-page.html" },
+          { label: "Наша команда", path: "not-found-page.html" },
+          { label: "Вакансии", path: "not-found-page.html" },
+          { label: "Инвесторы", path: "not-found-page.html" }
         ]
       },
       {
         title: "Служба поддержки",
         list: [
-          { label: "Соглашения", path: "404.html" },
-          { label: "Сообщества", path: "404.html" },
-          { label: "Связь с нами", path: "404.html" }
+          { label: "Соглашения", path: "not-found-page.html" },
+          { label: "Сообщества", path: "not-found-page.html" },
+          { label: "Связь с нами", path: "not-found-page.html" }
         ]
       }
     ];
@@ -79,7 +79,7 @@ mixin footer(options = {})
                   +typography({ variant: "h3", text: "Подписка", hasUpper: true })
                 .page-footer__text-content-wrap
                   +typography({ variant: "body", text: "Получайте специальные предложения и новости сервиса" })
-                form(action="404.html")
+                form(action="not-found-page.html")
                   +input({ type: "text", name: "date", placeholder: "Email", withButton: true })
           div(class="page-footer__side-info")
             .page-footer__copyright-wrap
