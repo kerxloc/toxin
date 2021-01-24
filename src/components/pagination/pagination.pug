@@ -1,18 +1,31 @@
 mixin pagination()
+  -
+    const pages = [
+      { title: "1", path: "not-found-page.html", isActive: true },
+      { title: "2", path: "not-found-page.html" },
+      { title: "3", path: "not-found-page.html" },
+      { title: "...", path: "not-found-page.html" },
+      { title: "15", path: "not-found-page.html" },
+      { title: "Далее", path: "not-found-page.html", isNext: true },
+    ];
+
   .pagination
     .pagination__wrap
       ul.pagination__pages
-        li(class="pagination__page-item  pagination__page-item_active")
-          a(class="pagination__page-link" href="not-found-page.html") 1
-        li.pagination__page-item
-          a(class="pagination__page-link" href="not-found-page.html") 2
-        li.pagination__page-item
-          a(class="pagination__page-link" href="not-found-page.html") 3
-        li.pagination__page-item
-          a(class="pagination__page-link" href="not-found-page.html") ...
-        li.pagination__page-item
-          a(class="pagination__page-link" href="not-found-page.html") 15
-        li(class="pagination__page-item  pagination__page-next")
-          a(class="pagination__page-link" href="not-found-page.html") Далее
+        each page in pages
+          -
+            const { path, title, isActive, isNext } = page;
+            let pageClass = "pagination__page-item";
+
+            if (isActive) {
+              pageClass += " pagination__page-item_active";
+            }
+
+            if (isNext) {
+              pageClass += " pagination__page-item_next";
+            }
+
+          li(class=pageClass)
+            a(class="pagination__page-link" href=path)= title
       .pagination__overview
         p 1 – 12 из 100+ вариантов аренды
