@@ -15,10 +15,6 @@ greenGradient.addColorStop(0, '#6FCF97');
 greenGradient.addColorStop(1, '#66D2EA');
 
 class PieChart {
-  constructor() {
-    this._getPieData.bind(this._getPieData);
-  }
-
   static _createPie(item, pieData) {
     new Chart(item, {
       type: 'doughnut',
