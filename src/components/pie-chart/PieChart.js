@@ -15,12 +15,7 @@ greenGradient.addColorStop(0, '#6FCF97');
 greenGradient.addColorStop(1, '#66D2EA');
 
 class PieChart {
-  static init() {
-    const elements = this.getElements();
-    elements.forEach(this.createPie);
-  }
-
-  static createPie(item) {
+  static _createPie(item) {
     new Chart(item, {
       type: 'doughnut',
       data: {
@@ -47,8 +42,13 @@ class PieChart {
     });
   }
 
-  static getElements() {
+  static _getElements() {
     return document.querySelectorAll('.js-doughnut-chart');
+  }
+
+  static init() {
+    const elements = this._getElements();
+    elements.forEach(this._createPie);
   }
 }
 

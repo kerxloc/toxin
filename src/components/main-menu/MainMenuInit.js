@@ -1,18 +1,18 @@
 import MainMenu from './MainMenu';
 
 class MainMenuInit {
-  static init() {
-    const elements = this.getElements();
-    elements.forEach(this.createInstance);
-  }
-
-  static createInstance(parentDom) {
+  static _createInstance(parentDom) {
     const mainMenu = new MainMenu(parentDom);
     mainMenu.init();
   }
 
-  static getElements() {
+  static _getElements() {
     return document.querySelectorAll('.js-main-menu');
+  }
+
+  static init() {
+    const elements = this._getElements();
+    elements.forEach(this._createInstance);
   }
 }
 

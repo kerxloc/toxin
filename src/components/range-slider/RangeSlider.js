@@ -2,13 +2,8 @@ import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
 
 class RangeSlider {
-  static init() {
-    const element = this.getElement();
-    this.createSlider(element);
-  }
-
-  static createSlider(item) {
-    const viewNodes = this.getViewNodes();
+  static _createSlider(item) {
+    const viewNodes = this._getViewNodes();
     noUiSlider.create(item, {
       start: [5000, 10000],
       connect: true,
@@ -65,14 +60,19 @@ class RangeSlider {
     });
   }
 
-  static getViewNodes() {
+  static _getViewNodes() {
     const lowerViewPrice = document.querySelector('.js-range-slider-lower-value');
     const upperViewPrice = document.querySelector('.js-range-slider-upper-value');
     return [lowerViewPrice, upperViewPrice];
   }
 
-  static getElement() {
+  static _getElement() {
     return document.querySelector('.js-range-slider');
+  }
+
+  static init() {
+    const element = this._getElement();
+    this._createSlider(element);
   }
 }
 

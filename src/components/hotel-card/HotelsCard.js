@@ -1,17 +1,17 @@
 import Glide from '@glidejs/glide';
 
 class HotelsCard {
-  static init() {
-    const elements = this.getElements();
-    elements.forEach(this.createSlider);
-  }
-
-  static createSlider(item) {
+  static _createSlider(item) {
     new Glide(item, {type: 'carousel', classes: {activeNav: 'hotel-card__bullet-active'}}).mount()
   }
 
-  static getElements() {
+  static _getElements() {
     return document.querySelectorAll('.js-hotel-card-glide');
+  }
+
+  static init() {
+    const elements = this._getElements();
+    elements.forEach(this._createSlider);
   }
 }
 

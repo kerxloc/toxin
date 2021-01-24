@@ -3,88 +3,88 @@ class MainMenu {
     this.parentDom = parentDom;
   }
 
-  init() {
-    this.setSubMenuListener();
-    this.setBurgerListener();
-    this.isAuthorized = !this.parentDom.parentNode.querySelector('.js-profile-btn');
-    if (!this.isAuthorized) {
-      this.setAuthListener();
-    }
-  }
-
-  setSubMenuListener() {
+  _setSubMenuListener() {
     const subMenuItems = this.parentDom.querySelectorAll('.js-main-menu-item-sub-menu');
-    subMenuItems.forEach(this.addSubMenuItemListener);
+    subMenuItems.forEach(this._addSubMenuItemListener);
   }
 
-  setBurgerListener() {
+  _setBurgerListener() {
     const burgerBtn = this.parentDom.querySelector('.js-main-menu-burger-btn');
-    burgerBtn.addEventListener('click', this.handleBurgerBtnClick);
+    burgerBtn.addEventListener('click', this._handleBurgerBtnClick);
   }
 
-  handleBurgerBtnClick = () => {
-    this.toggleBurgerBtnClass();
+  _handleBurgerBtnClick = () => {
+    this._toggleBurgerBtnClass();
 
     if (!this.isAuthorized) {
-      this.toggleAuthBtnClass();
+      this._toggleAuthBtnClass();
       const authList = this.parentDom.parentNode.querySelector('.js-auth-list');
       const isAuthListActive = authList.classList.contains('page-header__auth-list_active');
 
       if (!isAuthListActive) {
-        this.toggleMainMenuClass();
+        this._toggleMainMenuClass();
       }
 
       if (isAuthListActive) {
-        this.toggleAuthListClass();
+        this._toggleAuthListClass();
       }
     } else {
-      this.toggleMainMenuClass();
+      this._toggleMainMenuClass();
     }
   };
 
-  setAuthListener() {
+  _setAuthListener() {
     const authBtn = this.parentDom.parentNode.querySelector('.js-profile-btn');
-    authBtn.addEventListener('click', this.handleAuthBtnClick);
+    authBtn.addEventListener('click', this._handleAuthBtnClick);
   }
 
-  handleAuthBtnClick = () => {
-    this.toggleBurgerBtnClass();
-    this.toggleAuthBtnClass();
-    this.toggleAuthListClass();
+  _handleAuthBtnClick = () => {
+    this._toggleBurgerBtnClass();
+    this._toggleAuthBtnClass();
+    this._toggleAuthListClass();
   }
 
-  addSubMenuItemListener = subMenuItem => {
+  _addSubMenuItemListener = subMenuItem => {
     const subMenuLink = subMenuItem.firstChild;
     const subMenu = subMenuLink.nextSibling;
-    subMenuItem.addEventListener('mouseover', () => this.addSubMenuClass(subMenu));
-    subMenuItem.addEventListener('mouseleave', () => this.removeSubMenuClass(subMenu));
+    subMenuItem.addEventListener('mouseover', () => this._addSubMenuClass(subMenu));
+    subMenuItem.addEventListener('mouseleave', () => this._removeSubMenuClass(subMenu));
   };
 
-  addSubMenuClass(subMenu) {
+  _addSubMenuClass(subMenu) {
     subMenu.classList.add('main-menu__sub-menu_opened');
   }
 
-  removeSubMenuClass(subMenu) {
+  _removeSubMenuClass(subMenu) {
     subMenu.classList.remove('main-menu__sub-menu_opened');
   }
 
-  toggleBurgerBtnClass() {
+  _toggleBurgerBtnClass() {
     const burgerBtn = this.parentDom.querySelector('.js-main-menu-burger-btn');
     burgerBtn.classList.toggle('main-menu__burger-icon_active');
   }
 
-  toggleMainMenuClass() {
+  _toggleMainMenuClass() {
     this.parentDom.classList.toggle('main-menu_active');
   }
 
-  toggleAuthBtnClass() {
+  _toggleAuthBtnClass() {
     const authBtn = this.parentDom.parentNode.querySelector('.js-profile-btn');
     authBtn.classList.toggle('page-header__auth-profile_hidden');
   }
 
-  toggleAuthListClass() {
+  _toggleAuthListClass() {
     const authList = this.parentDom.parentNode.querySelector('.js-auth-list');
     authList.classList.toggle('page-header__auth-list_active');
+  }
+
+  init() {
+    this._setSubMenuListener();
+    this._setBurgerListener();
+    this.isAuthorized = !this.parentDom.parentNode.querySelector('.js-profile-btn');
+    if (!this.isAuthorized) {
+      this._setAuthListener();
+    }
   }
 }
 
