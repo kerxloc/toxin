@@ -52,7 +52,16 @@ block content
               section.room-details__impression
                 .room-details__title-wrap
                   +typography({ variant: "h2", text: "Впечатления от номера" })
-                +pieChart()
+                +pieChart({
+                  voteCount: 260,
+                  listLabels: [
+                    { title: "Великолепно", color: "yellow" },
+                    { title: "Хорошо", color: "green" },
+                    { title: "Удовлетворительно", color: "purple" },
+                    { title: "Разочарован" },
+                  ],
+                  pieData: [25, 25, 50]
+                })
             section.room-details__reviews
               div(class="room-details__title-wrap")
                 +typography({ variant: "h2", text: "Отзывы посетителей номера" })

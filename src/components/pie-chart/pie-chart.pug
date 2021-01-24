@@ -1,10 +1,21 @@
-mixin pieChart()
+mixin pieChart(pie = {})
+  -
+    const { voteCount, listLabels, pieData } = pie;
+    const pieDataString = pieData.join();
+
   .pie-chart
-    .pie-chart__diagram
+    div(class="js-pie-diagram pie-chart__diagram" data-pie=pieDataString)
       canvas(class="js-doughnut-chart" width="120" height="120")
-    p.pie-chart__vote #[b= 260] Голосов
+    p.pie-chart__vote #[b= voteCount] Голосов
     ul.pie-chart__label-list
-      li(class="pie-chart__label-item  pie-chart__label-item_yellow") Великолепно
-      li(class="pie-chart__label-item  pie-chart__label-item_green") Хорошо
-      li(class="pie-chart__label-item  pie-chart__label-item_purple")  Удовлетворительно
-      li(class="pie-chart__label-item") Разочарован
+      each item in listLabels
+        -
+          const { title, color } = item;
+          let itemClass = "pie-chart__label-item";
+          const colorModifiers = ["yellow", "green", "purple"];
+
+          if (colorModifiers.includes(color)) {
+            itemClass += ` pie-chart__label-item_${color}`;
+          }
+
+        li(class=itemClass)= title
