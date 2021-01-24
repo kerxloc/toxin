@@ -1,9 +1,9 @@
 import '../../style/main.scss';
 import './index.scss';
 import '../../favicons/favicons.js';
-import '../../components/main-menu/main-menu-init';
-import DropDown from '../../components/drop-down-counter/drop-down-counter';
-import DatePicker from '../../components/date-picker/date-picker';
+import '../../components/main-menu/mainMenuInit';
+import DropDownCounter from '../../components/drop-down-counter/DropDownCounter';
+import DatePicker from '../../components/date-picker/DatePicker';
 
 const datePickerDomInfo = {
   parentNode: document.querySelector('.js-date-picker-container'),
@@ -34,5 +34,5 @@ const dropDownOptions = {
   placeholder: 'Cколько гостей',
 };
 
-const dropDown = new DropDown(dropDownOptions);
+const dropDown = new DropDownCounter(dropDownOptions);
 dropDown.init();

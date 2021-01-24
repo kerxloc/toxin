@@ -1,4 +1,4 @@
-import MainMenu from './main-menu';
+import MainMenu from './MainMenu';
 
 class MainMenuInit {
   static init() {

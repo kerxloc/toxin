@@ -1,9 +1,9 @@
 import '../../style/main.scss';
 import './room-details.scss';
-import '../../components/pie-chart/pie-chart-init';
-import '../../components/main-menu/main-menu-init';
-import DatePicker from '../../components/date-picker/date-picker';
-import DropDown from '../../components/drop-down-counter/drop-down-counter';
+import '../../components/pie-chart/PieChart';
+import '../../components/main-menu/mainMenuInit';
+import DatePicker from '../../components/date-picker/DatePicker';
+import DropDownCounter from '../../components/drop-down-counter/DropDownCounter';
 
 const datePickerDomInfo = {
   parentNode: document.querySelector('.js-date-picker-container'),
@@ -34,5 +34,5 @@ const dropDownOptions = {
   placeholder: 'Cколько гостей',
 };
 
-const dropDown = new DropDown(dropDownOptions);
+const dropDown = new DropDownCounter(dropDownOptions);
 dropDown.init();

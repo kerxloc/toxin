@@ -1,7 +1,7 @@
 import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
 
-class StepSlider {
+class RangeSlider {
   static init() {
     const element = this.getElement();
     this.createSlider(element);
@@ -76,4 +76,4 @@ class StepSlider {
   }
 }
 
-StepSlider.init();
+RangeSlider.init();

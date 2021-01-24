@@ -24,7 +24,7 @@ function declOfNum(number, titles) {
   ];
 }
 
-class DropDown {
+class DropDownCounter {
   constructor(options) {
     if (options.container) {
       this.container = options.container;
@@ -331,4 +331,4 @@ class DropDown {
   };
 }
 
-export default DropDown;
+export default DropDownCounter;

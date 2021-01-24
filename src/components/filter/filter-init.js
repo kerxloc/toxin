@@ -1,5 +1,5 @@
-import DatePicker from '../date-picker/date-picker';
-import DropDown from '../drop-down-counter/drop-down-counter';
+import DatePicker from '../date-picker/DatePicker';
+import DropDownCounter from '../drop-down-counter/DropDownCounter';
 
 const datePickerDomInfo = {
   parentNode: document.querySelector('.js-date-picker-container'),
@@ -32,7 +32,7 @@ const dropDownOptions = {
   placeholder: 'Удобства номера',
 };
 
-const dropDown = new DropDown(dropDownOptions);
+const dropDown = new DropDownCounter(dropDownOptions);
 dropDown.init();
 
 const dropDownGuestContainer = document.querySelector('.js-drop-down-counter-container-guest');
@@ -53,5 +53,5 @@ const dropDownGuestOptions = {
   placeholder: 'Cколько гостей',
 };
 
-const dropDownGuest = new DropDown(dropDownGuestOptions);
+const dropDownGuest = new DropDownCounter(dropDownGuestOptions);
 dropDownGuest.init();

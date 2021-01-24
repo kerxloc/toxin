@@ -1,7 +1,7 @@
 import '../../style/main.scss';
 import './form-elements.scss';
-import '../../components/range-slider/range-slider-init';
-import DropDown from '../../components/drop-down-counter/drop-down-counter';
+import '../../components/range-slider/RangeSlider';
+import DropDownCounter from '../../components/drop-down-counter/DropDownCounter';
 import Inputmask from 'inputmask';
 
 Inputmask({mask: '99.99.9999', placeholder: 'ДД.ММ.ГГГГ'}).mask('.js-masked-input');
@@ -30,7 +30,7 @@ const dropDownOptions = {
   isPinShow: true,
 };
 
-const dropDown = new DropDown(dropDownOptions);
+const dropDown = new DropDownCounter(dropDownOptions);
 dropDown.init();
 
 const dropDownGuestContainer = document.querySelector('.js-drop-down-counter-container-clear');
@@ -52,7 +52,7 @@ const dropDownGuestOptions = {
   isPinShow: true,
 };
 
-const dropDownGuest = new DropDown(dropDownGuestOptions);
+const dropDownGuest = new DropDownCounter(dropDownGuestOptions);
 dropDownGuest.init();
 
 const dropDownQuestContainer = document.querySelector('.js-drop-down-counter-container-filled');
@@ -74,5 +74,5 @@ const dropDownQuestOptions = {
   isPinShow: true,
 };
 
-const dropDownQuest = new DropDown(dropDownQuestOptions);
+const dropDownQuest = new DropDownCounter(dropDownQuestOptions);
 dropDownQuest.init();
