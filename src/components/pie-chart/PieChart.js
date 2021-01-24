@@ -49,7 +49,6 @@ class PieChart {
   static _getPieData() {
     const pieDiagram = document.querySelector('.js-pie-diagram');
     const dataPie = pieDiagram.getAttribute('data-pie');
-    console.log(dataPie);
     return dataPie.split(',').map(item => parseInt(item));
   }
 
