@@ -23,22 +23,22 @@ class MainMenu {
   }
 
   handleBurgerBtnClick = () => {
-    this.burgerBtnToggleClass();
+    this.toggleBurgerBtnClass();
 
     if (!this.isAuthorized) {
-      this.authBtnToggleClass();
+      this.toggleAuthBtnClass();
       const authList = this.parentDom.parentNode.querySelector('.js-auth-list');
       const isAuthListActive = authList.classList.contains('page-header__auth-list_active');
 
       if (!isAuthListActive) {
-        this.mainMenuToggleClass();
+        this.toggleMainMenuClass();
       }
 
       if (isAuthListActive) {
-        this.authListToggleClass();
+        this.toggleAuthListClass();
       }
     } else {
-      this.mainMenuToggleClass();
+      this.toggleMainMenuClass();
     }
   };
 
@@ -48,41 +48,41 @@ class MainMenu {
   }
 
   handleAuthBtnClick = () => {
-    this.burgerBtnToggleClass();
-    this.authBtnToggleClass();
-    this.authListToggleClass();
+    this.toggleBurgerBtnClass();
+    this.toggleAuthBtnClass();
+    this.toggleAuthListClass();
   }
 
   addSubMenuItemListener = subMenuItem => {
     const subMenuLink = subMenuItem.firstChild;
     const subMenu = subMenuLink.nextSibling;
-    subMenuItem.addEventListener('mouseover', () => this.subMenuAddClass(subMenu));
-    subMenuItem.addEventListener('mouseleave', () => this.subMenuRemoveClass(subMenu));
+    subMenuItem.addEventListener('mouseover', () => this.addSubMenuClass(subMenu));
+    subMenuItem.addEventListener('mouseleave', () => this.removeSubMenuClass(subMenu));
   };
 
-  subMenuAddClass(subMenu) {
+  addSubMenuClass(subMenu) {
     subMenu.classList.add('main-menu__sub-menu_opened');
   }
 
-  subMenuRemoveClass(subMenu) {
+  removeSubMenuClass(subMenu) {
     subMenu.classList.remove('main-menu__sub-menu_opened');
   }
 
-  burgerBtnToggleClass() {
+  toggleBurgerBtnClass() {
     const burgerBtn = this.parentDom.querySelector('.js-main-menu-burger-btn');
     burgerBtn.classList.toggle('main-menu__burger-icon_active');
   }
 
-  mainMenuToggleClass() {
+  toggleMainMenuClass() {
     this.parentDom.classList.toggle('main-menu_active');
   }
 
-  authBtnToggleClass() {
+  toggleAuthBtnClass() {
     const authBtn = this.parentDom.parentNode.querySelector('.js-profile-btn');
     authBtn.classList.toggle('page-header__auth-profile_hidden');
   }
 
-  authListToggleClass() {
+  toggleAuthListClass() {
     const authList = this.parentDom.parentNode.querySelector('.js-auth-list');
     authList.classList.toggle('page-header__auth-list_active');
   }
