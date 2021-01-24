@@ -10,20 +10,6 @@
 @import '../../components/typography/typography.scss';
 
 .not-found-page {
-  background-image: url('./unicorn-r.svg'), url('./unicorn-l.svg');
-  background-repeat: no-repeat;
-  background-position: 90% center, 10% center;
-  background-size: 28%;
-  border-bottom: 1px solid rgba(31, 32, 65, .25);
-
-  @media (max-width: 768px) {
-    background-position: right bottom, left top;
-  }
-
-  @media (max-width: 425px) {
-    background-position: center bottom, center top;
-  }
-
   &__wrap {
     padding: 120px 0;
     text-align: center;
@@ -69,5 +55,21 @@
     &:hover {
       color: darken($accentColor, 10%);
     }
+  }
+}
+
+.not-found {
+  background-image: url('./unicorn-r.svg'), url('./unicorn-l.svg');
+  background-repeat: no-repeat;
+  background-position: 90% center, 10% center;
+  background-size: 28%;
+  border-bottom: 1px solid rgba(31, 32, 65, .25);
+
+  @media (max-width: 768px) and (min-width: 425px) {
+    background-position: right bottom, left top;
+  }
+
+  @media (max-width: 425px) {
+    background-position: center bottom, center top;
   }
 }
