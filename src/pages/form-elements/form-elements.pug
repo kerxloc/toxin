@@ -110,7 +110,12 @@ block content
               +rateBtn({ currentRating: 4, ratingLength: 5 })  
         .form-elements__buttons
           .form-elements__range-slider-wrap
-            +rangeSlider({ title: "Range Slider" })
+            +rangeSlider({
+              title: "Range Slider",
+              start: [5000, 10000],
+              step: 100,
+              range: { min: 300, max: 15700 },
+            })
           .form-elements__button
             div(class="form-elements__title-wrap form-elements__title-wrap_bottom-gap")
               +typography({ text: "Buttons", variant: "h3", hasUpper: true })

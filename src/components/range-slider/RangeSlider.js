@@ -5,14 +5,11 @@ class RangeSlider {
   static _createSlider(item) {
     const viewNodes = this._getViewNodes();
     noUiSlider.create(item, {
-      start: [5000, 10000],
+      start: this._getStartData(),
       connect: true,
       format: wNumb({decimals: 0}),
-      step: 100,
-      range: {
-        min: [300],
-        max: 15700,
-      },
+      step: this._getStepData(),
+      range: this._getRangeData(),
       cssClasses: {
         target: 'target',
         base: 'base',
@@ -68,6 +65,25 @@ class RangeSlider {
 
   static _getElement() {
     return document.querySelector('.js-range-slider');
+  }
+
+  static _getStartData() {
+    const rangeSliderOptions = document.querySelector('.js-range-slider-options');
+    const startData = rangeSliderOptions.getAttribute('data-start');
+    return startData.split(',').map(item => parseInt(item));
+  }
+
+  static _getStepData() {
+    const rangeSliderOptions = document.querySelector('.js-range-slider-options');
+    const stepData = rangeSliderOptions.getAttribute('data-step');
+    return parseInt(stepData);
+  }
+
+  static _getRangeData() {
+    const rangeSliderOptions = document.querySelector('.js-range-slider-options');
+    const min = parseInt(rangeSliderOptions.getAttribute('data-range-min'));
+    const max = parseInt(rangeSliderOptions.getAttribute('data-range-max'));
+    return {min, max};
   }
 
   static init() {

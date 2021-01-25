@@ -18,7 +18,12 @@ mixin filter()
         +dropDownInput({ text: "3 гостя, 1 младенец", classForJs: "js-input-drop-down-guest" })
         div(class="drop-down-counter-container js-drop-down-counter-container-guest")
       .filter__item
-        +rangeSlider({ title: "Диапазон цены" })
+        +rangeSlider({
+          title: "Диапазон цены",
+          start: [5000, 10000],
+          step: 100,
+          range: { min: 300, max: 15700 },
+        })
         p.filter__explain Стоимость за сутки пребывания в номере
       .filter__item
         div(class="filter__title-wrap filter__title-wrap_bottom-gap")
