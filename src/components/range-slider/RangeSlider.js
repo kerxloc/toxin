@@ -2,6 +2,11 @@ import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
 
 class RangeSlider {
+  static init() {
+    const element = this._getElement();
+    this._createSlider(element);
+  }
+
   static _createSlider(item) {
     const viewNodes = this._getViewNodes();
     noUiSlider.create(item, {
@@ -84,11 +89,6 @@ class RangeSlider {
     const min = parseInt(rangeSliderOptions.getAttribute('data-range-min'));
     const max = parseInt(rangeSliderOptions.getAttribute('data-range-max'));
     return {min, max};
-  }
-
-  static init() {
-    const element = this._getElement();
-    this._createSlider(element);
   }
 }
 

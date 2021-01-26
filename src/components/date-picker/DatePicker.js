@@ -120,6 +120,11 @@ class DatePicker {
     this.isEndSelect = false;
   }
 
+  renderCalendar = () => {
+    const calendar = this._getCalendar();
+    this.parentNode.appendChild(calendar);
+  };
+
   _hasCurrentMonth = date => {
     return date.getMonth() === this.currentDate.getMonth();
   };
@@ -493,7 +498,9 @@ class DatePicker {
     if (this.arrivalInput) this.arrivalInput.textContent = 'ДД.ММ.ГГГГ';
     if (this.departureInput) this.departureInput.textContent = 'ДД.ММ.ГГГГ';
     if (this.datePickerInput) {
-      this.datePickerInput.textContent = this.inputPlaceholder ? this.inputPlaceholder : 'ДД.ММ.ГГГГ';
+      this.datePickerInput.textContent = this.inputPlaceholder
+        ? this.inputPlaceholder
+        : 'ДД.ММ.ГГГГ';
     }
     this._updateCurrentDate(new Date());
   };
@@ -636,7 +643,7 @@ class DatePicker {
         const tableTd = getHtmlElement('td', 'date-picker__day', viewDate.getDate());
         const isNowDate = this._compareDate(viewDate, nowDate) === 0;
 
-        if(this.isCellLower) {
+        if (this.isCellLower) {
           tableTd.classList.add('date-picker__day_lower');
         }
 
@@ -819,11 +826,6 @@ class DatePicker {
     tBody.addEventListener('click', this._onSelectDate);
     tBody.appendChild(tableDate);
     calendarTable.appendChild(tBody);
-  };
-
-  renderCalendar = () => {
-    const calendar = this._getCalendar();
-    this.parentNode.appendChild(calendar);
   };
 }
 

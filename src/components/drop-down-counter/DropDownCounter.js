@@ -75,6 +75,46 @@ class DropDownCounter {
       this.isPinShow = options.isPinShow;
     }
   }
+  
+  init = () => {
+    const modifiedCountElements = this._getModifiedCountElements();
+    this.countElements = modifiedCountElements;
+    const dropDownParentWrap = getHtmlElement('div', 'drop-down-counter__wrap');
+    const countList = getHtmlElement('ul', 'drop-down-counter__count-list');
+    const dropDownControl = getHtmlElement('div', 'drop-down-counter__control');
+    const clearBtn = getHtmlElement('button', 'drop-down-counter__button', 'Очистить');
+    this.clearBtn = clearBtn;
+    clearBtn.type = 'button';
+    clearBtn.addEventListener('click', this._onClickClear);
+    const acceptBtn = getHtmlElement('button', 'drop-down-counter__button', 'Применить');
+    acceptBtn.type = 'button';
+    acceptBtn.classList.add('drop-down-counter__button_accentuating');
+    acceptBtn.addEventListener('click', this._hide);
+    const countListFragment = document.createDocumentFragment();
+
+    this.countElements.forEach(element => {
+      const countItem = this._getCountItem(element);
+      countListFragment.appendChild(countItem);
+    });
+
+    countList.appendChild(countListFragment);
+    if (!this.isHideControl) {
+      dropDownControl.appendChild(clearBtn);
+      dropDownControl.appendChild(acceptBtn);
+    }
+
+    dropDownParentWrap.appendChild(countList);
+
+    if (!this.isHideControl) {
+      dropDownParentWrap.appendChild(dropDownControl);
+    }
+    this.dropDownParent.appendChild(dropDownParentWrap);
+    this.container.appendChild(this.dropDownParent);
+
+    const isAllCounterZero = this.countElements.every(item => item.counter === 0);
+
+    if (isAllCounterZero) this._hideClearBtn();
+  };
 
   _hasHaveStartValue = countElements => {
     return countElements.some(item => {
@@ -156,7 +196,9 @@ class DropDownCounter {
       item.counter = item.minValue;
     });
 
-    const minusButtons = this.dropDownParent.querySelectorAll('.drop-down-counter__counter-btn_minus');
+    const minusButtons = this.dropDownParent.querySelectorAll(
+      '.drop-down-counter__counter-btn_minus'
+    );
     minusButtons.forEach(item => {
       item.classList.add('drop-down-counter__counter-btn_disabled');
       item.setAttribute('disabled', 'true');
@@ -248,13 +290,17 @@ class DropDownCounter {
       groupView.counter++;
       countItemView.textContent = element.counter;
       this._renderViewCount();
-      const isMinusDisabled = countItemMinus.classList.contains('drop-down-counter__counter-btn_disabled');
+      const isMinusDisabled = countItemMinus.classList.contains(
+        'drop-down-counter__counter-btn_disabled'
+      );
       if (isMinusDisabled) {
         countItemMinus.classList.remove('drop-down-counter__counter-btn_disabled');
         countItemMinus.removeAttribute('disabled');
       }
 
-      const isClearBtnDisabled = this.clearBtn.classList.contains('drop-down-counter__button_hidden');
+      const isClearBtnDisabled = this.clearBtn.classList.contains(
+        'drop-down-counter__button_hidden'
+      );
       if (isClearBtnDisabled) {
         this.clearBtn.classList.remove('drop-down-counter__button_hidden');
       }
@@ -288,46 +334,6 @@ class DropDownCounter {
     countItem.appendChild(countItemName);
     countItem.appendChild(counterMenu);
     return countItem;
-  };
-
-  init = () => {
-    const modifiedCountElements = this._getModifiedCountElements();
-    this.countElements = modifiedCountElements;
-    const dropDownParentWrap = getHtmlElement('div', 'drop-down-counter__wrap');
-    const countList = getHtmlElement('ul', 'drop-down-counter__count-list');
-    const dropDownControl = getHtmlElement('div', 'drop-down-counter__control');
-    const clearBtn = getHtmlElement('button', 'drop-down-counter__button', 'Очистить');
-    this.clearBtn = clearBtn;
-    clearBtn.type = 'button';
-    clearBtn.addEventListener('click', this._onClickClear);
-    const acceptBtn = getHtmlElement('button', 'drop-down-counter__button', 'Применить');
-    acceptBtn.type = 'button';
-    acceptBtn.classList.add('drop-down-counter__button_accentuating');
-    acceptBtn.addEventListener('click', this._hide);
-    const countListFragment = document.createDocumentFragment();
-
-    this.countElements.forEach(element => {
-      const countItem = this._getCountItem(element);
-      countListFragment.appendChild(countItem);
-    });
-
-    countList.appendChild(countListFragment);
-    if (!this.isHideControl) {
-      dropDownControl.appendChild(clearBtn);
-      dropDownControl.appendChild(acceptBtn);
-    }
-
-    dropDownParentWrap.appendChild(countList);
-
-    if (!this.isHideControl) {
-      dropDownParentWrap.appendChild(dropDownControl);
-    }
-    this.dropDownParent.appendChild(dropDownParentWrap);
-    this.container.appendChild(this.dropDownParent);
-
-    const isAllCounterZero = this.countElements.every(item => item.counter === 0);
-
-    if (isAllCounterZero) this._hideClearBtn();
   };
 }
 

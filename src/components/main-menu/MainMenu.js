@@ -2,6 +2,15 @@ class MainMenu {
   constructor(parentDom) {
     this.parentDom = parentDom;
   }
+  
+  init() {
+    this._setSubMenuListener();
+    this._setBurgerListener();
+    this.isAuthorized = !this.parentDom.parentNode.querySelector('.js-profile-btn');
+    if (!this.isAuthorized) {
+      this._setAuthListener();
+    }
+  }
 
   _setSubMenuListener() {
     const subMenuItems = this.parentDom.querySelectorAll('.js-main-menu-item-sub-menu');
@@ -76,15 +85,6 @@ class MainMenu {
   _toggleAuthListClass() {
     const authList = this.parentDom.parentNode.querySelector('.js-auth-list');
     authList.classList.toggle('page-header__auth-list_active');
-  }
-
-  init() {
-    this._setSubMenuListener();
-    this._setBurgerListener();
-    this.isAuthorized = !this.parentDom.parentNode.querySelector('.js-profile-btn');
-    if (!this.isAuthorized) {
-      this._setAuthListener();
-    }
   }
 }
 
