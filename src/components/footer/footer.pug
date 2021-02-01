@@ -36,7 +36,7 @@ mixin footer(options = {})
       }
     ];
 
-    const { isShort } = options;
+    const { isShort, copyrightYear } = options;
 
     let footerClass = "page-footer";
 
@@ -51,7 +51,7 @@ mixin footer(options = {})
           div(class="page-footer__logo-wrap  page-footer__logo-wrap_short")
             +logo({ id: logoId })
           div(class="page-footer__copyright-wrap  page-footer__copyright-wrap_short")  
-            +copyright()
+            +copyright(copyrightYear)
           +socialButtons()
       else
         .page-footer__wrap
@@ -83,5 +83,5 @@ mixin footer(options = {})
                   +input({ type: "text", name: "date", placeholder: "Email", withButton: true })
           div(class="page-footer__side-info")
             .page-footer__copyright-wrap
-              +copyright()
+              +copyright(copyrightYear)
             +socialButtons()
