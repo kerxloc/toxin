@@ -3,6 +3,16 @@ include ../hotel-card/hotel-card
 include ../pagination/pagination
 
 mixin hotelRooms(hotels)
+  -
+    const pages = [
+      { title: "1", path: "not-found-page.html", isActive: true },
+      { title: "2", path: "not-found-page.html" },
+      { title: "3", path: "not-found-page.html" },
+      { title: "...", path: "not-found-page.html" },
+      { title: "15", path: "not-found-page.html" },
+      { title: "Далее", path: "not-found-page.html", isNext: true },
+    ];
+
   section.hotels
     .hotels__wrap
       .hotels__title-wrap
@@ -12,4 +22,4 @@ mixin hotelRooms(hotels)
           li.hotels__item
             +hotelCard(item)
       .hotels__pagination      
-        +pagination()
+        +pagination(pages)

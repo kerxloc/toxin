@@ -1,14 +1,4 @@
-mixin pagination()
-  -
-    const pages = [
-      { title: "1", path: "not-found-page.html", isActive: true },
-      { title: "2", path: "not-found-page.html" },
-      { title: "3", path: "not-found-page.html" },
-      { title: "...", path: "not-found-page.html" },
-      { title: "15", path: "not-found-page.html" },
-      { title: "Далее", path: "not-found-page.html", isNext: true },
-    ];
-
+mixin pagination(pages)
   .pagination
     .pagination__wrap
       ul.pagination__pages
