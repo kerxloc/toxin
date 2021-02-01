@@ -1,4 +1,6 @@
-mixin logo()
+mixin logo(options = {})
+  - const { altText = "Логотип Токсин", href = "index.html" } = options;
+
   .logo
-    a(class="logo__link" href="index.html")
-      img(class="logo__img" src="img/logo.svg" alt="Логотип Токсин")
+    a(class="logo__link" href=href)
+      img(class="logo__img" src="img/logo.svg" alt=altText)
