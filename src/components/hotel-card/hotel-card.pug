@@ -1,6 +1,6 @@
 include ../rate-btn/rate-btn
 mixin hotelCard(options = {})
-  - const { images, numberHotel, starCount, reviewCount, dayCost, isLuxed } = options;
+  - const { images, numberHotel, starCount, reviewCount, dayCost, isLux } = options;
 
   section.hotel-card
     div(class="hotel-card__wrap glide js-hotel-card-glide")
@@ -17,7 +17,7 @@ mixin hotelCard(options = {})
             button(class="hotel-card__bullet glide__bullet" data-glide-dir=`=${index}` type="button")
       .hotel-card__info
         .hotel-card__info-item
-          if (isLuxed)
+          if (isLux)
             h2.hotel-card__title 
               a(class="hotel-card__title-link" href="room-details.html") № #[span= numberHotel] #[b люкс]
           else 
