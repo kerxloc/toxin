@@ -99,4 +99,11 @@ block content
                 h2.room-details__title Отмена
                 p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
         .room-details__total-card-wrap
-          +totalCard()
+          +totalCard({
+            numberHotel: 888,
+            dayCost: 9990,
+            amountDay: 4,
+            discount: 2179,
+            additionalService: 300,
+            isLux: true,
+          })

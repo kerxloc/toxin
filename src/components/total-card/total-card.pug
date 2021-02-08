@@ -1,12 +1,40 @@
 include ../drop-down-input/drop-down-input
 
-mixin totalCard()
+mixin totalCard(options = {})
+  -
+    const {
+      numberHotel,
+      dayCost,
+      amountDay,
+      additionalService = 0,
+      discount = 0,
+      isLux,
+    } = options;
+
+    const getNumStringWithSpaces = num => {
+      const numString = String(num); 
+      return numString
+        .split('')
+        .reverse()
+        .join('')
+        .match(/\d\d?\d?/g)
+        .map(el => el.split('').reverse().join(''))
+        .reverse()
+        .join(' ');
+    }
+
+    const costPerDays = dayCost * amountDay;
+    const totalPrice = costPerDays - discount + additionalService;
+
   section.total-card
     .total-card__wrap
       form(action="not-found-page.html")
         .total-card__head
-          h2.total-card__title № #[span 888] #[b люкс]
-          p.total-card__per-day #[b 9 990₽] в сутки
+          if (isLux)
+            h2.total-card__title № #[span= numberHotel] #[b люкс]
+          else
+            h2.total-card__title № #[span= numberHotel]
+          p.total-card__per-day #[b= getNumStringWithSpaces(dayCost) + "₽ в сутки"]
         .total-card__date-inputs
           .total-card__date-input-wrap
             .total-card__title-wrap
@@ -23,15 +51,15 @@ mixin totalCard()
         div(class="drop-down-counter-container js-drop-down-counter-container")
         .total-card__calc
           .total-card__calc-row
-            p.total-card__calc-text 9 990₽ х 4 суток
-            p(class="total-card__calc-text total-card__calc-text_informational") Сбор за услуги: скидка 2 179₽
+            p(class="total-card__calc-text")= `${getNumStringWithSpaces(dayCost)}₽ х ${amountDay} суток`
+            p(class="total-card__calc-text total-card__calc-text_informational")= `Сбор за услуги: скидка ${getNumStringWithSpaces(discount)}₽`
             p(class="total-card__calc-text total-card__calc-text_informational") Сбор за дополнительные услуги
           div(class="total-card__calc-row total-card__calc-row_low total-card__calc-row_tar")
-            p.total-card__calc-text 39 960₽
+            p(class="total-card__calc-text")= `${getNumStringWithSpaces(costPerDays)}₽`
             p.total-card__calc-text 0₽
-            p.total-card__calc-text 300₽
+            p.total-card__calc-text= `${additionalService}₽`
         .total-card__total
           p.total-card__total-text Итого
           .total-card__total-separator
-          p.total-card__total-price 38 081₽
+          p.total-card__total-price= `${getNumStringWithSpaces(totalPrice)}₽`
         +button({ title: "Забронировать", withIcon: true, buttonType: "submit" })

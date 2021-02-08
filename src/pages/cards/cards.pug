@@ -23,7 +23,13 @@ block content
           +registerCard()
       .cards-page__row
         .cards-page__item
-          +totalCard()
+          +totalCard({
+            numberHotel: 888,
+            dayCost: 9990,
+            amountDay: 4,
+            discount: 2179,
+            isLux: true,
+          })
         .cards-page__item
           +authCard()
       .cards-page__row
