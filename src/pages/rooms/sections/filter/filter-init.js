@@ -1,5 +1,5 @@
-import DatePicker from '../date-picker/DatePicker';
-import DropDownCounter from '../drop-down-counter/DropDownCounter';
+import DatePicker from '../../../../components/date-picker/DatePicker';
+import DropDownCounter from '../../../../components/drop-down-counter/DropDownCounter';
 
 const datePickerDomInfo = {
   parentNode: document.querySelector('.js-date-picker-container'),
