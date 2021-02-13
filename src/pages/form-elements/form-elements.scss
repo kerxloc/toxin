@@ -1,4 +1,10 @@
 @import '../../style/utils/variables.scss';
+@import './sections/inputs/inputs.scss';
+@import './sections/controls/controls.scss';
+@import './sections/buttons/buttons.scss';
+@import './sections/drop-with-expandable/drop-with-expandable.scss';
+@import './sections/drop-with-rich/drop-with-rich.scss';
+@import './sections/drop-with-bullet/drop-with-bullet.scss';
 @import '../../components/input/input.scss';
 @import '../../components/typography/typography.scss';
 @import '../../components/drop-down-input/drop-down-input.scss';
@@ -18,7 +24,7 @@
 
 .form-elements {
   &__wrap {
-    padding-top: 65px;
+    padding-top: 62px;
     padding-bottom: 100px;
   }
 
@@ -37,118 +43,12 @@
     width: 27.6%;
   }
 
-  &__input {
-    margin-bottom: 20px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &_size_medium {
-      width: 83%;
-    }
-
-    &_bottom-gap {
-      margin-bottom: 174px;
-    }
-
-    &_bottom-large-gap {
-      margin-bottom: 220px;
-    }
-  }
-
-  &__title-wrap {
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
-
-    &_bottom-gap {
-      margin-bottom: 16px;
-    }
-  }
-
-  &__title-alt {
-    margin: 0;
-    padding: 0;
-    font-family: Montserrat, Quicksand, Arial, sans-serif;
-    font-size: 12px;
-    font-weight: normal;
-    text-transform: uppercase;
-    color: transparentize($contentColor, .5);
-  }
-
-  &__date-inputs {
-    margin: 41px 0;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__date-input {
-    width: 100%;
-
-    &:first-child {
-      margin-right: 20px;
-    }
-
-    &_with-margin {
-      margin-bottom: 41px;
-    }
-
-    &_size_medium {
-      width: 83%;
-    }
-  }
-
   &__controls {
     width: 22.9%;
   }
 
-  &__control {
-    margin-bottom: 40px;
-  }
-
-  &__toggle {
-    margin-bottom: 10px;
-  }
-
-  &__like-wrap {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  &__like-btn {
-    margin-right: 10px;
-  }
-
-  &__rate-btn-wrap {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  &__rate-btn {
-    margin-right: 20px;
-  }
-
   &__buttons {
     width: 27.7%;
-  }
-
-  &__range-slider-wrap {
-    margin-bottom: 42px;
-    width: 82.8%;
-  }
-
-  &__buttons-wrap {
-    margin-bottom: 30px;
-    display: flex;
-  }
-
-  &__button-wrap {
-    margin-right: 20px;
-  }
-
-  &__submit-btn {
-    margin-bottom: 41px;
   }
 
   &__row-wrap {
@@ -157,9 +57,5 @@
     &_size_large {
       width: 61.3%;
     }
-  }
-
-  &__checkbox-list {
-    margin-bottom: 32px;
   }
 }

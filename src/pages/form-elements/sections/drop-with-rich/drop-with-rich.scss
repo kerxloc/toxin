@@ -1,0 +1,21 @@
+.drop-with-rich {
+  width: 100%;
+
+  &__title-wrap {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+
+    &_bottom-gap {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 20px;
+
+    &_bottom-gap {
+      margin-bottom: 220px;
+    }
+  }
+}
