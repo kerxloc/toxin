@@ -1,7 +1,7 @@
 import '../../style/main.scss';
 import './index.scss';
 import '../../favicons/favicons.js';
-import '../../components/main-menu/mainMenuInit';
+import '../../components/main-menu/MainMenuInit';
 import DropDownCounter from '../../components/drop-down-counter/DropDownCounter';
 import DatePicker from '../../components/date-picker/DatePicker';
 
